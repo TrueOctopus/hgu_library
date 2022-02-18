@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-02-17 10:15:11
+ * @LastEditTime: 2022-02-17 11:13:45
  * @LastEditors: 郑钊宇
  * @Description: 
 -->
@@ -38,6 +38,6 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #b3ddff;
+  background-color: #dbdbdb;
 }
 </style>

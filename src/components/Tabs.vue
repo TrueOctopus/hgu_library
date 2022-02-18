@@ -1,3 +1,10 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-02-16 14:19:24
+ * @LastEditTime: 2022-02-18 12:22:53
+ * @LastEditors: 郑钊宇
+ * @Description: 标签组件
+-->
 <template>
   <md-card
     class="md-card-tabs"
@@ -31,8 +38,8 @@
             :class="getTabContent(index + 1)"
             v-for="(item, index) in tabName"
             :key="item"
-            v-if="isActivePanel(tabName[index])"
           >
+            <!-- v-if="isActivePanel(tabName[index])" -->
             <slot :name="getTabContent(index + 1)">
               This is the default text!
             </slot>

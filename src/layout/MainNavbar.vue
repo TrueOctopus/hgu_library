@@ -12,10 +12,9 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <a href="https://www.hgu.edu.cn/">
         <img
-          :src="image"
-          alt="Logo Image"
-          class="rounded"
-          style="margin-left:-15px;width:250px;"
+          :src="logoImage"
+          alt="Logo image"
+          style="height:40px; margin-right:15px;"
         />
       </a>
       <div class="md-toolbar-section-start">
@@ -25,7 +24,15 @@
           </md-list-item>
 
           <md-list-item href="javascript:void(0)">
-            <p>Link2</p>
+            <p>图书馆概况</p>
+          </md-list-item>
+
+          <md-list-item href="javascript:void(0)">
+            <p>文献资源</p>
+          </md-list-item>
+
+          <md-list-item href="javascript:void(0)">
+            <p>读者指南</p>
           </md-list-item>
 
           <li class="md-list-item">
@@ -40,7 +47,7 @@
                     class="md-button md-button-link md-white md-simple dropdown-toggle"
                     data-toggle="dropdown"
                   >
-                    <p>Dropdown</p>
+                    <p>馆读互动</p>
                   </md-button>
                   <ul class="dropdown-menu">
                     <li class="dropdown-header">Dropdown header</li>
@@ -86,13 +93,29 @@
         <div class="md-collapse">
           <div class="md-collapse-wrapper">
             <mobile-menu nav-mobile-section-start="true">
-              <md-list>
-                <!-- <h3 class="md-title">河北地质大学图书馆</h3> -->
-              </md-list>
+              <!-- <md-list>
+                <h3 class="md-title">河北地质大学图书馆</h3>
+              </md-list> -->
             </mobile-menu>
+
             <md-list>
-              <md-list-item href="javascript:void(0)">
-                <p>登录</p>
+              <md-list-item>
+                <div class="md-autocomplete">
+                  <md-autocomplete
+                    class="search has-info"
+                    v-model="selectedEmployee"
+                    :md-options="employees"
+                    :md-open-on-focus="false"
+                  >
+                    <label class="searchLabel">Search...</label>
+                  </md-autocomplete>
+                </div>
+              </md-list-item>
+
+              <md-list-item>
+                <md-button class="md-info" href="javascript:void(0)"
+                  >登录</md-button
+                >
               </md-list-item>
             </md-list>
           </div>
@@ -144,9 +167,14 @@ export default {
   },
   data() {
     return {
-      extraNavClasses: "initBar",
-      toggledClass: false,
-      image: require("@/assets/img/shoolLogo-white.png")
+      extraNavClasses: "initBar", //导航栏额外class
+      toggledClass: false, //按钮切换标志符
+      logoImage: require("@/assets/img/shoolLogo-white.png"), //顶部图
+
+      selectedEmployee: "", //搜索框默认配置
+      employees: [],
+
+      mobileFlag: false //移动端激活标志
     };
   },
   methods: {
@@ -174,26 +202,49 @@ export default {
       let scrollValue =
         document.body.scrollTop || document.documentElement.scrollTop;
       let navbarColor = document.getElementById("toolbar");
+      let searchColor = document.getElementsByClassName("search")[0];
+      let searchLabel = document.getElementsByTagName("label")[0];
       this.currentScrollValue = scrollValue;
-
-      if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
-        this.extraNavClasses = "navHidden";
+      if (!this.mobileFlag) {
+        if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
+          this.extraNavClasses = "navHidden";
+        } else {
+          if (this.extraNavClasses) {
+            this.logoImage = require("@/assets/img/shoolLogo-white.png");
+            this.extraNavClasses = "navShow";
+            navbarColor.classList.add("md-transparent");
+            searchColor.classList.remove("has-info");
+            searchColor.classList.add("has-white");
+            searchLabel.classList.add("searchLabel");
+          }
+        }
+        if (
+          this.scrollValueFlag > this.currentScrollValue &&
+          scrollValue > this.colorOnScroll
+        ) {
+          this.logoImage = require("@/assets/img/shoolLogo-black.png");
+          this.extraNavClasses = `md-${this.type} navShow`;
+          navbarColor.classList.remove("md-transparent");
+          searchColor.classList.remove("has-white");
+          searchColor.classList.add("has-info");
+          searchLabel.classList.remove("searchLabel");
+        }
+        this.scrollValueFlag = this.currentScrollValue;
       } else {
-        if (this.extraNavClasses) {
-          this.image = require("@/assets/img/shoolLogo-white.png");
-          this.extraNavClasses = "navShow";
-          navbarColor.classList.add("md-transparent");
+        searchColor.classList.remove("has-white");
+        searchColor.classList.add("has-info");
+        if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
+          this.logoImage = require("@/assets/img/shoolLogo-black.png");
+          this.extraNavClasses = `md-${this.type}`;
+          navbarColor.classList.remove("md-transparent");
+        } else {
+          if (this.extraNavClasses) {
+            this.logoImage = require("@/assets/img/shoolLogo-white.png");
+            this.extraNavClasses = "";
+            navbarColor.classList.add("md-transparent");
+          }
         }
       }
-      if (
-        this.scrollValueFlag > this.currentScrollValue &&
-        scrollValue > this.colorOnScroll
-      ) {
-        this.image = require("@/assets/img/shoolLogo-black.png");
-        this.extraNavClasses = `md-${this.type} navShow`;
-        navbarColor.classList.remove("md-transparent");
-      }
-      this.scrollValueFlag = this.currentScrollValue;
     },
     scrollListener() {
       resizeThrottler(this.handleScroll);
@@ -211,6 +262,7 @@ export default {
 /*导航栏隐藏*/
 .initBar {
   top: 0px;
+  max-width: 2000px;
 }
 .navHidden {
   top: -100px;
@@ -219,5 +271,12 @@ export default {
 .navShow {
   top: 0px;
   transition: 0.8s;
+}
+/* 其他设置 */
+.searchLabel {
+  color: #fff !important;
+}
+.md-toolbar-row {
+  max-width: 80%;
 }
 </style>
