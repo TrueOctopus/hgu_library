@@ -1,3 +1,10 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-02-16 14:25:02
+ * @LastEditTime: 2022-02-28 21:42:22
+ * @LastEditors: 郑钊宇
+ * @Description: 主页面
+-->
 <template>
   <div class="wrapper">
     <parallax class="page-header header-filter" :style="headerStyle">
@@ -12,7 +19,8 @@
         </div>
       </div>
     </parallax>
-    <div class="main main-raised">
+
+    <div class="main main-raised test">
       <div class="section" id="tabs">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -211,18 +219,12 @@
 <script>
 import { NavTabsCard } from "@/components";
 import ResBtn from "./components/ResourceButtonSection.vue";
-
 export default {
+  name: "index",
+  bodyClass: "index-page",
   components: {
     NavTabsCard,
     ResBtn
-  },
-  name: "index",
-  props: {
-    image: {
-      type: String,
-      default: require("@/assets/img/header.jpg")
-    }
   },
   data() {
     return {
@@ -258,11 +260,11 @@ export default {
       }
     };
   },
-  computed: {
-    headerStyle() {
-      return {
-        backgroundImage: `url(${this.image})`
-      };
+  props: {
+    image: {
+      type: String,
+      // default: require("@/assets/img/header.jpg")
+      default: require("@/assets/img/vue-mk-header.jpg")
     }
   },
   methods: {
@@ -285,49 +287,32 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     }
+  },
+  computed: {
+    headerStyle() {
+      return {
+        backgroundImage: `url(${this.image})`
+      };
+    }
   }
 };
 </script>
-<style lang="scss">
-@media all and (min-width: 991px) {
-  .btn-container {
-    display: flex;
-  }
-}
 
-.test {
+<style lang="scss" scoped>
+/* .test {
   height: 1000px;
-}
-
-#tabs {
+} */
+/* #tabs {
   padding-bottom: 0px;
 }
-
 #resBtns {
   padding-top: 0px;
 }
-
 .formStyle {
   text-align: left;
   width: 95%;
-
-  button {
-    margin-right: 10px;
-  }
 }
-.brand {
-  text-align: center;
-  color: #fff;
-
-  h1 {
-    font-family: "Microsoft Yahei", Times, serif;
-    font-size: 5.5rem;
-    font-weight: bold;
-    letter-spacing: 5px;
-  }
-  h3 {
-    font-family: "Verdana", "Microsoft Yahei", Times, serif;
-    font-size: 2rem;
-  }
-}
+.formStyle button {
+  margin-right: 10px;
+} */
 </style>

@@ -10,7 +10,7 @@
       <h3 class="md-title">河北地质大学图书馆</h3>
     </div> -->
     <div class="md-toolbar-row md-collapse-lateral">
-      <a href="https://www.hgu.edu.cn/">
+      <a v-if="showLogo" href="https://www.hgu.edu.cn/">
         <img
           :src="logoImage"
           alt="Logo image"
@@ -35,7 +35,7 @@
             <p>读者指南</p>
           </md-list-item>
 
-          <li class="md-list-item">
+          <li class="md-list-item" style="margin-top: 1px">
             <a
               href="javascript:void(0)"
               class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -174,7 +174,8 @@ export default {
       selectedEmployee: "", //搜索框默认配置
       employees: [],
 
-      mobileFlag: false //移动端激活标志
+      mobileFlag: false, //移动端激活标志
+      showLogo: true
     };
   },
   methods: {
@@ -205,6 +206,7 @@ export default {
       let searchColor = document.getElementsByClassName("search")[0];
       let searchLabel = document.getElementsByTagName("label")[0];
       this.currentScrollValue = scrollValue;
+
       if (!this.mobileFlag) {
         if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
           this.extraNavClasses = "navHidden";
@@ -252,6 +254,12 @@ export default {
   },
   mounted() {
     document.addEventListener("scroll", this.scrollListener);
+    // console.log(screen.width);
+    if (screen.width < 1300 && screen.width > 990) {
+      this.showLogo = !this.showLogo;
+    } else if (screen.width <= 990) {
+      this.mobileFlag = true;
+    }
   },
   beforeDestroy() {
     document.removeEventListener("scroll", this.scrollListener);
@@ -262,7 +270,6 @@ export default {
 /*导航栏隐藏*/
 .initBar {
   top: 0px;
-  max-width: 2000px;
 }
 .navHidden {
   top: -100px;

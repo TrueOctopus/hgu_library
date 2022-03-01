@@ -1,3 +1,10 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-02-16 14:19:24
+ * @LastEditTime: 2022-02-19 14:22:52
+ * @LastEditors: 郑钊宇
+ * @Description: 
+-->
 <template>
   <md-card class="md-card-login" :class="{ 'md-card-hidden': cardHidden }">
     <md-card-header :class="getClass(headerColor)">

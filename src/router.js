@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-02-16 14:38:14
+ * @LastEditTime: 2022-02-19 20:38:17
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -17,6 +17,7 @@ import Kits from "./views/Kits.vue";
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
