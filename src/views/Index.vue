@@ -59,8 +59,8 @@
                             ></el-option>
                           </el-select>
                         </el-form-item>
-                        <el-form-item label="文献名称" prop="name">
-                          <el-input v-model="docForm.name"></el-input>
+                        <el-form-item label="文献名称" prop="docName">
+                          <el-input v-model="docForm.docName"></el-input>
                         </el-form-item>
 
                         <el-form-item>
@@ -195,11 +195,160 @@
         </div>
       </div>
 
-      <div class="section" id="resource">
+      <div class="section section-tabs" id="resource">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div class="md-layout-item">
-            <h1 class="tittle">常用数据库列表</h1>
+          <div class="md-layout-item md-layout">
+            <div class="md-layout-item md-size-50">
+              <div class="md-layout">
+                <h3 class="md-layout-item md-size-80 tittle">常用数据库列表</h3>
+                <h6 class="md-layout-item md-size-20 tittle">
+                  <md-button class="md-simple">更多>></md-button>
+                </h6>
+              </div>
+              <el-collapse class="dataBaseList" accordion>
+                <el-collapse-item title="中文资源">
+                  <div>
+                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
+                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
+                    经济期刊总库
+                  </div>
+                  <div>
+                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
+                    CADAL国家自科基金 河地大学报
+                  </div>
+                </el-collapse-item>
+                <el-collapse-item title="外文资源">
+                  <div>
+                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
+                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
+                    经济期刊总库
+                  </div>
+                  <div>
+                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
+                    CADAL国家自科基金 河地大学报
+                  </div>
+                </el-collapse-item>
+                <el-collapse-item title="试用资源">
+                  <div>
+                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
+                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
+                    经济期刊总库
+                  </div>
+                  <div>
+                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
+                    CADAL国家自科基金 河地大学报
+                  </div>
+                </el-collapse-item>
+                <el-collapse-item title="开放资源">
+                  <div>
+                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
+                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
+                    经济期刊总库
+                  </div>
+                  <div>
+                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
+                    CADAL国家自科基金 河地大学报
+                  </div>
+                </el-collapse-item>
+              </el-collapse>
+            </div>
+            <div class="md-layout-item md-size-50">
+              <div class="md-layout">
+                <h3 class="md-layout-item md-size-80 tittle">特色资源</h3>
+                <h6 class="md-layout-item md-size-20 tittle">
+                  <md-button class="md-simple">更多>></md-button>
+                </h6>
+              </div>
+              <el-collapse class="dataBaseList" accordion>
+                <el-collapse-item title="随书光盘">
+                  <div>
+                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
+                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
+                    经济期刊总库
+                  </div>
+                  <div>
+                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
+                    CADAL国家自科基金 河地大学报
+                  </div>
+                </el-collapse-item>
+                <el-collapse-item title="高教社产品检索">
+                  <div>
+                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
+                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
+                    经济期刊总库
+                  </div>
+                  <div>
+                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
+                    CADAL国家自科基金 河地大学报
+                  </div>
+                </el-collapse-item>
+                <el-collapse-item title="中外图书大全">
+                  <div>
+                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
+                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
+                    经济期刊总库
+                  </div>
+                  <div>
+                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
+                    CADAL国家自科基金 河地大学报
+                  </div>
+                </el-collapse-item>
+                <el-collapse-item title="英文名著3000">
+                  <div>
+                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
+                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
+                    经济期刊总库
+                  </div>
+                  <div>
+                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
+                    CADAL国家自科基金 河地大学报
+                  </div>
+                </el-collapse-item>
+              </el-collapse>
+            </div>
+          </div>
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+        </div>
+      </div>
+
+      <div class="section" id="announcement">
+        <div class="md-layout">
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+          <div class="md-layout-item md-layout">
+            <div class="md-layout-item md-size-50">
+              <h3 class="tittle">新闻公告</h3>
+            </div>
+            <div class="md-layout-item md-size-50 md-layout">
+              <div class="md-layout-item md-size-50">
+                <img
+                  :src="image"
+                  alt="Raised Image"
+                  class="img-raised rounded"
+                />
+              </div>
+              <div class="md-layout-item md-size-50">
+                <img
+                  :src="image"
+                  alt="Raised Image"
+                  class="img-raised rounded"
+                />
+              </div>
+              <div class="md-layout-item md-size-50">
+                <img
+                  :src="image"
+                  alt="Raised Image"
+                  class="img-raised rounded"
+                />
+              </div>
+              <div class="md-layout-item md-size-50">
+                <img
+                  :src="image"
+                  alt="Raised Image"
+                  class="img-raised rounded"
+                />
+              </div>
+            </div>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
@@ -211,7 +360,6 @@
 <script>
 import { NavTabsCard } from "@/components";
 import ResBtn from "./components/ResourceButtonSection.vue";
-
 export default {
   components: {
     NavTabsCard,
@@ -219,15 +367,19 @@ export default {
   },
   name: "index",
   props: {
-    image: {
+    headerImage: {
       type: String,
       default: require("@/assets/img/header.jpg")
+    },
+    image: {
+      type: String,
+      default: require("@/assets/img/cynthia-del-rio.jpg")
     }
   },
   data() {
     return {
       docForm: {
-        name: "",
+        docName: "",
         docType: "all"
       },
       baiduSearchForm: {
@@ -241,7 +393,9 @@ export default {
         readerCardPassword: ""
       },
       rules: {
-        name: [{ required: true, message: "请输入文献名称", trigger: "blur" }],
+        docName: [
+          { required: true, message: "请输入文献名称", trigger: "change" }
+        ],
         docType: [
           { required: true, message: "请选择文献区域", trigger: "change" }
         ],
@@ -261,7 +415,7 @@ export default {
   computed: {
     headerStyle() {
       return {
-        backgroundImage: `url(${this.image})`
+        backgroundImage: `url(${this.headerImage})`
       };
     }
   },
@@ -304,7 +458,7 @@ export default {
 }
 
 #resBtns {
-  padding-top: 0px;
+  padding: 0px 0px 25px;
 }
 
 .formStyle {
@@ -329,5 +483,27 @@ export default {
     font-family: "Verdana", "Microsoft Yahei", Times, serif;
     font-size: 2rem;
   }
+}
+
+#resource {
+  padding: 50px 0px;
+}
+.tittle {
+  font-family: "Microsoft Yahei", Arial, sans-serif;
+  font-weight: bold;
+  color: rgb(90, 90, 90);
+  letter-spacing: 2px;
+}
+.dataBaseList {
+  * {
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+}
+
+#announcement {
+  padding: 50px 0px;
+}
+.img-raised {
+  margin: 10px 0px;
 }
 </style>

@@ -107,7 +107,7 @@
                     :md-options="employees"
                     :md-open-on-focus="false"
                   >
-                    <label class="searchLabel">Search...</label>
+                    <label class="searchLabel">搜索...</label>
                   </md-autocomplete>
                 </div>
               </md-list-item>
