@@ -1,5 +1,13 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-03-03 08:34:22
+ * @LastEditTime: 2022-03-04 20:55:28
+ * @LastEditors: 郑钊宇
+ * @Description: 主页
+-->
 <template>
   <div class="wrapper">
+    <el-backtop target=".wrapper"></el-backtop>
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout">
         <div class="md-layout-item">
@@ -194,7 +202,7 @@
         </div>
       </div>
 
-      <div class="section section-tabs" id="resource">
+      <div class="section" id="resource">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-layout">
@@ -319,56 +327,69 @@
               <h3 class="tittle">新闻公告</h3>
               <NewsElem
                 :newsTypeIndex="0"
-                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-                date="3/3"
+                tittle="这是一段测试文字"
+                date="03/03"
               ></NewsElem>
               <NewsElem
                 :newsTypeIndex="1"
                 tittle="这是一段测试文字"
-                date="3/3"
+                date="03/03"
               ></NewsElem>
               <NewsElem
                 :newsTypeIndex="2"
                 tittle="这是一段测试文字"
-                date="3/3"
+                date="03/03"
               ></NewsElem>
               <NewsElem
                 :newsTypeIndex="3"
                 tittle="这是一段测试文字"
-                date="3/3"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="2"
+                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="1"
+                tittle="这是一段测试文字"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字"
+                date="03/03"
               ></NewsElem>
               <NewsElem
                 :newsTypeIndex="0"
-                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-                date="3/3"
+                tittle="这是一段测试文字"
+                date="03/03"
               ></NewsElem>
               <NewsElem
                 :newsTypeIndex="1"
-                tittle="这是一段测试文字"
-                date="3/3"
+                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
+                date="03/03"
               ></NewsElem>
               <NewsElem
-                :newsTypeIndex="2"
+                :newsTypeIndex="0"
                 tittle="这是一段测试文字"
-                date="3/3"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
+                date="03/03"
               ></NewsElem>
               <NewsElem
                 :newsTypeIndex="3"
                 tittle="这是一段测试文字"
-                date="3/3"
-              ></NewsElem>
-              <NewsElem
-                :newsTypeIndex="2"
-                tittle="这是一段测试文字"
-                date="3/3"
-              ></NewsElem>
-              <NewsElem
-                :newsTypeIndex="3"
-                tittle="这是一段测试文字"
-                date="3/3"
+                date="12/13"
               ></NewsElem>
             </div>
-            <div class="md-layout-item md-size-50 md-layout">
+            <div
+              class="md-layout-item md-size-50 md-layout"
+              style="margin-top: 50px"
+            >
               <div class="md-layout-item md-size-50">
                 <img
                   :src="image"
@@ -402,6 +423,16 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
+
+      <!-- <div class="section section-tabs" id="resource">
+        <div class="md-layout">
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+          <div class="md-layout-item">
+            <h3 class="tittle">友情链接</h3>
+          </div>
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -499,7 +530,6 @@ export default {
     display: flex;
   }
 }
-
 .test {
   height: 1000px;
 }
@@ -538,12 +568,7 @@ export default {
 
 #resource {
   padding: 50px 0px;
-}
-.tittle {
-  font-family: "Microsoft Yahei", Arial, sans-serif;
-  font-weight: bold;
-  color: rgb(90, 90, 90);
-  letter-spacing: 2px;
+  background-image: require("@/assets/img/header.jpg");
 }
 .dataBaseList {
   * {

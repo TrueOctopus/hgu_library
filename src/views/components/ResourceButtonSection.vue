@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-19 14:34:07
- * @LastEditTime: 2022-02-21 21:02:02
+ * @LastEditTime: 2022-03-04 20:32:22
  * @LastEditors: 郑钊宇
  * @Description: 资源快速入口按钮
 -->
@@ -37,15 +37,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .res-btn {
-  /* width: 120px;
-  height: 120px; */
   background-color: #00bcd4;
   text-align: center;
   border-radius: 3px;
-  box-shadow: 0 5px 20px 0px rgb(0 0 0 / 20%),
-    0 13px 24px -11px rgb(0 188 212 / 60%);
+  box-shadow: 0 5px 10px 0px rgb(0 0 0 / 18%);
+  &:hover {
+    box-shadow: 0 5px 20px 0px rgb(0 0 0 / 20%),
+      0 13px 24px -11px rgb(0 188 212 / 60%);
+  }
 }
 .material-icons {
   font-size: 50px;

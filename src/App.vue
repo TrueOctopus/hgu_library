@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-02 17:09:16
+ * @LastEditTime: 2022-03-04 20:05:17
  * @LastEditors: 郑钊宇
  * @Description: 
 -->
@@ -38,5 +38,11 @@
   border-radius: 5px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #dbdbdb;
+}
+.tittle {
+  font-family: "Microsoft Yahei", Arial, sans-serif;
+  font-weight: bold;
+  color: rgb(90, 90, 90);
+  letter-spacing: 2px;
 }
 </style>
