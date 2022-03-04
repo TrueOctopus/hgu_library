@@ -59,7 +59,7 @@
                             ></el-option>
                           </el-select>
                         </el-form-item>
-                        <el-form-item label="文献名称" prop="docName">
+                        <el-form-item label="文献题名" prop="docName">
                           <el-input v-model="docForm.docName"></el-input>
                         </el-form-item>
 
@@ -182,7 +182,6 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout md-layout-item md-gutter res-btns">
-            <ResBtn class="md-layout-item" iconName="face" text="主页"></ResBtn>
             <ResBtn class="md-layout-item" iconName="face" text="主页"></ResBtn>
             <ResBtn class="md-layout-item" iconName="face" text="主页"></ResBtn>
             <ResBtn class="md-layout-item" iconName="face" text="主页"></ResBtn>
@@ -318,6 +317,56 @@
           <div class="md-layout-item md-layout">
             <div class="md-layout-item md-size-50">
               <h3 class="tittle">新闻公告</h3>
+              <NewsElem
+                :newsTypeIndex="0"
+                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="1"
+                tittle="这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="2"
+                tittle="这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="0"
+                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="1"
+                tittle="这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="2"
+                tittle="这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="2"
+                tittle="这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字"
+                date="3/3"
+              ></NewsElem>
             </div>
             <div class="md-layout-item md-size-50 md-layout">
               <div class="md-layout-item md-size-50">
@@ -360,10 +409,12 @@
 <script>
 import { NavTabsCard } from "@/components";
 import ResBtn from "./components/ResourceButtonSection.vue";
+import NewsElem from "./components/NewsElement.vue";
 export default {
   components: {
     NavTabsCard,
-    ResBtn
+    ResBtn,
+    NewsElem
   },
   name: "index",
   props: {
@@ -504,6 +555,6 @@ export default {
   padding: 50px 0px;
 }
 .img-raised {
-  margin: 10px 0px;
+  margin: 15px 0px;
 }
 </style>

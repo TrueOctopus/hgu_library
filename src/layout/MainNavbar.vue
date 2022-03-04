@@ -52,7 +52,7 @@
                   <ul class="dropdown-menu">
                     <li class="dropdown-header">Dropdown header</li>
                     <li>
-                      <a href="#pablo" class="dropdown-item">Action</a>
+                      <a href="kits" class="dropdown-item">Action</a>
                     </li>
                     <li>
                       <a href="#pablo" class="dropdown-item">Another action</a>
