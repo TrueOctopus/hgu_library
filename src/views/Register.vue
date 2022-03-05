@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-05 16:29:09
+ * @LastEditTime: 2022-03-05 16:28:00
  * @LastEditors: 郑钊宇
- * @Description: 登录页面
+ * @Description: 注册页面
 -->
 <template>
   <div class="wrapper">
@@ -15,7 +15,7 @@
             md-xsmall-size-100 md-medium-size-40 mx-auto"
           >
             <login-card header-color="info" class="header">
-              <h4 slot="title" class="card-title">用户登录</h4>
+              <h4 slot="title" class="card-title">用户注册</h4>
               <!-- <md-button
                 slot="buttons"
                 href="javascript:void(0)"
@@ -25,8 +25,13 @@
               </md-button> -->
 
               <p slot="description" class="description">
-                没有账号？<router-link to="/register">注册</router-link>
+                已有账号？ <router-link to="/login">登录</router-link>
               </p>
+              <md-field class="md-form-group" slot="inputs">
+                <md-icon>face</md-icon>
+                <label>用户名...</label>
+                <md-input v-model="firstname"></md-input>
+              </md-field>
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
                 <label>邮箱地址...</label>
@@ -38,7 +43,7 @@
                 <md-input v-model="password"></md-input>
               </md-field>
               <md-button slot="footer" class="md-simple md-success md-lg">
-                登录
+                注册
               </md-button>
             </login-card>
           </div>
@@ -58,6 +63,7 @@ export default {
   bodyClass: "login-page",
   data() {
     return {
+      firstname: null,
       email: null,
       password: null
     };

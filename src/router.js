@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-02-19 20:38:17
+ * @LastEditTime: 2022-03-05 16:21:36
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -10,6 +10,7 @@ import Router from "vue-router";
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
+import Register from "./views/Register.vue";
 import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
@@ -58,6 +59,15 @@ export default new Router({
       path: "/kits",
       name: "kits",
       components: { default: Kits, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" }
+      }
+    },
+    {
+      path: "/register",
+      name: "Register",
+      components: { default: Register, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }

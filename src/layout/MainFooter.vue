@@ -3,7 +3,7 @@
  * @Date: 2022-02-16 14:19:24
  * @LastEditTime: 2022-03-05 15:29:19
  * @LastEditors: 郑钊宇
- * @Description: 
+ * @Description: 底部栏组件
 -->
 <template>
   <footer

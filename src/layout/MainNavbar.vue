@@ -19,7 +19,7 @@
       </a>
       <div class="md-toolbar-section-start">
         <md-list>
-          <md-list-item href="#/">
+          <md-list-item href="/">
             <p>首页</p>
           </md-list-item>
 
@@ -37,7 +37,6 @@
 
           <li class="md-list-item" style="margin-top: 1px">
             <a
-              href="javascript:void(0)"
               class="md-list-item-router md-list-item-container md-button-clean dropdown"
             >
               <div class="md-list-item-content">
@@ -96,6 +95,7 @@
               <!-- <md-list>
                 <h3 class="md-title">河北地质大学图书馆</h3>
               </md-list> -->
+              <!-- TODO 手机版导航 -->
             </mobile-menu>
 
             <md-list>
@@ -113,9 +113,7 @@
               </md-list-item>
 
               <md-list-item>
-                <md-button class="md-info" href="javascript:void(0)"
-                  >登录</md-button
-                >
+                <md-button class="md-info" href="/login">登录</md-button>
               </md-list-item>
             </md-list>
           </div>
