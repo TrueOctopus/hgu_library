@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-05 15:26:10
+ * @LastEditTime: 2022-03-05 15:29:19
  * @LastEditors: 郑钊宇
  * @Description: 
 -->
@@ -67,6 +67,6 @@ export default {
 }
 .copyright {
   font-family: "Microsoft YaHei", sans-serif, serif;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.03rem;
 }
 </style>
