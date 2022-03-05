@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-02-16 14:43:01
+ * @LastEditTime: 2022-03-05 15:26:10
  * @LastEditors: 郑钊宇
  * @Description: 
 -->
@@ -15,19 +15,24 @@
       <nav>
         <ul>
           <li>
-            <a href="https:///presentation.creative-tim.com">
-              About Us
+            <a href="https://beian.miit.gov.cn/">
+              冀ICP备15002650号
             </a>
           </li>
           <li>
-            <a href="https:///blog.creative-tim.com">
-              Blog
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo">
+              冀公网安备 13010802000749号
             </a>
           </li>
+          <br />
           <li>
-            <a href="https://www.creative-tim.com/license">
-              Licenses
-            </a>
+            地址：河北省石家庄市槐安东路136号
+          </li>
+          <li>
+            电话：0311-87208050（馆办）
+          </li>
+          <li>
+            邮编：050031
           </li>
         </ul>
       </nav>
@@ -50,4 +55,18 @@ export default {
   }
 };
 </script>
-<style></style>
+<style lang="scss" scoped>
+.container {
+  text-align: center;
+  li {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px 3px;
+    font-family: "Microsoft Yahei", sans-serif, serif;
+  }
+}
+.copyright {
+  font-family: "Microsoft YaHei", sans-serif, serif;
+  letter-spacing: 0.02rem;
+}
+</style>

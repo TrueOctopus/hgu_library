@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-04 20:55:28
+ * @LastEditTime: 2022-03-05 10:49:10
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -197,23 +197,25 @@
             <ResBtn class="md-layout-item" iconName="face" text="主页"></ResBtn>
             <ResBtn class="md-layout-item" iconName="face" text="主页"></ResBtn>
             <ResBtn class="md-layout-item" iconName="face" text="主页"></ResBtn>
+            <ResBtn class="md-layout-item" iconName="face" text="主页"></ResBtn>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
 
-      <div class="section" id="resource">
+      <div class="section" id="resource" :style="bgImage">
+        <!-- <div class="resourceBg"></div> -->
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div class="md-layout-item md-layout">
-            <div class="md-layout-item md-size-50">
+          <div class="md-layout-item md-layout dataBaseList">
+            <div class="md-layout-item dataBaseListItem">
               <div class="md-layout">
                 <h3 class="md-layout-item md-size-80 tittle">常用数据库列表</h3>
                 <h6 class="md-layout-item md-size-20 tittle">
                   <md-button class="md-simple">更多>></md-button>
                 </h6>
               </div>
-              <el-collapse class="dataBaseList" accordion>
+              <el-collapse accordion>
                 <el-collapse-item title="中文资源">
                   <div>
                     CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
@@ -260,14 +262,14 @@
                 </el-collapse-item>
               </el-collapse>
             </div>
-            <div class="md-layout-item md-size-50">
+            <div class="md-layout-item dataBaseListItem">
               <div class="md-layout">
                 <h3 class="md-layout-item md-size-80 tittle">特色资源</h3>
                 <h6 class="md-layout-item md-size-20 tittle">
                   <md-button class="md-simple">更多>></md-button>
                 </h6>
               </div>
-              <el-collapse class="dataBaseList" accordion>
+              <el-collapse accordion>
                 <el-collapse-item title="随书光盘">
                   <div>
                     CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
@@ -322,9 +324,9 @@
       <div class="section" id="announcement">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div class="md-layout-item md-layout">
-            <div class="md-layout-item md-size-50">
-              <h3 class="tittle">新闻公告</h3>
+          <div class="md-layout-item md-size-80 md-layout">
+            <h3 class="md-layout-item md-size-100 tittle">新闻公告</h3>
+            <div class="md-layout-item md-size-50 md-small-size-100">
               <NewsElem
                 :newsTypeIndex="0"
                 tittle="这是一段测试文字"
@@ -386,10 +388,7 @@
                 date="12/13"
               ></NewsElem>
             </div>
-            <div
-              class="md-layout-item md-size-50 md-layout"
-              style="margin-top: 50px"
-            >
+            <div class="md-layout-item md-size-50 md-layout md-small-hide">
               <div class="md-layout-item md-size-50">
                 <img
                   :src="image"
@@ -424,15 +423,28 @@
         </div>
       </div>
 
-      <!-- <div class="section section-tabs" id="resource">
+      <div class="section section-tabs" id="friendLink">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div class="md-layout-item">
-            <h3 class="tittle">友情链接</h3>
+          <div class="md-layout-item md-size-80 md-layout">
+            <h3 class="md-layout-item md-size-100 tittle">友情链接</h3>
+            <div class="md-layout-item md-size-25 ">
+              国家图书馆<br />中国地质图书馆<br />北京大学图书馆
+            </div>
+            <div class="md-layout-item md-size-25 ">
+              吉林大学图书馆<br />地质大学图书馆<br />中南大学图书馆
+            </div>
+            <div class="md-layout-item md-size-25 ">
+              河北工业大学图书馆<br />河北科技大学图书馆<br />河北师范大学图书馆<br />
+              河北大学图书馆
+            </div>
+            <div class="md-layout-item md-size-25 ">
+              河北科技大学图书馆<br />河北师范大学图书馆<br />河北大学图书馆
+            </div>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -456,6 +468,10 @@ export default {
     image: {
       type: String,
       default: require("@/assets/img/cynthia-del-rio.jpg")
+    },
+    resourseImage: {
+      type: String,
+      default: require("@/assets/img/profile_city.jpg")
     }
   },
   data() {
@@ -499,6 +515,11 @@ export default {
       return {
         backgroundImage: `url(${this.headerImage})`
       };
+    },
+    bgImage() {
+      return {
+        backgroundImage: `url(${this.resourseImage})`
+      };
     }
   },
   methods: {
@@ -530,16 +551,13 @@ export default {
     display: flex;
   }
 }
-.test {
-  height: 1000px;
-}
 
 #tabs {
   padding-bottom: 0px;
 }
 
 #resBtns {
-  padding: 0px 0px 25px;
+  padding: 0px 0px 30px;
 }
 
 .formStyle {
@@ -567,19 +585,48 @@ export default {
 }
 
 #resource {
-  padding: 50px 0px;
-  background-image: require("@/assets/img/header.jpg");
+  padding: 80px 0;
 }
+// .resourceBg {
+//   float: left;
+//   width: 100%;
+//   height: 400px;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: cover;
+//   -webkit-filter: blur(5px);
+//   -moz-filter: blur(5px);
+//   -o-filter: blur(5px);
+//   -ms-filter: blur(5px);
+//   filter: blur(5px);
+// }
 .dataBaseList {
+  margin: 0 15px !important;
+  padding: 5px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 2px 5px 0px rgb(211, 211, 211);
+  border-radius: 8px;
+}
+.dataBaseListItem {
   * {
     background-color: rgba(255, 255, 255, 0) !important;
   }
 }
 
 #announcement {
-  padding: 50px 0px;
+  padding: 40px 0px 50px;
+  h3 {
+    margin-bottom: 15px;
+  }
 }
 .img-raised {
   margin: 15px 0px;
+}
+
+#friendLink {
+  padding: 50px 0;
+  font-size: 16px;
+  font-family: "Microsoft Yahei", sans-serif, serif;
+  letter-spacing: 1px;
 }
 </style>

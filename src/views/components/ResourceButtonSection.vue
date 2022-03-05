@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-19 14:34:07
- * @LastEditTime: 2022-03-04 20:32:22
+ * @LastEditTime: 2022-03-05 09:33:27
  * @LastEditors: 郑钊宇
  * @Description: 资源快速入口按钮
 -->
@@ -41,7 +41,7 @@ export default {
 .res-btn {
   background-color: #00bcd4;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 8px;
   box-shadow: 0 5px 10px 0px rgb(0 0 0 / 18%);
   &:hover {
     box-shadow: 0 5px 20px 0px rgb(0 0 0 / 20%),

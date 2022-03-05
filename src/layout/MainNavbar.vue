@@ -256,7 +256,7 @@ export default {
     document.addEventListener("scroll", this.scrollListener);
     // console.log(screen.width);
     if (screen.width < 1300 && screen.width > 990) {
-      this.showLogo = !this.showLogo;
+      this.showLogo = false;
     } else if (screen.width <= 990) {
       this.mobileFlag = true;
     }
