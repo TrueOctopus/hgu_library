@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-02-16 19:50:43
+ * @LastEditTime: 2022-03-06 18:25:14
  * @LastEditors: 郑钊宇
  * @Description: 入口文件
  */
@@ -20,6 +20,10 @@ import "element-ui/lib/theme-chalk/index.css";
 
 Vue.use(ElementUI);
 
+import animated from "animate.css";
+
+Vue.use(animated);
+
 const NavbarStore = {
   showNavbar: false
 };
@@ -31,7 +35,6 @@ Vue.mixin({
     };
   }
 });
-
 new Vue({
   router,
   render: h => h(App)

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-05 16:28:00
+ * @LastEditTime: 2022-03-05 16:37:38
  * @LastEditors: 郑钊宇
  * @Description: 注册页面
 -->
@@ -77,7 +77,11 @@ export default {
   computed: {
     headerStyle() {
       return {
-        backgroundImage: `url(${this.header})`
+        backgroundImage: `url(${this.header})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        height: "100vh"
       };
     }
   }

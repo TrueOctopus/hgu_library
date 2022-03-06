@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-05 16:21:36
+ * @LastEditTime: 2022-03-06 21:25:12
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -15,6 +15,8 @@ import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Kits from "./views/Kits.vue";
+import NewsList from "./views/NewsList.vue";
+import News from "./views/News.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -72,6 +74,21 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
       }
+    },
+    {
+      path: "/news",
+      name: "News",
+      components: { default: NewsList, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 100 },
+        footer: { backgroundColor: "black" }
+      },
+      children: [
+        {
+          path: ":newsId",
+          components: { default: News, header: MainNavbar, footer: MainFooter }
+        }
+      ]
     }
   ],
   scrollBehavior: to => {

@@ -131,7 +131,6 @@ function resizeThrottler(actualResizeHandler) {
     resizeTimeout = setTimeout(() => {
       resizeTimeout = null;
       actualResizeHandler();
-
       // The actualResizeHandler will execute at a rate of 15fps
     }, 66);
   }
@@ -207,6 +206,7 @@ export default {
 
       if (!this.mobileFlag) {
         if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
+          console.log(this.colorOnScroll);
           this.extraNavClasses = "navHidden";
         } else {
           if (this.extraNavClasses) {

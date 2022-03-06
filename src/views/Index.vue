@@ -1,13 +1,12 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-05 10:49:10
+ * @LastEditTime: 2022-03-06 19:10:54
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
 <template>
   <div class="wrapper">
-    <el-backtop target=".wrapper"></el-backtop>
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout">
         <div class="md-layout-item">
@@ -587,19 +586,6 @@ export default {
 #resource {
   padding: 80px 0;
 }
-// .resourceBg {
-//   float: left;
-//   width: 100%;
-//   height: 400px;
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: cover;
-//   -webkit-filter: blur(5px);
-//   -moz-filter: blur(5px);
-//   -o-filter: blur(5px);
-//   -ms-filter: blur(5px);
-//   filter: blur(5px);
-// }
 .dataBaseList {
   margin: 0 15px !important;
   padding: 5px 0;
@@ -628,5 +614,8 @@ export default {
   font-size: 16px;
   font-family: "Microsoft Yahei", sans-serif, serif;
   letter-spacing: 1px;
+  .md-layout-item {
+    line-height: 30px;
+  }
 }
 </style>

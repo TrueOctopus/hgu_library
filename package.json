@@ -1,5 +1,5 @@
 {
-  "name": "library",
+  "name": "hgulibrary",
   "author": "zhengzhaoyu",
   "description": "HeBei GEO University Library",
   "version": "1.2.2",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@vue/component-compiler-utils": "^3.3.0",
+    "animate.css": "^4.1.1",
     "core-js": "3.5.0",
     "element-ui": "^2.15.6",
     "nouislider": "14.1.0",
