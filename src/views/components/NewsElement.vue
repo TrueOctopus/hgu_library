@@ -1,18 +1,20 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-05 15:32:03
+ * @LastEditTime: 2022-03-07 16:55:54
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
 <template>
-  <div id="newsTab">
+  <div id="newsTab" :style="tabColorStyle">
     <div class="dateClass">{{ date }} |</div>
-    <a href="#">
+    <router-link to="#">
       <badge class="labelClass" :type="newsColor">{{ newsType }}</badge>
-    </a>
+    </router-link>
     <span>
-      <a href="#">{{ tittle }}</a>
+      <router-link :to="`news/${newsId}`">
+        {{ tittle }}
+      </router-link>
     </span>
   </div>
 </template>
@@ -31,8 +33,26 @@ export default {
       return news[this.newsTypeIndex];
     },
     newsColor() {
-      let colorTabs = ["primary", "info", "success", "warning"];
+      let colorTabs = ["primary", "warning", "success", "info"];
       return colorTabs[this.newsTypeIndex];
+    },
+    tabColorStyle() {
+      let tabColor = "#00bcd4";
+      switch (this.newsTypeIndex) {
+        case 0:
+          tabColor = "#9c27b0";
+          break;
+        case 1:
+          tabColor = "#ff9800";
+          break;
+        case 2:
+          tabColor = "#2196f3";
+          break;
+        case 3:
+          tabColor = "#00bcd4";
+          break;
+      }
+      return `border-left: 5px solid ${tabColor};`;
     }
   },
   props: {
@@ -47,6 +67,10 @@ export default {
     date: {
       type: String,
       required: true
+    },
+    newsId: {
+      type: String,
+      require: true
     }
   },
   methods: {}
@@ -63,7 +87,6 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  border-left: 5px solid #00bcd4;
   a {
     font-weight: normal;
     font-family: "Microsoft Yahei", Times, serif;
@@ -71,9 +94,6 @@ export default {
     color: black;
     text-decoration: none;
     margin-left: 5px;
-    &:hover {
-      color: #00bcd4;
-    }
   }
 }
 .labelClass {

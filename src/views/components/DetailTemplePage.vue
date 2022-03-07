@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-03-06 21:22:18
+ * @LastEditTime: 2022-03-07 16:20:33
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -30,6 +30,14 @@
         <div class="md-layout-item md-size-10 md-small-size-5" />
         <div class="md-layout-item md-size-80">
           <slot name="breadcrumb"></slot>
+        </div>
+        <div class="md-layout-item md-size-10 md-small-size-5" />
+      </div>
+
+      <div class="section md-layout" id="buttons">
+        <div class="md-layout-item md-size-10 md-small-size-5" />
+        <div class="md-layout-item md-size-80">
+          <slot name="buttons"></slot>
         </div>
         <div class="md-layout-item md-size-10 md-small-size-5" />
       </div>
@@ -94,7 +102,10 @@ export default {
   }
 }
 #breadcrumb {
-  padding: 50px 0 70px;
+  padding: 60px 0 20px;
+}
+#buttons {
+  padding: 0 0 10px;
 }
 #text {
   padding: 0 0 70px;

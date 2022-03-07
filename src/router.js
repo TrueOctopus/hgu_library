@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-06 21:25:12
+ * @LastEditTime: 2022-03-07 10:56:05
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -77,7 +77,7 @@ export default new Router({
     },
     {
       path: "/news",
-      name: "News",
+      name: "NewsList",
       components: { default: NewsList, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 100 },
@@ -85,10 +85,35 @@ export default new Router({
       },
       children: [
         {
-          path: ":newsId",
-          components: { default: News, header: MainNavbar, footer: MainFooter }
+          path: "news",
+          name: "allNews",
+          components: News
+        },
+        {
+          path: "announcements",
+          name: "allAnnouncements",
+          components: News
+        },
+        {
+          path: "buy",
+          name: "allBuy",
+          components: News
+        },
+        {
+          path: "try",
+          name: "allTry",
+          components: News
         }
       ]
+    },
+    {
+      path: "/news/:newId",
+      name: "News",
+      components: { default: News, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 100 },
+        footer: { backgroundColor: "black" }
+      }
     }
   ],
   scrollBehavior: to => {

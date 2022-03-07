@@ -206,7 +206,7 @@ export default {
 
       if (!this.mobileFlag) {
         if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
-          console.log(this.colorOnScroll);
+          // console.log(this.colorOnScroll);
           this.extraNavClasses = "navHidden";
         } else {
           if (this.extraNavClasses) {

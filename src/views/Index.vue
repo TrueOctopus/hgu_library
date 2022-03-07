@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-06 19:10:54
+ * @LastEditTime: 2022-03-07 16:48:12
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -210,9 +210,12 @@
             <div class="md-layout-item dataBaseListItem">
               <div class="md-layout">
                 <h3 class="md-layout-item md-size-80 tittle">常用数据库列表</h3>
-                <h6 class="md-layout-item md-size-20 tittle">
-                  <md-button class="md-simple">更多>></md-button>
-                </h6>
+                <router-link
+                  to="/database"
+                  class="md-layout-item md-size-20 moreClass"
+                >
+                  更多>>
+                </router-link>
               </div>
               <el-collapse accordion>
                 <el-collapse-item title="中文资源">
@@ -264,9 +267,12 @@
             <div class="md-layout-item dataBaseListItem">
               <div class="md-layout">
                 <h3 class="md-layout-item md-size-80 tittle">特色资源</h3>
-                <h6 class="md-layout-item md-size-20 tittle">
-                  <md-button class="md-simple">更多>></md-button>
-                </h6>
+                <router-link
+                  to="/characteristic"
+                  class="md-layout-item md-size-20 moreClass"
+                >
+                  更多>>
+                </router-link>
               </div>
               <el-collapse accordion>
                 <el-collapse-item title="随书光盘">
@@ -324,40 +330,13 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
-            <h3 class="md-layout-item md-size-100 tittle">新闻公告</h3>
+            <h3 class="md-layout-item md-size-90 tittle">新闻公告</h3>
+            <router-link to="/news" class="md-layout-item md-size-10 moreClass">
+              更多>>
+            </router-link>
             <div class="md-layout-item md-size-50 md-small-size-100">
               <NewsElem
-                :newsTypeIndex="0"
-                tittle="这是一段测试文字"
-                date="03/03"
-              ></NewsElem>
-              <NewsElem
                 :newsTypeIndex="1"
-                tittle="这是一段测试文字"
-                date="03/03"
-              ></NewsElem>
-              <NewsElem
-                :newsTypeIndex="2"
-                tittle="这是一段测试文字"
-                date="03/03"
-              ></NewsElem>
-              <NewsElem
-                :newsTypeIndex="3"
-                tittle="这是一段测试文字"
-                date="03/03"
-              ></NewsElem>
-              <NewsElem
-                :newsTypeIndex="2"
-                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-                date="03/03"
-              ></NewsElem>
-              <NewsElem
-                :newsTypeIndex="1"
-                tittle="这是一段测试文字"
-                date="03/03"
-              ></NewsElem>
-              <NewsElem
-                :newsTypeIndex="3"
                 tittle="这是一段测试文字"
                 date="03/03"
               ></NewsElem>
@@ -367,7 +346,7 @@
                 date="03/03"
               ></NewsElem>
               <NewsElem
-                :newsTypeIndex="1"
+                :newsTypeIndex="0"
                 tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
                 date="03/03"
               ></NewsElem>
@@ -377,12 +356,12 @@
                 date="03/03"
               ></NewsElem>
               <NewsElem
-                :newsTypeIndex="3"
+                :newsTypeIndex="1"
                 tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
                 date="03/03"
               ></NewsElem>
               <NewsElem
-                :newsTypeIndex="3"
+                :newsTypeIndex="1"
                 tittle="这是一段测试文字"
                 date="12/13"
               ></NewsElem>
@@ -402,6 +381,48 @@
                   class="img-raised rounded"
                 />
               </div>
+            </div>
+          </div>
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+          <div class="md-layout-item md-size-80 md-layout">
+            <h3 class="md-layout-item md-size-90 tittle">资源信息</h3>
+            <router-link to="/news" class="md-layout-item md-size-10 moreClass">
+              更多>>
+            </router-link>
+            <div class="md-layout-item md-size-50 md-small-size-100">
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="2"
+                tittle="这是一段测试文字"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="2"
+                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
+                date="03/03"
+              ></NewsElem>
+              <NewsElem
+                :newsTypeIndex="3"
+                tittle="这是一段测试文字"
+                date="12/13"
+              ></NewsElem>
+            </div>
+            <div class="md-layout-item md-size-50 md-layout md-small-hide">
               <div class="md-layout-item md-size-50">
                 <img
                   :src="image"
@@ -598,7 +619,11 @@ export default {
     background-color: rgba(255, 255, 255, 0) !important;
   }
 }
-
+.moreClass {
+  font-size: 14px;
+  color: #3c4858 !important;
+  line-height: 75px;
+}
 #announcement {
   padding: 40px 0px 50px;
   h3 {
