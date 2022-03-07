@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-05 16:34:59
+ * @LastEditTime: 2022-03-07 17:55:59
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -14,7 +14,10 @@
             class="md-layout-item md-size-33 md-small-size-66 
             md-xsmall-size-100 md-medium-size-40 mx-auto"
           >
-            <login-card header-color="info" class="header">
+            <login-card
+              header-color="info"
+              class="header animate__animated animate__slow animate__fadeInLeft"
+            >
               <h4 slot="title" class="card-title">用户登录</h4>
               <!-- <md-button
                 slot="buttons"

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-02-19 14:22:52
+ * @LastEditTime: 2022-03-07 17:54:39
  * @LastEditors: 郑钊宇
  * @Description: 
 -->
@@ -53,4 +53,4 @@ export default {
 };
 </script>
 
-<style lang="css"></style>
+<style lang="scss"></style>

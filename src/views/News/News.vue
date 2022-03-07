@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:11:53
- * @LastEditTime: 2022-03-07 14:57:45
+ * @LastEditTime: 2022-03-07 18:38:17
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告页面
 -->
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import TemplePage from "./components/DetailTemplePage.vue";
+import TemplePage from "../components/DetailTemplePage.vue";
 export default {
   name: "news",
   data() {

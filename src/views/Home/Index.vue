@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-07 16:48:12
+ * @LastEditTime: 2022-03-07 17:47:31
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -11,7 +11,9 @@
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
-            <div class="brand">
+            <div
+              class="brand animate__animated animate__slow animate__fadeInUp"
+            >
               <h1>河北地质大学图书馆</h1>
               <h3>HeBei GEO University Library</h3>
             </div>
@@ -471,8 +473,8 @@
 
 <script>
 import { NavTabsCard } from "@/components";
-import ResBtn from "./components/ResourceButtonSection.vue";
-import NewsElem from "./components/NewsElement.vue";
+import ResBtn from "../components/ResourceButtonSection.vue";
+import NewsElem from "../components/NewsElement.vue";
 export default {
   components: {
     NavTabsCard,

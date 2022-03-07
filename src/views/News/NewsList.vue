@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-03-07 16:57:00
+ * @LastEditTime: 2022-03-07 17:05:14
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -118,8 +118,8 @@
 </template>
 
 <script>
-import TemplePage from "./components/DetailTemplePage.vue";
-import NewsElem from "./components/NewsElement.vue";
+import TemplePage from "../components/DetailTemplePage.vue";
+import NewsElem from "../components/NewsElement.vue";
 import { Pagination } from "@/components";
 
 export default {

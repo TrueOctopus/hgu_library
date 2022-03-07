@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-03-07 16:20:33
+ * @LastEditTime: 2022-03-07 18:37:35
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -21,6 +21,7 @@
           <div class="material-icons md-light">
             today
           </div>
+          <!-- <md-icon style="color: white">today</md-icon> -->
           {{ dateTittle }}
         </h4>
       </div>
@@ -74,7 +75,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page-header {
   height: 50vh !important;
   h2 {
@@ -119,8 +120,9 @@ export default {
   }
   .signature {
     font-size: 16px;
+    width: 20%;
     position: relative;
-    left: 85%;
+    left: 80%;
     top: 3%;
     font-weight: bold;
   }

@@ -1,22 +1,22 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-07 10:56:05
+ * @LastEditTime: 2022-03-07 17:12:12
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
 import Vue from "vue";
 import Router from "vue-router";
-import Index from "./views/Index.vue";
-import Landing from "./views/Landing.vue";
-import Login from "./views/Login.vue";
-import Register from "./views/Register.vue";
-import Profile from "./views/Profile.vue";
+import Index from "./views/Home/Index.vue";
+import Landing from "./views/Landing/Landing.vue";
+import Login from "./views/Personal/Login.vue";
+import Register from "./views/Personal/Register.vue";
+import Profile from "./views/Personal/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
-import Kits from "./views/Kits.vue";
-import NewsList from "./views/NewsList.vue";
-import News from "./views/News.vue";
+import Kits from "./views/Kits/Kits.vue";
+import NewsList from "./views/News/NewsList.vue";
+import News from "./views/News/News.vue";
 Vue.use(Router);
 
 export default new Router({
