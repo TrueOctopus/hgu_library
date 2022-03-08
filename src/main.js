@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-06 18:25:14
+ * @LastEditTime: 2022-03-08 10:46:47
  * @LastEditors: 郑钊宇
  * @Description: 入口文件
  */
@@ -35,6 +35,7 @@ Vue.mixin({
     };
   }
 });
+
 new Vue({
   router,
   render: h => h(App)

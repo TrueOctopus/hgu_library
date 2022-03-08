@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-06 18:57:39
+ * @LastEditTime: 2022-03-08 10:52:41
  * @LastEditors: 郑钊宇
- * @Description: 
+ * @Description: app.vue
 -->
 <template>
   <div>
@@ -18,14 +18,13 @@
 </template>
 <script>
 export default {
-  created() {
-    // let loadingPage = document.getElementById("loading");
-    // loadingPage.classList.remove("animate__fadeInUpBig");
-    // loadingPage.classList.add("animate__fadeOutUpBig");
-    // let loadingTittle = document.getElementById("loadingTittle");
-    // loadingTittle.classList.remove("animate__fadeInUp");
-    // loadingTittle.classList.add("animate__fadeOutUp");
-  }
+  // FIXME 页面加载动画 已弃用
+  // created() {
+  //   let loadingPage = document.getElementsByTagName("html")[0];
+  //   loadingPage.addEventListener("transitionend", () => {
+  //     loadingPage.classList.add("loading-finish");
+  //   });
+  // }
 };
 </script>
 <style lang="scss">

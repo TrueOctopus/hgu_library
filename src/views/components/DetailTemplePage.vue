@@ -1,24 +1,24 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-03-07 18:37:35
+ * @LastEditTime: 2022-03-08 10:37:05
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
 <template>
   <div class="wrapper">
     <parallax class="page-header header-filter" :style="headerStyle">
-      <div class="headerTittle">
+      <div class="headerTittle animate__animated animate__fadeInUp">
         <h4 class="tittle">{{ headerTittle }}</h4>
       </div>
-      <div class="md-layout">
+      <div class="md-layout animate__animated animate__fadeInUp">
         <div class="md-layout-item md-size-100">
           <h2 class="tittle">{{ detailTittle }}</h2>
         </div>
       </div>
-      <div class="dateTittle">
+      <div class="dateTittle animate__animated animate__fadeInUp">
         <h4 class="tittle">
-          <div class="material-icons md-light">
+          <div class="material-icons md-light" v-if="dateTittle">
             today
           </div>
           <!-- <md-icon style="color: white">today</md-icon> -->
@@ -112,6 +112,7 @@ export default {
   padding: 0 0 70px;
   p {
     font-size: 15px;
+    text-indent: 30px;
   }
   img {
     display: block;

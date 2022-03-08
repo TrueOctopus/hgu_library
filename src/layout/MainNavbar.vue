@@ -23,7 +23,7 @@
             <p>首页</p>
           </md-list-item>
 
-          <md-list-item href="javascript:void(0)">
+          <md-list-item href="/introduction">
             <p>图书馆概况</p>
           </md-list-item>
 

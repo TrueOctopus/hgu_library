@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-03-07 17:05:14
+ * @LastEditTime: 2022-03-08 08:44:07
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -128,7 +128,7 @@ export default {
     return {
       infoColor: "info",
       showLastBreadcrumb: false,
-      detailTittle: "",
+      detailTittle: "新闻公告",
       infoPagination: 1
     };
   },
