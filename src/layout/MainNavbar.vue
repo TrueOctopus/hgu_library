@@ -404,6 +404,6 @@ export default {
 }
 /* 其他设置 */
 .md-toolbar-row {
-  max-width: 85%;
+  max-width: 90%;
 }
 </style>

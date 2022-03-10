@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-10 09:26:32
+ * @LastEditTime: 2022-03-10 15:17:44
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -612,7 +612,7 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @media all and (min-width: 991px) {
   .btn-container {
     display: flex;
@@ -640,6 +640,7 @@ export default {
   }
   button {
     margin-top: -2px;
+    margin-left: 10vh;
   }
 }
 .brand {
@@ -667,15 +668,15 @@ export default {
 .dataBaseList {
   margin: 0 15px !important;
   padding: 5px 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 2px 5px 0px rgb(211, 211, 211);
   border-radius: 8px;
 }
-.dataBaseListItem {
-  * {
-    background-color: rgba(255, 255, 255, 0) !important;
-  }
-}
+// .dataBaseListItem {
+//   * {
+//     background-color: rgba(255, 255, 255, 0) !important;
+//   }
+// }
 .moreClass {
   font-size: 14px;
   color: #3c4858 !important;

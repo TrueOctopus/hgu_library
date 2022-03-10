@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-03-08 10:37:05
+ * @LastEditTime: 2022-03-10 15:12:58
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -111,8 +111,9 @@ export default {
 #text {
   padding: 0 0 70px;
   p {
-    font-size: 15px;
-    text-indent: 30px;
+    font-size: 18px;
+    text-indent: 39px;
+    letter-spacing: 1px;
   }
   img {
     display: block;
