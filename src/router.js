@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-08 20:32:56
+ * @LastEditTime: 2022-03-10 15:30:35
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -18,7 +18,6 @@ import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Kits from "./views/Kits/Kits.vue";
 import Announcement from "./views/News/Announcement.vue";
-import NewsList from "./views/News/NewsList.vue";
 import News from "./views/News/News.vue";
 import Introduction from "./views/Introduction/Introduction.vue";
 import DatabaseList from "./views/DataBaseResouce/DatabaseList.vue";
@@ -82,7 +81,7 @@ export default new Router({
     {
       path: "/announcement",
       name: "Announcement",
-      redirect: "/announcement/all",
+      // redirect: "/announcement/all",
       components: {
         default: Announcement,
         header: MainNavbar,
@@ -91,54 +90,54 @@ export default new Router({
       props: {
         header: { colorOnScroll: 100 },
         footer: { backgroundColor: "black" }
-      },
-      children: [
-        {
-          path: "all",
-          name: "allAnnouncement",
-          components: {
-            default: NewsList,
-            header: MainNavbar,
-            footer: MainFooter
-          }
-        },
-        {
-          path: "news",
-          name: "allNews",
-          components: {
-            default: NewsList,
-            header: MainNavbar,
-            footer: MainFooter
-          }
-        },
-        {
-          path: "notes",
-          name: "allNotes",
-          components: {
-            default: NewsList,
-            header: MainNavbar,
-            footer: MainFooter
-          }
-        },
-        {
-          path: "buy",
-          name: "allBuy",
-          components: {
-            default: NewsList,
-            header: MainNavbar,
-            footer: MainFooter
-          }
-        },
-        {
-          path: "try",
-          name: "allTry",
-          components: {
-            default: NewsList,
-            header: MainNavbar,
-            footer: MainFooter
-          }
-        }
-      ]
+      }
+      // children: [
+      //   {
+      //     path: "all",
+      //     name: "allAnnouncement",
+      //     components: {
+      //       default: NewsList,
+      //       header: MainNavbar,
+      //       footer: MainFooter
+      //     }
+      //   },
+      //   {
+      //     path: "news",
+      //     name: "allNews",
+      //     components: {
+      //       default: NewsList,
+      //       header: MainNavbar,
+      //       footer: MainFooter
+      //     }
+      //   },
+      //   {
+      //     path: "notes",
+      //     name: "allNotes",
+      //     components: {
+      //       default: NewsList,
+      //       header: MainNavbar,
+      //       footer: MainFooter
+      //     }
+      //   },
+      //   {
+      //     path: "buy",
+      //     name: "allBuy",
+      //     components: {
+      //       default: NewsList,
+      //       header: MainNavbar,
+      //       footer: MainFooter
+      //     }
+      //   },
+      //   {
+      //     path: "try",
+      //     name: "allTry",
+      //     components: {
+      //       default: NewsList,
+      //       header: MainNavbar,
+      //       footer: MainFooter
+      //     }
+      //   }
+      // ]
     },
     {
       path: "/announcement/:newId",

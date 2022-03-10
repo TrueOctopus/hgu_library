@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:11:53
- * @LastEditTime: 2022-03-08 15:18:30
+ * @LastEditTime: 2022-03-10 15:18:45
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告页面
 -->
@@ -15,7 +15,7 @@
       <template #breadcrumb>
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: '/news' }">
+          <el-breadcrumb-item :to="{ path: '/announcement' }">
             新闻公告
           </el-breadcrumb-item>
           <el-breadcrumb-item>{{ detailTittle }}</el-breadcrumb-item>

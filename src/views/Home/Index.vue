@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-10 15:17:44
+ * @LastEditTime: 2022-03-10 15:31:18
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -640,7 +640,7 @@ export default {
   }
   button {
     margin-top: -2px;
-    margin-left: 10vh;
+    margin-left: 2vh;
   }
 }
 .brand {
