@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-19 14:34:07
- * @LastEditTime: 2022-03-05 09:33:27
+ * @LastEditTime: 2022-03-10 11:16:57
  * @LastEditors: 郑钊宇
  * @Description: 资源快速入口按钮
 -->
@@ -39,6 +39,9 @@ export default {
 
 <style lang="scss" scoped>
 .res-btn {
+  margin: 10px 5px;
+  width: 18vh;
+  height: 16vh;
   background-color: #00bcd4;
   text-align: center;
   border-radius: 8px;
@@ -49,14 +52,14 @@ export default {
   }
 }
 .material-icons {
-  font-size: 50px;
-  margin-top: 20px;
+  font-size: 55px;
+  margin-top: 2vh;
 }
 .md-light {
   color: rgba(255, 255, 255, 1);
 }
 .res-tittle {
+  font-size: 16px;
   color: #fff;
-  padding: 6px 0;
 }
 </style>

@@ -1,12 +1,14 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-08 09:08:22
+ * @LastEditTime: 2022-03-08 20:32:56
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
 import Vue from "vue";
 import Router from "vue-router";
+Vue.use(Router);
+
 import Index from "./views/Home/Index.vue";
 import Landing from "./views/Landing/Landing.vue";
 import Login from "./views/Personal/Login.vue";
@@ -15,10 +17,11 @@ import Profile from "./views/Personal/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Kits from "./views/Kits/Kits.vue";
+import Announcement from "./views/News/Announcement.vue";
 import NewsList from "./views/News/NewsList.vue";
 import News from "./views/News/News.vue";
 import Introduction from "./views/Introduction/Introduction.vue";
-Vue.use(Router);
+import DatabaseList from "./views/DataBaseResouce/DatabaseList.vue";
 
 export default new Router({
   mode: "history",
@@ -28,7 +31,7 @@ export default new Router({
       name: "index",
       components: { default: Index, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 },
+        header: { colorOnScroll: 200 },
         footer: { backgroundColor: "black" }
       }
     },
@@ -37,7 +40,7 @@ export default new Router({
       name: "landing",
       components: { default: Landing, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 },
+        header: { colorOnScroll: 200 },
         footer: { backgroundColor: "black" }
       }
     },
@@ -46,7 +49,7 @@ export default new Router({
       name: "login",
       components: { default: Login, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 }
+        header: { colorOnScroll: 200 }
       }
     },
     {
@@ -54,7 +57,7 @@ export default new Router({
       name: "profile",
       components: { default: Profile, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 },
+        header: { colorOnScroll: 200 },
         footer: { backgroundColor: "black" }
       }
     },
@@ -63,7 +66,7 @@ export default new Router({
       name: "kits",
       components: { default: Kits, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 },
+        header: { colorOnScroll: 200 },
         footer: { backgroundColor: "black" }
       }
     },
@@ -72,44 +75,74 @@ export default new Router({
       name: "Register",
       components: { default: Register, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 },
+        header: { colorOnScroll: 200 },
         footer: { backgroundColor: "black" }
       }
     },
     {
-      path: "/news",
-      name: "NewsList",
-      components: { default: NewsList, header: MainNavbar, footer: MainFooter },
+      path: "/announcement",
+      name: "Announcement",
+      redirect: "/announcement/all",
+      components: {
+        default: Announcement,
+        header: MainNavbar,
+        footer: MainFooter
+      },
       props: {
         header: { colorOnScroll: 100 },
         footer: { backgroundColor: "black" }
       },
       children: [
         {
-          path: "news",
-          name: "allNews",
-          components: News
+          path: "all",
+          name: "allAnnouncement",
+          components: {
+            default: NewsList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
         },
         {
-          path: "announcements",
-          name: "allAnnouncements",
-          components: News
+          path: "news",
+          name: "allNews",
+          components: {
+            default: NewsList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
+        },
+        {
+          path: "notes",
+          name: "allNotes",
+          components: {
+            default: NewsList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
         },
         {
           path: "buy",
           name: "allBuy",
-          components: News
+          components: {
+            default: NewsList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
         },
         {
           path: "try",
           name: "allTry",
-          components: News
+          components: {
+            default: NewsList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
         }
       ]
     },
     {
-      path: "/news/:newId",
-      name: "News",
+      path: "/announcement/:newId",
+      name: "DetailNews",
       components: { default: News, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 100 },
@@ -121,6 +154,19 @@ export default new Router({
       name: "Introduction",
       components: {
         default: Introduction,
+        header: MainNavbar,
+        footer: MainFooter
+      },
+      props: {
+        header: { colorOnScroll: 100 },
+        footer: { backgroundColor: "black" }
+      }
+    },
+    {
+      path: "/databaselist",
+      name: "DatabaseList",
+      components: {
+        default: DatabaseList,
         header: MainNavbar,
         footer: MainFooter
       },

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-07 16:55:54
+ * @LastEditTime: 2022-03-08 15:39:16
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
@@ -12,7 +12,7 @@
       <badge class="labelClass" :type="newsColor">{{ newsType }}</badge>
     </router-link>
     <span>
-      <router-link :to="`news/${newsId}`">
+      <router-link :to="`/announcement/${newsId}`">
         {{ tittle }}
       </router-link>
     </span>
