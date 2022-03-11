@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-11 10:55:28
+ * @LastEditTime: 2022-03-11 11:16:40
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -398,9 +398,13 @@
             >
               <el-carousel-item>
                 <div class="md-layout">
-                  <div class="md-layout-item md-size-25" />
-                  <div class="md-layout-item md-size-50">
-                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
+                  <div class="md-layout-item md-size-20" />
+                  <div class="md-layout-item md-size-60">
+                    <el-card
+                      :body-style="{ padding: '0px' }"
+                      shadow="hover"
+                      style="height:434px"
+                    >
                       <img src="@/assets/img/st.jpg" class="image" />
                       <div style="padding: 14px;">
                         <span>《三体》</span>
@@ -414,10 +418,14 @@
               </el-carousel-item>
               <el-carousel-item>
                 <div class="md-layout">
-                  <div class="md-layout-item md-size-25" />
-                  <div class="md-layout-item md-size-50">
-                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
-                      <img src="@/assets/img/st.jpg" class="image" />
+                  <div class="md-layout-item md-size-20" />
+                  <div class="md-layout-item md-size-60">
+                    <el-card
+                      :body-style="{ padding: '0px' }"
+                      shadow="hover"
+                      style="height:434px"
+                    >
+                      <img src="@/assets/img/dsp.jpg" class="image" />
                       <div style="padding: 14px;">
                         <span>《三体》</span>
                         <div class="bottom clearfix">
@@ -430,10 +438,14 @@
               </el-carousel-item>
               <el-carousel-item>
                 <div class="md-layout">
-                  <div class="md-layout-item md-size-25" />
-                  <div class="md-layout-item md-size-50">
-                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
-                      <img src="@/assets/img/st.jpg" class="image" />
+                  <div class="md-layout-item md-size-20" />
+                  <div class="md-layout-item md-size-60">
+                    <el-card
+                      :body-style="{ padding: '0px' }"
+                      shadow="hover"
+                      style="height:434px"
+                    >
+                      <img src="@/assets/img/xgxlx.jpg" class="image" />
                       <div style="padding: 14px;">
                         <span>《三体》</span>
                         <div class="bottom clearfix">
@@ -446,10 +458,14 @@
               </el-carousel-item>
               <el-carousel-item>
                 <div class="md-layout">
-                  <div class="md-layout-item md-size-25" />
-                  <div class="md-layout-item md-size-50">
-                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
-                      <img src="@/assets/img/st.jpg" class="image" />
+                  <div class="md-layout-item md-size-20" />
+                  <div class="md-layout-item md-size-60">
+                    <el-card
+                      :body-style="{ padding: '0px' }"
+                      shadow="hover"
+                      style="height:434px"
+                    >
+                      <img src="@/assets/img/zcwa.jpg" class="image" />
                       <div style="padding: 14px;">
                         <span>《三体》</span>
                         <div class="bottom clearfix">
@@ -462,10 +478,14 @@
               </el-carousel-item>
               <el-carousel-item>
                 <div class="md-layout">
-                  <div class="md-layout-item md-size-25" />
-                  <div class="md-layout-item md-size-50">
-                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
-                      <img src="@/assets/img/st.jpg" class="image" />
+                  <div class="md-layout-item md-size-20" />
+                  <div class="md-layout-item md-size-60">
+                    <el-card
+                      :body-style="{ padding: '0px' }"
+                      shadow="hover"
+                      style="height:434px"
+                    >
+                      <img src="@/assets/img/zkl.jpg" class="image" />
                       <div style="padding: 14px;">
                         <span>《三体》</span>
                         <div class="bottom clearfix">
@@ -498,7 +518,7 @@
         </div>
       </div>
 
-      <div class="section" id="publicity">
+      <div class="section" id="characteristic">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
@@ -854,7 +874,7 @@ export default {
   }
 
   .image {
-    width: 100%;
+    height: 330px;
     display: block;
     margin: 0 auto;
   }
