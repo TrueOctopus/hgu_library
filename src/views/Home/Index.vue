@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-11 11:16:40
+ * @LastEditTime: 2022-03-11 16:25:42
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -513,6 +513,7 @@
             >
               更多>>
             </router-link>
+            <eventsCalendar></eventsCalendar>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
@@ -688,13 +689,15 @@ import { NavTabsCard } from "@/components";
 import ResBtn from "../components/ResourceButtonSection.vue";
 import NewsElem from "../components/NewsElement.vue";
 import anchorNav from "../components/AnchorNav.vue";
+import eventsCalendar from "../components/EventsCalendar.vue";
 
 export default {
   components: {
     NavTabsCard,
     ResBtn,
     NewsElem,
-    anchorNav
+    anchorNav,
+    eventsCalendar
   },
   name: "index",
   props: {
