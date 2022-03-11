@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-10 18:27:49
- * @LastEditTime: 2022-03-10 20:59:06
+ * @LastEditTime: 2022-03-11 10:39:57
  * @LastEditors: 郑钊宇
  * @Description: 侧边导航条
 -->
@@ -46,7 +46,8 @@ export default {};
     letter-spacing: 1px;
   }
   a:hover {
-    background-color: #fff;
+    background-color: #00bcd4;
+    color: #fff !important;
   }
 }
 // a.current {

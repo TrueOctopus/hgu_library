@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-10 18:33:04
+ * @LastEditTime: 2022-03-11 10:55:28
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -373,8 +373,148 @@
         </div>
       </div>
 
-      <div class="section" id="resource" :style="bgImage">
-        <!-- <div class="resourceBg"></div> -->
+      <div class="section" id="publicity">
+        <div class="md-layout">
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+          <div class="md-layout-item md-size-80 md-layout">
+            <h3
+              class="md-layout-item md-size-90 tittle"
+              style="padding-bottom: 30px"
+            >
+              阅读推广
+            </h3>
+            <router-link
+              to="/announcement"
+              class="md-layout-item md-size-10 moreClass"
+            >
+              更多>>
+            </router-link>
+            <el-carousel
+              :interval="3000"
+              type="card"
+              height="434px"
+              indicator-position="none"
+              class="md-layout-item md-size-100"
+            >
+              <el-carousel-item>
+                <div class="md-layout">
+                  <div class="md-layout-item md-size-25" />
+                  <div class="md-layout-item md-size-50">
+                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
+                      <img src="@/assets/img/st.jpg" class="image" />
+                      <div style="padding: 14px;">
+                        <span>《三体》</span>
+                        <div class="bottom clearfix">
+                          <time class="time">{{ currentDate }}</time>
+                        </div>
+                      </div>
+                    </el-card>
+                  </div>
+                </div>
+              </el-carousel-item>
+              <el-carousel-item>
+                <div class="md-layout">
+                  <div class="md-layout-item md-size-25" />
+                  <div class="md-layout-item md-size-50">
+                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
+                      <img src="@/assets/img/st.jpg" class="image" />
+                      <div style="padding: 14px;">
+                        <span>《三体》</span>
+                        <div class="bottom clearfix">
+                          <time class="time">{{ currentDate }}</time>
+                        </div>
+                      </div>
+                    </el-card>
+                  </div>
+                </div>
+              </el-carousel-item>
+              <el-carousel-item>
+                <div class="md-layout">
+                  <div class="md-layout-item md-size-25" />
+                  <div class="md-layout-item md-size-50">
+                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
+                      <img src="@/assets/img/st.jpg" class="image" />
+                      <div style="padding: 14px;">
+                        <span>《三体》</span>
+                        <div class="bottom clearfix">
+                          <time class="time">{{ currentDate }}</time>
+                        </div>
+                      </div>
+                    </el-card>
+                  </div>
+                </div>
+              </el-carousel-item>
+              <el-carousel-item>
+                <div class="md-layout">
+                  <div class="md-layout-item md-size-25" />
+                  <div class="md-layout-item md-size-50">
+                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
+                      <img src="@/assets/img/st.jpg" class="image" />
+                      <div style="padding: 14px;">
+                        <span>《三体》</span>
+                        <div class="bottom clearfix">
+                          <time class="time">{{ currentDate }}</time>
+                        </div>
+                      </div>
+                    </el-card>
+                  </div>
+                </div>
+              </el-carousel-item>
+              <el-carousel-item>
+                <div class="md-layout">
+                  <div class="md-layout-item md-size-25" />
+                  <div class="md-layout-item md-size-50">
+                    <el-card :body-style="{ padding: '0px' }" shadow="hover">
+                      <img src="@/assets/img/st.jpg" class="image" />
+                      <div style="padding: 14px;">
+                        <span>《三体》</span>
+                        <div class="bottom clearfix">
+                          <time class="time">{{ currentDate }}</time>
+                        </div>
+                      </div>
+                    </el-card>
+                  </div>
+                </div>
+              </el-carousel-item>
+            </el-carousel>
+          </div>
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+        </div>
+      </div>
+
+      <div class="section" id="lecture">
+        <div class="md-layout">
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+          <div class="md-layout-item md-size-80 md-layout">
+            <h3 class="md-layout-item md-size-90 tittle">活动讲座</h3>
+            <router-link
+              to="/announcement"
+              class="md-layout-item md-size-10 moreClass"
+            >
+              更多>>
+            </router-link>
+          </div>
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+        </div>
+      </div>
+
+      <div class="section" id="publicity">
+        <div class="md-layout">
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+          <div class="md-layout-item md-size-80 md-layout">
+            <h3 class="md-layout-item md-size-90 tittle">特色资源</h3>
+            <router-link
+              to="/announcement"
+              class="md-layout-item md-size-10 moreClass"
+            >
+              更多>>
+            </router-link>
+          </div>
+          <div class="md-layout-item md-size-10 md-small-size-5" />
+        </div>
+      </div>
+
+      <!-- <div class="section" id="resource" :style="bgImage">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-layout dataBaseList">
@@ -495,7 +635,7 @@
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
-      </div>
+      </div> -->
 
       <div class="section section-tabs" id="friendLink">
         <div class="md-layout">
@@ -553,6 +693,7 @@ export default {
   },
   data() {
     return {
+      currentDate: new Date(),
       docForm: {
         docName: "",
         docType: "all"
@@ -631,9 +772,9 @@ export default {
 .main-raised {
   margin-top: 0 !important;
 }
-#resBtns {
-  padding: 0px 0px 30px;
-}
+// #resBtns {
+//   padding: 0px 0px 30px;
+// }
 .res-btns {
   background-color: #fff;
   border-radius: 5px;
@@ -668,16 +809,16 @@ export default {
     font-size: 14px;
   }
 }
-#resource {
-  padding: 80px 0;
-}
-.dataBaseList {
-  margin: 0 15px !important;
-  padding: 5px 0;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 2px 5px 0px rgb(211, 211, 211);
-  border-radius: 8px;
-}
+// #resource {
+//   padding: 80px 0;
+// }
+// .dataBaseList {
+//   margin: 0 15px !important;
+//   padding: 5px 0;
+//   background-color: rgb(255, 255, 255);
+//   box-shadow: 0px 2px 5px 0px rgb(211, 211, 211);
+//   border-radius: 8px;
+// }
 // .dataBaseListItem {
 //   * {
 //     background-color: rgba(255, 255, 255, 0) !important;
@@ -689,7 +830,6 @@ export default {
   line-height: 75px;
 }
 #announcement {
-  padding: 40px 0px 50px;
   h3 {
     margin-bottom: 15px;
   }
@@ -697,9 +837,39 @@ export default {
 .img-raised {
   margin: 15px 0px;
 }
+#publicity {
+  .time {
+    font-size: 13px;
+    color: #999;
+  }
 
+  .bottom {
+    margin-top: 13px;
+    line-height: 12px;
+  }
+
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+
+  .clearfix:after {
+    clear: both;
+  }
+}
 #friendLink {
-  padding: 50px 0;
   font-size: 16px;
   font-family: "Microsoft Yahei", sans-serif, serif;
   letter-spacing: 1px;

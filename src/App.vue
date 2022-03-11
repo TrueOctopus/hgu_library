@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-08 10:52:41
+ * @LastEditTime: 2022-03-11 10:52:47
  * @LastEditors: 郑钊宇
  * @Description: app.vue
 -->
@@ -55,5 +55,6 @@ export default {
   font-weight: bold;
   color: rgb(90, 90, 90);
   letter-spacing: 2px;
+  padding-bottom: 5px;
 }
 </style>
