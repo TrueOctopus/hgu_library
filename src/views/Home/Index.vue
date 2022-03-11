@@ -1,12 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-10 15:31:18
+ * @LastEditTime: 2022-03-10 18:33:04
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
 <template>
   <div class="wrapper">
+    <anchorNav></anchorNav>
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout" style="width:99%">
         <div class="image-wrapper" style="width:99%">
@@ -25,7 +26,7 @@
                 <template slot="content">
                   <md-tabs class="md-info" md-alignment="fixed">
                     <md-tab
-                      id="tab-home"
+                      id="tab-pages1"
                       md-label="馆藏目录"
                       md-icon="auto_stories"
                     >
@@ -82,7 +83,7 @@
                       </p>
                     </md-tab>
 
-                    <md-tab id="tab-pages" md-label="百度学术" md-icon="edit">
+                    <md-tab id="tab-pages2" md-label="百度学术" md-icon="edit">
                       <p>
                         <el-form
                           :model="baiduSearchForm"
@@ -112,7 +113,7 @@
                     </md-tab>
 
                     <md-tab
-                      id="tab-posts"
+                      id="tab-pages3"
                       md-label="超星发现"
                       md-icon="saved_search"
                     >
@@ -145,7 +146,7 @@
                     </md-tab>
 
                     <md-tab
-                      id="tab-posts1"
+                      id="tab-pages4"
                       md-label="我的图书馆"
                       md-icon="face"
                     >
@@ -197,42 +198,48 @@
               <div class="res-btns md-layout md-layout-item md-size-80">
                 <div class="md-layout md-layout-item md-size-100">
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="schedule" text="开放时间"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="chair_alt" text="座位预约"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="local_library" text="研修室预约"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn
+                      iconName="format_list_bulleted"
+                      text="入馆须知"
+                    ></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="book" text="图书续借"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn
+                      iconName="collections_bookmark"
+                      text="资源荐购"
+                    ></ResBtn>
                   </div>
                 </div>
                 <div class="md-layout md-layout-item md-size-100">
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="school" text="校外访问"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="storage" text="数据库"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="dashboard" text="馆藏布局"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="3p" text="培训讲座"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="bookmark_add" text="新书通报"></ResBtn>
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="face" text="主页"></ResBtn>
+                    <ResBtn iconName="volunteer_activism" text="捐赠"></ResBtn>
                   </div>
                 </div>
               </div>
@@ -520,11 +527,14 @@
 import { NavTabsCard } from "@/components";
 import ResBtn from "../components/ResourceButtonSection.vue";
 import NewsElem from "../components/NewsElement.vue";
+import anchorNav from "../components/AnchorNav.vue";
+
 export default {
   components: {
     NavTabsCard,
     ResBtn,
-    NewsElem
+    NewsElem,
+    anchorNav
   },
   name: "index",
   props: {
@@ -621,10 +631,6 @@ export default {
 .main-raised {
   margin-top: 0 !important;
 }
-#tabs {
-  padding-bottom: 0px;
-}
-
 #resBtns {
   padding: 0px 0px 30px;
 }
@@ -640,7 +646,7 @@ export default {
   }
   button {
     margin-top: -2px;
-    margin-left: 2vh;
+    margin-left: 3vh;
   }
 }
 .brand {
