@@ -1,13 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-14 16:02:14
+ * @LastEditTime: 2022-03-14 21:10:52
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
 <template>
   <div class="wrapper">
-    <AnchorNav></AnchorNav>
+    <AnchorNav :columnType="columnType"></AnchorNav>
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout" style="width:99%">
         <div class="image-wrapper" style="width:99%">
@@ -17,6 +17,7 @@
                 <h3>HeBei GEO University Library</h3>
               </div> -->
             <div
+              ref="tabsNav"
               class="md-layout animate__animated animate__slow animate__fadeInUp"
             >
               <div class="md-layout-item md-size-10"></div>
@@ -254,7 +255,7 @@
       </div>
     </parallax>
     <div class="main main-raised">
-      <div class="section" id="announcement">
+      <div class="section" ref="announcement" id="announcement">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
@@ -377,7 +378,7 @@
         </div>
       </div>
 
-      <div class="section" id="publicity">
+      <div class="section" ref="publicity" id="publicity">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
@@ -393,123 +394,18 @@
             >
               更多>>
             </router-link>
-            <el-carousel
-              :interval="3000"
-              type="card"
-              height="434px"
-              indicator-position="none"
+            <PublicitySection
               class="md-layout-item md-size-100"
-            >
-              <el-carousel-item>
-                <div class="md-layout">
-                  <div class="md-layout-item md-size-20" />
-                  <div class="md-layout-item md-size-60">
-                    <el-card
-                      :body-style="{ padding: '0px' }"
-                      shadow="hover"
-                      style="height:434px"
-                    >
-                      <img src="@/assets/img/st.jpg" class="image" />
-                      <div style="padding: 14px;">
-                        <span>《三体》</span>
-                        <div class="bottom clearfix">
-                          <time class="time">{{ currentDate }}</time>
-                        </div>
-                      </div>
-                    </el-card>
-                  </div>
-                </div>
-              </el-carousel-item>
-              <el-carousel-item>
-                <div class="md-layout">
-                  <div class="md-layout-item md-size-20" />
-                  <div class="md-layout-item md-size-60">
-                    <el-card
-                      :body-style="{ padding: '0px' }"
-                      shadow="hover"
-                      style="height:434px"
-                    >
-                      <img src="@/assets/img/dsp.jpg" class="image" />
-                      <div style="padding: 14px;">
-                        <span>《三体》</span>
-                        <div class="bottom clearfix">
-                          <time class="time">{{ currentDate }}</time>
-                        </div>
-                      </div>
-                    </el-card>
-                  </div>
-                </div>
-              </el-carousel-item>
-              <el-carousel-item>
-                <div class="md-layout">
-                  <div class="md-layout-item md-size-20" />
-                  <div class="md-layout-item md-size-60">
-                    <el-card
-                      :body-style="{ padding: '0px' }"
-                      shadow="hover"
-                      style="height:434px"
-                    >
-                      <img src="@/assets/img/xgxlx.jpg" class="image" />
-                      <div style="padding: 14px;">
-                        <span>《三体》</span>
-                        <div class="bottom clearfix">
-                          <time class="time">{{ currentDate }}</time>
-                        </div>
-                      </div>
-                    </el-card>
-                  </div>
-                </div>
-              </el-carousel-item>
-              <el-carousel-item>
-                <div class="md-layout">
-                  <div class="md-layout-item md-size-20" />
-                  <div class="md-layout-item md-size-60">
-                    <el-card
-                      :body-style="{ padding: '0px' }"
-                      shadow="hover"
-                      style="height:434px"
-                    >
-                      <img src="@/assets/img/zcwa.jpg" class="image" />
-                      <div style="padding: 14px;">
-                        <span>《三体》</span>
-                        <div class="bottom clearfix">
-                          <time class="time">{{ currentDate }}</time>
-                        </div>
-                      </div>
-                    </el-card>
-                  </div>
-                </div>
-              </el-carousel-item>
-              <el-carousel-item>
-                <div class="md-layout">
-                  <div class="md-layout-item md-size-20" />
-                  <div class="md-layout-item md-size-60">
-                    <el-card
-                      :body-style="{ padding: '0px' }"
-                      shadow="hover"
-                      style="height:434px"
-                    >
-                      <img src="@/assets/img/zkl.jpg" class="image" />
-                      <div style="padding: 14px;">
-                        <span>《三体》</span>
-                        <div class="bottom clearfix">
-                          <time class="time">{{ currentDate }}</time>
-                        </div>
-                      </div>
-                    </el-card>
-                  </div>
-                </div>
-              </el-carousel-item>
-            </el-carousel>
+            ></PublicitySection>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
 
-      <div class="section" id="lecture">
+      <div class="section" ref="lecture" id="lecture" :style="bgImage">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div class="md-layout-item md-size-80 md-layout">
+          <div class="md-layout-item md-size-80 md-layout md-content">
             <h3 class="md-layout-item md-size-90 tittle">活动讲座</h3>
             <router-link
               to="/announcement"
@@ -525,7 +421,7 @@
         </div>
       </div>
 
-      <div class="section" id="characteristic">
+      <div class="section" ref="characteristic" id="characteristic">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
@@ -667,7 +563,7 @@
         </div>
       </div> -->
 
-      <div class="section section-tabs" id="friendLink">
+      <div class="section section-tabs" ref="friendLink" id="friendLink">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
@@ -699,7 +595,9 @@ import ResBtn from "../components/ResourceButtonSection.vue";
 import NewsElem from "../components/NewsElement.vue";
 import AnchorNav from "../components/AnchorNav.vue";
 import EventsCalendar from "../components/EventsCalendar.vue";
+import PublicitySection from "../components/BooksPublicitySection.vue";
 import CharacteristicSection from "../components/CharacteristicSection.vue";
+
 export default {
   components: {
     NavTabsCard,
@@ -707,7 +605,8 @@ export default {
     NewsElem,
     AnchorNav,
     EventsCalendar,
-    CharacteristicSection
+    CharacteristicSection,
+    PublicitySection
   },
   name: "index",
   props: {
@@ -726,7 +625,6 @@ export default {
   },
   data() {
     return {
-      currentDate: new Date(),
       docForm: {
         docName: "",
         docType: "all"
@@ -758,7 +656,9 @@ export default {
         readerCardPassword: [
           { required: true, message: "请输入密码", trigger: "blur" }
         ]
-      }
+      },
+      navShow: "",
+      columnType: 0
     };
   },
   computed: {
@@ -824,18 +724,7 @@ export default {
   }
 }
 .brand {
-  // color: #fff;
   margin-top: 7%;
-  // h1 {
-  //   font-family: "Microsoft Yahei", Times, serif;
-  //   font-size: 3.5rem;
-  //   font-weight: bold;
-  //   letter-spacing: 5px;
-  // }
-  // h3 {
-  //   font-family: "Verdana", "Microsoft Yahei", Times, serif;
-  //   font-size: 1.5rem;
-  // }
 }
 #header-tabs {
   * {
@@ -863,6 +752,7 @@ export default {
   line-height: 75px;
 }
 #announcement {
+  padding-bottom: 40px;
   h3 {
     margin-bottom: 15px;
   }
@@ -870,36 +760,16 @@ export default {
 .img-raised {
   margin: 15px 0px;
 }
-#publicity {
-  .time {
-    font-size: 13px;
-    color: #999;
-  }
 
-  .bottom {
-    margin-top: 13px;
-    line-height: 12px;
-  }
-
-  .button {
-    padding: 0;
-    float: right;
-  }
-
-  .image {
-    height: 330px;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .clearfix:before,
-  .clearfix:after {
-    display: table;
-    content: "";
-  }
-
-  .clearfix:after {
-    clear: both;
+#lecture {
+  background-color: #fff !important;
+  .md-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 3px;
+    box-shadow: 0 5px 15px -8px rgb(0 0 0 / 24%),
+      0 8px 10px -5px rgb(0 0 0 / 20%);
+    padding-top: 5px;
+    padding-bottom: 40px;
   }
 }
 #friendLink {

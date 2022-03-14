@@ -1,13 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-10 18:27:49
- * @LastEditTime: 2022-03-11 11:26:57
+ * @LastEditTime: 2022-03-14 20:18:04
  * @LastEditors: 郑钊宇
  * @Description: 侧边导航条
 -->
 <template>
-  <nav class="anchor-nav">
-    <a class="current" href="#">搜索/服务通道</a>
+  <nav ref="anchorNav" class="anchor-nav">
+    <a href="#">搜索/服务通道</a>
     <a href="#">新闻公告</a>
     <a href="#">阅读推广</a>
     <a href="#">活动讲座</a>
@@ -18,7 +18,25 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    columnType: Number
+  },
+  watch: {
+    columnType: {
+      handler(newVal, oldVal) {
+        // console.log(newVal, oldVal);
+        this.$refs.anchorNav.children[oldVal].classList.remove("active");
+        this.$refs.anchorNav.children[newVal].classList.add("active");
+      }
+    }
+  },
+  mounted() {
+    let sections = this.$refs.anchorNav.children;
+    // console.log("sections", sections);
+    sections[this.columnType].classList.add("active");
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -44,13 +62,15 @@ export default {};
     line-height: 45px;
     padding: 4px 8px;
     letter-spacing: 1px;
-  }
-  a:hover {
-    background-color: #00bcd4;
-    color: #fff !important;
+
+    &:hover {
+      background-color: #00bcd4;
+      color: #fff !important;
+    }
+    &.active {
+      background-color: #00bcd4;
+      color: #fff !important;
+    }
   }
 }
-// a.current {
-//   background-color: #000;
-// }
 </style>

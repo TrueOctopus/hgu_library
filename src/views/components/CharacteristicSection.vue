@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 09:30:09
- * @LastEditTime: 2022-03-14 16:09:14
+ * @LastEditTime: 2022-03-14 16:12:19
  * @LastEditors: 郑钊宇
  * @Description: 特色资源选项卡
 -->
@@ -80,7 +80,7 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/bg2.jpg")
+      default: require("@/assets/img/bg3.jpg")
     }
   },
   computed: {

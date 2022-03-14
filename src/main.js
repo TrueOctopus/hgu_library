@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-08 10:46:47
+ * @LastEditTime: 2022-03-14 21:08:04
  * @LastEditors: 郑钊宇
  * @Description: 入口文件
  */
@@ -38,5 +38,8 @@ Vue.mixin({
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  beforeCreate() {
+    Vue.prototype.$bus = this; //安装全局事件总线
+  }
 }).$mount("#app");

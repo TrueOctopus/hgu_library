@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-19 14:34:07
- * @LastEditTime: 2022-03-10 11:16:57
+ * @LastEditTime: 2022-03-14 20:29:54
  * @LastEditors: 郑钊宇
  * @Description: 资源快速入口按钮
 -->
@@ -39,9 +39,9 @@ export default {
 
 <style lang="scss" scoped>
 .res-btn {
-  margin: 10px 5px;
-  width: 18vh;
-  height: 16vh;
+  margin: 10px 15px;
+  width: 15vh;
+  height: 15vh;
   background-color: #00bcd4;
   text-align: center;
   border-radius: 8px;
