@@ -203,9 +203,9 @@
                 </div>
               </md-list-item>
 
-              <!-- <md-list-item>
+              <md-list-item>
                 <md-button class="md-info" href="/login">登录</md-button>
-              </md-list-item> -->
+              </md-list-item>
             </md-list>
           </div>
         </div>
@@ -387,7 +387,7 @@ export default {
   font-family: "STXingkai", Tahoma, Helvetica, Arial, "宋体", sans-serif;
 }
 .toolbar-ontop .toolbar-top div {
-  height: 15px;
+  height: 18px;
 }
 
 /*导航栏隐藏*/

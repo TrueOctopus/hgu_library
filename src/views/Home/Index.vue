@@ -1,22 +1,24 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-11 16:25:42
+ * @LastEditTime: 2022-03-14 16:02:14
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
 <template>
   <div class="wrapper">
-    <anchorNav></anchorNav>
+    <AnchorNav></AnchorNav>
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout" style="width:99%">
         <div class="image-wrapper" style="width:99%">
-          <div class="brand animate__animated animate__slow animate__fadeInUp">
+          <div class="brand">
             <!-- <div class="md-layout-item md-size-100 md-small-size-100">
                 <h1>河北地质大学图书馆</h1>
                 <h3>HeBei GEO University Library</h3>
               </div> -->
-            <div class="md-layout">
+            <div
+              class="md-layout animate__animated animate__slow animate__fadeInUp"
+            >
               <div class="md-layout-item md-size-10"></div>
               <nav-tabs-card
                 no-label
@@ -193,7 +195,9 @@
               </nav-tabs-card>
               <div class="md-layout-item md-size-10"></div>
             </div>
-            <div class="md-layout">
+            <div
+              class="md-layout animate__animated animate__slow animate__fadeInUp animate__delay-1s"
+            >
               <div class="md-layout-item md-size-10"></div>
               <div class="res-btns md-layout md-layout-item md-size-80">
                 <div class="md-layout md-layout-item md-size-100">
@@ -513,7 +517,9 @@
             >
               更多>>
             </router-link>
-            <eventsCalendar></eventsCalendar>
+            <div class="md-layout-item md-size-95">
+              <EventsCalendar></EventsCalendar>
+            </div>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
@@ -525,11 +531,14 @@
           <div class="md-layout-item md-size-80 md-layout">
             <h3 class="md-layout-item md-size-90 tittle">特色资源</h3>
             <router-link
-              to="/announcement"
+              to="/characteristic"
               class="md-layout-item md-size-10 moreClass"
             >
               更多>>
             </router-link>
+            <div class="md-layout-item md-size-95">
+              <CharacteristicSection />
+            </div>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
@@ -688,16 +697,17 @@
 import { NavTabsCard } from "@/components";
 import ResBtn from "../components/ResourceButtonSection.vue";
 import NewsElem from "../components/NewsElement.vue";
-import anchorNav from "../components/AnchorNav.vue";
-import eventsCalendar from "../components/EventsCalendar.vue";
-
+import AnchorNav from "../components/AnchorNav.vue";
+import EventsCalendar from "../components/EventsCalendar.vue";
+import CharacteristicSection from "../components/CharacteristicSection.vue";
 export default {
   components: {
     NavTabsCard,
     ResBtn,
     NewsElem,
-    anchorNav,
-    eventsCalendar
+    AnchorNav,
+    EventsCalendar,
+    CharacteristicSection
   },
   name: "index",
   props: {

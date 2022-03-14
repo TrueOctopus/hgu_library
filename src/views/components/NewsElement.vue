@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-08 15:39:16
+ * @LastEditTime: 2022-03-14 15:10:53
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
@@ -94,6 +94,9 @@ export default {
     color: black;
     text-decoration: none;
     margin-left: 5px;
+    &:hover {
+      color: #00bcd4 !important;
+    }
   }
 }
 .labelClass {

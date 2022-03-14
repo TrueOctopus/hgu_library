@@ -1,23 +1,17 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-11 15:22:34
- * @LastEditTime: 2022-03-11 18:01:25
+ * @LastEditTime: 2022-03-13 17:01:21
  * @LastEditors: 郑钊宇
  * @Description: 活动日历
 -->
 <template>
   <div class="content md-layout" @click="getSelectDate">
-    <Calendar
-      class="md-layout-item md-size-50"
-      ref="Calendar"
-      :markDate="markArr"
-    ></Calendar>
     <div class="md-layout-item md-size-50">
       <div class="tittle">
         <span v-if="selectDate === '' || selectDate === today">今日</span>
         <span v-if="selectDate !== today">{{ selectDate }}</span> 活动与讲座：
       </div>
-
       <div class="lecture">
         <a href="#" class="lectureTittle">{{ lecture.tittle }}</a>
         <p>{{ lecture.text }}</p>
@@ -34,6 +28,11 @@
         <p>{{ lecture.time }}</p>
       </div>
     </div>
+    <Calendar
+      class="md-layout-item md-size-50"
+      ref="Calendar"
+      :markDate="markArr"
+    ></Calendar>
   </div>
 </template>
 
@@ -42,7 +41,7 @@ import Calendar from "vue-calendar-component";
 export default {
   data() {
     return {
-      markArr: ["2022/3/6", "2022/3/3", "2022/3/4", "2022/3/5"],
+      markArr: ["2022/03/06", "2022/3/3", "2022/3/4", "2022/3/5"],
       today: "",
       selectDate: "",
       lecture: {
