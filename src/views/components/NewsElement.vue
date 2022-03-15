@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-15 19:48:42
+ * @LastEditTime: 2022-03-15 20:09:13
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
@@ -39,6 +39,7 @@ export default {
     },
     newsId: {
       type: String,
+      default: '',
       require: true
     }
   },

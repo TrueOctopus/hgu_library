@@ -272,6 +272,16 @@
 
 <script>
 export default {
+  props: {
+    image: {
+      type: String,
+      default: require('@/assets/img/bg.jpg')
+    },
+    img: {
+      type: String,
+      default: require('@/assets/img/faces/avatar.jpg')
+    }
+  },
   data() {
     return {
       selectedEmployee: '',
@@ -285,16 +295,6 @@ export default {
         'Ryan Howard',
         'Kevin Malone'
       ]
-    }
-  },
-  props: {
-    image: {
-      type: String,
-      default: require('@/assets/img/bg.jpg')
-    },
-    img: {
-      type: String,
-      default: require('@/assets/img/faces/avatar.jpg')
     }
   },
   computed: {

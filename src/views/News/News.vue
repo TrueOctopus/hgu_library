@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:11:53
- * @LastEditTime: 2022-03-15 19:53:15
+ * @LastEditTime: 2022-03-15 20:00:46
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告页面
 -->
@@ -45,12 +45,8 @@
 import TemplePage from '../components/DetailTemplePage.vue'
 export default {
   name: 'News',
-  data() {
-    return {
-      headerTittle: '新闻|公告',
-      detailTittle: '一段测试文字一段测试文字一段测试文字',
-      dateTittle: '2022/03/05'
-    }
+  components: {
+    TemplePage
   },
   props: {
     headerImage: {
@@ -58,8 +54,12 @@ export default {
       default: require('@/assets/img/header.jpg')
     }
   },
-  components: {
-    TemplePage
+  data() {
+    return {
+      headerTittle: '新闻|公告',
+      detailTittle: '一段测试文字一段测试文字一段测试文字',
+      dateTittle: '2022/03/05'
+    }
   }
 }
 </script>

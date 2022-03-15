@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 19:44:23
+ * @LastEditTime: 2022-03-15 20:10:51
  * @LastEditors: 郑钊宇
  * @Description: 底部栏组件
 -->
@@ -45,8 +45,14 @@
 <script>
 export default {
   props: {
-    backgroundColor: String,
-    type: String
+    backgroundColor: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {

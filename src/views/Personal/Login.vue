@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 19:53:22
+ * @LastEditTime: 2022-03-15 20:00:17
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -59,16 +59,16 @@ export default {
     LoginCard
   },
   bodyClass: 'login-page',
-  data() {
-    return {
-      email: null,
-      password: null
-    }
-  },
   props: {
     header: {
       type: String,
       default: require('@/assets/img/header.jpg')
+    }
+  },
+  data() {
+    return {
+      email: null,
+      password: null
     }
   },
   computed: {

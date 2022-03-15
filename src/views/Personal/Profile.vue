@@ -106,6 +106,16 @@ export default {
     Tabs
   },
   bodyClass: 'profile-page',
+  props: {
+    header: {
+      type: String,
+      default: require('@/assets/img/city-profile.jpg')
+    },
+    img: {
+      type: String,
+      default: require('@/assets/img/faces/christian.jpg')
+    }
+  },
   data() {
     return {
       tabPane1: [
@@ -128,16 +138,6 @@ export default {
         { image: require('@/assets/img/examples/olu-eletu.jpg') },
         { image: require('@/assets/img/examples/studio-1.jpg') }
       ]
-    }
-  },
-  props: {
-    header: {
-      type: String,
-      default: require('@/assets/img/city-profile.jpg')
-    },
-    img: {
-      type: String,
-      default: require('@/assets/img/faces/christian.jpg')
     }
   },
   computed: {

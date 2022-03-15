@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-03-15 19:48:25
+ * @LastEditTime: 2022-03-15 19:59:17
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -61,9 +61,18 @@ export default {
       type: String,
       default: require('@/assets/img/header.jpg')
     },
-    headerTittle: String,
-    detailTittle: String,
-    dateTittle: String
+    headerTittle: {
+      type: String,
+      default: ''
+    },
+    detailTittle: {
+      type: String,
+      default: ''
+    },
+    dateTittle: {
+      type: String,
+      default: ''
+    }
   },
   computed: {
     headerStyle() {

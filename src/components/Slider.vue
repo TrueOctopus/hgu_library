@@ -1,3 +1,10 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-02-16 14:19:24
+ * @LastEditTime: 2022-03-15 19:57:59
+ * @LastEditors: 郑钊宇
+ * @Description:
+-->
 <template>
   <div class="slider" :class="[`slider-${type}`]" :disabled="disabled" />
 </template>
@@ -7,7 +14,10 @@ import noUiSlider from 'nouislider'
 export default {
   name: 'Slider',
   props: {
-    value: [String, Array, Number],
+    value: {
+      type: [String, Array, Number],
+      default: ''
+    },
     disabled: Boolean,
     start: {
       type: [Number, Array],
