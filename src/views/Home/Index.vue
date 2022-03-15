@@ -1,13 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-15 09:46:04
+ * @LastEditTime: 2022-03-15 19:52:55
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
 <template>
   <div id="wrapper" class="wrapper">
-    <AnchorNav :columnType="columnType"></AnchorNav>
+    <AnchorNav :column-type="columnType" />
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout" style="width:99%">
         <div class="image-wrapper" style="width:99%">
@@ -17,14 +17,14 @@
                 <h3>HeBei GEO University Library</h3>
               </div> -->
             <div
-              ref="tabsNav"
               id="tabsNav"
+              ref="tabsNav"
               class="md-layout animate__animated animate__slow animate__fadeInUp"
             >
-              <div class="md-layout-item md-size-10"></div>
+              <div class="md-layout-item md-size-10" />
               <nav-tabs-card
-                no-label
                 id="header-tabs"
+                no-label
                 class="md-layout-item md-size-80"
               >
                 <template slot="content">
@@ -36,52 +36,51 @@
                     >
                       <p>
                         <el-form
+                          ref="docForm"
                           :model="docForm"
                           :rules="rules"
                           :inline="true"
-                          ref="docForm"
                           label-width="100px"
                           class="formStyle"
-                          ><el-form-item label="文献类型" prop="docType">
-                            <el-select
-                              v-model="docForm.docType"
-                              placeholder="请选择文献类型"
-                            >
-                              <el-option
-                                label="所有书刊"
-                                value="all"
-                              ></el-option>
-                              <el-option
-                                label="中文图书"
-                                value="cnBooks"
-                              ></el-option>
-                              <el-option
-                                label="西文图书"
-                                value="unCnBooks"
-                              ></el-option>
-                              <el-option
-                                label="中文期刊"
-                                value="cnPeriodicals"
-                              ></el-option>
-                              <el-option
-                                label="西文期刊"
-                                value="unCnPeriodicals"
-                              ></el-option>
-                            </el-select>
-                          </el-form-item>
+                        ><el-form-item label="文献类型" prop="docType">
+                           <el-select
+                             v-model="docForm.docType"
+                             placeholder="请选择文献类型"
+                           >
+                             <el-option
+                               label="所有书刊"
+                               value="all"
+                             />
+                             <el-option
+                               label="中文图书"
+                               value="cnBooks"
+                             />
+                             <el-option
+                               label="西文图书"
+                               value="unCnBooks"
+                             />
+                             <el-option
+                               label="中文期刊"
+                               value="cnPeriodicals"
+                             />
+                             <el-option
+                               label="西文期刊"
+                               value="unCnPeriodicals"
+                             />
+                           </el-select>
+                         </el-form-item>
                           <el-form-item label="文献题名" prop="docName">
-                            <el-input v-model="docForm.docName"></el-input>
+                            <el-input v-model="docForm.docName" />
                           </el-form-item>
 
                           <el-form-item>
                             <md-button
                               class="md-info"
                               @click="submitForm('docForm')"
-                              >开始搜索</md-button
-                            >
-                            <md-button @click="resetForm('docForm')"
-                              >重置</md-button
-                            >
+                            >开始搜索</md-button>
+                            <md-button
+                              @click="resetForm('docForm')"
+                            >重置</md-button>
                           </el-form-item>
                         </el-form>
                       </p>
@@ -90,27 +89,26 @@
                     <md-tab id="tab-pages2" md-label="百度学术" md-icon="edit">
                       <p>
                         <el-form
+                          ref="baiduSearchForm"
                           :model="baiduSearchForm"
                           :rules="rules"
                           :inline="true"
-                          ref="baiduSearchForm"
                           label-width="100px"
                           class="formStyle"
-                          ><el-form-item label="检索词" prop="searchWords">
-                            <el-input
-                              class="single-input"
-                              v-model="baiduSearchForm.searchWords"
-                            ></el-input>
-                          </el-form-item>
+                        ><el-form-item label="检索词" prop="searchWords">
+                           <el-input
+                             v-model="baiduSearchForm.searchWords"
+                             class="single-input"
+                           />
+                         </el-form-item>
                           <el-form-item>
                             <md-button
                               class="md-info"
                               @click="submitForm('baiduSearchForm')"
-                              >开始搜索</md-button
-                            >
-                            <md-button @click="resetForm('baiduSearchForm')"
-                              >重置</md-button
-                            >
+                            >开始搜索</md-button>
+                            <md-button
+                              @click="resetForm('baiduSearchForm')"
+                            >重置</md-button>
                           </el-form-item>
                         </el-form>
                       </p>
@@ -123,27 +121,26 @@
                     >
                       <p>
                         <el-form
+                          ref="chaoXingForm"
                           :model="chaoXingForm"
                           :rules="rules"
                           :inline="true"
-                          ref="chaoXingForm"
                           label-width="100px"
                           class="formStyle"
-                          ><el-form-item label="检索词" prop="searchWords">
-                            <el-input
-                              class="single-input"
-                              v-model="chaoXingForm.searchWords"
-                            ></el-input>
-                          </el-form-item>
+                        ><el-form-item label="检索词" prop="searchWords">
+                           <el-input
+                             v-model="chaoXingForm.searchWords"
+                             class="single-input"
+                           />
+                         </el-form-item>
                           <el-form-item>
                             <md-button
                               class="md-info"
                               @click="submitForm('chaoXingForm')"
-                              >开始搜索</md-button
-                            >
-                            <md-button @click="resetForm('chaoXingForm')"
-                              >重置</md-button
-                            >
+                            >开始搜索</md-button>
+                            <md-button
+                              @click="resetForm('chaoXingForm')"
+                            >重置</md-button>
                           </el-form-item>
                         </el-form>
                       </p>
@@ -156,38 +153,37 @@
                     >
                       <p>
                         <el-form
+                          ref="readerCardForm"
                           :model="readerCardForm"
                           :rules="rules"
                           :inline="true"
-                          ref="readerCardForm"
                           label-width="100px"
                           class="formStyle"
-                          ><el-form-item
-                            label="读者证号"
-                            prop="readerCardNumber"
-                          >
-                            <el-input
-                              v-model="readerCardForm.readerCardNumber"
-                              autocomplete="off"
-                            ></el-input>
-                          </el-form-item>
+                        ><el-form-item
+                           label="读者证号"
+                           prop="readerCardNumber"
+                         >
+                           <el-input
+                             v-model="readerCardForm.readerCardNumber"
+                             autocomplete="off"
+                           />
+                         </el-form-item>
                           <el-form-item label="密码" prop="readerCardPassword">
                             <el-input
                               v-model="readerCardForm.readerCardPassword"
                               autocomplete="off"
                               type="password"
                               placeholder="默认与证件号相同"
-                            ></el-input>
+                            />
                           </el-form-item>
                           <el-form-item>
                             <md-button
                               class="md-info"
                               @click="submitForm('readerCardForm')"
-                              >登录</md-button
-                            >
-                            <md-button @click="resetForm('readerCardForm')"
-                              >重置</md-button
-                            >
+                            >登录</md-button>
+                            <md-button
+                              @click="resetForm('readerCardForm')"
+                            >重置</md-button>
                           </el-form-item>
                         </el-form>
                       </p>
@@ -195,68 +191,68 @@
                   </md-tabs>
                 </template>
               </nav-tabs-card>
-              <div class="md-layout-item md-size-10"></div>
+              <div class="md-layout-item md-size-10" />
             </div>
             <div
               class="md-layout animate__animated animate__slow animate__fadeInUp animate__delay-1s"
             >
-              <div class="md-layout-item md-size-10"></div>
+              <div class="md-layout-item md-size-10" />
               <div class="res-btns md-layout md-layout-item md-size-80">
                 <div class="md-layout md-layout-item md-size-100">
                   <div class="md-layout-item">
-                    <ResBtn iconName="schedule" text="开放时间"></ResBtn>
+                    <ResBtn icon-name="schedule" text="开放时间" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="chair_alt" text="座位预约"></ResBtn>
+                    <ResBtn icon-name="chair_alt" text="座位预约" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="local_library" text="研修室预约"></ResBtn>
+                    <ResBtn icon-name="local_library" text="研修室预约" />
                   </div>
                   <div class="md-layout-item">
                     <ResBtn
-                      iconName="format_list_bulleted"
+                      icon-name="format_list_bulleted"
                       text="入馆须知"
-                    ></ResBtn>
+                    />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="book" text="图书续借"></ResBtn>
+                    <ResBtn icon-name="book" text="图书续借" />
                   </div>
                   <div class="md-layout-item">
                     <ResBtn
-                      iconName="collections_bookmark"
+                      icon-name="collections_bookmark"
                       text="资源荐购"
-                    ></ResBtn>
+                    />
                   </div>
                 </div>
                 <div class="md-layout md-layout-item md-size-100">
                   <div class="md-layout-item">
-                    <ResBtn iconName="school" text="校外访问"></ResBtn>
+                    <ResBtn icon-name="school" text="校外访问" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="storage" text="数据库"></ResBtn>
+                    <ResBtn icon-name="storage" text="数据库" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="dashboard" text="馆藏布局"></ResBtn>
+                    <ResBtn icon-name="dashboard" text="馆藏布局" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="3p" text="培训讲座"></ResBtn>
+                    <ResBtn icon-name="3p" text="培训讲座" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="bookmark_add" text="新书通报"></ResBtn>
+                    <ResBtn icon-name="bookmark_add" text="新书通报" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn iconName="volunteer_activism" text="捐赠"></ResBtn>
+                    <ResBtn icon-name="volunteer_activism" text="捐赠" />
                   </div>
                 </div>
               </div>
-              <div class="md-layout-item md-size-10"></div>
+              <div class="md-layout-item md-size-10" />
             </div>
           </div>
         </div>
       </div>
     </parallax>
     <div class="main main-raised">
-      <div class="section" ref="announcement" id="announcement">
+      <div id="announcement" ref="announcement" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
@@ -269,35 +265,35 @@
             </router-link>
             <div class="md-layout-item md-size-50 md-small-size-100">
               <NewsElem
-                :newsTypeIndex="1"
+                :news-type-index="1"
                 tittle="这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="0"
+                :news-type-index="0"
                 tittle="这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="0"
+                :news-type-index="0"
                 tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="0"
+                :news-type-index="0"
                 tittle="这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="1"
+                :news-type-index="1"
                 tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="1"
+                :news-type-index="1"
                 tittle="这是一段测试文字"
                 date="12/13"
-              ></NewsElem>
+              />
             </div>
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
               <div class="md-layout-item md-size-50">
@@ -305,14 +301,14 @@
                   :src="image"
                   alt="Raised Image"
                   class="img-raised rounded"
-                />
+                >
               </div>
               <div class="md-layout-item md-size-50">
                 <img
                   :src="image"
                   alt="Raised Image"
                   class="img-raised rounded"
-                />
+                >
               </div>
             </div>
           </div>
@@ -328,35 +324,35 @@
             </router-link>
             <div class="md-layout-item md-size-50 md-small-size-100">
               <NewsElem
-                :newsTypeIndex="3"
+                :news-type-index="3"
                 tittle="这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="2"
+                :news-type-index="2"
                 tittle="这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="2"
+                :news-type-index="2"
                 tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="3"
+                :news-type-index="3"
                 tittle="这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="3"
+                :news-type-index="3"
                 tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
                 date="03/03"
-              ></NewsElem>
+              />
               <NewsElem
-                :newsTypeIndex="3"
+                :news-type-index="3"
                 tittle="这是一段测试文字"
                 date="12/13"
-              ></NewsElem>
+              />
             </div>
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
               <div class="md-layout-item md-size-50">
@@ -364,14 +360,14 @@
                   :src="image"
                   alt="Raised Image"
                   class="img-raised rounded"
-                />
+                >
               </div>
               <div class="md-layout-item md-size-50">
                 <img
                   :src="image"
                   alt="Raised Image"
                   class="img-raised rounded"
-                />
+                >
               </div>
             </div>
           </div>
@@ -379,7 +375,7 @@
         </div>
       </div>
 
-      <div class="section" ref="publicity" id="publicity">
+      <div id="publicity" ref="publicity" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
@@ -397,13 +393,13 @@
             </router-link>
             <PublicitySection
               class="md-layout-item md-size-100"
-            ></PublicitySection>
+            />
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
 
-      <div class="section" ref="lecture" id="lecture" :style="bgImage">
+      <div id="lecture" ref="lecture" class="section" :style="bgImage">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout md-content">
@@ -415,14 +411,14 @@
               更多>>
             </router-link>
             <div class="md-layout-item md-size-95">
-              <EventsCalendar></EventsCalendar>
+              <EventsCalendar />
             </div>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
 
-      <div class="section" ref="characteristic" id="characteristic">
+      <div id="characteristic" ref="characteristic" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
@@ -564,23 +560,23 @@
         </div>
       </div> -->
 
-      <div class="section section-tabs" ref="friendLink" id="friendLink">
+      <div id="friendLink" ref="friendLink" class="section section-tabs">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
             <h3 class="md-layout-item md-size-100 tittle">友情链接</h3>
             <div class="md-layout-item md-size-25 ">
-              国家图书馆<br />中国地质图书馆<br />北京大学图书馆
+              国家图书馆<br>中国地质图书馆<br>北京大学图书馆
             </div>
             <div class="md-layout-item md-size-25 ">
-              吉林大学图书馆<br />地质大学图书馆<br />中南大学图书馆
+              吉林大学图书馆<br>地质大学图书馆<br>中南大学图书馆
             </div>
             <div class="md-layout-item md-size-25 ">
-              河北工业大学图书馆<br />河北科技大学图书馆<br />河北师范大学图书馆<br />
+              河北工业大学图书馆<br>河北科技大学图书馆<br>河北师范大学图书馆<br>
               河北大学图书馆
             </div>
             <div class="md-layout-item md-size-25 ">
-              河北科技大学图书馆<br />河北师范大学图书馆<br />河北大学图书馆
+              河北科技大学图书馆<br>河北师范大学图书馆<br>河北大学图书馆
             </div>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -591,15 +587,16 @@
 </template>
 
 <script>
-import { NavTabsCard } from "@/components";
-import ResBtn from "../components/ResourceButtonSection.vue";
-import NewsElem from "../components/NewsElement.vue";
-import AnchorNav from "../components/AnchorNav.vue";
-import EventsCalendar from "../components/EventsCalendar.vue";
-import PublicitySection from "../components/BooksPublicitySection.vue";
-import CharacteristicSection from "../components/CharacteristicSection.vue";
+import { NavTabsCard } from '@/components'
+import ResBtn from '../components/ResourceButtonSection.vue'
+import NewsElem from '../components/NewsElement.vue'
+import AnchorNav from '../components/AnchorNav.vue'
+import EventsCalendar from '../components/EventsCalendar.vue'
+import PublicitySection from '../components/BooksPublicitySection.vue'
+import CharacteristicSection from '../components/CharacteristicSection.vue'
 
 export default {
+  name: 'Index',
   components: {
     NavTabsCard,
     ResBtn,
@@ -609,113 +606,111 @@ export default {
     CharacteristicSection,
     PublicitySection
   },
-  name: "index",
   props: {
     headerImage: {
       type: String,
-      default: require("@/assets/img/header.jpg")
+      default: require('@/assets/img/header.jpg')
     },
     image: {
       type: String,
-      default: require("@/assets/img/cynthia-del-rio.jpg")
+      default: require('@/assets/img/cynthia-del-rio.jpg')
     },
     resourseImage: {
       type: String,
-      default: require("@/assets/img/profile_city.jpg")
+      default: require('@/assets/img/profile_city.jpg')
     }
   },
   data() {
     return {
       docForm: {
-        docName: "",
-        docType: "all"
+        docName: '',
+        docType: 'all'
       },
       baiduSearchForm: {
-        searchWords: ""
+        searchWords: ''
       },
       chaoXingForm: {
-        searchWords: ""
+        searchWords: ''
       },
       readerCardForm: {
-        readerCardNumber: "",
-        readerCardPassword: ""
+        readerCardNumber: '',
+        readerCardPassword: ''
       },
       rules: {
         docName: [
-          { required: true, message: "请输入文献名称", trigger: "change" }
+          { required: true, message: '请输入文献名称', trigger: 'change' }
         ],
         docType: [
-          { required: true, message: "请选择文献区域", trigger: "change" }
+          { required: true, message: '请选择文献区域', trigger: 'change' }
         ],
         searchWords: [
-          { required: true, message: "请输入检索词", trigger: "change" }
+          { required: true, message: '请输入检索词', trigger: 'change' }
         ],
         readerCardNumber: [
-          { required: true, message: "请输入读者证号", trigger: "blur" },
-          { min: 12, max: 12, message: "长度应为12位", trigger: "blur" }
+          { required: true, message: '请输入读者证号', trigger: 'blur' },
+          { min: 12, max: 12, message: '长度应为12位', trigger: 'blur' }
         ],
         readerCardPassword: [
-          { required: true, message: "请输入密码", trigger: "blur" }
+          { required: true, message: '请输入密码', trigger: 'blur' }
         ]
       },
       columnType: 0
-    };
+    }
   },
   computed: {
     headerStyle() {
       return {
         backgroundImage: `url(${this.headerImage})`
-      };
+      }
     },
     bgImage() {
       return {
         backgroundImage: `url(${this.resourseImage})`
-      };
+      }
     }
+  },
+  mounted() {
+    this.$bus.$on('scrollValue', scrollValue => {
+      const oneHeight = this.$refs.tabsNav.offsetHeight
+      const twoHeight = this.$refs.announcement.offsetHeight + oneHeight
+      const threeHeight = this.$refs.publicity.offsetHeight + twoHeight
+      const fourHeight = this.$refs.lecture.offsetHeight + threeHeight
+      const fiveHeight = this.$refs.characteristic.offsetHeight + fourHeight
+
+      if (scrollValue < oneHeight) {
+        this.columnType = 0
+      } else if (scrollValue < twoHeight) {
+        this.columnType = 1
+      } else if (scrollValue < threeHeight) {
+        this.columnType = 2
+      } else if (scrollValue < fourHeight) {
+        this.columnType = 3
+      } else if (scrollValue < fiveHeight) {
+        this.columnType = 4
+      } else {
+        this.columnType = 5
+      }
+    })
+  },
+  beforeDestroy() {
+    this.$bus.$off('scrollValue')
   },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!");
+          alert('submit!')
         } else {
-          console.log("error submit!!");
-          return false;
+          console.log('error submit!!')
+          return false
         }
-      });
+      })
     },
     resetForm(formName) {
-      this.$refs[formName].resetFields();
+      this.$refs[formName].resetFields()
     }
-  },
-  mounted() {
-    this.$bus.$on("scrollValue", scrollValue => {
-      let oneHeight = this.$refs.tabsNav.offsetHeight;
-      let twoHeight = this.$refs.announcement.offsetHeight + oneHeight;
-      let threeHeight = this.$refs.publicity.offsetHeight + twoHeight;
-      let fourHeight = this.$refs.lecture.offsetHeight + threeHeight;
-      let fiveHeight = this.$refs.characteristic.offsetHeight + fourHeight;
-      let sixHeight = this.$refs.friendLink.offsetHeight + fiveHeight;
-
-      if (scrollValue < oneHeight) {
-        this.columnType = 0;
-      } else if (scrollValue < twoHeight) {
-        this.columnType = 1;
-      } else if (scrollValue < threeHeight) {
-        this.columnType = 2;
-      } else if (scrollValue < fourHeight) {
-        this.columnType = 3;
-      } else if (scrollValue < fiveHeight) {
-        this.columnType = 4;
-      } else {
-        this.columnType = 5;
-      }
-    });
-  },
-  beforeDestroy() {
-    this.$bus.$off("scrollValue");
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 @media all and (min-width: 991px) {

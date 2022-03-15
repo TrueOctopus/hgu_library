@@ -22,16 +22,16 @@
                   <md-button
                     class="md-just-icon md-simple md-white md-toolbar-toggle"
                   >
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
                   </md-button>
 
                   <div class="md-collapse">
                     <div class="md-autocomplete">
                       <md-autocomplete
-                        class="search has-white"
                         v-model="selectedEmployee"
+                        class="search has-white"
                         :md-options="employees"
                         :md-open-on-focus="false"
                       >
@@ -51,9 +51,9 @@
                   <md-button
                     class="md-just-icon md-simple md-white md-toolbar-toggle"
                   >
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
                   </md-button>
 
                   <div class="md-collapse">
@@ -83,9 +83,9 @@
                   <md-button
                     class="md-just-icon md-simple md-white md-toolbar-toggle"
                   >
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
                   </md-button>
 
                   <div class="md-collapse">
@@ -118,9 +118,9 @@
                   <md-button
                     class="md-just-icon md-simple md-white md-toolbar-toggle"
                   >
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
                   </md-button>
 
                   <div class="md-collapse">
@@ -139,9 +139,9 @@
                           class="md-list-item-router md-list-item-container md-button-clean"
                         >
                           <div class="md-list-item-content">
-                            <md-button class="md-rose md-just-icon md-round"
-                              ><md-icon>email</md-icon></md-button
-                            >
+                            <md-button
+                              class="md-rose md-just-icon md-round"
+                            ><md-icon>email</md-icon></md-button>
                           </div>
                         </a>
                       </li>
@@ -154,11 +154,11 @@
                           <div class="md-list-item-content">
                             <drop-down direction="down" class="profile-photo">
                               <div
-                                class="profile-photo-small"
                                 slot="title"
+                                class="profile-photo-small"
                                 data-toggle="dropdown"
                               >
-                                <img :src="img" alt="Circle Image" />
+                                <img :src="img" alt="Circle Image">
                               </div>
                               <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="dropdown-header">Dropdown header</li>
@@ -166,14 +166,16 @@
                                   <a href="#pablo" class="dropdown-item">Me</a>
                                 </li>
                                 <li>
-                                  <a href="#pablo" class="dropdown-item"
-                                    >Settings and other stuff</a
-                                  >
+                                  <a
+                                    href="#pablo"
+                                    class="dropdown-item"
+                                  >Settings and other stuff</a>
                                 </li>
                                 <li>
-                                  <a href="#pablo" class="dropdown-item"
-                                    >Sign Out</a
-                                  >
+                                  <a
+                                    href="#pablo"
+                                    class="dropdown-item"
+                                  >Sign Out</a>
                                 </li>
                               </ul>
                             </drop-down>
@@ -194,9 +196,9 @@
                   <md-button
                     class="md-just-icon md-simple md-white md-toolbar-toggle"
                   >
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
                   </md-button>
 
                   <div class="md-collapse">
@@ -215,9 +217,9 @@
                           class="md-list-item-router md-list-item-container md-button-clean"
                         >
                           <div class="md-list-item-content">
-                            <md-button class="md-rose md-round"
-                              >Register</md-button
-                            >
+                            <md-button
+                              class="md-rose md-round"
+                            >Register</md-button>
                           </div>
                         </a>
                       </li>
@@ -235,25 +237,25 @@
                   <md-button
                     class="md-just-icon md-simple md-white md-toolbar-toggle"
                   >
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
                   </md-button>
 
                   <div class="md-collapse">
                     <md-list>
                       <md-list-item href="javascript:void(0)">
-                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-facebook-square" />
                         <p>Facebook</p>
                       </md-list-item>
 
                       <md-list-item href="javascript:void(0)">
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter" />
                         <p>Twitter</p>
                       </md-list-item>
 
                       <md-list-item href="javascript:void(0)">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram" />
                         <p>Instagram</p>
                       </md-list-item>
                     </md-list>
@@ -272,37 +274,37 @@
 export default {
   data() {
     return {
-      selectedEmployee: "",
+      selectedEmployee: '',
       employees: [
-        "Jim Halpert",
-        "Dwight Schrute",
-        "Michael Scott",
-        "Pam Beesly",
-        "Angela Martin",
-        "Kelly Kapoor",
-        "Ryan Howard",
-        "Kevin Malone"
+        'Jim Halpert',
+        'Dwight Schrute',
+        'Michael Scott',
+        'Pam Beesly',
+        'Angela Martin',
+        'Kelly Kapoor',
+        'Ryan Howard',
+        'Kevin Malone'
       ]
-    };
+    }
   },
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/bg.jpg")
+      default: require('@/assets/img/bg.jpg')
     },
     img: {
       type: String,
-      default: require("@/assets/img/faces/avatar.jpg")
+      default: require('@/assets/img/faces/avatar.jpg')
     }
   },
   computed: {
     bgImage() {
       return {
         backgroundImage: `url(${this.image})`
-      };
+      }
     }
   }
-};
+}
 </script>
 
 <style lang="css"></style>

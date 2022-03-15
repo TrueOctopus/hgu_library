@@ -130,14 +130,14 @@
           <div class="tim-typo">
             <h2>
               <span class="tim-note">Small Tag</span> Header with small subtitle
-              <br />
+              <br>
               <small>Use &quot;small&quot; tag for the headers</small>
             </h2>
           </div>
         </div>
       </div>
     </div>
-    <div class="space-50"></div>
+    <div class="space-50" />
 
     <div id="images">
       <div class="title">
@@ -154,7 +154,7 @@
             alt="Rounded Image"
             class="rounded"
             :class="{ 'responsive-image': responsive }"
-          />
+          >
         </div>
         <div
           class="md-layout-item md-size-20 md-xsmall-size-100 ml-auto"
@@ -166,7 +166,7 @@
             alt="Circle Image"
             class="rounded-circle"
             :class="{ 'responsive-image': responsive }"
-          />
+          >
         </div>
         <div
           class="md-layout-item md-size-20 md-xsmall-size-100 ml-auto"
@@ -178,7 +178,7 @@
             alt="Raised Image"
             class="img-raised rounded"
             :class="{ 'responsive-image': responsive }"
-          />
+          >
         </div>
         <div
           class="md-layout-item md-size-20 md-xsmall-size-100 ml-auto"
@@ -190,7 +190,7 @@
             alt="Thumbnail Image"
             class="img-raised rounded-circle"
             :class="{ 'responsive-image': responsive }"
-          />
+          >
         </div>
       </div>
     </div>
@@ -201,27 +201,27 @@
 export default {
   data() {
     return {
-      image: require("@/assets/img/faces/avatar.jpg"),
+      image: require('@/assets/img/faces/avatar.jpg'),
       responsive: false
-    };
+    }
+  },
+  mounted() {
+    this.onResponsiveInverted()
+    window.addEventListener('resize', this.onResponsiveInverted)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResponsiveInverted)
   },
   methods: {
     onResponsiveInverted() {
       if (window.innerWidth < 600) {
-        this.responsive = true;
+        this.responsive = true
       } else {
-        this.responsive = false;
+        this.responsive = false
       }
     }
-  },
-  mounted() {
-    this.onResponsiveInverted();
-    window.addEventListener("resize", this.onResponsiveInverted);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.onResponsiveInverted);
   }
-};
+}
 </script>
 
 <style lang="css"></style>

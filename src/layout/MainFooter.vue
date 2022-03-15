@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-05 15:29:19
+ * @LastEditTime: 2022-03-15 19:44:23
  * @LastEditors: 郑钊宇
  * @Description: 底部栏组件
 -->
@@ -24,7 +24,7 @@
               冀公网安备 13010802000749号
             </a>
           </li>
-          <br />
+          <br>
           <li>
             地址：河北省石家庄市槐安东路136号
           </li>
@@ -51,9 +51,9 @@ export default {
   data() {
     return {
       year: new Date().getFullYear()
-    };
+    }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .container {

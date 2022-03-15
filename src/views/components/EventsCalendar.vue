@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-11 15:22:34
- * @LastEditTime: 2022-03-13 17:01:21
+ * @LastEditTime: 2022-03-15 19:48:29
  * @LastEditors: 郑钊宇
  * @Description: 活动日历
 -->
@@ -29,66 +29,66 @@
       </div>
     </div>
     <Calendar
-      class="md-layout-item md-size-50"
       ref="Calendar"
-      :markDate="markArr"
-    ></Calendar>
+      class="md-layout-item md-size-50"
+      :mark-date="markArr"
+    />
   </div>
 </template>
 
 <script>
-import Calendar from "vue-calendar-component";
+import Calendar from 'vue-calendar-component'
 export default {
-  data() {
-    return {
-      markArr: ["2022/03/06", "2022/3/3", "2022/3/4", "2022/3/5"],
-      today: "",
-      selectDate: "",
-      lecture: {
-        tittle: "一个测试用的讲座标题",
-        text:
-          "一个测试用的讲座介绍，一个测试用的测试人员来进行一个测试的讲座!一个测试用的讲座介绍，一个测试用的测试人员来进行一个测试的讲座",
-        time: "2022/03/11 15:00"
-      }
-    };
-  },
   components: {
     Calendar
   },
+  data() {
+    return {
+      markArr: ['2022/03/06', '2022/3/3', '2022/3/4', '2022/3/5'],
+      today: '',
+      selectDate: '',
+      lecture: {
+        tittle: '一个测试用的讲座标题',
+        text:
+          '一个测试用的讲座介绍，一个测试用的测试人员来进行一个测试的讲座!一个测试用的讲座介绍，一个测试用的测试人员来进行一个测试的讲座',
+        time: '2022/03/11 15:00'
+      }
+    }
+  },
   mounted() {
-    let nowDate = new Date();
-    let year = nowDate.getFullYear();
-    let month =
+    const nowDate = new Date()
+    const year = nowDate.getFullYear()
+    const month =
       nowDate.getMonth() + 1 < 10
-        ? "0" + (nowDate.getMonth() + 1)
-        : nowDate.getMonth() + 1;
-    let day =
-      nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
-    this.today = year + "/" + month + "/" + day;
+        ? '0' + (nowDate.getMonth() + 1)
+        : nowDate.getMonth() + 1
+    const day =
+      nowDate.getDate() < 10 ? '0' + nowDate.getDate() : nowDate.getDate()
+    this.today = year + '/' + month + '/' + day
   },
   methods: {
     getSelectDate() {
-      let day = document.getElementsByClassName("wh_chose_day");
+      let day = document.getElementsByClassName('wh_chose_day')
       if (day.length === 0) {
-        return;
+        return
       }
       if (day[0].innerText < 10) {
-        day = "0" + day[0].innerText;
+        day = '0' + day[0].innerText
       } else {
-        day = day[0].innerText;
+        day = day[0].innerText
       }
-      let yearMonth = document.getElementsByClassName("wh_content_li")[0]
-        .innerText;
-      if (yearMonth.split("年")[1].split("月")[0] < 10) {
-        yearMonth = yearMonth.replace("年", "/0");
+      let yearMonth = document.getElementsByClassName('wh_content_li')[0]
+        .innerText
+      if (yearMonth.split('年')[1].split('月')[0] < 10) {
+        yearMonth = yearMonth.replace('年', '/0')
       } else {
-        yearMonth = yearMonth.replace("年", "/");
+        yearMonth = yearMonth.replace('年', '/')
       }
-      yearMonth = yearMonth.replace("月", "/");
-      this.selectDate = yearMonth + day;
+      yearMonth = yearMonth.replace('月', '/')
+      this.selectDate = yearMonth + day
     }
   }
-};
+}
 </script>
 
 <style lang="scss">

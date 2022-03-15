@@ -1,13 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-08 09:04:07
- * @LastEditTime: 2022-03-08 09:15:44
+ * @LastEditTime: 2022-03-15 19:53:00
  * @LastEditors: 郑钊宇
  * @Description: 图书馆概况
 -->
 <template>
   <div>
-    <TemplePage :detailTittle="detailTittle">
+    <TemplePage :detail-tittle="detailTittle">
       <template #breadcrumb>
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -44,15 +44,15 @@
 </template>
 
 <script>
-import TemplePage from "../components/DetailTemplePage.vue";
+import TemplePage from '../components/DetailTemplePage.vue'
 export default {
   components: { TemplePage },
   data() {
     return {
-      detailTittle: "本馆概况"
-    };
+      detailTittle: '本馆概况'
+    }
   }
-};
+}
 </script>
 
 <style></style>

@@ -1,33 +1,40 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-02-16 14:19:24
+ * @LastEditTime: 2022-03-15 19:45:52
+ * @LastEditors: 郑钊宇
+ * @Description:
+-->
 <template>
   <component :is="tag" class="badge" :class="`badge-${type}`">
-    <slot></slot>
+    <slot />
   </component>
 </template>
 <script>
 export default {
-  name: "badge",
+  name: 'Badge',
   props: {
     tag: {
       type: String,
-      default: "span"
+      default: 'span'
     },
     type: {
       type: String,
-      default: "default",
+      default: 'default',
       validator: value => {
-        let acceptedValues = [
-          "primary",
-          "info",
-          "success",
-          "warning",
-          "danger",
-          "rose",
-          "default"
-        ];
-        return acceptedValues.indexOf(value) !== -1;
+        const acceptedValues = [
+          'primary',
+          'info',
+          'success',
+          'warning',
+          'danger',
+          'rose',
+          'default'
+        ]
+        return acceptedValues.indexOf(value) !== -1
       }
     }
   }
-};
+}
 </script>
 <style></style>

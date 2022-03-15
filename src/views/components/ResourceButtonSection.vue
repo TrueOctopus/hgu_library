@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-19 14:34:07
- * @LastEditTime: 2022-03-14 20:29:54
+ * @LastEditTime: 2022-03-15 19:48:55
  * @LastEditors: 郑钊宇
  * @Description: 资源快速入口按钮
 -->
@@ -20,21 +20,21 @@
 
 <script>
 export default {
-  data() {
-    return {};
-  },
   props: {
     iconName: {
       type: String,
-      default: "home"
+      default: 'home'
     },
     text: {
       type: String,
-      default: "fault text"
+      default: 'fault text'
     }
   },
+  data() {
+    return {}
+  },
   methods: {}
-};
+}
 </script>
 
 <style lang="scss" scoped>

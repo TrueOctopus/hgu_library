@@ -7,7 +7,7 @@
 -->
 <template>
   <div>
-    <TemplePage :detailTittle="detailTittle">
+    <TemplePage :detail-tittle="detailTittle">
       <template #breadcrumb>
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -26,15 +26,15 @@
 </template>
 
 <script>
-import TemplePage from "../components/DetailTemplePage.vue";
+import TemplePage from '../components/DetailTemplePage.vue'
 export default {
   components: { TemplePage },
   data() {
     return {
-      detailTittle: "文献资源"
-    };
+      detailTittle: '文献资源'
+    }
   }
-};
+}
 </script>
 
 <style></style>

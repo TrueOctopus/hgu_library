@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-11 18:00:27
+ * @LastEditTime: 2022-03-15 19:53:33
  * @LastEditors: 郑钊宇
  * @Description: app.vue
 -->
@@ -25,7 +25,7 @@ export default {
   //     loadingPage.classList.add("loading-finish");
   //   });
   // }
-};
+}
 </script>
 <style lang="scss">
 /* 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/

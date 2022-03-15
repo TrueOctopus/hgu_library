@@ -30,7 +30,7 @@
           :src="logoImage"
           alt="Logo image"
           style="height:40px; margin-right:15px;"
-        />
+        >
       </a>
       <div class="md-toolbar-section-start">
         <md-list>
@@ -60,19 +60,21 @@
                       <a href="#pablo" class="dropdown-item">Another action</a>
                     </li>
                     <li>
-                      <a href="#pablo" class="dropdown-item"
-                        >Something else here</a
-                      >
+                      <a
+                        href="#pablo"
+                        class="dropdown-item"
+                      >Something else here</a>
                     </li>
-                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-divider" />
                     <li>
                       <a href="#pablo" class="dropdown-item">Separated link</a>
                     </li>
-                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-divider" />
                     <li>
-                      <a href="#pablo" class="dropdown-item"
-                        >One more separated link</a
-                      >
+                      <a
+                        href="#pablo"
+                        class="dropdown-item"
+                      >One more separated link</a>
                     </li>
                   </ul>
                 </drop-down>
@@ -102,19 +104,21 @@
                       <a href="#pablo" class="dropdown-item">Another action</a>
                     </li>
                     <li>
-                      <a href="#pablo" class="dropdown-item"
-                        >Something else here</a
-                      >
+                      <a
+                        href="#pablo"
+                        class="dropdown-item"
+                      >Something else here</a>
                     </li>
-                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-divider" />
                     <li>
                       <a href="#pablo" class="dropdown-item">Separated link</a>
                     </li>
-                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-divider" />
                     <li>
-                      <a href="#pablo" class="dropdown-item"
-                        >One more separated link</a
-                      >
+                      <a
+                        href="#pablo"
+                        class="dropdown-item"
+                      >One more separated link</a>
                     </li>
                   </ul>
                 </drop-down>
@@ -144,19 +148,21 @@
                       <a href="#pablo" class="dropdown-item">Another action</a>
                     </li>
                     <li>
-                      <a href="#pablo" class="dropdown-item"
-                        >Something else here</a
-                      >
+                      <a
+                        href="#pablo"
+                        class="dropdown-item"
+                      >Something else here</a>
                     </li>
-                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-divider" />
                     <li>
                       <a href="#pablo" class="dropdown-item">Separated link</a>
                     </li>
-                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-divider" />
                     <li>
-                      <a href="#pablo" class="dropdown-item"
-                        >One more separated link</a
-                      >
+                      <a
+                        href="#pablo"
+                        class="dropdown-item"
+                      >One more separated link</a>
                     </li>
                   </ul>
                 </drop-down>
@@ -175,9 +181,9 @@
           :class="{ toggled: toggledClass }"
           @click="toggleNavbarMobile()"
         >
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-bar" />
+          <span class="icon-bar" />
+          <span class="icon-bar" />
         </md-button>
 
         <div class="md-collapse">
@@ -193,8 +199,8 @@
               <md-list-item>
                 <div class="md-autocomplete">
                   <md-autocomplete
-                    class="search has-info"
                     v-model="selectedEmployee"
+                    class="search has-info"
                     :md-options="employees"
                     :md-open-on-focus="false"
                   >
@@ -215,19 +221,19 @@
 </template>
 
 <script>
-let resizeTimeout;
+let resizeTimeout
 function resizeThrottler(actualResizeHandler) {
   // ignore resize events as long as an actualResizeHandler execution is in the queue
   if (!resizeTimeout) {
     resizeTimeout = setTimeout(() => {
-      resizeTimeout = null;
-      actualResizeHandler();
+      resizeTimeout = null
+      actualResizeHandler()
       // The actualResizeHandler will execute at a rate of 15fps
-    }, 66);
+    }, 66)
   }
 }
 
-import MobileMenu from "@/layout/MobileMenu";
+import MobileMenu from '@/layout/MobileMenu'
 export default {
   components: {
     MobileMenu
@@ -235,17 +241,17 @@ export default {
   props: {
     type: {
       type: String,
-      default: "white",
+      default: 'white',
       validator(value) {
         return [
-          "white",
-          "default",
-          "primary",
-          "danger",
-          "success",
-          "warning",
-          "info"
-        ].includes(value);
+          'white',
+          'default',
+          'primary',
+          'danger',
+          'success',
+          'warning',
+          'info'
+        ].includes(value)
       }
     },
     colorOnScroll: {
@@ -255,57 +261,69 @@ export default {
   },
   data() {
     return {
-      extraNavClasses: "initBar", //导航栏额外class
-      toggledClass: false, //按钮切换标志符
-      logoImage: require("@/assets/img/shoolLogo-black.png"), //顶部图
+      extraNavClasses: 'initBar', // 导航栏额外class
+      toggledClass: false, // 按钮切换标志符
+      logoImage: require('@/assets/img/shoolLogo-black.png'), // 顶部图
 
-      selectedEmployee: "", //搜索框默认配置
+      selectedEmployee: '', // 搜索框默认配置
       employees: [],
 
-      mobileFlag: false, //移动端激活标志
+      mobileFlag: false, // 移动端激活标志
       showLogo: true,
 
-      peopleNumber: 900 //馆内人数
-    };
+      peopleNumber: 900 // 馆内人数
+    }
+  },
+  mounted() {
+    document.addEventListener('scroll', this.scrollListener)
+    // console.log(screen.width);
+    if (screen.width < 1300 && screen.width > 990) {
+      this.showLogo = false
+    } else if (screen.width <= 990) {
+      this.mobileFlag = true
+    }
+  },
+  beforeDestroy() {
+    document.removeEventListener('scroll', this.scrollListener)
   },
   methods: {
     bodyClick() {
-      let bodyClick = document.getElementById("bodyClick");
+      const bodyClick = document.getElementById('bodyClick')
 
       if (bodyClick === null) {
-        let body = document.querySelector("body");
-        let elem = document.createElement("div");
-        elem.setAttribute("id", "bodyClick");
-        body.appendChild(elem);
+        const body = document.querySelector('body')
+        const elem = document.createElement('div')
+        elem.setAttribute('id', 'bodyClick')
+        body.appendChild(elem)
 
-        let bodyClick = document.getElementById("bodyClick");
-        bodyClick.addEventListener("click", this.toggleNavbarMobile);
+        const bodyClick = document.getElementById('bodyClick')
+        bodyClick.addEventListener('click', this.toggleNavbarMobile)
       } else {
-        bodyClick.remove();
+        bodyClick.remove()
       }
     },
     toggleNavbarMobile() {
-      this.NavbarStore.showNavbar = !this.NavbarStore.showNavbar;
-      this.toggledClass = !this.toggledClass;
-      this.bodyClick();
+      this.NavbarStore.showNavbar = !this.NavbarStore.showNavbar
+      this.toggledClass = !this.toggledClass
+      this.bodyClick()
     },
     handleScroll() {
-      let scrollValue =
-        document.body.scrollTop || document.documentElement.scrollTop;
-      let navbarColor = document.getElementById("toolbar");
+      const scrollValue =
+        document.body.scrollTop || document.documentElement.scrollTop
+      const navbarColor = document.getElementById('toolbar')
       // let searchColor = document.getElementsByClassName("search")[0];
       // let searchLabel = document.getElementsByTagName("label")[0];
-      this.currentScrollValue = scrollValue;
-      this.$bus.$emit("scrollValue", scrollValue);
+      this.currentScrollValue = scrollValue
+      this.$bus.$emit('scrollValue', scrollValue)
 
       if (!this.mobileFlag) {
         if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
           // console.log(this.colorOnScroll);
-          this.extraNavClasses = "navHidden";
+          this.extraNavClasses = 'navHidden'
         } else {
           if (this.extraNavClasses) {
             // this.logoImage = require("@/assets/img/shoolLogo-white.png");
-            this.extraNavClasses = "navShow";
+            this.extraNavClasses = 'navShow'
             // navbarColor.classList.add("md-transparent");
             // searchColor.classList.remove("has-info");
             // searchColor.classList.add("has-white");
@@ -317,48 +335,36 @@ export default {
           scrollValue > this.colorOnScroll
         ) {
           // this.logoImage = require("@/assets/img/shoolLogo-black.png");
-          this.extraNavClasses = `md-${this.type} navShow`;
+          this.extraNavClasses = `md-${this.type} navShow`
           // navbarColor.classList.remove("md-transparent");
-          navbarColor.classList.remove("toolbar-ontop");
+          navbarColor.classList.remove('toolbar-ontop')
           // searchColor.classList.remove("has-white");
           // searchColor.classList.add("has-info");
           // searchLabel.classList.remove("searchLabel");
         }
-        this.scrollValueFlag = this.currentScrollValue;
+        this.scrollValueFlag = this.currentScrollValue
       } else {
         // searchColor.classList.remove("has-white");
         // searchColor.classList.add("has-info");
         if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
           // this.logoImage = require("@/assets/img/shoolLogo-black.png");
-          this.extraNavClasses = `md-${this.type}`;
+          this.extraNavClasses = `md-${this.type}`
           // navbarColor.classList.remove("md-transparent");
-          navbarColor.classList.remove("toolbar-ontop");
+          navbarColor.classList.remove('toolbar-ontop')
         } else {
           if (this.extraNavClasses) {
             // this.logoImage = require("@/assets/img/shoolLogo-white.png");
-            this.extraNavClasses = "";
+            this.extraNavClasses = ''
             // navbarColor.classList.add("md-transparent");
           }
         }
       }
     },
     scrollListener() {
-      resizeThrottler(this.handleScroll);
+      resizeThrottler(this.handleScroll)
     }
-  },
-  mounted() {
-    document.addEventListener("scroll", this.scrollListener);
-    // console.log(screen.width);
-    if (screen.width < 1300 && screen.width > 990) {
-      this.showLogo = false;
-    } else if (screen.width <= 990) {
-      this.mobileFlag = true;
-    }
-  },
-  beforeDestroy() {
-    document.removeEventListener("scroll", this.scrollListener);
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 #toolbar {

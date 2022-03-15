@@ -4,10 +4,10 @@
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
-            <img :src="leaf4" alt="leaf4" class="leaf4" v-show="leafShow" />
-            <img :src="leaf3" alt="leaf3" class="leaf3" v-show="leafShow" />
-            <img :src="leaf2" alt="leaf2" class="leaf2" v-show="leafShow" />
-            <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" />
+            <img v-show="leafShow" :src="leaf4" alt="leaf4" class="leaf4">
+            <img v-show="leafShow" :src="leaf3" alt="leaf3" class="leaf3">
+            <img v-show="leafShow" :src="leaf2" alt="leaf2" class="leaf2">
+            <img v-show="leafShow" :src="leaf1" alt="leaf1" class="leaf1">
             <div class="brand">
               <h1>Vue Material Kit</h1>
               <h3>A Badass Vue.js UI Kit made with Material Design.</h3>
@@ -22,23 +22,23 @@
           <div class="title">
             <h2>Basic Elements</h2>
           </div>
-          <basic-elements></basic-elements>
+          <basic-elements />
         </div>
       </div>
       <div class="section section-navbars">
         <div class="container">
-          <small-navigation></small-navigation>
+          <small-navigation />
         </div>
-        <navigation></navigation>
+        <navigation />
       </div>
       <div class="section section-tabs">
         <div class="container">
-          <tabs></tabs>
+          <tabs />
         </div>
       </div>
       <div class="section section-white">
         <div class="container">
-          <nav-pills></nav-pills>
+          <nav-pills />
         </div>
       </div>
       <div class="section section-notifications">
@@ -47,16 +47,16 @@
             <h3>Notifications</h3>
           </div>
         </div>
-        <notifications></notifications>
+        <notifications />
       </div>
       <div class="section">
         <div class="container">
-          <typography-images></typography-images>
+          <typography-images />
         </div>
       </div>
       <div class="section section-javascript">
         <div class="container">
-          <javascript-components></javascript-components>
+          <javascript-components />
         </div>
       </div>
       <div class="section">
@@ -89,37 +89,37 @@
                   href="javascript:void(0)"
                   class="md-just-icon md-simple md-white"
                 >
-                  <i class="fab fa-facebook-square"></i>
+                  <i class="fab fa-facebook-square" />
                 </md-button>
                 <md-button
                   slot="buttons"
                   href="javascript:void(0)"
                   class="md-just-icon md-simple md-white"
                 >
-                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-twitter" />
                 </md-button>
                 <md-button
                   slot="buttons"
                   href="javascript:void(0)"
                   class="md-just-icon md-simple md-white"
                 >
-                  <i class="fab fa-google-plus-g"></i>
+                  <i class="fab fa-google-plus-g" />
                 </md-button>
                 <p slot="description" class="description">Or Be Classical</p>
-                <md-field class="md-form-group" slot="inputs">
+                <md-field slot="inputs" class="md-form-group">
                   <md-icon>face</md-icon>
                   <label>First Name...</label>
-                  <md-input v-model="firstname"></md-input>
+                  <md-input v-model="firstname" />
                 </md-field>
-                <md-field class="md-form-group" slot="inputs">
+                <md-field slot="inputs" class="md-form-group">
                   <md-icon>email</md-icon>
                   <label>Email...</label>
-                  <md-input v-model="email" type="email"></md-input>
+                  <md-input v-model="email" type="email" />
                 </md-field>
-                <md-field class="md-form-group" slot="inputs">
+                <md-field slot="inputs" class="md-form-group">
                   <md-icon>lock_outline</md-icon>
                   <label>Password...</label>
-                  <md-input v-model="password"></md-input>
+                  <md-input v-model="password" />
                 </md-field>
                 <md-button slot="footer" class="md-simple md-success md-lg">
                   Get Started
@@ -131,9 +131,10 @@
       </div>
       <div class="md-layout">
         <div class="md-layout-item text-center">
-          <md-button href="#/login" class="md-simple md-success md-lg"
-            >View Login Page</md-button
-          >
+          <md-button
+            href="#/login"
+            class="md-simple md-success md-lg"
+          >View Login Page</md-button>
         </div>
       </div>
       <div class="section section-examples">
@@ -145,11 +146,12 @@
                   :src="landing"
                   alt="Rounded Image"
                   class="img-raised rounded img-fluid"
-                />
+                >
               </a>
-              <md-button href="#/landing" class="md-simple md-success md-lg"
-                >View Landing Page</md-button
-              >
+              <md-button
+                href="#/landing"
+                class="md-simple md-success md-lg"
+              >View Landing Page</md-button>
             </div>
             <div class="md-layout-item">
               <a href="#/profile" target="_blank">
@@ -157,16 +159,17 @@
                   :src="profile"
                   alt="Rounded Image"
                   class="img-raised rounded img-fluid"
-                />
+                >
               </a>
-              <md-button href="#/profile" class="md-simple md-success md-lg"
-                >View Profile Page</md-button
-              >
+              <md-button
+                href="#/profile"
+                class="md-simple md-success md-lg"
+              >View Profile Page</md-button>
             </div>
           </div>
         </div>
       </div>
-      <div class="section section-download" id="downloadSection">
+      <div id="downloadSection" class="section section-download">
         <div class="container">
           <div class="md-layout text-center">
             <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
@@ -178,8 +181,7 @@
                 <a
                   href="https://themeisle.com/?utm_campaign=mkfree-hestia&amp;utm_source=creativetim&amp;utm_medium=website"
                   target="_blank"
-                  >ThemeIsle</a
-                >
+                >ThemeIsle</a>
                 created a Wordpress Theme which can be also downloaded for free.
                 Start a new project or give an old Bootstrap project a new look!
               </h4>
@@ -189,17 +191,15 @@
                 href="https://www.creative-tim.com/product/material-kit"
                 target="_blank"
                 class="md-success md-lg"
-                ><i class="fab fa-html5"></i> Free HTML Download</md-button
-              >
+              ><i class="fab fa-html5" /> Free HTML Download</md-button>
               <md-button
                 href="https://themeisle.com/themes/hestia/?utm_campaign=mkfree-hestia&amp;utm_source=creativetim&amp;utm_medium=website"
                 class="md-success md-lg"
                 target="_blank"
-                ><i class="fab fa-wordpress"></i> Wordpress Theme</md-button
-              >
+              ><i class="fab fa-wordpress" /> Wordpress Theme</md-button>
             </div>
           </div>
-          <br /><br />
+          <br><br>
 
           <div class="md-layout text-center">
             <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
@@ -209,14 +209,12 @@
                 <a
                   href="https://www.creative-tim.com/product/vue-material-dashboard-pro?ref=utp-mk-demos"
                   target="_blank"
-                  >Vue Material Dashboard PRO</a
-                >
+                >Vue Material Dashboard PRO</a>
                 and
                 <a
                   href="https://www.creative-tim.com/product/vue-material-kit-pro?ref=utp-vmk-demos"
                   target="_blank"
-                  >Vue Material Kit PRO</a
-                >. Every product has a huge number of components, sections and
+                >Vue Material Kit PRO</a>. Every product has a huge number of components, sections and
                 example pages. Start Your Development With A Badass Bootstrap UI
                 Kit inspired by Material Design.
               </h4>
@@ -227,15 +225,13 @@
                   href="https://www.creative-tim.com/product/vue-material-kit-pro?ref=utp-vmk-demos"
                   class="md-button md-success md-lg md-upgrade"
                   target="_blank"
-                  ><md-icon>unarchive</md-icon>Vue Material Kit PRO</md-button
-                >
+                ><md-icon>unarchive</md-icon>Vue Material Kit PRO</md-button>
                 <md-button
                   href="https://www.creative-tim.com/product/vue-material-dashboard-pro?ref=utp-vmd-demos"
                   class="md-button md-success md-lg md-upgrade"
                   target="_blank"
-                  ><md-icon>unarchive</md-icon>Vue Material Dashboard
-                  PRO</md-button
-                >
+                ><md-icon>unarchive</md-icon>Vue Material Dashboard
+                  PRO</md-button>
               </div>
             </div>
           </div>
@@ -247,18 +243,18 @@
               </div>
             </div>
 
-            <md-button class="md-twitter"
-              ><i class="fab fa-twitter"></i>Tweet</md-button
-            >
-            <md-button class="md-facebook"
-              ><i class="fab fa-facebook-square"></i> Share</md-button
-            >
-            <md-button class="md-google"
-              ><i class="fab fa-google-plus"></i> Share</md-button
-            >
-            <md-button class="md-github"
-              ><i class="fab fa-github"></i> Star</md-button
-            >
+            <md-button
+              class="md-twitter"
+            ><i class="fab fa-twitter" />Tweet</md-button>
+            <md-button
+              class="md-facebook"
+            ><i class="fab fa-facebook-square" /> Share</md-button>
+            <md-button
+              class="md-google"
+            ><i class="fab fa-google-plus" /> Share</md-button>
+            <md-button
+              class="md-github"
+            ><i class="fab fa-github" /> Star</md-button>
           </div>
         </div>
       </div>
@@ -267,17 +263,18 @@
 </template>
 
 <script>
-import BasicElements from "../components/BasicElementsSection";
-import Navigation from "../components/NavigationSection";
-import SmallNavigation from "../components/SmallNavigationSection";
-import Tabs from "../components/TabsSection";
-import NavPills from "../components/NavPillsSection";
-import Notifications from "../components/NotificationsSection";
-import TypographyImages from "../components/TypographyImagesSection";
-import JavascriptComponents from "../components/JavascriptComponentsSection";
-import { LoginCard } from "@/components";
+import BasicElements from '../components/BasicElementsSection'
+import Navigation from '../components/NavigationSection'
+import SmallNavigation from '../components/SmallNavigationSection'
+import Tabs from '../components/TabsSection'
+import NavPills from '../components/NavPillsSection'
+import Notifications from '../components/NotificationsSection'
+import TypographyImages from '../components/TypographyImagesSection'
+import JavascriptComponents from '../components/JavascriptComponentsSection'
+import { LoginCard } from '@/components'
 
 export default {
+  name: 'Kits',
   components: {
     BasicElements,
     Navigation,
@@ -289,40 +286,39 @@ export default {
     JavascriptComponents,
     LoginCard
   },
-  name: "kits",
-  bodyClass: "kits-page",
+  bodyClass: 'kits-page',
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
+      default: require('@/assets/img/vue-mk-header.jpg')
     },
     leaf4: {
       type: String,
-      default: require("@/assets/img/leaf4.png")
+      default: require('@/assets/img/leaf4.png')
     },
     leaf3: {
       type: String,
-      default: require("@/assets/img/leaf3.png")
+      default: require('@/assets/img/leaf3.png')
     },
     leaf2: {
       type: String,
-      default: require("@/assets/img/leaf2.png")
+      default: require('@/assets/img/leaf2.png')
     },
     leaf1: {
       type: String,
-      default: require("@/assets/img/leaf1.png")
+      default: require('@/assets/img/leaf1.png')
     },
     signup: {
       type: String,
-      default: require("@/assets/img/city.jpg")
+      default: require('@/assets/img/city.jpg')
     },
     landing: {
       type: String,
-      default: require("@/assets/img/landing.jpg")
+      default: require('@/assets/img/landing.jpg')
     },
     profile: {
       type: String,
-      default: require("@/assets/img/profile.jpg")
+      default: require('@/assets/img/profile.jpg')
     }
   },
   data() {
@@ -331,37 +327,37 @@ export default {
       email: null,
       password: null,
       leafShow: false
-    };
-  },
-  methods: {
-    leafActive() {
-      if (window.innerWidth < 768) {
-        this.leafShow = false;
-      } else {
-        this.leafShow = true;
-      }
     }
   },
   computed: {
     headerStyle() {
       return {
         backgroundImage: `url(${this.image})`
-      };
+      }
     },
     signupImage() {
       return {
         backgroundImage: `url(${this.signup})`
-      };
+      }
     }
   },
   mounted() {
-    this.leafActive();
-    window.addEventListener("resize", this.leafActive);
+    this.leafActive()
+    window.addEventListener('resize', this.leafActive)
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.leafActive);
+    window.removeEventListener('resize', this.leafActive)
+  },
+  methods: {
+    leafActive() {
+      if (window.innerWidth < 768) {
+        this.leafShow = false
+      } else {
+        this.leafShow = true
+      }
+    }
   }
-};
+}
 </script>
 <style lang="scss">
 .section-download {

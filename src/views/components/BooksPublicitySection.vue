@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 17:26:09
- * @LastEditTime: 2022-03-14 17:34:27
+ * @LastEditTime: 2022-03-15 19:48:19
  * @LastEditors: 郑钊宇
  * @Description: 阅读推广
 -->
@@ -21,7 +21,7 @@
             shadow="hover"
             style="height:434px"
           >
-            <img src="@/assets/img/st.jpg" class="image" />
+            <img src="@/assets/img/st.jpg" class="image">
             <div style="padding: 14px;">
               <span>《三体》</span>
               <div class="bottom clearfix">
@@ -41,7 +41,7 @@
             shadow="hover"
             style="height:434px"
           >
-            <img src="@/assets/img/dsp.jpg" class="image" />
+            <img src="@/assets/img/dsp.jpg" class="image">
             <div style="padding: 14px;">
               <span>《三体》</span>
               <div class="bottom clearfix">
@@ -61,7 +61,7 @@
             shadow="hover"
             style="height:434px"
           >
-            <img src="@/assets/img/xgxlx.jpg" class="image" />
+            <img src="@/assets/img/xgxlx.jpg" class="image">
             <div style="padding: 14px;">
               <span>《三体》</span>
               <div class="bottom clearfix">
@@ -81,7 +81,7 @@
             shadow="hover"
             style="height:434px"
           >
-            <img src="@/assets/img/zcwa.jpg" class="image" />
+            <img src="@/assets/img/zcwa.jpg" class="image">
             <div style="padding: 14px;">
               <span>《三体》</span>
               <div class="bottom clearfix">
@@ -101,7 +101,7 @@
             shadow="hover"
             style="height:434px"
           >
-            <img src="@/assets/img/zkl.jpg" class="image" />
+            <img src="@/assets/img/zkl.jpg" class="image">
             <div style="padding: 14px;">
               <span>《三体》</span>
               <div class="bottom clearfix">
@@ -120,9 +120,9 @@ export default {
   data() {
     return {
       currentDate: new Date()
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

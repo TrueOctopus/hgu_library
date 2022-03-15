@@ -1,12 +1,19 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-02-16 14:19:24
+ * @LastEditTime: 2022-03-15 19:46:16
+ * @LastEditors: 郑钊宇
+ * @Description:
+-->
 <template>
   <div
+    v-click-outside="closeDropDown"
     :class="[
       { open: isOpen },
       { dropdown: direction === 'down' },
       { dropup: direction === 'up' }
     ]"
     @click="toggleDropDown"
-    v-click-outside="closeDropDown"
   >
     <slot name="title">
       <a
@@ -14,20 +21,20 @@
         data-toggle="dropdown"
         href="javascript:void(0)"
       >
-        <i :class="icon"></i>
+        <i :class="icon" />
         <p>{{ title }}</p>
       </a>
     </slot>
-    <slot></slot>
+    <slot />
   </div>
 </template>
 <script>
 export default {
-  name: "drop-down",
+  name: 'DropDown',
   props: {
     direction: {
       type: String,
-      default: "down"
+      default: 'down'
     },
     multiLevel: {
       type: Boolean,
@@ -39,19 +46,19 @@ export default {
   data() {
     return {
       isOpen: false
-    };
+    }
   },
   methods: {
     toggleDropDown() {
       if (this.multiLevel) {
-        this.isOpen = true;
+        this.isOpen = true
       } else {
-        this.isOpen = !this.isOpen;
+        this.isOpen = !this.isOpen
       }
     },
     closeDropDown() {
-      this.isOpen = false;
+      this.isOpen = false
     }
   }
-};
+}
 </script>

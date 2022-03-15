@@ -4,17 +4,17 @@
     :class="{ 'no-label': noLabel, 'md-card-plain': tabsPlain }"
   >
     <md-card-content>
-      <slot name="content"></slot>
+      <slot name="content" />
     </md-card-content>
   </md-card>
 </template>
 
 <script>
 export default {
-  name: "nav-tabs-card",
+  name: 'NavTabsCard',
   props: {
     noLabel: Boolean,
     tabsPlain: Boolean
   }
-};
+}
 </script>

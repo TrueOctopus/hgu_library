@@ -1,13 +1,17 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-10 18:27:49
- * @LastEditTime: 2022-03-15 09:48:47
+ * @LastEditTime: 2022-03-15 19:43:42
  * @LastEditors: 郑钊宇
  * @Description: 侧边导航条
 -->
 <template>
   <nav ref="anchorNav" class="anchor-nav">
-    <a href="javascript:void(0)" @click="onTopClick('wrapper')">
+    <a
+      href="javascript:void(0)"
+      style="border-radius: 3px 3px 0 0"
+      @click="onTopClick('wrapper')"
+    >
       搜索/服务通道
     </a>
     <a href="javascript:void(0)" @click="onTopClick('announcement')">
@@ -25,7 +29,11 @@
     <a href="javascript:void(0)" @click="onTopClick('friendLink')">
       友情链接
     </a>
-    <a href="javascript:void(0)" @click="onTopClick('wrapper')">
+    <a
+      href="javascript:void(0)"
+      style="border-radius: 0 0 3px 3px"
+      @click="onTopClick('wrapper')"
+    >
       <span class="material-icons"> expand_less </span>返回顶部
     </a>
   </nav>
@@ -34,33 +42,36 @@
 <script>
 export default {
   props: {
-    columnType: Number
+    columnType: {
+      type: Number,
+      default: 0
+    }
   },
   watch: {
     columnType: {
       handler(newVal, oldVal) {
         // console.log(newVal, oldVal);
-        this.$refs.anchorNav.children[oldVal].classList.remove("active");
-        this.$refs.anchorNav.children[newVal].classList.add("active");
+        this.$refs.anchorNav.children[oldVal].classList.remove('active')
+        this.$refs.anchorNav.children[newVal].classList.add('active')
       }
     }
   },
+  mounted() {
+    const sections = this.$refs.anchorNav.children
+    // console.log("sections", sections);
+    sections[this.columnType].classList.add('active')
+  },
   methods: {
     onTopClick(locationId) {
-      //获取目标元素
-      let element = document.getElementById(locationId);
-      console.log(locationId);
-      console.log(element);
-      //元素方法调用
-      element.scrollIntoView();
+      // 获取目标元素
+      const element = document.getElementById(locationId)
+      console.log(locationId)
+      console.log(element)
+      // 元素方法调用
+      element.scrollIntoView()
     }
-  },
-  mounted() {
-    let sections = this.$refs.anchorNav.children;
-    // console.log("sections", sections);
-    sections[this.columnType].classList.add("active");
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

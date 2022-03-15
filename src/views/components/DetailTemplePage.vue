@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-03-10 15:12:58
+ * @LastEditTime: 2022-03-15 19:48:25
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -18,7 +18,7 @@
       </div>
       <div class="dateTittle animate__animated animate__fadeInUp">
         <h4 class="tittle">
-          <div class="material-icons md-light" v-if="dateTittle">
+          <div v-if="dateTittle" class="material-icons md-light">
             today
           </div>
           <!-- <md-icon style="color: white">today</md-icon> -->
@@ -27,26 +27,26 @@
       </div>
     </parallax>
     <div class="main main-raised">
-      <div class="section md-layout" id="breadcrumb">
+      <div id="breadcrumb" class="section md-layout">
         <div class="md-layout-item md-size-10 md-small-size-5" />
         <div class="md-layout-item md-size-80">
-          <slot name="breadcrumb"></slot>
+          <slot name="breadcrumb" />
         </div>
         <div class="md-layout-item md-size-10 md-small-size-5" />
       </div>
 
-      <div class="section md-layout" id="buttons">
+      <div id="buttons" class="section md-layout">
         <div class="md-layout-item md-size-10 md-small-size-5" />
         <div class="md-layout-item md-size-80">
-          <slot name="buttons"></slot>
+          <slot name="buttons" />
         </div>
         <div class="md-layout-item md-size-10 md-small-size-5" />
       </div>
 
-      <div class="section md-layout" id="text">
+      <div id="text" class="section md-layout">
         <div class="md-layout-item md-size-10 md-small-size-5" />
         <div class="md-layout-item md-size-80">
-          <slot name="text"></slot>
+          <slot name="text" />
         </div>
         <div class="md-layout-item md-size-10 md-small-size-5" />
       </div>
@@ -59,7 +59,7 @@ export default {
   props: {
     headerImage: {
       type: String,
-      default: require("@/assets/img/header.jpg")
+      default: require('@/assets/img/header.jpg')
     },
     headerTittle: String,
     detailTittle: String,
@@ -69,10 +69,10 @@ export default {
     headerStyle() {
       return {
         backgroundImage: `url(${this.headerImage})`
-      };
+      }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

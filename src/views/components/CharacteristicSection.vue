@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 09:30:09
- * @LastEditTime: 2022-03-14 16:12:19
+ * @LastEditTime: 2022-03-15 19:43:27
  * @LastEditors: 郑钊宇
  * @Description: 特色资源选项卡
 -->
@@ -9,8 +9,8 @@
   <div class="md-layout">
     <div
       class="characteristicSection section-open"
-      @click.stop="showInfo($event)"
       :style="sectionStyle"
+      @click.stop="showInfo($event)"
     >
       <div class="portrait">这是一个测试标题</div>
       <div class="text">
@@ -20,8 +20,8 @@
 
     <div
       class="characteristicSection"
-      @click.stop="showInfo($event)"
       :style="sectionStyle"
+      @click.stop="showInfo($event)"
     >
       <div class="portrait">这是一个测试标题</div>
       <div class="text">
@@ -31,8 +31,8 @@
 
     <div
       class="characteristicSection"
-      @click.stop="showInfo($event)"
       :style="sectionStyle"
+      @click.stop="showInfo($event)"
     >
       <div class="portrait">这是一个测试标题</div>
       <div class="text">
@@ -42,8 +42,8 @@
 
     <div
       class="characteristicSection"
-      @click.stop="showInfo($event)"
       :style="sectionStyle"
+      @click.stop="showInfo($event)"
     >
       <div class="portrait">这是一个测试标题</div>
       <div class="text">
@@ -53,8 +53,8 @@
 
     <div
       class="characteristicSection"
-      @click.stop="showInfo($event)"
       :style="sectionStyle"
+      @click.stop="showInfo($event)"
     >
       <div class="portrait">这是一个测试标题</div>
       <div class="text">
@@ -64,8 +64,8 @@
 
     <div
       class="characteristicSection"
-      @click.stop="showInfo($event)"
       :style="sectionStyle"
+      @click.stop="showInfo($event)"
     >
       <div class="portrait">这是一个测试标题</div>
       <div class="text">
@@ -80,26 +80,26 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/bg3.jpg")
+      default: require('@/assets/img/bg3.jpg')
     }
   },
   computed: {
     sectionStyle() {
       return {
         backgroundImage: `url(${this.image})`
-      };
+      }
     }
   },
   methods: {
     showInfo(e) {
-      let section = document.getElementsByClassName("characteristicSection");
+      const section = document.getElementsByClassName('characteristicSection')
       section.forEach(e => {
-        e.classList.remove("section-open");
-      });
-      e.currentTarget.classList.add("section-open");
+        e.classList.remove('section-open')
+      })
+      e.currentTarget.classList.add('section-open')
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -109,7 +109,7 @@ export default {
   border-radius: 3px;
   height: 450px;
   width: 8%;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease;
   color: rgb(255, 255, 255);
   box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 12%);
   overflow: hidden;
@@ -122,7 +122,8 @@ export default {
     font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
     font-weight: bold;
     top: 5%;
-    transition: top 0.5s ease;
+    transition: top 0.3s ease;
+
     &:hover {
       top: 10%;
     }

@@ -3,7 +3,7 @@
     <div id="buttons">
       <div class="title">
         <h3>
-          Buttons <br />
+          Buttons <br>
           <small>Pick your style</small>
         </h3>
       </div>
@@ -11,12 +11,12 @@
         <div class="md-layout-item md-size-66 mx-auto">
           <md-button class="md-primary">Default</md-button>
           <md-button class="md-primary md-round">Round</md-button>
-          <md-button class="md-primary"
-            ><md-icon>favorite</md-icon> With Icon</md-button
-          >
-          <md-button class="md-primary md-just-icon md-round"
-            ><md-icon>favorite</md-icon></md-button
-          >
+          <md-button
+            class="md-primary"
+          ><md-icon>favorite</md-icon> With Icon</md-button>
+          <md-button
+            class="md-primary md-just-icon md-round"
+          ><md-icon>favorite</md-icon></md-button>
           <md-button class="md-primary md-simple">Simple</md-button>
         </div>
       </div>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <!-- end buttons -->
-    <div class="space-50"></div>
+    <div class="space-50" />
 
     <!-- Inputs -->
     <div id="inputs">
@@ -60,7 +60,7 @@
           class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
         >
           <md-field>
-            <md-input v-model="initial" placeholder="Regular"></md-input>
+            <md-input v-model="initial" placeholder="Regular" />
           </md-field>
         </div>
         <div
@@ -68,7 +68,7 @@
         >
           <md-field>
             <label>With Floating Label</label>
-            <md-input v-model="floatingLabel" type="text"></md-input>
+            <md-input v-model="floatingLabel" type="text" />
           </md-field>
         </div>
         <div
@@ -76,7 +76,7 @@
         >
           <md-field class="md-valid">
             <label>Success Input</label>
-            <md-input v-model="success" type="text"></md-input>
+            <md-input v-model="success" type="text" />
             <md-icon>done</md-icon>
           </md-field>
         </div>
@@ -85,7 +85,7 @@
         >
           <md-field class="md-error">
             <label>Error Input</label>
-            <md-input v-model="error" type="text"></md-input>
+            <md-input v-model="error" type="text" />
             <md-icon>clear</md-icon>
           </md-field>
         </div>
@@ -97,25 +97,25 @@
             <md-input
               v-model="withMIcon"
               placeholder="With Material Icons"
-            ></md-input>
+            />
           </md-field>
         </div>
         <div
           class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
         >
           <md-field class="md-form-group">
-            <i class="fas fa-users"></i>
+            <i class="fas fa-users" />
             <md-input
               v-model="withFaIcon"
               placeholder="With Font Awesome Icons"
-            ></md-input>
+            />
           </md-field>
         </div>
       </div>
     </div>
     <!-- end inputs -->
 
-    <div class="space-50"></div>
+    <div class="space-50" />
 
     <!-- Checkboxes/Radios/Toggle -->
     <div id="checkRadios">
@@ -129,12 +129,14 @@
           <div class="flex-column">
             <md-checkbox v-model="checkbox1">Checked</md-checkbox>
             <md-checkbox v-model="checkbox2">Unchecked</md-checkbox>
-            <md-checkbox v-model="checkbox3" disabled
-              >Disabled Checked</md-checkbox
-            >
-            <md-checkbox v-model="checkbox4" disabled
-              >Disabled Unchecked</md-checkbox
-            >
+            <md-checkbox
+              v-model="checkbox3"
+              disabled
+            >Disabled Checked</md-checkbox>
+            <md-checkbox
+              v-model="checkbox4"
+              disabled
+            >Disabled Unchecked</md-checkbox>
           </div>
         </div>
         <div
@@ -146,12 +148,16 @@
           <div class="flex-column">
             <md-radio v-model="radio1" :value="true">Radio is on</md-radio>
             <md-radio v-model="radio1" :value="false">Radio is off</md-radio>
-            <md-radio v-model="radio2" :value="true" disabled
-              >Disabled Radio is on</md-radio
-            >
-            <md-radio v-model="radio2" :value="false" disabled
-              >Disabled Radio is off</md-radio
-            >
+            <md-radio
+              v-model="radio2"
+              :value="true"
+              disabled
+            >Disabled Radio is on</md-radio>
+            <md-radio
+              v-model="radio2"
+              :value="false"
+              disabled
+            >Disabled Radio is off</md-radio>
           </div>
         </div>
         <div
@@ -169,7 +175,7 @@
     </div>
     <!-- end Checkboxes/Radios/Toggle -->
 
-    <div class="space-70"></div>
+    <div class="space-70" />
 
     <!-- Progress/Pagination -->
     <div id="progress-pagination">
@@ -181,37 +187,35 @@
           <md-progress-bar
             class="md-primary"
             :md-value="amount"
-          ></md-progress-bar>
+          />
           <md-progress-bar
             class="md-info"
             :md-value="amount2"
-          ></md-progress-bar>
+          />
           <md-progress-bar
             class="md-warning"
             md-mode="buffer"
             :md-value="buffer"
             :md-buffer="buffer"
-          ></md-progress-bar>
+          />
         </div>
         <div class="md-layout-item md-size-50 md-xsmall-size-100">
           <div class="title">
             <h3>Pagination</h3>
           </div>
-          <pagination no-arrows v-model="defaultPagination" :page-count="5">
-          </pagination>
+          <pagination v-model="defaultPagination" no-arrows :page-count="5" />
           <pagination
-            class="pagination-info"
             v-model="infoPagination"
+            class="pagination-info"
             with-text
             :page-count="5"
-          >
-          </pagination>
+          />
         </div>
       </div>
     </div>
     <!-- end progress/pagination -->
 
-    <div class="space-50"></div>
+    <div class="space-50" />
 
     <!-- Sliders -->
     <div id="sliders">
@@ -220,10 +224,9 @@
           <div class="title">
             <h3>Sliders</h3>
           </div>
-          <slider v-model="sliders.simple"> </slider>
+          <slider v-model="sliders.simple" />
 
-          <slider v-model="sliders.rangeSlider" type="info" :connect="true">
-          </slider>
+          <slider v-model="sliders.rangeSlider" type="info" :connect="true" />
         </div>
         <div class="md-layout-item md-size-50 md-xsmall-size-100">
           <div class="title">
@@ -244,9 +247,9 @@
 </template>
 
 <script>
-import { Pagination } from "@/components";
-import { Slider } from "@/components";
-import { Badge } from "@/components";
+import { Pagination } from '@/components'
+import { Slider } from '@/components'
+import { Badge } from '@/components'
 
 export default {
   components: {
@@ -279,9 +282,9 @@ export default {
         simple: 40,
         rangeSlider: [20, 60]
       }
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

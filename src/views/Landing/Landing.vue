@@ -13,13 +13,12 @@
               information that can make you or your product create the first
               impression.
             </h4>
-            <br />
+            <br>
             <md-button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               class="md-success md-lg"
               target="_blank"
-              ><i class="fas fa-play"></i> Watch video</md-button
-            >
+            ><i class="fas fa-play" /> Watch video</md-button>
           </div>
         </div>
       </div>
@@ -99,11 +98,11 @@
                         :src="teamImg1"
                         alt="Thumbnail Image"
                         class="img-raised rounded-circle img-fluid"
-                      />
+                      >
                     </div>
                     <h4 class="card-title">
                       Gigi Hadid
-                      <br />
+                      <br>
                       <small class="card-description text-muted">Model</small>
                     </h4>
 
@@ -121,19 +120,19 @@
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter" />
                       </md-button>
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram" />
                       </md-button>
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-facebook-square" />
                       </md-button>
                     </md-card-actions>
                   </md-card>
@@ -147,14 +146,14 @@
                         :src="teamImg2"
                         alt="Thumbnail Image"
                         class="img-raised rounded-circle img-fluid"
-                      />
+                      >
                     </div>
                     <h4 class="card-title">
                       Carla Hortensia
-                      <br />
-                      <small class="card-description text-muted"
-                        >Designer</small
-                      >
+                      <br>
+                      <small
+                        class="card-description text-muted"
+                      >Designer</small>
                     </h4>
 
                     <md-card-content>
@@ -171,13 +170,13 @@
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter" />
                       </md-button>
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-linkedin" />
                       </md-button>
                     </md-card-actions>
                   </md-card>
@@ -191,11 +190,11 @@
                         :src="teamImg3"
                         alt="Thumbnail Image"
                         class="img-raised rounded-circle img-fluid"
-                      />
+                      >
                     </div>
                     <h4 class="card-title">
                       Kendall Jenner
-                      <br />
+                      <br>
                       <small class="card-description text-muted">Model</small>
                     </h4>
 
@@ -213,19 +212,19 @@
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter" />
                       </md-button>
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram" />
                       </md-button>
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-facebook-square" />
                       </md-button>
                     </md-card-actions>
                   </md-card>
@@ -251,19 +250,19 @@
                   <div class="md-layout-item md-size-50">
                     <md-field>
                       <label>Your Name</label>
-                      <md-input v-model="name" type="text"></md-input>
+                      <md-input v-model="name" type="text" />
                     </md-field>
                   </div>
                   <div class="md-layout-item md-size-50">
                     <md-field>
                       <label>Your Email</label>
-                      <md-input v-model="email" type="email"></md-input>
+                      <md-input v-model="email" type="email" />
                     </md-field>
                   </div>
                 </div>
                 <md-field maxlength="5">
                   <label>Your Message</label>
-                  <md-textarea v-model="message"></md-textarea>
+                  <md-textarea v-model="message" />
                 </md-field>
                 <div class="md-layout">
                   <div class="md-layout-item md-size-33 mx-auto text-center">
@@ -281,23 +280,23 @@
 
 <script>
 export default {
-  bodyClass: "landing-page",
+  bodyClass: 'landing-page',
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/bg7.jpg")
+      default: require('@/assets/img/bg7.jpg')
     },
     teamImg1: {
       type: String,
-      default: require("@/assets/img/faces/avatar.jpg")
+      default: require('@/assets/img/faces/avatar.jpg')
     },
     teamImg2: {
       type: String,
-      default: require("@/assets/img/faces/christian.jpg")
+      default: require('@/assets/img/faces/christian.jpg')
     },
     teamImg3: {
       type: String,
-      default: require("@/assets/img/faces/kendall.jpg")
+      default: require('@/assets/img/faces/kendall.jpg')
     }
   },
   data() {
@@ -305,16 +304,16 @@ export default {
       name: null,
       email: null,
       message: null
-    };
+    }
   },
   computed: {
     headerStyle() {
       return {
         backgroundImage: `url(${this.header})`
-      };
+      }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

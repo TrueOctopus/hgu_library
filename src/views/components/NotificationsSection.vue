@@ -1,3 +1,10 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-02-16 14:19:24
+ * @LastEditTime: 2022-03-15 19:48:53
+ * @LastEditors: 郑钊宇
+ * @Description:
+-->
 <template>
   <div class="wrapper">
     <div id="notifications">
@@ -78,14 +85,14 @@
 export default {
   methods: {
     removeNotify(e, notifyClass) {
-      var target = e.target;
+      var target = e.target
       while (target.className.indexOf(notifyClass) === -1) {
-        target = target.parentNode;
+        target = target.parentNode
       }
-      return target.parentNode.removeChild(target);
+      return target.parentNode.removeChild(target)
     }
   }
-};
+}
 </script>
 
 <style lang="css"></style>

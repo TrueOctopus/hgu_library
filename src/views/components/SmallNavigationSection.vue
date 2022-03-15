@@ -42,26 +42,30 @@
                               <a href="#pablo" class="dropdown-item">Action</a>
                             </li>
                             <li>
-                              <a href="#pablo" class="dropdown-item"
-                                >Another action</a
-                              >
+                              <a
+                                href="#pablo"
+                                class="dropdown-item"
+                              >Another action</a>
                             </li>
                             <li>
-                              <a href="#pablo" class="dropdown-item"
-                                >Something else here</a
-                              >
+                              <a
+                                href="#pablo"
+                                class="dropdown-item"
+                              >Something else here</a>
                             </li>
-                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-divider" />
                             <li>
-                              <a href="#pablo" class="dropdown-item"
-                                >Separated link</a
-                              >
+                              <a
+                                href="#pablo"
+                                class="dropdown-item"
+                              >Separated link</a>
                             </li>
-                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-divider" />
                             <li>
-                              <a href="#pablo" class="dropdown-item"
-                                >One more separated link</a
-                              >
+                              <a
+                                href="#pablo"
+                                class="dropdown-item"
+                              >One more separated link</a>
                             </li>
                           </ul>
                         </drop-down>
@@ -74,12 +78,12 @@
                 <md-button
                   class="md-just-icon md-simple md-white md-toolbar-toggle"
                 >
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
+                  <span class="icon-bar" />
+                  <span class="icon-bar" />
+                  <span class="icon-bar" />
                 </md-button>
 
-                <div class="md-collapse"></div>
+                <div class="md-collapse" />
               </div>
             </div>
           </md-toolbar>
@@ -97,9 +101,9 @@
                 <md-button
                   class="md-just-icon md-simple md-white md-toolbar-toggle"
                 >
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
+                  <span class="icon-bar" />
+                  <span class="icon-bar" />
+                  <span class="icon-bar" />
                 </md-button>
 
                 <div class="md-collapse">
@@ -129,31 +133,36 @@
                             <ul class="dropdown-menu dropdown-menu-right">
                               <li class="dropdown-header">Dropdown header</li>
                               <li>
-                                <a href="#pablo" class="dropdown-item"
-                                  >Action</a
-                                >
+                                <a
+                                  href="#pablo"
+                                  class="dropdown-item"
+                                >Action</a>
                               </li>
                               <li>
-                                <a href="#pablo" class="dropdown-item"
-                                  >Another action</a
-                                >
+                                <a
+                                  href="#pablo"
+                                  class="dropdown-item"
+                                >Another action</a>
                               </li>
                               <li>
-                                <a href="#pablo" class="dropdown-item"
-                                  >Something else here</a
-                                >
+                                <a
+                                  href="#pablo"
+                                  class="dropdown-item"
+                                >Something else here</a>
                               </li>
-                              <li class="dropdown-divider"></li>
+                              <li class="dropdown-divider" />
                               <li>
-                                <a href="#pablo" class="dropdown-item"
-                                  >Separated link</a
-                                >
+                                <a
+                                  href="#pablo"
+                                  class="dropdown-item"
+                                >Separated link</a>
                               </li>
-                              <li class="dropdown-divider"></li>
+                              <li class="dropdown-divider" />
                               <li>
-                                <a href="#pablo" class="dropdown-item"
-                                  >One more separated link</a
-                                >
+                                <a
+                                  href="#pablo"
+                                  class="dropdown-item"
+                                >One more separated link</a>
                               </li>
                             </ul>
                           </drop-down>
@@ -180,25 +189,25 @@ export default {
   data() {
     return {
       responsive: false
-    };
+    }
+  },
+  mounted() {
+    this.onResponsiveInverted()
+    window.addEventListener('resize', this.onResponsiveInverted)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResponsiveInverted)
   },
   methods: {
     onResponsiveInverted() {
       if (window.innerWidth < 500) {
-        this.responsive = true;
+        this.responsive = true
       } else {
-        this.responsive = false;
+        this.responsive = false
       }
     }
-  },
-  mounted() {
-    this.onResponsiveInverted();
-    window.addEventListener("resize", this.onResponsiveInverted);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.onResponsiveInverted);
   }
-};
+}
 </script>
 
 <style lang="css"></style>

@@ -1,16 +1,16 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:11:53
- * @LastEditTime: 2022-03-10 15:18:45
+ * @LastEditTime: 2022-03-15 19:53:15
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告页面
 -->
 <template>
   <div>
     <TemplePage
-      :headerTittle="headerTittle"
-      :detailTittle="detailTittle"
-      :dateTittle="dateTittle"
+      :header-tittle="headerTittle"
+      :detail-tittle="detailTittle"
+      :date-tittle="dateTittle"
     >
       <template #breadcrumb>
         <el-breadcrumb separator-class="el-icon-arrow-right">
@@ -26,7 +26,7 @@
           'asdasdasjdghalsdhasjlkd' "12314551"
           这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘
         </p>
-        <img :src="headerImage" alt="测试用" />
+        <img :src="headerImage" alt="测试用">
         <p>
           这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘这是一段测试用文稿《测试用》，！？；’”“‘
         </p>
@@ -42,26 +42,26 @@
 </template>
 
 <script>
-import TemplePage from "../components/DetailTemplePage.vue";
+import TemplePage from '../components/DetailTemplePage.vue'
 export default {
-  name: "news",
+  name: 'News',
   data() {
     return {
-      headerTittle: "新闻|公告",
-      detailTittle: "一段测试文字一段测试文字一段测试文字",
-      dateTittle: "2022/03/05"
-    };
+      headerTittle: '新闻|公告',
+      detailTittle: '一段测试文字一段测试文字一段测试文字',
+      dateTittle: '2022/03/05'
+    }
   },
   props: {
     headerImage: {
       type: String,
-      default: require("@/assets/img/header.jpg")
+      default: require('@/assets/img/header.jpg')
     }
   },
   components: {
     TemplePage
   }
-};
+}
 </script>
 
 <style></style>

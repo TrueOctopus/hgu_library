@@ -14,8 +14,7 @@
               <md-button
                 class="md-success md-block"
                 @click="classicModal = true"
-                ><md-icon>library_books</md-icon> Classic</md-button
-              >
+              ><md-icon>library_books</md-icon> Classic</md-button>
               <modal v-if="classicModal" @close="classicModalHide">
                 <template slot="header">
                   <h4 class="modal-title">Modal Title</h4>
@@ -48,8 +47,7 @@
                   <md-button
                     class="md-danger md-simple"
                     @click="classicModalHide"
-                    >Close</md-button
-                  >
+                  >Close</md-button>
                 </template>
               </modal>
             </div>
@@ -114,7 +112,7 @@
               </v-popover>
             </div>
           </div>
-          <div class="md-layout" id="tooltips">
+          <div id="tooltips" class="md-layout">
             <div class="md-layout-item">
               <div class="title">
                 <h3>Tooltips</h3>
@@ -142,7 +140,7 @@
           </div>
         </div>
       </div>
-      <br />
+      <br>
       <div class="title">
         <h3>Carousel</h3>
       </div>
@@ -156,9 +154,9 @@
               autoplay
               :autoplay-timeout="5000"
               :mouse-drag="false"
-              navigationEnabled
-              navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
-              navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
+              navigation-enabled
+              navigation-next-label="<i class='material-icons'>keyboard_arrow_right</i>"
+              navigation-prev-label="<i class='material-icons'>keyboard_arrow_left</i>"
             >
               <slide>
                 <div class="carousel-caption">
@@ -167,7 +165,7 @@
                     Somewhere Beyond, United States
                   </h4>
                 </div>
-                <img :src="carousel1" alt="carousel1" />
+                <img :src="carousel1" alt="carousel1">
               </slide>
               <slide>
                 <div class="carousel-caption">
@@ -176,7 +174,7 @@
                     Yellowstone National Park, United States
                   </h4>
                 </div>
-                <img :src="carousel2" alt="carousel2" />
+                <img :src="carousel2" alt="carousel2">
               </slide>
               <slide>
                 <div class="carousel-caption">
@@ -185,7 +183,7 @@
                     Yellowstone National Park, United States
                   </h4>
                 </div>
-                <img :src="carousel3" alt="carousel3" />
+                <img :src="carousel3" alt="carousel3">
               </slide>
             </carousel>
           </md-card>
@@ -196,7 +194,7 @@
 </template>
 
 <script>
-import { Modal } from "@/components";
+import { Modal } from '@/components'
 export default {
   components: {
     Modal
@@ -204,16 +202,16 @@ export default {
   data() {
     return {
       classicModal: false,
-      selectedDate: new Date("2018/03/26"),
-      carousel1: require("@/assets/img/nature-2.jpg"),
-      carousel2: require("@/assets/img/nature.jpg"),
-      carousel3: require("@/assets/img/nature-3.jpg")
-    };
+      selectedDate: new Date('2018/03/26'),
+      carousel1: require('@/assets/img/nature-2.jpg'),
+      carousel2: require('@/assets/img/nature.jpg'),
+      carousel3: require('@/assets/img/nature-3.jpg')
+    }
   },
   methods: {
     classicModalHide() {
-      this.classicModal = false;
+      this.classicModal = false
     }
   }
-};
+}
 </script>

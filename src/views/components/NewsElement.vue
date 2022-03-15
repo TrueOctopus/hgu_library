@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-14 15:10:53
+ * @LastEditTime: 2022-03-15 19:48:42
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
@@ -20,41 +20,10 @@
 </template>
 
 <script>
-import { Badge } from "@/components";
+import { Badge } from '@/components'
 
 export default {
   components: { Badge },
-  data() {
-    return {};
-  },
-  computed: {
-    newsType() {
-      let news = ["新闻", "公告", "购买", "试用"];
-      return news[this.newsTypeIndex];
-    },
-    newsColor() {
-      let colorTabs = ["primary", "warning", "success", "info"];
-      return colorTabs[this.newsTypeIndex];
-    },
-    tabColorStyle() {
-      let tabColor = "#00bcd4";
-      switch (this.newsTypeIndex) {
-        case 0:
-          tabColor = "#9c27b0";
-          break;
-        case 1:
-          tabColor = "#ff9800";
-          break;
-        case 2:
-          tabColor = "#2196f3";
-          break;
-        case 3:
-          tabColor = "#00bcd4";
-          break;
-      }
-      return `border-left: 5px solid ${tabColor};`;
-    }
-  },
   props: {
     newsTypeIndex: {
       type: Number,
@@ -73,8 +42,39 @@ export default {
       require: true
     }
   },
+  data() {
+    return {}
+  },
+  computed: {
+    newsType() {
+      const news = ['新闻', '公告', '购买', '试用']
+      return news[this.newsTypeIndex]
+    },
+    newsColor() {
+      const colorTabs = ['primary', 'warning', 'success', 'info']
+      return colorTabs[this.newsTypeIndex]
+    },
+    tabColorStyle() {
+      let tabColor = '#00bcd4'
+      switch (this.newsTypeIndex) {
+        case 0:
+          tabColor = '#9c27b0'
+          break
+        case 1:
+          tabColor = '#ff9800'
+          break
+        case 2:
+          tabColor = '#2196f3'
+          break
+        case 3:
+          tabColor = '#00bcd4'
+          break
+      }
+      return `border-left: 5px solid ${tabColor};`
+    }
+  },
   methods: {}
-};
+}
 </script>
 
 <style lang="scss" scoped>
