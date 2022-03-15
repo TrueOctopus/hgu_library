@@ -1,12 +1,12 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-14 21:10:52
+ * @LastEditTime: 2022-03-15 09:46:04
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
 <template>
-  <div class="wrapper">
+  <div id="wrapper" class="wrapper">
     <AnchorNav :columnType="columnType"></AnchorNav>
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout" style="width:99%">
@@ -18,6 +18,7 @@
               </div> -->
             <div
               ref="tabsNav"
+              id="tabsNav"
               class="md-layout animate__animated animate__slow animate__fadeInUp"
             >
               <div class="md-layout-item md-size-10"></div>
@@ -657,7 +658,6 @@ export default {
           { required: true, message: "请输入密码", trigger: "blur" }
         ]
       },
-      navShow: "",
       columnType: 0
     };
   },
@@ -674,12 +674,6 @@ export default {
     }
   },
   methods: {
-    onTopClick(locationId) {
-      //获取目标元素
-      let element = document.getElementById(locationId);
-      //元素方法调用
-      element.scrollIntoView();
-    },
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
@@ -693,6 +687,33 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     }
+  },
+  mounted() {
+    this.$bus.$on("scrollValue", scrollValue => {
+      let oneHeight = this.$refs.tabsNav.offsetHeight;
+      let twoHeight = this.$refs.announcement.offsetHeight + oneHeight;
+      let threeHeight = this.$refs.publicity.offsetHeight + twoHeight;
+      let fourHeight = this.$refs.lecture.offsetHeight + threeHeight;
+      let fiveHeight = this.$refs.characteristic.offsetHeight + fourHeight;
+      let sixHeight = this.$refs.friendLink.offsetHeight + fiveHeight;
+
+      if (scrollValue < oneHeight) {
+        this.columnType = 0;
+      } else if (scrollValue < twoHeight) {
+        this.columnType = 1;
+      } else if (scrollValue < threeHeight) {
+        this.columnType = 2;
+      } else if (scrollValue < fourHeight) {
+        this.columnType = 3;
+      } else if (scrollValue < fiveHeight) {
+        this.columnType = 4;
+      } else {
+        this.columnType = 5;
+      }
+    });
+  },
+  beforeDestroy() {
+    this.$bus.$off("scrollValue");
   }
 };
 </script>

@@ -1,19 +1,33 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-10 18:27:49
- * @LastEditTime: 2022-03-14 20:18:04
+ * @LastEditTime: 2022-03-15 09:48:47
  * @LastEditors: 郑钊宇
  * @Description: 侧边导航条
 -->
 <template>
   <nav ref="anchorNav" class="anchor-nav">
-    <a href="#">搜索/服务通道</a>
-    <a href="#">新闻公告</a>
-    <a href="#">阅读推广</a>
-    <a href="#">活动讲座</a>
-    <a href="#">特色资源</a>
-    <a href="#">友情链接</a>
-    <a href="#"> <span class="material-icons"> expand_less </span>返回顶部 </a>
+    <a href="javascript:void(0)" @click="onTopClick('wrapper')">
+      搜索/服务通道
+    </a>
+    <a href="javascript:void(0)" @click="onTopClick('announcement')">
+      新闻公告
+    </a>
+    <a href="javascript:void(0)" @click="onTopClick('publicity')">
+      阅读推广
+    </a>
+    <a href="javascript:void(0)" @click="onTopClick('lecture')">
+      活动讲座
+    </a>
+    <a href="javascript:void(0)" @click="onTopClick('characteristic')">
+      特色资源
+    </a>
+    <a href="javascript:void(0)" @click="onTopClick('friendLink')">
+      友情链接
+    </a>
+    <a href="javascript:void(0)" @click="onTopClick('wrapper')">
+      <span class="material-icons"> expand_less </span>返回顶部
+    </a>
   </nav>
 </template>
 
@@ -29,6 +43,16 @@ export default {
         this.$refs.anchorNav.children[oldVal].classList.remove("active");
         this.$refs.anchorNav.children[newVal].classList.add("active");
       }
+    }
+  },
+  methods: {
+    onTopClick(locationId) {
+      //获取目标元素
+      let element = document.getElementById(locationId);
+      console.log(locationId);
+      console.log(element);
+      //元素方法调用
+      element.scrollIntoView();
     }
   },
   mounted() {

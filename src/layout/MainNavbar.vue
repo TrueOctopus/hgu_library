@@ -296,6 +296,7 @@ export default {
       // let searchColor = document.getElementsByClassName("search")[0];
       // let searchLabel = document.getElementsByTagName("label")[0];
       this.currentScrollValue = scrollValue;
+      this.$bus.$emit("scrollValue", scrollValue);
 
       if (!this.mobileFlag) {
         if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
@@ -339,43 +340,6 @@ export default {
             // navbarColor.classList.add("md-transparent");
           }
         }
-      }
-    },
-    // FIXME 悬浮导航条滚动监听
-    anchorScroll() {
-      let scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop;
-      console.log(scrollTop);
-      this.navShow = scrollTop;
-      let oneHeight = this.$refs.tabsNav.offsetHeight;
-      let twoHeight = this.$refs.announcement.offsetHeight + oneHeight;
-      let threeHeight = this.$refs.publicity.offsetHeight + twoHeight;
-      let fourHeight = this.$refs.lecture.offsetHeight + threeHeight;
-      let fiveHeight = this.$refs.characteristic.offsetHeight + fourHeight;
-      let sixHeight = this.$refs.friendLink.offsetHeight + fiveHeight;
-
-      console.log(
-        oneHeight,
-        twoHeight,
-        threeHeight,
-        fourHeight,
-        fiveHeight,
-        sixHeight
-      );
-      if (scrollTop < twoHeight) {
-        this.columnType = 0;
-      }
-      if (scrollTop < threeHeight) {
-        this.columnType = 1;
-      }
-      if (scrollTop < fourHeight) {
-        this.columnType = 2;
-      }
-      if (scrollTop < fiveHeight) {
-        this.columnType = 3;
-      }
-      if (scrollTop < sixHeight) {
-        this.columnType = 4;
       }
     },
     scrollListener() {
