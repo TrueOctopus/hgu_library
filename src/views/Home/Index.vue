@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-15 19:52:55
+ * @LastEditTime: 2022-03-18 10:46:03
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -189,6 +189,8 @@
                       </p>
                     </md-tab>
                   </md-tabs>
+
+                  <div>123</div>
                 </template>
               </nav-tabs-card>
               <div class="md-layout-item md-size-10" />
@@ -721,9 +723,11 @@ export default {
 .main-raised {
   margin-top: 0 !important;
 }
-// #resBtns {
-//   padding: 0px 0px 30px;
-// }
+#tabsNav {
+ .md-card {
+   height: 35vh;
+ }
+}
 .res-btns {
   background-color: #fff;
   border-radius: 5px;

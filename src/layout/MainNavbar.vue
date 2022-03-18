@@ -51,31 +51,63 @@
                   >
                     <p>资源</p>
                   </md-button>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-header">Dropdown header</li>
-                    <li>
-                      <a href="kits" class="dropdown-item">Action</a>
-                    </li>
-                    <li>
-                      <a href="#pablo" class="dropdown-item">Another action</a>
-                    </li>
-                    <li>
-                      <a
-                        href="#pablo"
-                        class="dropdown-item"
-                      >Something else here</a>
-                    </li>
-                    <li class="dropdown-divider" />
-                    <li>
-                      <a href="#pablo" class="dropdown-item">Separated link</a>
-                    </li>
-                    <li class="dropdown-divider" />
-                    <li>
-                      <a
-                        href="#pablo"
-                        class="dropdown-item"
-                      >One more separated link</a>
-                    </li>
+                  <ul class="dropdown-menu" style="width: 80vh">
+                    <el-row>
+                      <el-col :span="12">
+                        <ul>
+                          <li class="dropdown-header">Dropdown header</li>
+                          <li>
+                            <a href="kits" class="dropdown-item">Action</a>
+                          </li>
+                          <li>
+                            <a href="#pablo" class="dropdown-item">Another action</a>
+                          </li>
+                          <li>
+                            <a
+                              href="#pablo"
+                              class="dropdown-item"
+                            >Something else here</a>
+                          </li>
+                          <li class="dropdown-divider" />
+                          <li>
+                            <a href="#pablo" class="dropdown-item">Separated link</a>
+                          </li>
+                          <li class="dropdown-divider" />
+                          <li>
+                            <a
+                              href="#pablo"
+                              class="dropdown-item"
+                            >One more separated link</a>
+                          </li>
+                        </ul>
+                      </el-col>
+                      <el-col :span="12">
+                        <ul>
+                          <li class="dropdown-header">Dropdown header</li>
+                          <li>
+                            <a href="kits" class="dropdown-item">Action</a>
+                          </li>
+                          <li>
+                            <a href="#pablo" class="dropdown-item">Another action</a>
+                          </li>
+                          <li>
+                            <a
+                              href="#pablo"
+                              class="dropdown-item"
+                            >Something else here</a>
+                          </li>
+                          <li>
+                            <a href="#pablo" class="dropdown-item">Separated link</a>
+                          </li>
+                          <li>
+                            <a
+                              href="#pablo"
+                              class="dropdown-item"
+                            >One more separated link</a>
+                          </li>
+                        </ul>
+                      </el-col>
+                    </el-row>
                   </ul>
                 </drop-down>
               </div>
@@ -95,31 +127,38 @@
                   >
                     <p>读者服务</p>
                   </md-button>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-header">Dropdown header</li>
-                    <li>
-                      <a href="kits" class="dropdown-item">Action</a>
-                    </li>
-                    <li>
-                      <a href="#pablo" class="dropdown-item">Another action</a>
-                    </li>
-                    <li>
-                      <a
-                        href="#pablo"
-                        class="dropdown-item"
-                      >Something else here</a>
-                    </li>
-                    <li class="dropdown-divider" />
-                    <li>
-                      <a href="#pablo" class="dropdown-item">Separated link</a>
-                    </li>
-                    <li class="dropdown-divider" />
-                    <li>
-                      <a
-                        href="#pablo"
-                        class="dropdown-item"
-                      >One more separated link</a>
-                    </li>
+                  <ul class="dropdown-menu" style="width: 33vh">
+                    <el-row>
+                      <el-col :span="24">
+                        <ul>
+                          <li>
+                            <a href="kits" class="dropdown-item">开馆时间</a>
+                          </li>
+                          <li>
+                            <a href="kits" class="dropdown-item">馆藏分布</a>
+                          </li>
+                          <li class="dropdown-divider" />
+                          <li class="dropdown-header">借阅服务</li>
+                          <li>
+                            <a href="kits" class="dropdown-item">借阅规则</a>
+                          </li>
+                          <li>
+                            <a href="#pablo" class="dropdown-item">借阅流程</a>
+                          </li>
+                          <li class="dropdown-divider" />
+                          <li class="dropdown-header">预约服务</li>
+                          <li>
+                            <a href="kits" class="dropdown-item">座位预约</a>
+                          </li>
+                          <li>
+                            <a href="#pablo" class="dropdown-item">研修室预约</a>
+                          </li>
+                          <li>
+                            <a href="#pablo" class="dropdown-item">讲座预约</a>
+                          </li>
+                        </ul>
+                      </el-col>
+                    </el-row>
                   </ul>
                 </drop-down>
               </div>
@@ -366,7 +405,11 @@ export default {
   }
 }
 </script>
+
 <style lang="scss" scoped>
+.el-col ul{
+  padding: 0;
+}
 #toolbar {
   * {
     font-size: 18px;
