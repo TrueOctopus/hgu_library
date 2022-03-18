@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-03-15 19:53:12
+ * @LastEditTime: 2022-03-18 17:17:31
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -22,8 +22,10 @@
           </el-breadcrumb-item>
         </el-breadcrumb>
       </template>
-      <template #buttons>
-        <md-button
+      <template #subNav>
+        <SubNav :menu-list="menuList" menu-tittle="新闻中心" />
+
+        <!-- <md-button
           ref="all"
           class="md-sm"
           :class="{ 'md-simple': buttonClass.isAllActive }"
@@ -52,7 +54,7 @@
           class="md-info md-sm"
           :class="{ 'md-simple': buttonClass.isTryActive }"
           @click="buttonShow('Try')"
-        >试用</md-button>
+        >试用</md-button> -->
       </template>
       <template #text>
         <div>
@@ -152,13 +154,15 @@
 import TemplePage from '../components/DetailTemplePage.vue'
 import NewsElem from '../components/NewsElement.vue'
 import { Pagination } from '@/components'
+import SubNav from '../components/SubNav/Index.vue'
 
 export default {
   name: 'NewsList',
   components: {
     TemplePage,
     NewsElem,
-    Pagination
+    Pagination,
+    SubNav
   },
   data() {
     return {
@@ -174,7 +178,20 @@ export default {
         isNotesActive: true,
         isBuyActive: true,
         isTryActive: true
-      }
+      },
+      menuList: [
+        {
+          title: '新闻公告',
+          children: [
+            { title: '所有新闻', link: 'newsList' },
+            { title: '菜单1-2', link: 'newsList' },
+            { title: '菜单1-3', link: 'newsList' }
+          ]
+        },
+        { title: '菜单2', link: 'newsList' },
+        { title: '菜单3', link: 'newsList' }
+      ]
+
     }
   },
   methods: {
