@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-03-18 17:48:56
+ * @LastEditTime: 2022-03-19 16:59:59
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -57,92 +57,7 @@
         >试用</md-button> -->
       </template>
       <template #text>
-        <div>
-          <NewsElem
-            :news-type-index="0"
-            tittle="这是一段测试文字"
-            date="03/03"
-            news-id="1"
-          />
-          <NewsElem
-            :news-type-index="1"
-            tittle="这是一段测试文字"
-            date="03/03"
-            news-id="1"
-          />
-          <NewsElem
-            :news-type-index="2"
-            tittle="这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="3"
-            tittle="这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="2"
-            tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="1"
-            tittle="这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="3"
-            tittle="这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="0"
-            tittle="这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="1"
-            tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="0"
-            tittle="这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="3"
-            tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-            date="03/03"
-          />
-          <NewsElem
-            :news-type-index="3"
-            tittle="这是一段测试文字"
-            date="12/13"
-          />
-          <NewsElem
-            :news-type-index="3"
-            tittle="这是一段测试文字"
-            date="12/13"
-          />
-          <NewsElem
-            :news-type-index="3"
-            tittle="这是一段测试文字"
-            date="12/13"
-          />
-          <NewsElem
-            :news-type-index="3"
-            tittle="这是一段测试文字"
-            date="12/13"
-          />
-          <pagination
-            v-model="infoPagination"
-            :class="`pagination-${infoColor}`"
-            :page-count="10"
-          />
-
-          <!-- {{ $route.params.newsId }} -->
-        </div>
+        <router-view />
       </template>
 
       <!-- {{ $route.params.newsId }} -->
@@ -152,16 +67,12 @@
 
 <script>
 import TemplePage from '../components/DetailTemplePage.vue'
-import NewsElem from '../components/NewsElement.vue'
-import { Pagination } from '@/components'
 import SubNav from '../components/SubNav/Index.vue'
 
 export default {
   name: 'NewsList',
   components: {
     TemplePage,
-    NewsElem,
-    Pagination,
     SubNav
   },
   data() {
@@ -179,50 +90,56 @@ export default {
         isBuyActive: true,
         isTryActive: true
       },
+      // TODO 修改名称
       menuList: [
+        { title: '资讯一览', link: 'all' },
         {
           title: '新闻公告',
           children: [
-            { title: '所有新闻', link: '' },
-            { title: '菜单1-2', link: '' },
-            { title: '菜单1-3', link: '' }
+            { title: '新闻列表', link: 'news' },
+            { title: '公告列表', link: 'notes' }
           ]
         },
-        { title: '菜单2', link: '' },
-        { title: '菜单3', link: '' }
+        {
+          title: '资源信息',
+          children: [
+            { title: '资源购买', link: 'buy' },
+            { title: '资源试用', link: 'try' }
+          ]
+        },
+        { title: '讲座通知', link: 'lecture' }
       ]
-
     }
   },
   methods: {
-    buttonShow(newsType) {
-      this.buttonClass.newsType = newsType
-      for (const key in this.buttonClass) {
-        this.buttonClass[key] = true
-      }
-      this.buttonClass['is' + newsType + 'Active'] = false
-      switch (newsType) {
-        case 'All':
-          this.isShowBreadcrub = false
-          break
-        case 'News':
-          this.lastBreadcrumbTittle = '新闻'
-          this.isShowBreadcrub = true
-          break
-        case 'Notes':
-          this.lastBreadcrumbTittle = '公告'
-          this.isShowBreadcrub = true
-          break
-        case 'Buy':
-          this.lastBreadcrumbTittle = '购买'
-          this.isShowBreadcrub = true
-          break
-        case 'Try':
-          this.lastBreadcrumbTittle = '试用'
-          this.isShowBreadcrub = true
-          break
-      }
-    }
+    // buttonShow(newsType) {
+    //   this.buttonClass.newsType = newsType
+    //   for (const key in this.buttonClass) {
+    //     this.buttonClass[key] = true
+    //   }
+    //   this.buttonClass['is' + newsType + 'Active'] = false
+    //   switch (newsType) {
+    //     case 'All':
+    //       this.isShowBreadcrub = false
+    //       break
+    //     case 'News':
+    //       this.lastBreadcrumbTittle = '新闻'
+    //       this.isShowBreadcrub = true
+    //       break
+    //     case 'Notes':
+    //       this.lastBreadcrumbTittle = '公告'
+    //       this.isShowBreadcrub = true
+    //       break
+    //     case 'Buy':
+    //       this.lastBreadcrumbTittle = '购买'
+    //       this.isShowBreadcrub = true
+    //       break
+    //     case 'Try':
+    //       this.lastBreadcrumbTittle = '试用'
+    //       this.isShowBreadcrub = true
+    //       break
+    //   }
+    // }
   }
 }
 </script>

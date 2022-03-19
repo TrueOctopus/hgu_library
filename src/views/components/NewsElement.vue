@@ -1,14 +1,14 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-15 20:09:13
+ * @LastEditTime: 2022-03-19 17:14:22
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
 <template>
   <div id="newsTab" :style="tabColorStyle">
     <div class="dateClass">{{ date }} |</div>
-    <router-link to="#">
+    <router-link :to="`/announcement/${urlType}`">
       <badge class="labelClass" :type="newsColor">{{ newsType }}</badge>
     </router-link>
     <span>
@@ -48,11 +48,15 @@ export default {
   },
   computed: {
     newsType() {
-      const news = ['新闻', '公告', '购买', '试用']
+      const news = ['新闻', '公告', '购买', '试用', '讲座']
+      return news[this.newsTypeIndex]
+    },
+    urlType() {
+      const news = ['news', 'notes', 'buy', 'try', 'lecture']
       return news[this.newsTypeIndex]
     },
     newsColor() {
-      const colorTabs = ['primary', 'warning', 'success', 'info']
+      const colorTabs = ['primary', 'warning', 'success', 'info', 'rose']
       return colorTabs[this.newsTypeIndex]
     },
     tabColorStyle() {
@@ -69,6 +73,9 @@ export default {
           break
         case 3:
           tabColor = '#00bcd4'
+          break
+        case 4:
+          tabColor = '#e91e63'
           break
       }
       return `border-left: 5px solid ${tabColor};`

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-18 10:46:03
+ * @LastEditTime: 2022-03-19 17:15:41
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -270,9 +270,10 @@
                 :news-type-index="1"
                 tittle="这是一段测试文字"
                 date="03/03"
+                :news-id="1"
               />
               <NewsElem
-                :news-type-index="0"
+                :news-type-index="4"
                 tittle="这是一段测试文字"
                 date="03/03"
               />
@@ -287,7 +288,7 @@
                 date="03/03"
               />
               <NewsElem
-                :news-type-index="1"
+                :news-type-index="4"
                 tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
                 date="03/03"
               />

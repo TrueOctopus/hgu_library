@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-03-18 15:59:44
+ * @LastEditTime: 2022-03-19 14:53:51
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -37,7 +37,7 @@
 
       <div class="md-layout">
         <div class="md-layout-item md-size-10 md-small-size-5" />
-        <div id="subNav" class="md-layout-item md-size-15">
+        <div v-if="$slots.subNav" id="subNav" class="md-layout-item md-size-15">
           <slot name="subNav" />
         </div>
         <div class="md-layout-item md-size-5 md-small-size-5" />

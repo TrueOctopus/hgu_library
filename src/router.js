@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-15 19:53:45
+ * @LastEditTime: 2022-03-19 16:58:15
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -17,7 +17,15 @@ import Profile from './views/Personal/Profile.vue'
 import MainNavbar from './layout/MainNavbar.vue'
 import MainFooter from './layout/MainFooter.vue'
 import Kits from './views/Kits/Kits.vue'
+
 import Announcement from './views/News/Announcement.vue'
+import AllList from './views/News/All.vue'
+import NewsList from './views/News/NewsList.vue'
+import NotesList from './views/News/NotesList.vue'
+import TryList from './views/News/TryList.vue'
+import LectureList from './views/News/LectureList.vue'
+import BuyList from './views/News/BuyList.vue'
+
 import News from './views/News/News.vue'
 import Introduction from './views/Introduction/Introduction.vue'
 import DatabaseList from './views/DataBaseResouce/DatabaseList.vue'
@@ -81,7 +89,7 @@ export default new Router({
     {
       path: '/announcement',
       name: 'Announcement',
-      // redirect: "/announcement/all",
+      redirect: '/announcement/all',
       components: {
         default: Announcement,
         header: MainNavbar,
@@ -90,54 +98,63 @@ export default new Router({
       props: {
         header: { colorOnScroll: 100 },
         footer: { backgroundColor: 'black' }
-      }
-      // children: [
-      //   {
-      //     path: "all",
-      //     name: "allAnnouncement",
-      //     components: {
-      //       default: NewsList,
-      //       header: MainNavbar,
-      //       footer: MainFooter
-      //     }
-      //   },
-      //   {
-      //     path: "news",
-      //     name: "allNews",
-      //     components: {
-      //       default: NewsList,
-      //       header: MainNavbar,
-      //       footer: MainFooter
-      //     }
-      //   },
-      //   {
-      //     path: "notes",
-      //     name: "allNotes",
-      //     components: {
-      //       default: NewsList,
-      //       header: MainNavbar,
-      //       footer: MainFooter
-      //     }
-      //   },
-      //   {
-      //     path: "buy",
-      //     name: "allBuy",
-      //     components: {
-      //       default: NewsList,
-      //       header: MainNavbar,
-      //       footer: MainFooter
-      //     }
-      //   },
-      //   {
-      //     path: "try",
-      //     name: "allTry",
-      //     components: {
-      //       default: NewsList,
-      //       header: MainNavbar,
-      //       footer: MainFooter
-      //     }
-      //   }
-      // ]
+      },
+      children: [
+        {
+          path: 'all',
+          name: 'allNews',
+          components: {
+            default: AllList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
+        },
+        {
+          path: 'news',
+          name: 'newsList',
+          components: {
+            default: NewsList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
+        },
+        {
+          path: 'notes',
+          name: 'notesList',
+          components: {
+            default: NotesList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
+        },
+        {
+          path: 'buy',
+          name: 'buyList',
+          components: {
+            default: BuyList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
+        },
+        {
+          path: 'try',
+          name: 'tryList',
+          components: {
+            default: TryList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
+        },
+        {
+          path: 'lecture',
+          name: 'lectureList',
+          components: {
+            default: LectureList,
+            header: MainNavbar,
+            footer: MainFooter
+          }
+        }
+      ]
     },
     {
       path: '/announcement/:newId',
