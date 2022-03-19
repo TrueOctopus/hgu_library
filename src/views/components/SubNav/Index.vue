@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-18 17:08:15
- * @LastEditTime: 2022-03-18 17:16:22
+ * @LastEditTime: 2022-03-18 17:46:17
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -29,8 +29,8 @@ export default {
   },
   props: {
     menuList: {
-      type: Object,
-      default: () => ({})
+      type: Array,
+      default: () => []
     },
     menuTittle: {
       type: String,
@@ -39,7 +39,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-18 14:30:26
- * @LastEditTime: 2022-03-18 17:05:13
+ * @LastEditTime: 2022-03-19 10:42:08
  * @LastEditors: 郑钊宇
  * @Description: 侧边递归树菜单
 -->
@@ -14,7 +14,9 @@
       </div>
     </template>
     <template v-for="child in data.children">
-      <MenuItem v-if="!child.children" :key="child.title"><router-link :to="child.link">{{ child.title }}</router-link></MenuItem>
+      <MenuItem v-if="!child.children" :key="child.title">
+        <router-link :to="child.link">{{ child.title }}</router-link>
+      </MenuItem>
       <Menu v-else :key="child.title" :data="child" />
     </template>
   </SubMenu>
@@ -41,5 +43,6 @@ export default {
 ul .material-icons {
   position: relative;
   top: 5px;
+  left: 25%;
 }
 </style>

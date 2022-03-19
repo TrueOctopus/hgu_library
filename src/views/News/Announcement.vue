@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-03-18 17:17:31
+ * @LastEditTime: 2022-03-18 17:48:56
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -112,7 +112,7 @@
           />
           <NewsElem
             :news-type-index="3"
-            tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
+            tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
             date="03/03"
           />
           <NewsElem
@@ -183,13 +183,13 @@ export default {
         {
           title: '新闻公告',
           children: [
-            { title: '所有新闻', link: 'newsList' },
-            { title: '菜单1-2', link: 'newsList' },
-            { title: '菜单1-3', link: 'newsList' }
+            { title: '所有新闻', link: '' },
+            { title: '菜单1-2', link: '' },
+            { title: '菜单1-3', link: '' }
           ]
         },
-        { title: '菜单2', link: 'newsList' },
-        { title: '菜单3', link: 'newsList' }
+        { title: '菜单2', link: '' },
+        { title: '菜单3', link: '' }
       ]
 
     }

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-18 15:07:21
- * @LastEditTime: 2022-03-18 16:59:31
+ * @LastEditTime: 2022-03-19 10:44:24
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.sub li {
-  padding-left: 20px !important;
+.sub a {
+  padding-left: 9vh !important;
 }
 </style>
