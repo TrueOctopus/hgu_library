@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-03-19 16:59:59
+ * @LastEditTime: 2022-03-19 17:38:49
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -15,7 +15,6 @@
             新闻公告
           </el-breadcrumb-item>
           <el-breadcrumb-item
-            v-if="isShowBreadcrub"
             :to="{ path: '/announcement' }"
           >
             {{ lastBreadcrumbTittle }}
@@ -77,10 +76,8 @@ export default {
   },
   data() {
     return {
-      isShowBreadcrub: false,
       infoColor: 'info',
       detailTittle: '新闻公告',
-      lastBreadcrumbTittle: '',
       infoPagination: 1,
       buttonClass: {
         newsType: 'All',
@@ -109,6 +106,20 @@ export default {
         },
         { title: '讲座通知', link: 'lecture' }
       ]
+    }
+  },
+  computed: {
+    lastBreadcrumbTittle() {
+      const news = ['all', 'news', 'notes', 'buy', 'try', 'lecture']
+      const newsCN = ['资讯一览', '新闻', '公告', '购买', '试用', '讲座']
+      let type = ''
+      news.forEach((e, index) => {
+        // console.log(e, index, this.$route.path.split('/')[2])
+        if (e === this.$route.path.split('/')[2]) {
+          type = newsCN[index]
+        }
+      })
+      return type
     }
   },
   methods: {

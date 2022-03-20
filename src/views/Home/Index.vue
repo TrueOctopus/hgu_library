@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-19 17:15:41
+ * @LastEditTime: 2022-03-20 15:50:28
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -86,7 +86,7 @@
                       </p>
                     </md-tab>
 
-                    <md-tab id="tab-pages2" md-label="百度学术" md-icon="edit">
+                    <md-tab id="tab-pages2" md-label="中国知网（CNKI）" md-icon="edit">
                       <p>
                         <el-form
                           ref="baiduSearchForm"
@@ -116,7 +116,7 @@
 
                     <md-tab
                       id="tab-pages3"
-                      md-label="超星发现"
+                      md-label="读秀学术"
                       md-icon="saved_search"
                     >
                       <p>
@@ -148,6 +148,38 @@
 
                     <md-tab
                       id="tab-pages4"
+                      md-label="维普智立方"
+                      md-icon="widgets"
+                    >
+                      <p>
+                        <el-form
+                          ref="chaoXingForm"
+                          :model="chaoXingForm"
+                          :rules="rules"
+                          :inline="true"
+                          label-width="100px"
+                          class="formStyle"
+                        ><el-form-item label="检索词" prop="searchWords">
+                           <el-input
+                             v-model="chaoXingForm.searchWords"
+                             class="single-input"
+                           />
+                         </el-form-item>
+                          <el-form-item>
+                            <md-button
+                              class="md-info"
+                              @click="submitForm('chaoXingForm')"
+                            >开始搜索</md-button>
+                            <md-button
+                              @click="resetForm('chaoXingForm')"
+                            >重置</md-button>
+                          </el-form-item>
+                        </el-form>
+                      </p>
+                    </md-tab>
+
+                    <md-tab
+                      id="tab-pages5"
                       md-label="我的图书馆"
                       md-icon="face"
                     >
@@ -190,7 +222,47 @@
                     </md-tab>
                   </md-tabs>
 
-                  <div>123</div>
+                  <div class="resourceSimple">
+                    <div>
+                      中文资源:
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a class="more" href="javascript:void(0)">更多>></a>
+                    </div>
+                    <div>
+                      外文资源:
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a class="more" href="javascript:void(0)">更多>></a>
+                    </div>
+                    <div>
+                      试用资源:
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a class="more" href="javascript:void(0)">更多>></a>
+                    </div>
+                    <div>
+                      开发资源:
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a class="more" href="javascript:void(0)">更多>></a>
+                    </div>
+                  </div>
                 </template>
               </nav-tabs-card>
               <div class="md-layout-item md-size-10" />
@@ -270,7 +342,7 @@
                 :news-type-index="1"
                 tittle="这是一段测试文字"
                 date="03/03"
-                :news-id="1"
+                news-id="1"
               />
               <NewsElem
                 :news-type-index="4"
@@ -727,6 +799,24 @@ export default {
 #tabsNav {
  .md-card {
    height: 35vh;
+ }
+
+ .resourceSimple {
+   a {
+     padding-left: 1vh;
+     color: #ababab;
+
+     &:hover {
+       color: #00bcd4 !important;
+     }
+   }
+   margin-left: 5vh;
+ }
+
+ .more {
+   font-weight: bold;
+   float: right;
+   margin-right: 8vh;
  }
 }
 .res-btns {
