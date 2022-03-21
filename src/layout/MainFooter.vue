@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 20:10:51
+ * @LastEditTime: 2022-03-21 11:07:09
  * @LastEditors: 郑钊宇
  * @Description: 底部栏组件
 -->
@@ -20,8 +20,21 @@
             </a>
           </li>
           <li>
-            <a href="http://www.beian.gov.cn/portal/registerSystemInfo">
-              冀公网安备 13010802000749号
+            <a
+              href="http://www.beian.gov.cn/portal/registerSystemInfo"
+              target="_blank"
+              style="height: 20px; color: white; text-decoration: none; display: inline-block; line-height: 20px"
+            >
+              <img
+                border="0"
+                hspace="0"
+                alt=""
+                src="@/assets/img/beian.png"
+                width="20"
+                height="20"
+                style="float: left"
+              >
+              &nbsp;冀公网安备&nbsp;13010802000749号-2
             </a>
           </li>
           <br>
