@@ -103,7 +103,7 @@
                       <el-col :span="12">
                         <ul>
                           <li>
-                            <a href="kits" class="dropdown-item">开馆时间</a>
+                            <a href="/service" class="dropdown-item">开馆时间</a>
                           </li>
                           <li>
                             <a href="kits" class="dropdown-item">馆藏分布</a>

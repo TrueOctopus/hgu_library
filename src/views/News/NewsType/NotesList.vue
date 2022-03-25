@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-19 16:48:05
- * @LastEditTime: 2022-03-19 17:08:03
+ * @LastEditTime: 2022-03-25 15:45:01
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -95,7 +95,7 @@
 </template>
 
 <script>
-import NewsElem from '../components/NewsElement.vue'
+import NewsElem from '../../components/NewsElement.vue'
 import { Pagination } from '@/components'
 
 export default {

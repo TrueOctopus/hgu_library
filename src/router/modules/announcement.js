@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-25 08:29:01
- * @LastEditTime: 2022-03-25 08:37:23
+ * @LastEditTime: 2022-03-25 15:47:07
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -9,12 +9,12 @@ import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'
 
 import Announcement from '@/views/News/Index.vue'
-import AllList from '@/views/News/All.vue'
-import NewsList from '@/views/News/NewsList.vue'
-import NotesList from '@/views/News/NotesList.vue'
-import TryList from '@/views/News/TryList.vue'
-import LectureList from '@/views/News/LectureList.vue'
-import BuyList from '@/views/News/BuyList.vue'
+import AllList from '@/views/News/NewsType/All.vue'
+import NewsList from '@/views/News/NewsType/NewsList.vue'
+import NotesList from '@/views/News/NewsType/NotesList.vue'
+import TryList from '@/views/News/NewsType/TryList.vue'
+import LectureList from '@/views/News/NewsType/LectureList.vue'
+import BuyList from '@/views/News/NewsType/BuyList.vue'
 
 const announcementRouter = {
   path: '/announcement',
