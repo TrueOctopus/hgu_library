@@ -158,7 +158,7 @@
                   </md-button>
                   <ul class="dropdown-menu" style="width: 30vh">
                     <li>
-                      <a href="kits" class="dropdown-item">读书推荐</a>
+                      <a href="/reading/recommendedReading" class="dropdown-item">读书推荐</a>
                     </li>
                     <li>
                       <a href="kits" class="dropdown-item">新书通报</a>
