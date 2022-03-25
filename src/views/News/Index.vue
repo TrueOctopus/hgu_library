@@ -1,30 +1,29 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-03-19 17:38:49
+ * @LastEditTime: 2022-03-25 08:51:54
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
 <template>
-  <div>
-    <TemplePage :detail-tittle="detailTittle">
-      <template #breadcrumb>
-        <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: '/announcement' }">
-            新闻公告
-          </el-breadcrumb-item>
-          <el-breadcrumb-item
-            :to="{ path: '/announcement' }"
-          >
-            {{ lastBreadcrumbTittle }}
-          </el-breadcrumb-item>
-        </el-breadcrumb>
-      </template>
-      <template #subNav>
-        <SubNav :menu-list="menuList" menu-tittle="新闻中心" />
+  <TemplePage :detail-tittle="detailTittle">
+    <template #breadcrumb>
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/announcement' }">
+          新闻公告
+        </el-breadcrumb-item>
+        <el-breadcrumb-item
+          :to="{ path: '/announcement' }"
+        >
+          {{ lastBreadcrumbTittle }}
+        </el-breadcrumb-item>
+      </el-breadcrumb>
+    </template>
+    <template #subNav>
+      <SubNav :menu-list="menuList" menu-tittle="新闻中心" />
 
-        <!-- <md-button
+      <!-- <md-button
           ref="all"
           class="md-sm"
           :class="{ 'md-simple': buttonClass.isAllActive }"
@@ -54,14 +53,13 @@
           :class="{ 'md-simple': buttonClass.isTryActive }"
           @click="buttonShow('Try')"
         >试用</md-button> -->
-      </template>
-      <template #text>
-        <router-view />
-      </template>
+    </template>
+    <template #text>
+      <router-view />
+    </template>
 
-      <!-- {{ $route.params.newsId }} -->
-    </TemplePage>
-  </div>
+    <!-- {{ $route.params.newsId }} -->
+  </TemplePage>
 </template>
 
 <script>
@@ -76,17 +74,16 @@ export default {
   },
   data() {
     return {
-      infoColor: 'info',
       detailTittle: '新闻公告',
-      infoPagination: 1,
-      buttonClass: {
-        newsType: 'All',
-        isAllActive: false,
-        isNewsActive: true,
-        isNotesActive: true,
-        isBuyActive: true,
-        isTryActive: true
-      },
+      // buttonClass: {
+      //   newsType: 'All',
+      //   isAllActive: false,
+      //   isNewsActive: true,
+      //   isNotesActive: true,
+      //   isBuyActive: true,
+      //   isTryActive: true
+      // },
+
       // TODO 修改名称
       menuList: [
         { title: '资讯一览', link: 'all' },

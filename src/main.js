@@ -1,13 +1,13 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-14 21:08:04
+ * @LastEditTime: 2022-03-25 08:27:25
  * @LastEditors: 郑钊宇
  * @Description: 入口文件
  */
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/router'
 
 import MaterialKit from './plugins/material-kit'
 

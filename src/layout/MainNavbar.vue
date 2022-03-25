@@ -60,7 +60,7 @@
                             <a href="kits" class="dropdown-item">馆藏目录</a>
                           </li>
                           <li>
-                            <a href="#pablo" class="dropdown-item">数据库导航</a>
+                            <a href="/resouce" class="dropdown-item">数据库导航</a>
                           </li>
                           <li>
                             <a href="#pablo" class="dropdown-item">试用资源</a>
@@ -80,7 +80,6 @@
                       </el-col>
                     </el-row>
                   </ul>
-
                 </drop-down>
               </div>
             </a>
