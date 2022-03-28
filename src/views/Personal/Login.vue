@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 20:00:17
+ * @LastEditTime: 2022-03-27 14:55:10
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -30,15 +30,17 @@
               <p slot="description" class="description">
                 没有账号？<router-link to="/register">注册</router-link>
               </p>
-              <md-field slot="inputs" class="md-form-group">
-                <md-icon>email</md-icon>
-                <label>邮箱地址...</label>
-                <md-input v-model="email" type="email" />
+              <md-field slot="inputs" class="md-form-group" :class="usernameMessageClass">
+                <md-icon>face</md-icon>
+                <label>用户名...</label>
+                <md-input v-model="username" @blur="usernameVerify" />
+                <span class="md-error">{{ UsernameErrorMessage }}</span>
               </md-field>
-              <md-field slot="inputs" class="md-form-group">
+              <md-field slot="inputs" class="md-form-group" :class="passwordMessageClass" style="margin-bottom: 0;">
                 <md-icon>lock_outline</md-icon>
                 <label>密码...</label>
-                <md-input v-model="password" />
+                <md-input v-model="password" type="password" @blur="passwordVerify" />
+                <span class="md-error">{{ passwordErrorMessage }}</span>
               </md-field>
               <md-button slot="footer" class="md-simple md-success md-lg">
                 登录
@@ -67,8 +69,13 @@ export default {
   },
   data() {
     return {
-      email: null,
-      password: null
+      username: null,
+      password: null,
+
+      hasPasswordErrorMessage: false,
+      passwordErrorMessage: '',
+      hasUsernameErrorMessage: false,
+      UsernameErrorMessage: ''
     }
   },
   computed: {
@@ -79,6 +86,39 @@ export default {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         height: '100vh'
+      }
+    },
+    usernameMessageClass() {
+      return {
+        'md-invalid': this.hasUsernameErrorMessage
+      }
+    },
+    passwordMessageClass() {
+      return {
+        'md-invalid': this.hasPasswordErrorMessage
+      }
+    }
+  },
+  methods: {
+    usernameVerify() {
+      if (this.username === null || this.username === '') {
+        this.hasUsernameErrorMessage = true
+        this.UsernameErrorMessage = '用户名不能为空'
+      } else {
+        this.hasUsernameErrorMessage = false
+        this.UsernameErrorMessage = ''
+      }
+    },
+    passwordVerify() {
+      if (this.password === null || this.password === '') {
+        this.hasPasswordErrorMessage = true
+        this.passwordErrorMessage = '密码不能为空'
+      } else if (this.password.length < 6) {
+        this.hasPasswordErrorMessage = true
+        this.passwordErrorMessage = '密码至少需要6位'
+      } else {
+        this.hasPasswordErrorMessage = false
+        this.passwordErrorMessage = ''
       }
     }
   }
