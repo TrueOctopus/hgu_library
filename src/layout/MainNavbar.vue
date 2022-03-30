@@ -214,7 +214,8 @@
               </md-list-item>
 
               <md-list-item>
-                <md-button class="md-info" href="/login">登录</md-button>
+                <md-button v-if="!username" class="md-info" href="/login">登录</md-button>
+                <router-link v-else to="/profile" style="margin-top: 0.5rem">{{ username }}</router-link>
               </md-list-item>
             </md-list>
           </div>
@@ -238,6 +239,7 @@ function resizeThrottler(actualResizeHandler) {
 }
 
 import MobileMenu from '@/layout/MobileMenu'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     MobileMenu
@@ -263,6 +265,7 @@ export default {
       default: 0
     }
   },
+
   data() {
     return {
       extraNavClasses: 'initBar', // 导航栏额外class
@@ -277,6 +280,11 @@ export default {
 
       peopleNumber: 900 // 馆内人数
     }
+  },
+  computed: {
+    ...mapGetters([
+      'username'
+    ])
   },
   mounted() {
     document.addEventListener('scroll', this.scrollListener)

@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-16 08:44:06
- * @LastEditTime: 2022-03-27 16:11:18
+ * @LastEditTime: 2022-03-29 15:13:29
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -25,9 +25,11 @@ export function register(data) {
 
 export function getInfo(token) {
   return request({
-    url: '/userAction/userinfo',
-    method: 'get',
-    params: { token }
+    url: '/token/parseToken',
+    method: 'post',
+    data: {
+      'tokenStr': token
+    }
   })
 }
 

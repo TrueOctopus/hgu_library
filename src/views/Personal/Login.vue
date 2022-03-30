@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-27 14:55:10
+ * @LastEditTime: 2022-03-29 15:09:29
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -33,16 +33,16 @@
               <md-field slot="inputs" class="md-form-group" :class="usernameMessageClass">
                 <md-icon>face</md-icon>
                 <label>用户名...</label>
-                <md-input v-model="username" @blur="usernameVerify" />
+                <md-input v-model="userInfo.username" @blur="usernameVerify" />
                 <span class="md-error">{{ UsernameErrorMessage }}</span>
               </md-field>
               <md-field slot="inputs" class="md-form-group" :class="passwordMessageClass" style="margin-bottom: 0;">
                 <md-icon>lock_outline</md-icon>
                 <label>密码...</label>
-                <md-input v-model="password" type="password" @blur="passwordVerify" />
+                <md-input v-model="userInfo.password" type="password" @blur="passwordVerify" />
                 <span class="md-error">{{ passwordErrorMessage }}</span>
               </md-field>
-              <md-button slot="footer" class="md-simple md-success md-lg">
+              <md-button slot="footer" class="md-simple md-success md-lg" @click="submitForm">
                 登录
               </md-button>
             </login-card>
@@ -69,8 +69,10 @@ export default {
   },
   data() {
     return {
-      username: null,
-      password: null,
+      userInfo: {
+        username: 'test',
+        password: '111111'
+      },
 
       hasPasswordErrorMessage: false,
       passwordErrorMessage: '',
@@ -100,8 +102,23 @@ export default {
     }
   },
   methods: {
+    submitForm() {
+      this.usernameVerify()
+      this.passwordVerify()
+      if (!this.hasPasswordErrorMessage && !this.hasUsernameErrorMessage) {
+        this.$store.dispatch('user/login', this.userInfo).then(() => {
+          this.$store.dispatch('notification/promptNotification', {
+            noticeType: 'success',
+            message: '登录成功'
+          })
+          this.$router.push('/')
+        })
+      } else {
+        alert('提交失败!!')
+      }
+    },
     usernameVerify() {
-      if (this.username === null || this.username === '') {
+      if (this.userInfo.username === null || this.userInfo.username === '') {
         this.hasUsernameErrorMessage = true
         this.UsernameErrorMessage = '用户名不能为空'
       } else {
@@ -110,10 +127,10 @@ export default {
       }
     },
     passwordVerify() {
-      if (this.password === null || this.password === '') {
+      if (this.userInfo.password === null || this.userInfo.password === '') {
         this.hasPasswordErrorMessage = true
         this.passwordErrorMessage = '密码不能为空'
-      } else if (this.password.length < 6) {
+      } else if (this.userInfo.password.length < 6) {
         this.hasPasswordErrorMessage = true
         this.passwordErrorMessage = '密码至少需要6位'
       } else {

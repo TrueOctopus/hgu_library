@@ -1,12 +1,11 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-27 09:15:30
- * @LastEditTime: 2022-03-27 09:54:53
+ * @LastEditTime: 2022-03-29 11:12:35
  * @LastEditors: 郑钊宇
  * @Description:
  */
 import axios from 'axios'
-import { Message } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
 
@@ -34,6 +33,7 @@ service.interceptors.request.use(
     // config.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
     return config
   },
+
   error => {
     // do something with request error
     console.log(error) // for debug
@@ -47,13 +47,23 @@ service.interceptors.response.use(
    * If you want to get http information such as headers or status
    * Please return  response => response
   */
-
+  response => {
+    const res = response.data
+    if (!res.ok) {
+      this.$store.dispatch('notification/promptNotification', {
+        noticeType: 'danger',
+        message: res.message || 'Error'
+      })
+      return Promise.reject(new Error(res.message || 'Error'))
+    } else {
+      return res
+    }
+  },
   error => {
     console.log('err' + error) // for debug
-    Message({
-      message: error.message,
-      type: 'error',
-      duration: 5 * 1000
+    this.$store.dispatch('notification/promptNotification', {
+      noticeType: 'danger',
+      message: error.msg
     })
     return Promise.reject(error)
   }

@@ -1,12 +1,14 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-21 09:08:09
+ * @LastEditTime: 2022-03-28 19:56:23
  * @LastEditors: 郑钊宇
  * @Description: app.vue
 -->
 <template>
+
   <div>
+    <Notifications />
     <div :class="{ 'nav-open': NavbarStore.showNavbar }">
       <router-view name="header" />
       <div>
@@ -16,8 +18,11 @@
     </div>
   </div>
 </template>
+
 <script>
+import Notifications from '@/components/Notifications.vue'
 export default {
+  components: { Notifications }
   // FIXME 页面加载动画 已弃用
   // created() {
   //   let loadingPage = document.getElementsByTagName("html")[0];

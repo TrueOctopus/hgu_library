@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-16 08:44:06
- * @LastEditTime: 2022-03-27 16:39:48
+ * @LastEditTime: 2022-03-29 16:39:11
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -11,8 +11,7 @@ import { getToken, setToken, removeToken } from '@/utils/auth'
 const getDefaultState = () => {
   return {
     token: getToken(),
-    name: '',
-    avatar: ''
+    username: ''
   }
 }
 
@@ -25,11 +24,8 @@ const mutations = {
   SET_TOKEN: (state, token) => {
     state.token = token
   },
-  SET_NAME: (state, username) => {
+  SET_USERNAME: (state, username) => {
     state.username = username
-  },
-  SET_AVATAR: (state, avatar) => {
-    state.avatar = avatar
   }
 }
 
@@ -58,11 +54,10 @@ const actions = {
         if (!data) {
           return reject('验证失败请重新登录')
         }
+        // console.log(data.userInfo)
+        const { username } = data.userInfo
 
-        const { name, avatar } = data
-
-        commit('SET_NAME', name)
-        commit('SET_AVATAR', avatar)
+        commit('SET_USERNAME', username)
         resolve(data)
       }).catch(error => {
         reject(error)

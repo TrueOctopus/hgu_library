@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-20 15:50:28
+ * @LastEditTime: 2022-03-29 16:59:40
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -49,34 +49,34 @@
                            >
                              <el-option
                                label="所有书刊"
-                               value="all"
+                               value="ALL"
                              />
                              <el-option
                                label="中文图书"
-                               value="cnBooks"
+                               value="01"
                              />
                              <el-option
                                label="西文图书"
-                               value="unCnBooks"
+                               value="02"
                              />
                              <el-option
                                label="中文期刊"
-                               value="cnPeriodicals"
+                               value="11"
                              />
                              <el-option
                                label="西文期刊"
-                               value="unCnPeriodicals"
+                               value="12"
                              />
                            </el-select>
                          </el-form-item>
                           <el-form-item label="文献题名" prop="docName">
-                            <el-input v-model="docForm.docName" />
+                            <el-input v-model="docForm.strText" />
                           </el-form-item>
 
                           <el-form-item>
                             <md-button
                               class="md-info"
-                              @click="submitForm('docForm')"
+                              @click="submitForm(`https://opac.hgu.edu.cn/opac/openlink.php?doctype=${docForm.docType}&strText=${docForm.strText}&simple=mode&strSearchType=title&match_flag=forward&displaypg=20&sort=CATA_DATE&orderby=desc&showmode=list&dept=ALL&submit=%25E6%25A3%2580%25E7%25B4%25A2`)"
                             >开始搜索</md-button>
                             <md-button
                               @click="resetForm('docForm')"
@@ -89,25 +89,25 @@
                     <md-tab id="tab-pages2" md-label="中国知网（CNKI）" md-icon="edit">
                       <p>
                         <el-form
-                          ref="baiduSearchForm"
-                          :model="baiduSearchForm"
+                          ref="cnkiSearchForm"
+                          :model="cnkiSearchForm"
                           :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
                         ><el-form-item label="检索词" prop="searchWords">
                            <el-input
-                             v-model="baiduSearchForm.searchWords"
+                             v-model="cnkiSearchForm.searchWords"
                              class="single-input"
                            />
                          </el-form-item>
                           <el-form-item>
                             <md-button
                               class="md-info"
-                              @click="submitForm('baiduSearchForm')"
+                              @click="submitForm()"
                             >开始搜索</md-button>
                             <md-button
-                              @click="resetForm('baiduSearchForm')"
+                              @click="resetForm('cnkiSearchForm')"
                             >重置</md-button>
                           </el-form-item>
                         </el-form>
@@ -698,10 +698,10 @@ export default {
   data() {
     return {
       docForm: {
-        docName: '',
-        docType: 'all'
+        strText: '',
+        docType: 'ALL'
       },
-      baiduSearchForm: {
+      cnkiSearchForm: {
         searchWords: ''
       },
       chaoXingForm: {
@@ -712,7 +712,7 @@ export default {
         readerCardPassword: ''
       },
       rules: {
-        docName: [
+        strText: [
           { required: true, message: '请输入文献名称', trigger: 'change' }
         ],
         docType: [
@@ -771,15 +771,8 @@ export default {
     this.$bus.$off('scrollValue')
   },
   methods: {
-    submitForm(formName) {
-      this.$refs[formName].validate(valid => {
-        if (valid) {
-          alert('submit!')
-        } else {
-          console.log('error submit!!')
-          return false
-        }
-      })
+    submitForm(submitUrl) {
+      window.location.href = submitUrl
     },
     resetForm(formName) {
       this.$refs[formName].resetFields()

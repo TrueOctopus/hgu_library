@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 19:46:16
+ * @LastEditTime: 2022-03-28 19:19:13
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -40,8 +40,14 @@ export default {
       type: Boolean,
       default: false
     },
-    title: String,
-    icon: String
+    title: {
+      type: String,
+      default: ''
+    },
+    icon: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {
