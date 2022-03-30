@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-29 16:59:40
+ * @LastEditTime: 2022-03-30 10:12:47
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -86,28 +86,28 @@
                       </p>
                     </md-tab>
 
-                    <md-tab id="tab-pages2" md-label="中国知网（CNKI）" md-icon="edit">
+                    <md-tab id="tab-pages2" md-label="百链搜索" md-icon="edit">
                       <p>
                         <el-form
-                          ref="cnkiSearchForm"
-                          :model="cnkiSearchForm"
+                          ref="medaLinkSearchForm"
+                          :model="medaLinkSearchForm"
                           :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
                         ><el-form-item label="检索词" prop="searchWords">
                            <el-input
-                             v-model="cnkiSearchForm.searchWords"
+                             v-model="medaLinkSearchForm.searchWords"
                              class="single-input"
                            />
                          </el-form-item>
                           <el-form-item>
                             <md-button
                               class="md-info"
-                              @click="submitForm()"
+                              @click="submitForm(`https://jour.blyun.com/searchJour?Field=all&channel=searchJour&sw=${medaLinkSearchForm.searchWords}&ecode=utf-8&edtype=&searchtype=&view=0`)"
                             >开始搜索</md-button>
                             <md-button
-                              @click="resetForm('cnkiSearchForm')"
+                              @click="resetForm('medaLinkSearchForm')"
                             >重置</md-button>
                           </el-form-item>
                         </el-form>
@@ -121,25 +121,25 @@
                     >
                       <p>
                         <el-form
-                          ref="chaoXingForm"
-                          :model="chaoXingForm"
+                          ref="duxiuSearchForm"
+                          :model="duxiuSearchForm"
                           :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
                         ><el-form-item label="检索词" prop="searchWords">
                            <el-input
-                             v-model="chaoXingForm.searchWords"
+                             v-model="duxiuSearchForm.searchWords"
                              class="single-input"
                            />
                          </el-form-item>
                           <el-form-item>
                             <md-button
                               class="md-info"
-                              @click="submitForm('chaoXingForm')"
+                              @click="submitForm(`https://jour.duxiu.com/searchJour?Field=all&channel=searchJour&sw=${duxiuSearchForm.searchWords}&ecode=utf-8&edtype=&searchtype=&view=0`)"
                             >开始搜索</md-button>
                             <md-button
-                              @click="resetForm('chaoXingForm')"
+                              @click="resetForm('duxiuSearchForm')"
                             >重置</md-button>
                           </el-form-item>
                         </el-form>
@@ -153,25 +153,25 @@
                     >
                       <p>
                         <el-form
-                          ref="chaoXingForm"
-                          :model="chaoXingForm"
+                          ref="zlfSearchForm"
+                          :model="zlfSearchForm"
                           :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
                         ><el-form-item label="检索词" prop="searchWords">
                            <el-input
-                             v-model="chaoXingForm.searchWords"
+                             v-model="zlfSearchForm.searchWords"
                              class="single-input"
                            />
                          </el-form-item>
                           <el-form-item>
                             <md-button
                               class="md-info"
-                              @click="submitForm('chaoXingForm')"
+                              @click="submitForm(`http://zlf.cqvip.com/zk/search.aspx?from=index&key=U%3D${zlfSearchForm.searchWords}`)"
                             >开始搜索</md-button>
                             <md-button
-                              @click="resetForm('chaoXingForm')"
+                              @click="resetForm('zlfSearchForm')"
                             >重置</md-button>
                           </el-form-item>
                         </el-form>
@@ -211,7 +211,7 @@
                           <el-form-item>
                             <md-button
                               class="md-info"
-                              @click="submitForm('readerCardForm')"
+                              @click="submitForm(`https://opac.hgu.edu.cn/reader/redr_verify.php`)"
                             >登录</md-button>
                             <md-button
                               @click="resetForm('readerCardForm')"
@@ -223,43 +223,32 @@
                   </md-tabs>
 
                   <div class="resourceSimple">
-                    <div>
+                    <div style="overflow: hidden">
                       中文资源:
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a v-for="item in databaseList.cn" :key="item.id" :href="item.urladdress">
+                        {{ item.urlname }}
+                      </a>
                       <a class="more" href="javascript:void(0)">更多>></a>
                     </div>
                     <div>
                       外文资源:
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a v-for="item in databaseList.foreign" :key="item.id" :href="item.urladdress">
+                        {{ item.urlname }}
+                      </a>
                       <a class="more" href="javascript:void(0)">更多>></a>
                     </div>
                     <div>
                       试用资源:
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      <a v-for="item in databaseList.try" :key="item.id" :href="item.urladdress">
+                        {{ item.urlname }}
+                      </a>
                       <a class="more" href="javascript:void(0)">更多>></a>
                     </div>
                     <div>
-                      开发资源:
-                      <a href="javascript:void(0)">CNKI(北京)</a>
-                      <a href="javascript:void(0)">CNKI(北京)</a>
+                      开放资源:
+                      <a v-for="item in databaseList.open" :key="item.id" :href="item.urladdress">
+                        {{ item.urlname }}
+                      </a>
                       <a class="more" href="javascript:void(0)">更多>></a>
                     </div>
                   </div>
@@ -512,129 +501,6 @@
         </div>
       </div>
 
-      <!-- <div class="section" id="resource" :style="bgImage">
-        <div class="md-layout">
-          <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div class="md-layout-item md-layout dataBaseList">
-            <div class="md-layout-item dataBaseListItem">
-              <div class="md-layout">
-                <h3 class="md-layout-item md-size-80 tittle">常用数据库列表</h3>
-                <router-link
-                  to="/databaselist"
-                  class="md-layout-item md-size-20 moreClass"
-                >
-                  更多>>
-                </router-link>
-              </div>
-              <el-collapse accordion>
-                <el-collapse-item title="中文资源">
-                  <div>
-                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
-                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
-                    经济期刊总库
-                  </div>
-                  <div>
-                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
-                    CADAL国家自科基金 河地大学报
-                  </div>
-                </el-collapse-item>
-                <el-collapse-item title="外文资源">
-                  <div>
-                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
-                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
-                    经济期刊总库
-                  </div>
-                  <div>
-                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
-                    CADAL国家自科基金 河地大学报
-                  </div>
-                </el-collapse-item>
-                <el-collapse-item title="试用资源">
-                  <div>
-                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
-                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
-                    经济期刊总库
-                  </div>
-                  <div>
-                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
-                    CADAL国家自科基金 河地大学报
-                  </div>
-                </el-collapse-item>
-                <el-collapse-item title="开放资源">
-                  <div>
-                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
-                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
-                    经济期刊总库
-                  </div>
-                  <div>
-                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
-                    CADAL国家自科基金 河地大学报
-                  </div>
-                </el-collapse-item>
-              </el-collapse>
-            </div>
-            <div class="md-layout-item dataBaseListItem">
-              <div class="md-layout">
-                <h3 class="md-layout-item md-size-80 tittle">特色资源</h3>
-                <router-link
-                  to="/characteristic"
-                  class="md-layout-item md-size-20 moreClass"
-                >
-                  更多>>
-                </router-link>
-              </div>
-              <el-collapse accordion>
-                <el-collapse-item title="随书光盘">
-                  <div>
-                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
-                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
-                    经济期刊总库
-                  </div>
-                  <div>
-                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
-                    CADAL国家自科基金 河地大学报
-                  </div>
-                </el-collapse-item>
-                <el-collapse-item title="高教社产品检索">
-                  <div>
-                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
-                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
-                    经济期刊总库
-                  </div>
-                  <div>
-                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
-                    CADAL国家自科基金 河地大学报
-                  </div>
-                </el-collapse-item>
-                <el-collapse-item title="中外图书大全">
-                  <div>
-                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
-                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
-                    经济期刊总库
-                  </div>
-                  <div>
-                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
-                    CADAL国家自科基金 河地大学报
-                  </div>
-                </el-collapse-item>
-                <el-collapse-item title="英文名著3000">
-                  <div>
-                    CNKI(北京) CNKI(本地) 维普知识资源 维普期刊 读秀学术搜索
-                    百链搜索 EBM中外文 国泰安数据 国研网 全球案例发现
-                    经济期刊总库
-                  </div>
-                  <div>
-                    经济社会统计 科学文献计量 国家哲社期刊 EBM中文(远程)
-                    CADAL国家自科基金 河地大学报
-                  </div>
-                </el-collapse-item>
-              </el-collapse>
-            </div>
-          </div>
-          <div class="md-layout-item md-size-10 md-small-size-5" />
-        </div>
-      </div> -->
-
       <div id="friendLink" ref="friendLink" class="section section-tabs">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -670,6 +536,8 @@ import EventsCalendar from '../components/EventsCalendar.vue'
 import PublicitySection from '../components/BooksPublicitySection.vue'
 import CharacteristicSection from '../components/CharacteristicSection.vue'
 
+import { fetchDatabaseList } from '@/api/resource'
+
 export default {
   name: 'Index',
   components: {
@@ -697,14 +565,23 @@ export default {
   },
   data() {
     return {
+      databaseList: {
+        cn: [],
+        foreign: [],
+        try: [],
+        open: []
+      },
       docForm: {
         strText: '',
         docType: 'ALL'
       },
-      cnkiSearchForm: {
+      medaLinkSearchForm: {
         searchWords: ''
       },
-      chaoXingForm: {
+      duxiuSearchForm: {
+        searchWords: ''
+      },
+      zlfSearchForm: {
         searchWords: ''
       },
       readerCardForm: {
@@ -712,22 +589,22 @@ export default {
         readerCardPassword: ''
       },
       rules: {
-        strText: [
-          { required: true, message: '请输入文献名称', trigger: 'change' }
-        ],
-        docType: [
-          { required: true, message: '请选择文献区域', trigger: 'change' }
-        ],
-        searchWords: [
-          { required: true, message: '请输入检索词', trigger: 'change' }
-        ],
-        readerCardNumber: [
-          { required: true, message: '请输入读者证号', trigger: 'blur' },
-          { min: 12, max: 12, message: '长度应为12位', trigger: 'blur' }
-        ],
-        readerCardPassword: [
-          { required: true, message: '请输入密码', trigger: 'blur' }
-        ]
+        // strText: [
+        //   { required: true, message: '请输入文献名称', trigger: 'change' }
+        // ],
+        // docType: [
+        //   { required: true, message: '请选择文献区域', trigger: 'change' }
+        // ],
+        // searchWords: [
+        //   { required: true, message: '请输入检索词', trigger: 'change' }
+        // ],
+        // readerCardNumber: [
+        //   { required: true, message: '请输入读者证号', trigger: 'blur' },
+        //   { min: 12, max: 12, message: '长度应为12位', trigger: 'blur' }
+        // ],
+        // readerCardPassword: [
+        //   { required: true, message: '请输入密码', trigger: 'blur' }
+        // ]
       },
       columnType: 0
     }
@@ -745,6 +622,29 @@ export default {
     }
   },
   mounted() {
+    fetchDatabaseList().then(response => {
+      response.data.databaseList.forEach(ele => {
+        switch (ele.genre) {
+          case '中文':
+            if (this.databaseList.cn.length > 10) break
+            this.databaseList.cn.push(ele)
+            break
+          case '外文':
+            if (this.databaseList.foreign.length > 10) break
+            this.databaseList.foreign.push(ele)
+            break
+          case '试用':
+            if (this.databaseList.try.length > 10) break
+            this.databaseList.try.push(ele)
+            break
+          case '开放':
+            if (this.databaseList.open.length > 10) break
+            this.databaseList.open.push(ele)
+            break
+        }
+      })
+    })
+
     this.$bus.$on('scrollValue', scrollValue => {
       const oneHeight = this.$refs.tabsNav.offsetHeight
       const twoHeight = this.$refs.announcement.offsetHeight + oneHeight
@@ -791,7 +691,7 @@ export default {
 }
 #tabsNav {
  .md-card {
-   height: 35vh;
+   height: 37vh;
  }
 
  .resourceSimple {

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-10 18:27:49
- * @LastEditTime: 2022-03-15 19:43:42
+ * @LastEditTime: 2022-03-30 09:28:54
  * @LastEditors: 郑钊宇
  * @Description: 侧边导航条
 -->
@@ -65,8 +65,8 @@ export default {
     onTopClick(locationId) {
       // 获取目标元素
       const element = document.getElementById(locationId)
-      console.log(locationId)
-      console.log(element)
+      // console.log(locationId)
+      // console.log(element)
       // 元素方法调用
       element.scrollIntoView()
     }
