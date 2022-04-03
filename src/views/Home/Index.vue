@@ -621,7 +621,7 @@ export default {
       }
     }
   },
-  mounted() {
+  created() {
     fetchDatabaseList().then(response => {
       response.data.databaseList.forEach(ele => {
         switch (ele.genre) {
@@ -644,7 +644,8 @@ export default {
         }
       })
     })
-
+  },
+  mounted() {
     this.$bus.$on('scrollValue', scrollValue => {
       const oneHeight = this.$refs.tabsNav.offsetHeight
       const twoHeight = this.$refs.announcement.offsetHeight + oneHeight

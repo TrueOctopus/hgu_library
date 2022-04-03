@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 09:30:09
- * @LastEditTime: 2022-03-15 19:43:27
+ * @LastEditTime: 2022-04-02 18:45:38
  * @LastEditors: 郑钊宇
  * @Description: 特色资源选项卡
 -->
@@ -92,9 +92,9 @@ export default {
   },
   methods: {
     showInfo(e) {
-      const section = document.getElementsByClassName('characteristicSection')
-      section.forEach(e => {
-        e.classList.remove('section-open')
+      const section = Array.from(document.getElementsByClassName('characteristicSection'))
+      section.forEach(ele => {
+        ele.classList.remove('section-open')
       })
       e.currentTarget.classList.add('section-open')
     }
