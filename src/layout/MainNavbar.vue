@@ -63,18 +63,18 @@
                             <a href="/resouce/all" class="dropdown-item">数据库导航</a>
                           </li>
                           <li>
-                            <a href="#pablo" class="dropdown-item">试用资源</a>
+                            <a href="/resouce/try" class="dropdown-item">试用资源</a>
                           </li>
                           <li>
-                            <a href="#pablo" class="dropdown-item">特色资源</a>
-                          </li>
-                          <li class="dropdown-divider" />
-                          <li>
-                            <a href="#pablo" class="dropdown-item">文献传递</a>
+                            <a href="/characteristic" class="dropdown-item">特色资源</a>
                           </li>
                           <li class="dropdown-divider" />
                           <li>
-                            <a href="#pablo" class="dropdown-item">校外访问</a>
+                            <a href="/resouce/delivery" class="dropdown-item">文献传递</a>
+                          </li>
+                          <li class="dropdown-divider" />
+                          <li>
+                            <a href="/resouce/offcampus" class="dropdown-item">校外访问</a>
                           </li>
                         </ul>
                       </el-col>
@@ -103,18 +103,18 @@
                       <el-col :span="12">
                         <ul>
                           <li>
-                            <a href="/service" class="dropdown-item">开馆时间</a>
+                            <a href="/service/opentime" class="dropdown-item">开馆时间</a>
                           </li>
                           <li>
-                            <a href="kits" class="dropdown-item">馆藏分布</a>
+                            <a href="/service/distribution" class="dropdown-item">馆藏分布</a>
                           </li>
                           <li class="dropdown-divider" />
                           <li class="dropdown-header">借阅服务</li>
                           <li>
-                            <a href="kits" class="dropdown-item">借阅规则</a>
+                            <a href="/service/borrowRules" class="dropdown-item">借阅规则</a>
                           </li>
                           <li>
-                            <a href="#pablo" class="dropdown-item">借阅流程</a>
+                            <a href="/service/borrowProcess" class="dropdown-item">借阅流程</a>
                           </li>
                         </ul>
                       </el-col>
@@ -122,17 +122,17 @@
                         <ul>
                           <li class="dropdown-header">预约服务</li>
                           <li>
-                            <a href="kits" class="dropdown-item">座位预约</a>
+                            <a href="/service/seatOrder" class="dropdown-item">座位预约</a>
                           </li>
                           <li>
-                            <a href="#pablo" class="dropdown-item">研修室预约</a>
+                            <a href="/service/labOrder" class="dropdown-item">研修室预约</a>
                           </li>
                           <li>
-                            <a href="#pablo" class="dropdown-item">讲座预约</a>
+                            <a href="/service/lectureOrder" class="dropdown-item">讲座预约</a>
                           </li>
                           <li class="dropdown-divider" />
                           <li>
-                            <a href="#pablo" class="dropdown-item">捐赠</a>
+                            <a href="/service/donation" class="dropdown-item">捐赠</a>
                           </li>
                         </ul>
                       </el-col>
@@ -161,12 +161,12 @@
                       <a href="/reading/recommendedReading" class="dropdown-item">读书推荐</a>
                     </li>
                     <li>
-                      <a href="kits" class="dropdown-item">新书通报</a>
+                      <a href="/reading/bookReport" class="dropdown-item">新书通报</a>
                     </li>
                     <li class="dropdown-divider" />
                     <li class="dropdown-header">主题活动</li>
                     <li>
-                      <a href="kits" class="dropdown-item">读书月</a>
+                      <a href="/reading/readingMonth" class="dropdown-item">读书月</a>
                     </li>
                   </ul>
                 </drop-down>

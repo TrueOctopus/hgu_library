@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-30 10:12:47
+ * @LastEditTime: 2022-04-05 15:35:51
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -623,6 +623,7 @@ export default {
   },
   created() {
     fetchDatabaseList().then(response => {
+      console.log(response)
       response.data.databaseList.forEach(ele => {
         switch (ele.genre) {
           case '中文':
