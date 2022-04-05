@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-28 10:31:04
- * @LastEditTime: 2022-03-28 10:38:10
+ * @LastEditTime: 2022-04-05 16:08:00
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -14,10 +14,9 @@ export function fetchNewsByCatalog(pageNo, pageSize, catalog) {
     params: { pageNo, pageSize, catalog }
   })
 }
-
-export function fetchNewsList(pageNo, pageSize) {
+export function fetchReleaseNewsList(pageNo, pageSize) {
   return request({
-    url: '/news/newsFour',
+    url: '/news/releaseNews',
     method: 'get',
     params: { pageNo, pageSize }
   })

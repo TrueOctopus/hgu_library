@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-03-19 17:14:22
+ * @LastEditTime: 2022-04-05 16:05:02
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
@@ -48,15 +48,15 @@ export default {
   },
   computed: {
     newsType() {
-      const news = ['新闻', '公告', '购买', '试用', '讲座']
+      const news = ['新闻', '公告', '购买', '试用', '活动', '讲座']
       return news[this.newsTypeIndex]
     },
     urlType() {
-      const news = ['news', 'notes', 'buy', 'try', 'lecture']
+      const news = ['news', 'notes', 'buy', 'try', 'activity', 'lecture']
       return news[this.newsTypeIndex]
     },
     newsColor() {
-      const colorTabs = ['primary', 'warning', 'success', 'info', 'rose']
+      const colorTabs = ['primary', 'warning', 'success', 'info', 'rose', 'danger']
       return colorTabs[this.newsTypeIndex]
     },
     tabColorStyle() {
@@ -76,6 +76,9 @@ export default {
           break
         case 4:
           tabColor = '#e91e63'
+          break
+        case 5:
+          tabColor = '#f44336'
           break
       }
       return `border-left: 5px solid ${tabColor};`

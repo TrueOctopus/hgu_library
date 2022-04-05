@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-05 15:35:51
+ * @LastEditTime: 2022-04-05 16:06:11
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -349,7 +349,7 @@
                 date="03/03"
               />
               <NewsElem
-                :news-type-index="4"
+                :news-type-index="5"
                 tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
                 date="03/03"
               />
@@ -571,6 +571,10 @@ export default {
         try: [],
         open: []
       },
+      newsList: {
+        news: [],
+        lectures: []
+      },
       docForm: {
         strText: '',
         docType: 'ALL'
@@ -641,6 +645,10 @@ export default {
           case '开放':
             if (this.databaseList.open.length > 10) break
             this.databaseList.open.push(ele)
+            break
+          case '中外文':
+            if (this.databaseList.cn.length <= 10) this.databaseList.cn.push(ele)
+            if (this.databaseList.foreign.length <= 10) this.databaseList.foreign.push(ele)
             break
         }
       })

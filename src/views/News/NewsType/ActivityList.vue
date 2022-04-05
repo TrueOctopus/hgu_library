@@ -1,79 +1,86 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-04-05 15:57:49
+ * @LastEditTime: 2022-04-05 16:01:19
+ * @LastEditors: 郑钊宇
+ * @Description:
+-->
 <template>
   <div>
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="03/03"
       news-id="1"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="03/03"
       news-id="1"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
       date="03/03"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="12/13"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="12/13"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="12/13"
     />
     <NewsElem
-      :news-type-index="5"
+      :news-type-index="4"
       tittle="这是一段测试文字"
       date="12/13"
     />
@@ -99,7 +106,7 @@ export default {
   },
   data() {
     return {
-      infoColor: 'rose',
+      infoColor: 'danger',
       showLastBreadcrumb: false,
       detailTittle: '新闻公告',
       infoPagination: 1

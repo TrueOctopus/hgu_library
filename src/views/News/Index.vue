@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-03-25 08:51:54
+ * @LastEditTime: 2022-04-05 15:56:51
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -101,7 +101,9 @@ export default {
             { title: '资源试用', link: 'try' }
           ]
         },
+        { title: '活动通知', link: 'activity' },
         { title: '讲座通知', link: 'lecture' }
+
       ]
     }
   },

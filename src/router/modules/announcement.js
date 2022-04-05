@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-25 08:29:01
- * @LastEditTime: 2022-03-25 15:47:07
+ * @LastEditTime: 2022-04-05 15:57:39
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -15,6 +15,7 @@ import NotesList from '@/views/News/NewsType/NotesList.vue'
 import TryList from '@/views/News/NewsType/TryList.vue'
 import LectureList from '@/views/News/NewsType/LectureList.vue'
 import BuyList from '@/views/News/NewsType/BuyList.vue'
+import ActivityList from '@/views/News/NewsType/ActivityList.vue'
 
 const announcementRouter = {
   path: '/announcement',
@@ -80,6 +81,15 @@ const announcementRouter = {
       name: 'lectureList',
       components: {
         default: LectureList,
+        header: MainNavbar,
+        footer: MainFooter
+      }
+    },
+    {
+      path: 'activity',
+      name: 'activityList',
+      components: {
+        default: ActivityList,
         header: MainNavbar,
         footer: MainFooter
       }
