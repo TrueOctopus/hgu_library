@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-18 14:30:26
- * @LastEditTime: 2022-03-19 10:42:08
+ * @LastEditTime: 2022-04-05 14:33:56
  * @LastEditors: 郑钊宇
  * @Description: 侧边递归树菜单
 -->
@@ -15,7 +15,7 @@
     </template>
     <template v-for="child in data.children">
       <MenuItem v-if="!child.children" :key="child.title">
-        <router-link :to="child.link">{{ child.title }}</router-link>
+        <router-link :name="child.link" :to="child.link">{{ child.title }}</router-link>
       </MenuItem>
       <Menu v-else :key="child.title" :data="child" />
     </template>

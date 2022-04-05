@@ -57,10 +57,10 @@
                         <ul>
                           <li class="dropdown-header">资源服务</li>
                           <li>
-                            <a href="kits" class="dropdown-item">馆藏目录</a>
+                            <a href="/resouce/collection" class="dropdown-item">馆藏目录</a>
                           </li>
                           <li>
-                            <a href="/resouce" class="dropdown-item">数据库导航</a>
+                            <a href="/resouce/all" class="dropdown-item">数据库导航</a>
                           </li>
                           <li>
                             <a href="#pablo" class="dropdown-item">试用资源</a>

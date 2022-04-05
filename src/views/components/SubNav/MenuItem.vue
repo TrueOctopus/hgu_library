@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-18 15:06:05
- * @LastEditTime: 2022-03-19 17:33:17
+ * @LastEditTime: 2022-04-05 14:32:04
  * @LastEditors: 郑钊宇
  * @Description: 没有子节点，所要展示的标题
 -->
@@ -16,9 +16,10 @@ export default {
     activeLi(e) {
       // console.log(e.currentTarget)
       const list = document.getElementsByTagName('li')
-      list.forEach(l => {
-        l.classList.remove('active')
-      })
+      // console.log('list', list.length)
+      for (var i = 0; i < list.length; i++) {
+        list[i].classList.remove('active')
+      }
       e.currentTarget.classList.add('active')
     }
   }
