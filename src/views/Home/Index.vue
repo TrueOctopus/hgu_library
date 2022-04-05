@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-05 16:06:11
+ * @LastEditTime: 2022-04-05 16:28:35
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -228,28 +228,28 @@
                       <a v-for="item in databaseList.cn" :key="item.id" :href="item.urladdress">
                         {{ item.urlname }}
                       </a>
-                      <a class="more" href="javascript:void(0)">更多>></a>
+                      <a class="more" href="/resouce/cn">更多>></a>
                     </div>
                     <div>
                       外文资源:
                       <a v-for="item in databaseList.foreign" :key="item.id" :href="item.urladdress">
                         {{ item.urlname }}
                       </a>
-                      <a class="more" href="javascript:void(0)">更多>></a>
+                      <a class="more" href="/resouce/foreign">更多>></a>
                     </div>
                     <div>
                       试用资源:
                       <a v-for="item in databaseList.try" :key="item.id" :href="item.urladdress">
                         {{ item.urlname }}
                       </a>
-                      <a class="more" href="javascript:void(0)">更多>></a>
+                      <a class="more" href="/resouce/try">更多>></a>
                     </div>
                     <div>
                       开放资源:
                       <a v-for="item in databaseList.open" :key="item.id" :href="item.urladdress">
                         {{ item.urlname }}
                       </a>
-                      <a class="more" href="javascript:void(0)">更多>></a>
+                      <a class="more" href="/resouce/open">更多>></a>
                     </div>
                   </div>
                 </template>
@@ -263,13 +263,13 @@
               <div class="res-btns md-layout md-layout-item md-size-80">
                 <div class="md-layout md-layout-item md-size-100">
                   <div class="md-layout-item">
-                    <ResBtn icon-name="schedule" text="开放时间" />
+                    <ResBtn icon-name="schedule" url="/service/opentime" text="开放时间" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn icon-name="chair_alt" text="座位预约" />
+                    <ResBtn icon-name="chair_alt" url="/service/seatOrder" text="座位预约" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn icon-name="local_library" text="研修室预约" />
+                    <ResBtn icon-name="local_library" url="/service/labOrder" text="研修室预约" />
                   </div>
                   <div class="md-layout-item">
                     <ResBtn
@@ -278,7 +278,7 @@
                     />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn icon-name="book" text="图书续借" />
+                    <ResBtn icon-name="book" url="/service/borrowRules" text="图书续借" />
                   </div>
                   <div class="md-layout-item">
                     <ResBtn
@@ -289,22 +289,22 @@
                 </div>
                 <div class="md-layout md-layout-item md-size-100">
                   <div class="md-layout-item">
-                    <ResBtn icon-name="school" text="校外访问" />
+                    <ResBtn icon-name="school" url="/resouce/offcampus" text="校外访问" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn icon-name="storage" text="数据库" />
+                    <ResBtn icon-name="storage" url="/resouce/all" text="数据库" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn icon-name="dashboard" text="馆藏布局" />
+                    <ResBtn icon-name="dashboard" url="/resouce/collection" text="馆藏布局" />
                   </div>
                   <div class="md-layout-item">
                     <ResBtn icon-name="3p" text="培训讲座" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn icon-name="bookmark_add" text="新书通报" />
+                    <ResBtn icon-name="bookmark_add" url="/reading/bookReport" text="新书通报" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn icon-name="volunteer_activism" text="捐赠" />
+                    <ResBtn icon-name="volunteer_activism" url="/service/donation" text="捐赠" />
                   </div>
                 </div>
               </div>
@@ -450,7 +450,7 @@
               阅读推广
             </h3>
             <router-link
-              to="/announcement"
+              to="/reading/recommendedReading"
               class="md-layout-item md-size-10 moreClass"
             >
               更多>>
@@ -469,7 +469,7 @@
           <div class="md-layout-item md-size-80 md-layout md-content">
             <h3 class="md-layout-item md-size-90 tittle">活动讲座</h3>
             <router-link
-              to="/announcement"
+              to="/announcement/lecture"
               class="md-layout-item md-size-10 moreClass"
             >
               更多>>
@@ -488,7 +488,7 @@
           <div class="md-layout-item md-size-80 md-layout">
             <h3 class="md-layout-item md-size-90 tittle">特色资源</h3>
             <router-link
-              to="/characteristic"
+              to="/resouce/characteristic"
               class="md-layout-item md-size-10 moreClass"
             >
               更多>>

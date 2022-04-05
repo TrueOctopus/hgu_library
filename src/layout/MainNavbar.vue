@@ -66,7 +66,7 @@
                             <a href="/resouce/try" class="dropdown-item">试用资源</a>
                           </li>
                           <li>
-                            <a href="/characteristic" class="dropdown-item">特色资源</a>
+                            <a href="/resouce/characteristic" class="dropdown-item">特色资源</a>
                           </li>
                           <li class="dropdown-divider" />
                           <li>

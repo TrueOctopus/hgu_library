@@ -1,13 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-19 14:34:07
- * @LastEditTime: 2022-03-18 14:23:54
+ * @LastEditTime: 2022-04-05 16:20:23
  * @LastEditors: 郑钊宇
  * @Description: 资源快速入口按钮
 -->
 <template>
   <div>
-    <a class="md-layout res-btn" href="#">
+    <a class="md-layout res-btn" :href="url">
       <div class="md-layout-item md-size-100 material-icons md-light">
         {{ iconName }}
       </div>
@@ -24,6 +24,10 @@ export default {
     iconName: {
       type: String,
       default: 'home'
+    },
+    url: {
+      type: String,
+      default: 'javascript:void(0)'
     },
     text: {
       type: String,
