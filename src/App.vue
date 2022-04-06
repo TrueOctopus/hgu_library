@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-28 19:56:23
+ * @LastEditTime: 2022-04-06 19:22:35
  * @LastEditors: 郑钊宇
  * @Description: app.vue
 -->
@@ -64,5 +64,9 @@ export default {
 }
 ul {
   list-style: none;
+}
+.md-image {
+  display: inline-block !important;
+  align-items: initial !important;
 }
 </style>
