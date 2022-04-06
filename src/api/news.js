@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-28 10:31:04
- * @LastEditTime: 2022-04-06 15:15:10
+ * @LastEditTime: 2022-04-06 16:06:55
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -11,7 +11,7 @@ export const newsOption = ['新闻', '公告', '购买', '试用', '活动', '�
 
 export function fetchNewsByCatalog(pageNo, pageSize, catalog) {
   return request({
-    url: '/news/textByCatalog',
+    url: '/news/newsByCatalog',
     method: 'get',
     params: { pageNo, pageSize, catalog }
   })

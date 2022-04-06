@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-19 16:43:06
- * @LastEditTime: 2022-04-06 15:37:51
+ * @LastEditTime: 2022-04-06 15:40:13
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -40,8 +40,6 @@ export default {
       newsOption,
       list: [],
       infoColor: 'info',
-      showLastBreadcrumb: false,
-      detailTittle: '新闻公告',
       infoPagination: {
         pageNo: 1,
         pageSize: 12,

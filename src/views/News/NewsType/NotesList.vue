@@ -1,115 +1,67 @@
 <!--
  * @Author: 郑钊宇
- * @Date: 2022-03-19 16:48:05
- * @LastEditTime: 2022-03-25 15:45:01
+ * @Date: 2022-03-19 16:47:36
+ * @LastEditTime: 2022-04-06 16:09:06
  * @LastEditors: 郑钊宇
  * @Description:
 -->
 <template>
   <div>
     <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="03/03"
-      news-id="1"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="03/03"
-      news-id="1"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-      date="03/03"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="12/13"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="12/13"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="12/13"
-    />
-    <NewsElem
-      :news-type-index="1"
-      tittle="这是一段测试文字"
-      date="12/13"
+      v-for="item in list"
+      :key="item.id"
+      :news-type-index="newsOption.indexOf(item.catalog)"
+      :tittle="item.title"
+      :date="item.releasetime.substring(5, 10)"
+      :news-id="item.id"
     />
     <pagination
-      v-model="infoPagination"
+      v-model="infoPagination.pageNo"
       :class="`pagination-${infoColor}`"
-      :page-count="10"
+      :page-count="infoPagination.pageCount"
+      @input="fetchList"
     />
-
-    <!-- {{ $route.params.newsId }} -->
   </div>
 </template>
 
 <script>
 import NewsElem from '../../components/NewsElement.vue'
 import { Pagination } from '@/components'
+import { fetchNewsByCatalog, newsOption } from '@/api/news'
 
 export default {
-  name: 'NotesList',
+  name: 'ALL',
   components: {
     NewsElem,
     Pagination
   },
   data() {
     return {
-      infoColor: 'warning',
-      showLastBreadcrumb: false,
-      detailTittle: '新闻公告',
-      infoPagination: 1
+      newsOption,
+      list: [],
+      infoColor: 'info',
+      infoPagination: {
+        pageNo: 1,
+        pageSize: 12,
+        pageCount: 1
+      }
+    }
+  },
+  created() {
+    this.fetchList()
+  },
+  methods: {
+    fetchList() {
+      fetchNewsByCatalog(
+        this.infoPagination.pageNo,
+        this.infoPagination.pageSize,
+        '公告'
+      ).then(response => {
+        // console.log(response)
+        this.list = response.data.news.list
+        this.infoPagination.pageCount = response.data.news.pages
+        // console.log(this.list)
+      })
     }
   }
 }
