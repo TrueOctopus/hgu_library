@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-04-05 15:56:51
+ * @LastEditTime: 2022-04-06 15:07:11
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -22,43 +22,11 @@
     </template>
     <template #subNav>
       <SubNav :menu-list="menuList" menu-tittle="新闻中心" />
-
-      <!-- <md-button
-          ref="all"
-          class="md-sm"
-          :class="{ 'md-simple': buttonClass.isAllActive }"
-          @click="buttonShow('All')"
-        >所有发布消息</md-button>
-        <md-button
-          ref="news"
-          class="md-primary md-sm"
-          :class="{ 'md-simple': buttonClass.isNewsActive }"
-          @click="buttonShow('News')"
-        >新闻</md-button>
-        <md-button
-          ref="notes"
-          class="md-warning md-sm"
-          :class="{ 'md-simple': buttonClass.isNotesActive }"
-          @click="buttonShow('Notes')"
-        >公告</md-button>
-        <md-button
-          ref="buy"
-          class="md-success md-sm"
-          :class="{ 'md-simple': buttonClass.isBuyActive }"
-          @click="buttonShow('Buy')"
-        >购买</md-button>
-        <md-button
-          ref="try"
-          class="md-info md-sm"
-          :class="{ 'md-simple': buttonClass.isTryActive }"
-          @click="buttonShow('Try')"
-        >试用</md-button> -->
     </template>
     <template #text>
       <router-view />
     </template>
 
-    <!-- {{ $route.params.newsId }} -->
   </TemplePage>
 </template>
 
@@ -120,36 +88,6 @@ export default {
       })
       return type
     }
-  },
-  methods: {
-    // buttonShow(newsType) {
-    //   this.buttonClass.newsType = newsType
-    //   for (const key in this.buttonClass) {
-    //     this.buttonClass[key] = true
-    //   }
-    //   this.buttonClass['is' + newsType + 'Active'] = false
-    //   switch (newsType) {
-    //     case 'All':
-    //       this.isShowBreadcrub = false
-    //       break
-    //     case 'News':
-    //       this.lastBreadcrumbTittle = '新闻'
-    //       this.isShowBreadcrub = true
-    //       break
-    //     case 'Notes':
-    //       this.lastBreadcrumbTittle = '公告'
-    //       this.isShowBreadcrub = true
-    //       break
-    //     case 'Buy':
-    //       this.lastBreadcrumbTittle = '购买'
-    //       this.isShowBreadcrub = true
-    //       break
-    //     case 'Try':
-    //       this.lastBreadcrumbTittle = '试用'
-    //       this.isShowBreadcrub = true
-    //       break
-    //   }
-    // }
   }
 }
 </script>

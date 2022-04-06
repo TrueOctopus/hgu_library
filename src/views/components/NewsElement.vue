@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-05 16:05:02
+ * @LastEditTime: 2022-04-06 14:58:26
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
@@ -38,8 +38,8 @@ export default {
       required: true
     },
     newsId: {
-      type: String,
-      default: '',
+      type: Number,
+      default: 0,
       require: true
     }
   },
@@ -83,8 +83,7 @@ export default {
       }
       return `border-left: 5px solid ${tabColor};`
     }
-  },
-  methods: {}
+  }
 }
 </script>
 

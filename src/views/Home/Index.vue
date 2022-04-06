@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-05 16:28:35
+ * @LastEditTime: 2022-04-06 15:17:45
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -328,35 +328,12 @@
             </router-link>
             <div class="md-layout-item md-size-50 md-small-size-100">
               <NewsElem
-                :news-type-index="1"
-                tittle="这是一段测试文字"
-                date="03/03"
-                news-id="1"
-              />
-              <NewsElem
-                :news-type-index="4"
-                tittle="这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="0"
-                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="0"
-                tittle="这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="5"
-                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="1"
-                tittle="这是一段测试文字"
-                date="12/13"
+                v-for="item in newsList.news"
+                :key="item.id"
+                :news-type-index="newsOption.indexOf(item.catalog)"
+                :tittle="item.title"
+                :date="item.releasetime.substring(5, 10)"
+                :news-id="item.id"
               />
             </div>
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
@@ -388,34 +365,12 @@
             </router-link>
             <div class="md-layout-item md-size-50 md-small-size-100">
               <NewsElem
-                :news-type-index="3"
-                tittle="这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="2"
-                tittle="这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="2"
-                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="3"
-                tittle="这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="3"
-                tittle="这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字这是一段测试文字"
-                date="03/03"
-              />
-              <NewsElem
-                :news-type-index="3"
-                tittle="这是一段测试文字"
-                date="12/13"
+                v-for="item in newsList.resource"
+                :key="item.id"
+                :news-type-index="newsOption.indexOf(item.catalog)"
+                :tittle="item.title"
+                :date="item.releasetime.substring(5, 10)"
+                :news-id="item.id"
               />
             </div>
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
@@ -537,6 +492,7 @@ import PublicitySection from '../components/BooksPublicitySection.vue'
 import CharacteristicSection from '../components/CharacteristicSection.vue'
 
 import { fetchDatabaseList } from '@/api/resource'
+import { fetchNewsList, fetchResourcesList, newsOption } from '@/api/news'
 
 export default {
   name: 'Index',
@@ -565,6 +521,7 @@ export default {
   },
   data() {
     return {
+      newsOption,
       databaseList: {
         cn: [],
         foreign: [],
@@ -573,7 +530,7 @@ export default {
       },
       newsList: {
         news: [],
-        lectures: []
+        resource: []
       },
       docForm: {
         strText: '',
@@ -627,7 +584,7 @@ export default {
   },
   created() {
     fetchDatabaseList().then(response => {
-      console.log(response)
+      // console.log(response)
       response.data.databaseList.forEach(ele => {
         switch (ele.genre) {
           case '中文':
@@ -652,6 +609,16 @@ export default {
             break
         }
       })
+    })
+
+    fetchNewsList(1, 6).then(response => {
+      // console.log(response)
+      this.newsList.news = response.data.news.list
+    })
+
+    fetchResourcesList(1, 6).then(response => {
+      // console.log(response)
+      this.newsList.resource = response.data.news.list
     })
   },
   mounted() {
