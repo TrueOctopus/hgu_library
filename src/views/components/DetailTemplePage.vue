@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-04-06 19:09:39
+ * @LastEditTime: 2022-04-06 19:33:28
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -42,13 +42,14 @@
             <slot name="subNav" />
           </div>
           <div class="md-layout-item md-size-5 md-small-size-5" />
-          <div class="md-layout-item md-size-70">
+          <div id="text" class="md-layout-item md-size-70">
             <slot name="text" />
           </div>
         </div>
+
         <div v-else class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div class="md-layout-item md-size-80">
+          <div id="text" class="md-layout-item md-size-80">
             <slot name="text" />
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -122,5 +123,8 @@ export default {
 }
 #subNav {
   padding: 0 0 10px;
+}
+#text {
+  padding-bottom: 10vh;
 }
 </style>

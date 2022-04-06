@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:11:53
- * @LastEditTime: 2022-04-06 19:28:13
+ * @LastEditTime: 2022-04-06 19:37:51
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告页面
 -->
@@ -22,7 +22,14 @@
         </el-breadcrumb>
       </template>
       <template #text>
-        <div v-html="content" />
+        <div v-if="picture" class="md-layout">
+          <div class="md-layout-item md-size-30">
+            <img class="md-image" style="height: auto" :src="picture" alt="主题图片">
+          </div>
+
+          <div class="md-layout-item md-size-70" v-html="content" />
+        </div>
+        <div v-else v-html="content" />
       </template>
 
     </TemplePage>
