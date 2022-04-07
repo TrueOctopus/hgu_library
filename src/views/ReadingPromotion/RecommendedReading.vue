@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 16:01:50
- * @LastEditTime: 2022-04-07 10:07:45
+ * @LastEditTime: 2022-04-07 10:47:51
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -54,6 +54,10 @@ export default {
   cursor: pointer;
   text-align: center;
   padding-right: 50px;
+  img {
+    width: 100%;
+    height: auto;
+  }
   span {
     display: inline-block;
     padding: 8px 0 20px;
