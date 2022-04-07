@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-04-06 19:33:28
+ * @LastEditTime: 2022-04-07 10:42:28
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -91,7 +91,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .page-header {
   height: 50vh !important;
   h2 {
@@ -126,5 +126,30 @@ export default {
 }
 #text {
   padding-bottom: 10vh;
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.33em;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: 1.17em;
+    font-weight: 400;
+  }
+  h5 {
+    font-size: 0.83em;
+  }
+  h6 {
+    font-size: 0.67em;
+  }
+  p {
+    font-size: 1em;
+  }
 }
 </style>

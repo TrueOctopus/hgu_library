@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-04-07 08:49:31
+ * @LastEditTime: 2022-04-07 10:13:53
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -25,6 +25,7 @@ import Kits from '@/views/Kits/Kits.vue'
 
 import News from '@/views/News/News.vue'
 import Introduction from '@/views/Introduction/Introduction.vue'
+import BookDetail from '@/views/ReadingPromotion/BookDetail.vue'
 
 export default new Router({
   mode: 'history',
@@ -91,6 +92,16 @@ export default new Router({
       path: '/announcement/:newId',
       name: 'DetailNews',
       components: { default: News, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 100 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+
+    {
+      path: '/reading/bookDetail/:bookId',
+      name: 'DetailBook',
+      components: { default: BookDetail, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 100 },
         footer: { backgroundColor: 'black' }

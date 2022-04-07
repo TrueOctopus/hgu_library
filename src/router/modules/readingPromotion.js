@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-25 15:26:51
- * @LastEditTime: 2022-04-07 08:52:08
+ * @LastEditTime: 2022-04-07 10:12:09
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -48,15 +48,6 @@ const readingPromotion = {
     {
       path: 'readingMonth',
       name: 'ReadingMonth',
-      components: {
-        default: ReadingMonth,
-        header: MainNavbar,
-        footer: MainFooter
-      }
-    },
-    {
-      path: 'bookDetail/:bookId',
-      name: 'BookDetail',
       components: {
         default: ReadingMonth,
         header: MainNavbar,

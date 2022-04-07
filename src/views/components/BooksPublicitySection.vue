@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 17:26:09
- * @LastEditTime: 2022-04-07 08:51:39
+ * @LastEditTime: 2022-04-07 10:32:36
  * @LastEditors: 郑钊宇
  * @Description: 阅读推广
 -->
@@ -24,7 +24,7 @@
             <img :src="book.coverimage" class="image">
             <div style="padding: 14px;">
               <span>{{ book.title }}</span>
-              <div class="bottom clearfix">
+              <div class="bottom clearfix" style="white-space: pre-wrap;">
                 {{ book.bookinformation }}
               </div>
             </div>
@@ -67,7 +67,7 @@ export default {
 .bottom {
   margin-top: 13px;
   line-height: 16px;
-
+  height: 46px;
   overflow: hidden;
   font-size: 14px;
   color: #ababab;

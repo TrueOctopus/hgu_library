@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-19 16:43:06
- * @LastEditTime: 2022-04-06 15:40:13
+ * @LastEditTime: 2022-04-07 10:45:18
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -56,10 +56,10 @@ export default {
         this.infoPagination.pageNo,
         this.infoPagination.pageSize)
         .then(response => {
-          console.log(response)
+          // console.log(response)
           this.list = response.data.news.list
           this.infoPagination.pageCount = response.data.news.pages
-          console.log(this.list)
+          // console.log(this.list)
         })
     }
   }
