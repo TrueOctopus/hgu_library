@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-07 10:09:23
- * @LastEditTime: 2022-04-07 10:44:50
+ * @LastEditTime: 2022-04-07 14:36:10
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -25,7 +25,7 @@
       <template #text>
         <div v-if="picture" class="md-layout">
           <div class="md-layout-item md-size-30">
-            <img class="md-image" style="height: auto" :src="picture" alt="主题图片">
+            <img class="md-image" style="width: 100%;height: auto" :src="picture" alt="主题图片">
             <div style="white-space: pre-wrap; font-size: 14px;">{{ bookinformation }}</div>
           </div>
 
