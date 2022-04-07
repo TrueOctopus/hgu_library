@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-11 15:22:34
- * @LastEditTime: 2022-03-15 19:48:29
+ * @LastEditTime: 2022-04-07 15:25:43
  * @LastEditors: 郑钊宇
  * @Description: 活动日历
 -->
@@ -12,21 +12,27 @@
         <span v-if="selectDate === '' || selectDate === today">今日</span>
         <span v-if="selectDate !== today">{{ selectDate }}</span> 活动与讲座：
       </div>
-      <div class="lecture">
-        <a href="#" class="lectureTittle">{{ lecture.tittle }}</a>
-        <p>{{ lecture.text }}</p>
-        <p>{{ lecture.time }}</p>
+      <div v-if="lectureList.length !== 0">
+        <div class="catalog">讲座:</div>
+        <div v-for="lecture in lectureList" :key="lecture.id" class="lecture">
+          <div v-if="lecture.catalog === '讲座'">
+            <router-link :to="`lecture/${lecture.id}`" class="lectureTittle">{{ lecture.title }}</router-link>
+            <p>{{ lecture.remark }}</p>
+            <p>开始时间: {{ lecture.lecturetime }}</p>
+          </div>
+        </div>
       </div>
-      <div class="lecture">
-        <a href="#" class="lectureTittle">{{ lecture.tittle }}</a>
-        <p>{{ lecture.text }}</p>
-        <p>{{ lecture.time }}</p>
+      <div v-if="lectureList.length !== 0">
+        <div class="catalog">活动:</div>
+        <div v-for="lecture in lectureList" :key="lecture.id" class="lecture">
+          <div v-if="lecture.catalog === '活动'">
+            <router-link :to="`lecture/${lecture.id}`" class="lectureTittle">{{ lecture.title }}</router-link>
+            <p>{{ lecture.remark }}</p>
+            <p>开始时间: {{ lecture.lecturetime }}</p>
+          </div>
+        </div>
       </div>
-      <div class="lecture">
-        <a href="#" class="lectureTittle">{{ lecture.tittle }}</a>
-        <p>{{ lecture.text }}</p>
-        <p>{{ lecture.time }}</p>
-      </div>
+      <div v-else>当前日期没有讲座或活动~</div>
     </div>
     <Calendar
       ref="Calendar"
@@ -38,22 +44,25 @@
 
 <script>
 import Calendar from 'vue-calendar-component'
+import { getAllDate, fetchLectureByDate } from '@/api/lecture'
+
 export default {
   components: {
     Calendar
   },
   data() {
     return {
-      markArr: ['2022/03/06', '2022/3/3', '2022/3/4', '2022/3/5'],
+      markArr: [],
       today: '',
       selectDate: '',
-      lecture: {
-        tittle: '一个测试用的讲座标题',
-        text:
-          '一个测试用的讲座介绍，一个测试用的测试人员来进行一个测试的讲座!一个测试用的讲座介绍，一个测试用的测试人员来进行一个测试的讲座',
-        time: '2022/03/11 15:00'
-      }
+      lectureList: []
     }
+  },
+  created() {
+    getAllDate().then(res => {
+      console.log(res)
+      this.markArr = res.data.allDate
+    })
   },
   mounted() {
     const nowDate = new Date()
@@ -65,6 +74,7 @@ export default {
     const day =
       nowDate.getDate() < 10 ? '0' + nowDate.getDate() : nowDate.getDate()
     this.today = year + '/' + month + '/' + day
+    this.getSelectDateLecture(this.today)
   },
   methods: {
     getSelectDate() {
@@ -86,6 +96,14 @@ export default {
       }
       yearMonth = yearMonth.replace('月', '/')
       this.selectDate = yearMonth + day
+      this.getSelectDateLecture(this.selectDate)
+    },
+    getSelectDateLecture(date) {
+      console.log('date', date)
+      fetchLectureByDate(date).then(res => {
+        console.log(res)
+        this.lectureList = res.data.lecture
+      })
     }
   }
 }

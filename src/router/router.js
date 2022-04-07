@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-04-07 10:13:53
+ * @LastEditTime: 2022-04-07 14:44:42
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -21,7 +21,6 @@ import Register from '@/views/Personal/Register.vue'
 import Profile from '@/views/Personal/Profile.vue'
 import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'
-import Kits from '@/views/Kits/Kits.vue'
 
 import News from '@/views/News/News.vue'
 import Introduction from '@/views/Introduction/Introduction.vue'
@@ -60,15 +59,6 @@ export default new Router({
       path: '/profile',
       name: 'profile',
       components: { default: Profile, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 200 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/kits',
-      name: 'kits',
-      components: { default: Kits, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 200 },
         footer: { backgroundColor: 'black' }
