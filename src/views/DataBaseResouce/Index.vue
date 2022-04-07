@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 08:39:26
- * @LastEditTime: 2022-03-25 10:05:07
+ * @LastEditTime: 2022-04-07 17:27:15
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -22,7 +22,9 @@
       <SubNav :menu-list="menuList" menu-tittle="资源导航" />
     </template>
     <template #text>
-      <router-view />
+      <template>
+        <router-view />
+      </template>
     </template>
   </TemplePage>
 </template>
@@ -73,6 +75,9 @@ export default {
         }
       })
       return type
+    },
+    catalog() {
+      return this.$route.meta.catalog
     }
   }
 }

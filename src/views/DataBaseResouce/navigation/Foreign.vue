@@ -1,17 +1,22 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 09:46:01
- * @LastEditTime: 2022-03-25 09:53:16
+ * @LastEditTime: 2022-04-07 17:37:36
  * @LastEditors: 郑钊宇
  * @Description:
 -->
 <template>
-  <div>foreign</div>
+  <div>
+    <pageInfo catalog="外文资源" />
+  </div>
 </template>
 
 <script>
+import pageInfo from '@/views/components/PageInformation'
 export default {
-
+  components: {
+    pageInfo
+  }
 }
 </script>
 
