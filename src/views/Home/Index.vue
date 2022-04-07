@@ -485,7 +485,7 @@
 <script>
 import { NavTabsCard } from '@/components'
 import ResBtn from '../components/ResourceButtonSection.vue'
-import NewsElem from '../components/NewsElement.vue'
+import NewsElem from '../News/components/NewsElement.vue'
 import AnchorNav from '../components/AnchorNav.vue'
 import EventsCalendar from '../components/EventsCalendar.vue'
 import PublicitySection from '../components/BooksPublicitySection.vue'

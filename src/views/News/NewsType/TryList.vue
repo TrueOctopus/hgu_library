@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-19 16:47:36
- * @LastEditTime: 2022-04-06 16:10:31
+ * @LastEditTime: 2022-04-07 08:58:18
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import NewsElem from '../../components/NewsElement.vue'
+import NewsElem from '../components/NewsElement.vue'
 import { Pagination } from '@/components'
 import { fetchNewsByCatalog, newsOption } from '@/api/news'
 

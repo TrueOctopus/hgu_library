@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 17:26:09
- * @LastEditTime: 2022-03-15 19:48:19
+ * @LastEditTime: 2022-04-07 08:51:39
  * @LastEditors: 郑钊宇
  * @Description: 阅读推广
 -->
@@ -12,8 +12,8 @@
     height="434px"
     indicator-position="none"
   >
-    <el-carousel-item>
-      <div class="md-layout">
+    <el-carousel-item v-for="book in bookList" :key="book.id">
+      <div class="md-layout" @click="gotoBookDetail(book.id)">
         <div class="md-layout-item md-size-20" />
         <div class="md-layout-item md-size-60">
           <el-card
@@ -21,91 +21,11 @@
             shadow="hover"
             style="height:434px"
           >
-            <img src="@/assets/img/st.jpg" class="image">
+            <img :src="book.coverimage" class="image">
             <div style="padding: 14px;">
-              <span>《三体》</span>
+              <span>{{ book.title }}</span>
               <div class="bottom clearfix">
-                <time class="time">{{ currentDate }}</time>
-              </div>
-            </div>
-          </el-card>
-        </div>
-      </div>
-    </el-carousel-item>
-    <el-carousel-item>
-      <div class="md-layout">
-        <div class="md-layout-item md-size-20" />
-        <div class="md-layout-item md-size-60">
-          <el-card
-            :body-style="{ padding: '0px' }"
-            shadow="hover"
-            style="height:434px"
-          >
-            <img src="@/assets/img/dsp.jpg" class="image">
-            <div style="padding: 14px;">
-              <span>《三体》</span>
-              <div class="bottom clearfix">
-                <time class="time">{{ currentDate }}</time>
-              </div>
-            </div>
-          </el-card>
-        </div>
-      </div>
-    </el-carousel-item>
-    <el-carousel-item>
-      <div class="md-layout">
-        <div class="md-layout-item md-size-20" />
-        <div class="md-layout-item md-size-60">
-          <el-card
-            :body-style="{ padding: '0px' }"
-            shadow="hover"
-            style="height:434px"
-          >
-            <img src="@/assets/img/xgxlx.jpg" class="image">
-            <div style="padding: 14px;">
-              <span>《三体》</span>
-              <div class="bottom clearfix">
-                <time class="time">{{ currentDate }}</time>
-              </div>
-            </div>
-          </el-card>
-        </div>
-      </div>
-    </el-carousel-item>
-    <el-carousel-item>
-      <div class="md-layout">
-        <div class="md-layout-item md-size-20" />
-        <div class="md-layout-item md-size-60">
-          <el-card
-            :body-style="{ padding: '0px' }"
-            shadow="hover"
-            style="height:434px"
-          >
-            <img src="@/assets/img/zcwa.jpg" class="image">
-            <div style="padding: 14px;">
-              <span>《三体》</span>
-              <div class="bottom clearfix">
-                <time class="time">{{ currentDate }}</time>
-              </div>
-            </div>
-          </el-card>
-        </div>
-      </div>
-    </el-carousel-item>
-    <el-carousel-item>
-      <div class="md-layout">
-        <div class="md-layout-item md-size-20" />
-        <div class="md-layout-item md-size-60">
-          <el-card
-            :body-style="{ padding: '0px' }"
-            shadow="hover"
-            style="height:434px"
-          >
-            <img src="@/assets/img/zkl.jpg" class="image">
-            <div style="padding: 14px;">
-              <span>《三体》</span>
-              <div class="bottom clearfix">
-                <time class="time">{{ currentDate }}</time>
+                {{ book.bookinformation }}
               </div>
             </div>
           </el-card>
@@ -116,10 +36,23 @@
 </template>
 
 <script>
+import { fetchPublicityList } from '@/api/publicity'
+
 export default {
   data() {
     return {
-      currentDate: new Date()
+      bookList: []
+    }
+  },
+  created() {
+    fetchPublicityList().then(response => {
+      // console.log(response)
+      this.bookList = response.data.recommend
+    })
+  },
+  methods: {
+    gotoBookDetail(id) {
+      this.$router.push('/reading/bookDetail/' + id)
     }
   }
 }
@@ -134,6 +67,10 @@ export default {
 .bottom {
   margin-top: 13px;
   line-height: 16px;
+
+  overflow: hidden;
+  font-size: 14px;
+  color: #ababab;
 }
 
 .image {

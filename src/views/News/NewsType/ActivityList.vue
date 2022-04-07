@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import NewsElem from '../../components/NewsElement.vue'
+import NewsElem from '../components/NewsElement.vue'
 import { Pagination } from '@/components'
 import { fetchNewsByCatalog, newsOption } from '@/api/news'
 
