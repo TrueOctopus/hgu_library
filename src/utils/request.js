@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-27 09:15:30
- * @LastEditTime: 2022-03-29 11:12:35
+ * @LastEditTime: 2022-04-07 16:02:37
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -36,6 +36,10 @@ service.interceptors.request.use(
 
   error => {
     // do something with request error
+    store.dispatch('notification/promptNotification', {
+      message: error.message || '发生错误！',
+      noticeType: 'danger'
+    })
     console.log(error) // for debug
     return Promise.reject(error)
   }
@@ -50,7 +54,7 @@ service.interceptors.response.use(
   response => {
     const res = response.data
     if (!res.ok) {
-      this.$store.dispatch('notification/promptNotification', {
+      store.dispatch('notification/promptNotification', {
         noticeType: 'danger',
         message: res.message || 'Error'
       })
@@ -61,9 +65,9 @@ service.interceptors.response.use(
   },
   error => {
     console.log('err' + error) // for debug
-    this.$store.dispatch('notification/promptNotification', {
+    store.dispatch('notification/promptNotification', {
       noticeType: 'danger',
-      message: error.msg
+      message: error.message
     })
     return Promise.reject(error)
   }

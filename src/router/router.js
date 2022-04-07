@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-04-07 14:44:42
+ * @LastEditTime: 2022-04-07 15:46:56
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -25,6 +25,7 @@ import MainFooter from '@/layout/MainFooter.vue'
 import News from '@/views/News/News.vue'
 import Introduction from '@/views/Introduction/Introduction.vue'
 import BookDetail from '@/views/ReadingPromotion/BookDetail.vue'
+import LectureDetail from '@/views/Lecture/LectureDetail.vue'
 
 export default new Router({
   mode: 'history',
@@ -73,6 +74,21 @@ export default new Router({
         footer: { backgroundColor: 'black' }
       }
     },
+
+    {
+      path: '/introduction',
+      name: 'Introduction',
+      components: {
+        default: Introduction,
+        header: MainNavbar,
+        footer: MainFooter
+      },
+      props: {
+        header: { colorOnScroll: 100 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+
     databaseResouce,
     announcementRouter,
     readerService,
@@ -99,13 +115,9 @@ export default new Router({
     },
 
     {
-      path: '/introduction',
-      name: 'Introduction',
-      components: {
-        default: Introduction,
-        header: MainNavbar,
-        footer: MainFooter
-      },
+      path: '/lecture/:lectureId',
+      name: 'DetailLecture',
+      components: { default: LectureDetail, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 100 },
         footer: { backgroundColor: 'black' }
