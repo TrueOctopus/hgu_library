@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-04-07 15:46:56
+ * @LastEditTime: 2022-04-08 08:50:46
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -26,6 +26,8 @@ import News from '@/views/News/News.vue'
 import Introduction from '@/views/Introduction/Introduction.vue'
 import BookDetail from '@/views/ReadingPromotion/BookDetail.vue'
 import LectureDetail from '@/views/Lecture/LectureDetail.vue'
+
+import SearchResult from '@/views/SearchResult/SearchResult.vue'
 
 export default new Router({
   mode: 'history',
@@ -118,6 +120,16 @@ export default new Router({
       path: '/lecture/:lectureId',
       name: 'DetailLecture',
       components: { default: LectureDetail, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 100 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+
+    {
+      path: '/search',
+      name: 'GlobalSearch',
+      components: { default: SearchResult, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 100 },
         footer: { backgroundColor: 'black' }

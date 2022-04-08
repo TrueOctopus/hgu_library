@@ -200,10 +200,10 @@
             </mobile-menu>
 
             <md-list>
-              <md-list-item>
+              <md-list-item @keydown.enter="handleSearch">
                 <div class="md-autocomplete">
                   <md-autocomplete
-                    v-model="selectedEmployee"
+                    v-model="searchQuery"
                     class="search has-info"
                     :md-options="employees"
                     :md-open-on-focus="false"
@@ -272,7 +272,7 @@ export default {
       toggledClass: false, // 按钮切换标志符
       logoImage: require('@/assets/img/shoolLogo-black.png'), // 顶部图
 
-      selectedEmployee: '', // 搜索框默认配置
+      searchQuery: '', // 搜索框默认配置
       employees: [],
 
       mobileFlag: false, // 移动端激活标志
@@ -374,6 +374,15 @@ export default {
     },
     scrollListener() {
       resizeThrottler(this.handleScroll)
+    },
+    handleSearch() {
+      this.$router.push({
+        path: '/search',
+        query: {
+          searchQuery: this.searchQuery
+        }
+      })
+      this.searchQuery = ''
     }
   }
 }
