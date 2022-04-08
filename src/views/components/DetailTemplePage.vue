@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-04-07 15:41:16
+ * @LastEditTime: 2022-04-08 10:04:14
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -150,9 +150,6 @@ export default {
   }
   h6 {
     font-size: 0.67em;
-  }
-  p {
-    font-size: 1em;
   }
 }
 </style>

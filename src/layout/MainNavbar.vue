@@ -215,7 +215,17 @@
 
               <md-list-item>
                 <md-button v-if="!username" class="md-info" href="/login">登录</md-button>
-                <router-link v-else to="/profile" style="margin-top: 0.5rem">{{ username }}</router-link>
+
+                <el-dropdown v-else>
+                  <span class="el-dropdown-link">
+                    <router-link to="/profile" style="margin-top: 0.5rem">{{ username }}</router-link>
+                  </span>
+                  <el-dropdown-menu slot="dropdown">
+                    <a href="/profile"><el-dropdown-item>个人信息</el-dropdown-item></a>
+                    <a @click="logout"><el-dropdown-item>登出</el-dropdown-item></a>
+                  </el-dropdown-menu>
+                </el-dropdown>
+
               </md-list-item>
             </md-list>
           </div>
@@ -383,6 +393,10 @@ export default {
         }
       })
       this.searchQuery = ''
+    },
+    async logout() {
+      await this.$store.dispatch('user/logout')
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }
   }
 }
@@ -437,5 +451,11 @@ export default {
 /* 其他设置 */
 .md-toolbar-row {
   max-width: 90%;
+}
+.el-dropdown-menu__item {
+  &:hover {
+    color: #fff !important;
+    background-color: #2196f3 !important;
+  }
 }
 </style>

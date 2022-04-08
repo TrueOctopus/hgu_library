@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-16 08:44:06
- * @LastEditTime: 2022-03-29 16:39:11
+ * @LastEditTime: 2022-04-08 15:31:01
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -43,6 +43,13 @@ const actions = {
         reject(error)
       })
     })
+  },
+
+  // user logout
+  logout({ commit }) {
+    commit('SET_TOKEN', '')
+    commit('SET_USERNAME', '')
+    removeToken()
   },
 
   // get user info

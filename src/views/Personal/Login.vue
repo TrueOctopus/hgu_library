@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-29 15:09:29
+ * @LastEditTime: 2022-04-08 16:18:58
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -32,7 +32,7 @@
               </p>
               <md-field slot="inputs" class="md-form-group" :class="usernameMessageClass">
                 <md-icon>face</md-icon>
-                <label>用户名...</label>
+                <label>用户名或邮箱...</label>
                 <md-input v-model="userInfo.username" @blur="usernameVerify" />
                 <span class="md-error">{{ UsernameErrorMessage }}</span>
               </md-field>
