@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-04-08 08:50:46
+ * @LastEditTime: 2022-04-09 15:55:23
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -13,6 +13,7 @@ import announcementRouter from './modules/announcement'
 import databaseResouce from './modules/databaseResouce'
 import readerService from './modules/readerService'
 import readingPromotion from './modules/readingPromotion'
+import commentHub from './modules/commentHub'
 
 import Index from '@/views/Home/Index.vue'
 import Landing from '@/views/Landing/Landing.vue'
@@ -95,6 +96,7 @@ export default new Router({
     announcementRouter,
     readerService,
     readingPromotion,
+    commentHub,
 
     {
       path: '/announcement/:newId',

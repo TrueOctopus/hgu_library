@@ -116,6 +116,14 @@
                           <li>
                             <a href="/service/borrowProcess" class="dropdown-item">借阅流程</a>
                           </li>
+                          <li class="dropdown-divider" />
+                          <li class="dropdown-header">反馈中心</li>
+                          <li>
+                            <a href="/commentHub/common" class="dropdown-item">常见问题</a>
+                          </li>
+                          <li>
+                            <a href="/commentHub/comment" class="dropdown-item">留言板</a>
+                          </li>
                         </ul>
                       </el-col>
                       <el-col :span="12">
