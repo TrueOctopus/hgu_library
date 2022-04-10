@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-06 15:17:45
+ * @LastEditTime: 2022-04-10 10:05:38
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -462,17 +462,31 @@
           <div class="md-layout-item md-size-80 md-layout">
             <h3 class="md-layout-item md-size-100 tittle">友情链接</h3>
             <div class="md-layout-item md-size-25 ">
-              国家图书馆<br>中国地质图书馆<br>北京大学图书馆
+              <a href="http://www.nlc.gov.cn/">国家图书馆</a>
+              <br>
+              <a href="http://www.cgl.org.cn/">中国地质图书馆</a>
+              <br>
+              <a href="http://lib.pku.edu.cn/portal/">北京大学图书馆</a>
             </div>
             <div class="md-layout-item md-size-25 ">
-              吉林大学图书馆<br>地质大学图书馆<br>中南大学图书馆
+              <a href="http://lib.jlu.edu.cn/">吉林大学图书馆</a>
+              <br>
+              <a href="http://www.lib.cug.edu.cn/">中国地质大学图书馆</a>
+              <br>
+              <a href="https://lib.csu.edu.cn/">中南大学图书馆</a>
             </div>
             <div class="md-layout-item md-size-25 ">
-              河北工业大学图书馆<br>河北科技大学图书馆<br>河北师范大学图书馆<br>
-              河北大学图书馆
+              <a href="https://lib.chd.edu.cn">长安大学图书馆</a>
+              <br>
+              <a href="https://lib.web.hebust.edu.cn/">河北科技大学图书馆</a>
+              <br>
+              <a href="http://library.hebtu.edu.cn/">河北师范大学图书馆</a>
+
             </div>
             <div class="md-layout-item md-size-25 ">
-              河北科技大学图书馆<br>河北师范大学图书馆<br>河北大学图书馆
+              <a href="http://lib.hebut.edu.cn/">河北工业大学图书馆</a>
+              <br>
+              <a href="http://lib.hbu.edu.cn/">河北大学图书馆</a>
             </div>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -754,6 +768,13 @@ export default {
   }
 }
 #friendLink {
+  a {
+    color: #000 !important;
+    &:hover {
+      color: #00bcd4 !important;
+    }
+  }
+
   font-size: 16px;
   font-family: "Microsoft Yahei", sans-serif, serif;
   letter-spacing: 1px;
