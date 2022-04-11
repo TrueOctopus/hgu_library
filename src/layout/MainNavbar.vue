@@ -140,6 +140,10 @@
                           </li>
                           <li class="dropdown-divider" />
                           <li>
+                            <a href="/staffnumber" class="dropdown-item">职工读书证号查询</a>
+                          </li>
+                          <li class="dropdown-divider" />
+                          <li>
                             <a href="/service/donation" class="dropdown-item">捐赠</a>
                           </li>
                         </ul>

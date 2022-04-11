@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-04-09 15:55:23
+ * @LastEditTime: 2022-04-11 15:11:40
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -28,6 +28,7 @@ import Introduction from '@/views/Introduction/Introduction.vue'
 import BookDetail from '@/views/ReadingPromotion/BookDetail.vue'
 import LectureDetail from '@/views/Lecture/LectureDetail.vue'
 
+import StaffNumber from '@/views/Staff/index.vue'
 import SearchResult from '@/views/SearchResult/SearchResult.vue'
 
 export default new Router({
@@ -127,7 +128,15 @@ export default new Router({
         footer: { backgroundColor: 'black' }
       }
     },
-
+    {
+      path: '/staffnumber',
+      name: 'StaffNumber',
+      components: { default: StaffNumber, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 100 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
     {
       path: '/search',
       name: 'GlobalSearch',
