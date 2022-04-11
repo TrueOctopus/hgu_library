@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-27 09:15:30
- * @LastEditTime: 2022-04-07 16:02:37
+ * @LastEditTime: 2022-04-11 16:28:34
  * @LastEditors: 郑钊宇
  * @Description:
  */
@@ -9,12 +9,9 @@ import axios from 'axios'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
 
-// base api
-const VUE_APP_BASE_API = 'http://localhost:8081'
-
 // create an axios instance
 const service = axios.create({
-  baseURL: VUE_APP_BASE_API, // url = base url + request url
+  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
   timeout: 5000 // request timeout
 })

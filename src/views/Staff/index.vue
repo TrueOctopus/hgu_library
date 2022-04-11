@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-11 15:10:44
- * @LastEditTime: 2022-04-11 16:18:54
+ * @LastEditTime: 2022-04-11 16:20:08
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -75,7 +75,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           readerIdNumberSearch(this.workForm).then(res => {
-            console.log(res)
+            // console.log(res)
             this.$store.dispatch('notification/promptNotification', {
               noticeType: 'info',
               message: res.msg

@@ -8,7 +8,8 @@
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build && gulp licenses",
     "lint": "vue-cli-service lint",
-    "dev": "npm run serve",
+    "dev": "vue-cli-service serve --mode development --open",
+    "test": "vue-cli-service serve --mode production --open",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev"
   },
   "dependencies": {
