@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-04-11 15:11:40
+ * @LastEditTime: 2022-04-12 08:50:56
  * @LastEditors: 郑钊宇
  * @Description: 路由配置
  */
@@ -16,7 +16,6 @@ import readingPromotion from './modules/readingPromotion'
 import commentHub from './modules/commentHub'
 
 import Index from '@/views/Home/Index.vue'
-import Landing from '@/views/Landing/Landing.vue'
 import Login from '@/views/Personal/Login.vue'
 import Register from '@/views/Personal/Register.vue'
 import Profile from '@/views/Personal/Profile.vue'
@@ -38,15 +37,6 @@ export default new Router({
       path: '/',
       name: 'index',
       components: { default: Index, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 200 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/landing',
-      name: 'landing',
-      components: { default: Landing, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 200 },
         footer: { backgroundColor: 'black' }
