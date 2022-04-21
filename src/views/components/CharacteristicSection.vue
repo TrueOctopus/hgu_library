@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 09:30:09
- * @LastEditTime: 2022-04-02 18:45:38
+ * @LastEditTime: 2022-04-21 20:12:41
  * @LastEditors: 郑钊宇
  * @Description: 特色资源选项卡
 -->
@@ -12,7 +12,19 @@
       :style="sectionStyle"
       @click.stop="showInfo($event)"
     >
-      <div class="portrait">这是一个测试标题</div>
+      <div class="portrait">李廷栋</div>
+      <div class="text">
+        这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！
+      </div>
+      <md-button class="btn">了解相关资源</md-button>
+    </div>
+
+    <div
+      class="characteristicSection"
+      :style="sectionStyle"
+      @click.stop="showInfo($event)"
+    >
+      <div class="portrait">侯增谦</div>
       <div class="text">
         这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！
       </div>
@@ -23,7 +35,7 @@
       :style="sectionStyle"
       @click.stop="showInfo($event)"
     >
-      <div class="portrait">这是一个测试标题</div>
+      <div class="portrait">武强</div>
       <div class="text">
         这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！
       </div>
@@ -34,7 +46,7 @@
       :style="sectionStyle"
       @click.stop="showInfo($event)"
     >
-      <div class="portrait">这是一个测试标题</div>
+      <div class="portrait">成秋明</div>
       <div class="text">
         这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！
       </div>
@@ -45,7 +57,7 @@
       :style="sectionStyle"
       @click.stop="showInfo($event)"
     >
-      <div class="portrait">这是一个测试标题</div>
+      <div class="portrait">毛景文</div>
       <div class="text">
         这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！
       </div>
@@ -56,18 +68,7 @@
       :style="sectionStyle"
       @click.stop="showInfo($event)"
     >
-      <div class="portrait">这是一个测试标题</div>
-      <div class="text">
-        这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！
-      </div>
-    </div>
-
-    <div
-      class="characteristicSection"
-      :style="sectionStyle"
-      @click.stop="showInfo($event)"
-    >
-      <div class="portrait">这是一个测试标题</div>
+      <div class="portrait">谢玉洪</div>
       <div class="text">
         这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！这是一个测试内容！
       </div>
@@ -80,13 +81,14 @@ export default {
   props: {
     image: {
       type: String,
-      default: require('@/assets/img/bg3.jpg')
+      default: require('@/assets/img/characteristic/li.jpg')
     }
   },
   computed: {
     sectionStyle() {
       return {
-        backgroundImage: `url(${this.image})`
+        backgroundImage: `url(${this.image})`,
+        backgroundSize: 'cover'
       }
     }
   },
@@ -134,6 +136,11 @@ export default {
     left: 120px;
     font-size: 18px;
     width: 450px;
+  }
+  .btn {
+    position: absolute;
+    top: 50vh;
+    left: 60vh;
   }
 }
 .characteristicSection.section-open {
