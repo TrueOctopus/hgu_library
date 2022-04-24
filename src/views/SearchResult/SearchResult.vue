@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-08 08:36:46
- * @LastEditTime: 2022-04-08 09:35:42
+ * @LastEditTime: 2022-04-24 19:52:16
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -92,7 +92,7 @@ export default {
   },
   created() {
     globalSearch(this.$route.query.searchQuery).then(res => {
-      console.log(res)
+      // console.log(res)
       this.lectureList = res.data.lecture
       this.newsList = res.data.news
     })

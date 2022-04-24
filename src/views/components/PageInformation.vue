@@ -36,9 +36,9 @@ export default {
     }
   },
   created() {
-    console.log('this.catalog', this.catalog)
+    // console.log('this.catalog', this.catalog)
     fetchInfoByCatalog(this.catalog).then(res => {
-      console.log(res)
+      // console.log(res)
       this.content = res.data.text[0].content
       this.picture = res.data.text[0].picture
       this.title = res.data.text[0].title

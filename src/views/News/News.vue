@@ -74,7 +74,7 @@ export default {
     // console.log(this.$route.params.newId)
     if (this.$route.params.newId) {
       fetchNewsDetailById(this.$route.params.newId).then(response => {
-        console.log(response, download)
+        // console.log(response, download)
         this.headerTittle = response.data.news.catalog
         this.detailTittle = response.data.news.title
         this.dateTittle = response.data.news.releasetime.substring(0, 10)

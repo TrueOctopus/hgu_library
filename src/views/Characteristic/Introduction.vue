@@ -1,14 +1,13 @@
 <!--
  * @Author: 郑钊宇
- * @Date: 2022-03-25 09:42:44
- * @LastEditTime: 2022-04-24 19:11:19
+ * @Date: 2022-04-24 19:10:47
+ * @LastEditTime: 2022-04-24 19:10:48
  * @LastEditors: 郑钊宇
  * @Description:
 -->
 <template>
   <div>
-    <pageInfo catalog="特色资源" />
-    <md-button class="md-info btn" href="/characteristic/achievement">点击前往</md-button>
+    <pageInfo catalog="院士介绍" />
   </div>
 </template>
 

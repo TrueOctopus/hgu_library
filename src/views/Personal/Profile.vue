@@ -192,7 +192,7 @@ export default {
         })
         this.flag = false
         getInfo(this.$store.getters.token).then(res => {
-          console.log(res)
+          // console.log(res)
           this.userInfo.username = res.data.userInfo.username
           this.userInfo.email = res.data.userInfo.email
           this.userInfo.id = res.data.userInfo.id

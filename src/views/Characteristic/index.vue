@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-23 19:37:46
- * @LastEditTime: 2022-04-24 16:24:36
+ * @LastEditTime: 2022-04-24 19:09:25
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -41,7 +41,19 @@ export default {
 
       // TODO 修改名称
       menuList: [
-        { title: '成果', link: 'achievement' }
+        { title: '院士介绍', link: 'introduction' },
+        { title: '资源检索',
+          children: [
+            { title: '成果', link: 'achievement' },
+            { title: '成果奖励', link: 'award' },
+            { title: '书籍', link: 'book' },
+            { title: '会议', link: 'meeting' },
+            { title: '期刊论文', link: 'papers' },
+            { title: '专利', link: 'patent' },
+            { title: '课题报告', link: 'projectReport' },
+            { title: '科技成果', link: 'technology' }
+          ]
+        }
       ]
     }
   }

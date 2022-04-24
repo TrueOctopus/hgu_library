@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 16:01:50
- * @LastEditTime: 2022-04-10 09:48:47
+ * @LastEditTime: 2022-04-24 19:50:41
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -76,16 +76,16 @@ export default {
         pageNo: this.pageNo,
         pageSize: this.pageSize
       }).then(res => {
-        console.log(res)
+        // console.log(res)
         this.list = res.data.comments.list
         this.pages = res.data.comments.pages
         document.getElementsByClassName('wrapper')[0].scrollIntoView()
-        console.log(document.getElementsByClassName('wrapper')[0])
+        // console.log(document.getElementsByClassName('wrapper')[0])
       })
     },
     submit() {
       addComment(this.submitForm).then(res => {
-        console.log(res)
+        // console.log(res)
         this.$store.dispatch('notification/promptNotification', {
           noticeType: 'success',
           message: '留言成功,请记得查收'

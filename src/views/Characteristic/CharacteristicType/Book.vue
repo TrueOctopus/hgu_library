@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
- * @Date: 2022-03-19 16:47:36
- * @LastEditTime: 2022-04-24 19:18:48
+ * @Date: 2022-04-24 18:58:34
+ * @LastEditTime: 2022-04-24 19:32:26
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -10,7 +10,8 @@
     <div class="md-layout-item md-size-90 table">
       <div>
         <el-input v-model="listQuery.author" placeholder="作者" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
-        <el-input v-model="listQuery.achievementName" placeholder="成果名称" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
+        <el-input v-model="listQuery.bookName" placeholder="书名" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
+        <el-input v-model="listQuery.publishingHouse" placeholder="出版社" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
 
         <md-button class="filter-item md-info btn" @click="handleFilter">搜索</md-button>
 
@@ -29,21 +30,22 @@
             {{ scope.row.author }}
           </template>
         </el-table-column>
-        <el-table-column label="成果名称" align="center">
+        <el-table-column label="书名" align="center">
           <template slot-scope="scope">
-            <span>{{ scope.row.achievementName }}</span>
+            <span>{{ scope.row.bookName }}</span>
           </template>
         </el-table-column>
-        <el-table-column label="研究时间" width="110" align="center">
+        <el-table-column label="出版社" width="220" align="center">
           <template slot-scope="scope">
-            <span>{{ scope.row.achievementTime }}</span>
+            <span>{{ scope.row.publishingHouse }}</span>
           </template>
         </el-table-column>
-        <el-table-column label="第一完成单位" align="center">
+        <el-table-column label="出版时间" width="100" align="center">
           <template slot-scope="scope">
-            <span>{{ scope.row.completeUnit }}</span>
+            <span>{{ scope.row.publishDate }}</span>
           </template>
         </el-table-column>
+
         <el-table-column label="" align="center" width="120" class-name="small-padding fixed-width">
           <template slot-scope="{row}">
             <md-button class="md-sm md-info" @click="handleDownload(row)">下载</md-button>
@@ -51,6 +53,7 @@
         </el-table-column>
       </el-table>
     </div>
+
     <div class="md-layout-item md-size-10" />
     <div class="md-layout-item md-size-15 total">共 {{ total }} 条</div>
     <pagination
@@ -64,9 +67,9 @@
 
 <script>
 import { Pagination } from '@/components'
-import { searchAcaAchievement, downloadCharacteristic } from '@/api/characteristic'
+import { searchAcaBook, downloadCharacteristic } from '@/api/characteristic'
 export default {
-  name: 'Achievement',
+  name: 'Book',
   components: {
     Pagination
   },
@@ -81,7 +84,8 @@ export default {
         pageNo: 1,
         pageSize: 10,
         author: '',
-        achievementName: ''
+        bookName: '',
+        publishingHouse: ''
       }
     }
   },
@@ -91,7 +95,7 @@ export default {
   methods: {
     fetchList() {
       this.listLoading = true
-      searchAcaAchievement(this.listQuery).then(response => {
+      searchAcaBook(this.listQuery).then(response => {
         // console.log(response)
         const list = response.data.pageinfo.list
         this.list = list
@@ -104,7 +108,7 @@ export default {
       this.fetchList()
     },
     handleDownload(row) {
-      window.open(downloadCharacteristic + row.achievementName)
+      window.open(downloadCharacteristic + row.bookName)
     }
   }
 }

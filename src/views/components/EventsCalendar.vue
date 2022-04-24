@@ -60,7 +60,7 @@ export default {
   },
   created() {
     getAllDate().then(res => {
-      console.log(res)
+      // console.log(res)
       this.markArr = res.data.allDate
     })
   },
@@ -99,9 +99,9 @@ export default {
       this.getSelectDateLecture(this.selectDate)
     },
     getSelectDateLecture(date) {
-      console.log('date', date)
+      // console.log('date', date)
       fetchLectureByDate(date).then(res => {
-        console.log(res)
+        // console.log(res)
         this.lectureList = res.data.lecture
       })
     }
