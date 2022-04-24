@@ -20,7 +20,7 @@
         <p>李廷栋主要从事区域地质研究和地质编图，主持或参加了大兴安岭北部、四川西部、喜马拉雅和青藏高原等地区地质调查研究，主持完成了南极岩石圈构造及矿产资源潜力的研究。
         </p>
       </div>
-      <md-button class="md-info btn">了解相关资源</md-button>
+      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -36,7 +36,7 @@
           1996年入选“跨世纪人才工程”；2000年至2005年担任中国地质科学院矿产资源所副所长；2004年获得国家杰出青年科学基金资助；2005年担任中国地质科学院地质研究所所长；2017年当选为中国科学院院士；2018年担任第八届国家自然科学基金委员会副主任。
         </p>
       </div>
-      <md-button class="md-info btn">了解相关资源</md-button>
+      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -54,7 +54,7 @@
           1992年博士毕业后进入中国矿业大学（北京）任教；1995年至1997年前往荷兰国际水力与环境工程学院，担任访问学者；2000年获得国家教育部跨世纪优秀人才基金资助；2015年当选为中国工程院院士；2021年当选为国际欧亚科学院院士。
         </p>
       </div>
-      <md-button class="md-info btn">了解相关资源</md-button>
+      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -70,7 +70,7 @@
         <p>2019年11月22日，当选中国科学院院士。
         </p>
       </div>
-      <md-button class="md-info btn">了解相关资源</md-button>
+      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -83,7 +83,7 @@
         <p>毛景文，中国地质科学院研究生院博士，中国工程院院士。中国地质科学院矿产资源研究所研究员、国土资源部成矿作用与资源评价重点实验室主任和中国地质学会矿床专业委员会主任。</p>
         <p>现任紫金矿业独立董事，董事会战略与可持续发展（ESG）委员会委员、提名与薪酬委员会委员。</p>
       </div>
-      <md-button class="md-info btn">了解相关资源</md-button>
+      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -100,7 +100,7 @@
         <p>现任中国海洋石油集团有限公司总地质师。</p>
         <p>2021年11月18日，当选为中国工程院院士。</p>
       </div>
-      <md-button class="md-info btn">了解相关资源</md-button>
+      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
   </div>
 </template>
