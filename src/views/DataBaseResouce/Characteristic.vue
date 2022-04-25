@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 09:42:44
- * @LastEditTime: 2022-04-24 19:11:19
+ * @LastEditTime: 2022-04-25 15:05:43
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -21,6 +21,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.btn {
+  margin-left: -2rem;
+  margin-top: 2rem;
+}
 </style>
