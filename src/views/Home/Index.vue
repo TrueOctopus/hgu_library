@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-13 10:46:18
+ * @LastEditTime: 2022-04-25 18:35:25
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -626,7 +626,7 @@ export default {
     })
 
     fetchNewsList(1, 6).then(response => {
-      console.log('NewsList', response)
+      // console.log('NewsList', response)
       this.newsList.news = response.data.news.list
     })
 

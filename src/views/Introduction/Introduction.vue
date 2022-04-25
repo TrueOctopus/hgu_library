@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-08 09:04:07
- * @LastEditTime: 2022-04-07 17:43:56
+ * @LastEditTime: 2022-04-25 18:35:30
  * @LastEditors: 郑钊宇
  * @Description: 图书馆概况
 -->
@@ -47,7 +47,7 @@ export default {
   },
   created() {
     fetchInfoByCatalog(this.detailTittle).then(res => {
-      console.log(res)
+      // console.log(res)
       this.content = res.data.text[0].content
       this.picture = res.data.text[0].picture
       this.title = res.data.text[0].title

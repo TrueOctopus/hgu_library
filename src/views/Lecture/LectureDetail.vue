@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-07 15:44:54
- * @LastEditTime: 2022-04-07 16:14:15
+ * @LastEditTime: 2022-04-25 18:35:44
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -57,10 +57,10 @@ export default {
     }
   },
   created() {
-    console.log(this.$route.params.lectureId)
+    // console.log(this.$route.params.lectureId)
     if (this.$route.params.lectureId) {
       fetchLectureById(this.$route.params.lectureId).then(response => {
-        console.log(response)
+        // console.log(response)
         this.headerTittle = response.data.lecture.catalog
         this.detailTittle = response.data.lecture.title
         this.lectureTime = response.data.lecture.lecturetime
