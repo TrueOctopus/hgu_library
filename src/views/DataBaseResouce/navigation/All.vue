@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-30 18:51:55
- * @LastEditTime: 2022-04-25 14:58:20
+ * @LastEditTime: 2022-04-25 15:08:27
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -81,11 +81,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-container {
   margin-top: 4vh;
-}
-a {
-  color: #448aff !important;
+  a {
+    color: #448aff !important;
+  }
 }
 </style>

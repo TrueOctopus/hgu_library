@@ -90,11 +90,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-container {
   margin-top: 4vh;
-}
-a {
-  color: #448aff !important;
+  a {
+    color: #448aff !important;
+  }
 }
 </style>
