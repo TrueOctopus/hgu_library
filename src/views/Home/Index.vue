@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-26 20:40:45
+ * @LastEditTime: 2022-04-26 20:52:14
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -588,24 +588,24 @@ export default {
       response.data.databaseList.forEach(ele => {
         switch (ele.genre) {
           case '中文':
-            if (this.databaseList.cn.length > 6) break
+            if (this.databaseList.cn.length > 5) break
             this.databaseList.cn.push(ele)
             break
           case '外文':
-            if (this.databaseList.foreign.length > 6) break
+            if (this.databaseList.foreign.length > 5) break
             this.databaseList.foreign.push(ele)
             break
           case '试用':
-            if (this.databaseList.try.length > 6) break
+            if (this.databaseList.try.length > 5) break
             this.databaseList.try.push(ele)
             break
           case '开放':
-            if (this.databaseList.open.length > 6) break
+            if (this.databaseList.open.length > 5) break
             this.databaseList.open.push(ele)
             break
           case '中外文':
-            if (this.databaseList.cn.length <= 6) this.databaseList.cn.push(ele)
-            if (this.databaseList.foreign.length <= 6) this.databaseList.foreign.push(ele)
+            if (this.databaseList.cn.length <= 5) this.databaseList.cn.push(ele)
+            if (this.databaseList.foreign.length <= 5) this.databaseList.foreign.push(ele)
             break
         }
       })
