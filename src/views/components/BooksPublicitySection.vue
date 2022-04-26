@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 17:26:09
- * @LastEditTime: 2022-04-07 10:32:36
+ * @LastEditTime: 2022-04-26 19:26:47
  * @LastEditors: 郑钊宇
  * @Description: 阅读推广
 -->
@@ -21,7 +21,7 @@
             shadow="hover"
             style="height:434px"
           >
-            <img :src="book.coverimage" class="image">
+            <img :src="getPic + book.coverimage" class="image">
             <div style="padding: 14px;">
               <span>{{ book.title }}</span>
               <div class="bottom clearfix" style="white-space: pre-wrap;">
@@ -37,11 +37,12 @@
 
 <script>
 import { fetchPublicityList } from '@/api/publicity'
-
+import { getPic } from '@/api/file'
 export default {
   data() {
     return {
-      bookList: []
+      bookList: [],
+      getPic
     }
   },
   created() {

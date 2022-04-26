@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-07 10:09:23
- * @LastEditTime: 2022-04-07 14:36:10
+ * @LastEditTime: 2022-04-26 19:23:05
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -41,6 +41,7 @@
 <script>
 import TemplePage from '../components/DetailTemplePage.vue'
 import { fetchPublicityBookById } from '@/api/publicity'
+import { getPic } from '@/api/file'
 
 export default {
   name: 'News',
@@ -61,13 +62,13 @@ export default {
     // console.log(this.$route.params.bookId)
     if (this.$route.params.bookId) {
       fetchPublicityBookById(this.$route.params.bookId).then(response => {
-        // console.log(response)
+        console.log(response)
         this.detailTittle = response.data.recommend.title
         this.dateTittle = response.data.recommend.releasetime.substring(0, 10)
         this.bookinformation = response.data.recommend.bookinformation
         // FIXME 图片与后台预览不一致,会有水平居中的情况
         this.content = response.data.recommend.introduction.replace(/wscnph/g, 'wscnph md-image')
-        this.picture = response.data.recommend.coverimage
+        if (response.data.recommend.coverimage) this.picture = getPic + response.data.recommend.coverimage
       })
     }
   }
