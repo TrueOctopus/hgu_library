@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 16:01:50
- * @LastEditTime: 2022-04-07 10:47:51
+ * @LastEditTime: 2022-04-26 21:26:07
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -14,7 +14,7 @@
       class="item"
       @click="gotoBookDetail(item.id)"
     >
-      <img :src="item.coverimage">
+      <img :src="getPic + item.coverimage">
       <span>{{ item.title }}</span>
     </div>
   </div>
@@ -22,10 +22,13 @@
 
 <script>
 import { fetchPublicityList } from '@/api/publicity'
+import { getPic } from '@/api/file'
+
 export default {
   data() {
     return {
-      bookList: []
+      bookList: [],
+      getPic
     }
   },
   created() {
