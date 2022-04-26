@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-25 18:35:25
+ * @LastEditTime: 2022-04-26 20:40:45
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -38,7 +38,6 @@
                         <el-form
                           ref="docForm"
                           :model="docForm"
-                          :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
@@ -91,7 +90,6 @@
                         <el-form
                           ref="medaLinkSearchForm"
                           :model="medaLinkSearchForm"
-                          :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
@@ -123,7 +121,6 @@
                         <el-form
                           ref="duxiuSearchForm"
                           :model="duxiuSearchForm"
-                          :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
@@ -155,7 +152,6 @@
                         <el-form
                           ref="zlfSearchForm"
                           :model="zlfSearchForm"
-                          :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
@@ -187,7 +183,6 @@
                         <el-form
                           ref="readerCardForm"
                           :model="readerCardForm"
-                          :rules="rules"
                           :inline="true"
                           label-width="100px"
                           class="formStyle"
@@ -339,16 +334,20 @@
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
               <div class="md-layout-item md-size-50">
                 <img
-                  :src="image"
+                  :src="newsImage[0]?newsImage[0].image:image"
                   alt="Raised Image"
                   class="img-raised rounded"
+                  style="cursor: pointer"
+                  @click="$router.push('/announcement/' + newsImage[0].id)"
                 >
               </div>
               <div class="md-layout-item md-size-50">
                 <img
-                  :src="image"
+                  :src="newsImage[1]?newsImage[1].image:image"
                   alt="Raised Image"
                   class="img-raised rounded"
+                  style="cursor: pointer"
+                  @click="$router.push('/announcement/' + newsImage[1].id)"
                 >
               </div>
             </div>
@@ -376,16 +375,20 @@
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
               <div class="md-layout-item md-size-50">
                 <img
-                  :src="image"
+                  :src="newsImage[2]?newsImage[2].image:image"
                   alt="Raised Image"
                   class="img-raised rounded"
+                  style="cursor: pointer"
+                  @click="$router.push('/announcement/' + newsImage[2].id)"
                 >
               </div>
               <div class="md-layout-item md-size-50">
                 <img
-                  :src="image"
+                  :src="newsImage[3]?newsImage[3].image:image"
                   alt="Raised Image"
                   class="img-raised rounded"
+                  style="cursor: pointer"
+                  @click="$router.push('/announcement/' + newsImage[3].id)"
                 >
               </div>
             </div>
@@ -506,8 +509,8 @@ import PublicitySection from '../components/BooksPublicitySection.vue'
 import CharacteristicSection from '../components/CharacteristicSection.vue'
 
 import { fetchDatabaseList } from '@/api/resource'
-import { fetchNewsList, fetchResourcesList, newsOption } from '@/api/news'
-
+import { fetchNewsList, fetchResourcesList, newsOption, fetchReleaseNewsList } from '@/api/news'
+import { getPic } from '@/api/file'
 export default {
   name: 'Index',
   components: {
@@ -546,6 +549,7 @@ export default {
         news: [],
         resource: []
       },
+      newsImage: [],
       docForm: {
         strText: '',
         docType: 'ALL'
@@ -562,24 +566,6 @@ export default {
       readerCardForm: {
         readerCardNumber: '',
         readerCardPassword: ''
-      },
-      rules: {
-        // strText: [
-        //   { required: true, message: '请输入文献名称', trigger: 'change' }
-        // ],
-        // docType: [
-        //   { required: true, message: '请选择文献区域', trigger: 'change' }
-        // ],
-        // searchWords: [
-        //   { required: true, message: '请输入检索词', trigger: 'change' }
-        // ],
-        // readerCardNumber: [
-        //   { required: true, message: '请输入读者证号', trigger: 'blur' },
-        //   { min: 12, max: 12, message: '长度应为12位', trigger: 'blur' }
-        // ],
-        // readerCardPassword: [
-        //   { required: true, message: '请输入密码', trigger: 'blur' }
-        // ]
       },
       columnType: 0
     }
@@ -602,27 +588,39 @@ export default {
       response.data.databaseList.forEach(ele => {
         switch (ele.genre) {
           case '中文':
-            if (this.databaseList.cn.length > 10) break
+            if (this.databaseList.cn.length > 6) break
             this.databaseList.cn.push(ele)
             break
           case '外文':
-            if (this.databaseList.foreign.length > 10) break
+            if (this.databaseList.foreign.length > 6) break
             this.databaseList.foreign.push(ele)
             break
           case '试用':
-            if (this.databaseList.try.length > 10) break
+            if (this.databaseList.try.length > 6) break
             this.databaseList.try.push(ele)
             break
           case '开放':
-            if (this.databaseList.open.length > 10) break
+            if (this.databaseList.open.length > 6) break
             this.databaseList.open.push(ele)
             break
           case '中外文':
-            if (this.databaseList.cn.length <= 10) this.databaseList.cn.push(ele)
-            if (this.databaseList.foreign.length <= 10) this.databaseList.foreign.push(ele)
+            if (this.databaseList.cn.length <= 6) this.databaseList.cn.push(ele)
+            if (this.databaseList.foreign.length <= 6) this.databaseList.foreign.push(ele)
             break
         }
       })
+    })
+    fetchReleaseNewsList(1, 1000).then(response => {
+      const newslist = response.data.news.list
+      newslist.forEach(ele => {
+        if (ele.picture) {
+          const temp = { id: ele.id, image: getPic + ele.picture }
+          this.newsImage.push(temp)
+        }
+        if (this.newsImage.length >= 4) return
+      })
+      // console.log('NewsList', response, newslist)
+      // console.log('NewsList', this.newsImage)
     })
 
     fetchNewsList(1, 6).then(response => {

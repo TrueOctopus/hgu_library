@@ -32,14 +32,6 @@ export function fetchNewsDetailById(id) {
   })
 }
 
-export function fetchAllNewsList(pageNo, pageSize) {
-  return request({
-    url: '/news/releaseNews',
-    method: 'get',
-    params: { pageNo, pageSize }
-  })
-}
-
 export function fetchNewsList(pageNo, pageSize) {
   return request({
     url: '/news/groupOne',
