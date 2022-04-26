@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-11 15:22:34
- * @LastEditTime: 2022-04-07 15:31:48
+ * @LastEditTime: 2022-04-26 16:12:19
  * @LastEditors: 郑钊宇
  * @Description: 活动日历
 -->
@@ -114,20 +114,20 @@ export default {
   margin: 20px 0 0 !important;
   .wh_content_all {
     background-color: #ffffff !important;
-    border: 1px solid #dfe0e6;
+    border: 1px solid #dfe0e6 !important;
     width: 500px;
     border-radius: 6px;
   }
   .wh_item_date {
     color: #211d48;
     &:hover {
-      color: #ffffff;
-      background: #00bcd4;
+      color: #ffffff !important;
+      background: #00bcd4 !important;
       border-radius: 50%;
     }
   }
   .wh_other_dayhide {
-    color: #cccccc;
+    color: #cccccc !important;
   }
   .wh_content_item {
     margin-bottom: 5px;
@@ -144,26 +144,26 @@ export default {
     font-weight: bold;
   }
   .wh_jiantou1 {
-    border-top: 2px solid #006370;
-    border-left: 2px solid #006370;
+    border-top: 2px solid #006370 !important;
+    border-left: 2px solid #006370 !important;
   }
   .wh_jiantou2 {
-    border-top: 2px solid #006370;
-    border-right: 2px solid #006370;
+    border-top: 2px solid #006370 !important;
+    border-right: 2px solid #006370 !important;
   }
 
   .wh_content_item {
     .wh_isMark {
-      background-color: #00bbd433;
+      background-color: #00bbd433 !important;
       /*border-radius: 0px;*/
     }
     .wh_isToday {
-      background-color: #008697;
+      background-color: #008697 !important;
       /*border-radius: 0px;*/
       color: #ffffff;
     }
     .wh_chose_day {
-      background-color: #00bcd4;
+      background-color: #00bcd4 !important;
       /*border-radius: 0px;*/
       color: #ffffff;
     }
