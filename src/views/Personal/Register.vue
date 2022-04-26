@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-29 15:04:09
+ * @LastEditTime: 2022-04-26 16:53:32
  * @LastEditors: 郑钊宇
  * @Description: 注册页面
 -->
@@ -149,7 +149,7 @@ export default {
             this.$router.push('/login')
           })
       } else {
-        alert('提交失败!!')
+        alert('信息填写错误!!')
       }
     },
     usernameVerify() {
