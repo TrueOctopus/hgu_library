@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-04-26 16:53:44
+ * @LastEditTime: 2022-04-26 18:04:32
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -70,8 +70,8 @@ export default {
   data() {
     return {
       userInfo: {
-        username: 'test',
-        password: '111111'
+        username: '',
+        password: ''
       },
 
       hasPasswordErrorMessage: false,
