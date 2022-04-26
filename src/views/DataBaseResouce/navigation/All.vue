@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-30 18:51:55
- * @LastEditTime: 2022-04-25 15:08:27
+ * @LastEditTime: 2022-04-26 21:41:26
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -15,7 +15,7 @@
       fit
       highlight-current-row
     >
-      <el-table-column label="资源名称" width="110" align="center">
+      <el-table-column label="资源名称" width="220" align="center">
         <template slot-scope="scope">
           <a :href="scope.row.urladdress">{{ scope.row.urlname }}</a>
         </template>
