@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-19 14:34:07
- * @LastEditTime: 2022-04-05 16:20:23
+ * @LastEditTime: 2022-04-27 19:35:13
  * @LastEditors: 郑钊宇
  * @Description: 资源快速入口按钮
 -->
@@ -65,5 +65,6 @@ export default {
 .res-tittle {
   font-size: 16px;
   color: #fff;
+  white-space: nowrap;
 }
 </style>

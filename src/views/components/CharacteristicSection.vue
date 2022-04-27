@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 09:30:09
- * @LastEditTime: 2022-04-23 16:23:37
+ * @LastEditTime: 2022-04-27 19:40:21
  * @LastEditors: 郑钊宇
  * @Description: 特色资源选项卡
 -->
@@ -19,8 +19,8 @@
         </p>
         <p>李廷栋主要从事区域地质研究和地质编图，主持或参加了大兴安岭北部、四川西部、喜马拉雅和青藏高原等地区地质调查研究，主持完成了南极岩石圈构造及矿产资源潜力的研究。
         </p>
+        <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
       </div>
-      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -35,8 +35,8 @@
         <p>侯增谦于1982年从河北地质学院(现河北地质大学)地质系毕业；1985年获得武汉地质学院（现中国地质大学)北京研究生部硕士学位；1988年获得中国地质大学（北京）研究生院博士学位，之后进入中国地质科学院矿床地质研究所工作，先后担任助理研究员、副研究员、研究员、科技处长；
           1996年入选“跨世纪人才工程”；2000年至2005年担任中国地质科学院矿产资源所副所长；2004年获得国家杰出青年科学基金资助；2005年担任中国地质科学院地质研究所所长；2017年当选为中国科学院院士；2018年担任第八届国家自然科学基金委员会副主任。
         </p>
+        <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
       </div>
-      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -53,8 +53,8 @@
           武强于1982年从河北地质学院水文地质专业毕业后留校任教；1985年考取中国地质大学（北京）水文地质专业研究生，先后获得硕士、博士学位；
           1992年博士毕业后进入中国矿业大学（北京）任教；1995年至1997年前往荷兰国际水力与环境工程学院，担任访问学者；2000年获得国家教育部跨世纪优秀人才基金资助；2015年当选为中国工程院院士；2021年当选为国际欧亚科学院院士。
         </p>
+        <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
       </div>
-      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -69,8 +69,8 @@
         </p>
         <p>2019年11月22日，当选中国科学院院士。
         </p>
+        <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
       </div>
-      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -82,8 +82,8 @@
       <div class="text">
         <p>毛景文，中国地质科学院研究生院博士，中国工程院院士。中国地质科学院矿产资源研究所研究员、国土资源部成矿作用与资源评价重点实验室主任和中国地质学会矿床专业委员会主任。</p>
         <p>现任紫金矿业独立董事，董事会战略与可持续发展（ESG）委员会委员、提名与薪酬委员会委员。</p>
+        <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
       </div>
-      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
 
     <div
@@ -99,8 +99,8 @@
         </p>
         <p>现任中国海洋石油集团有限公司总地质师。</p>
         <p>2021年11月18日，当选为中国工程院院士。</p>
+        <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
       </div>
-      <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
     </div>
   </div>
 </template>
@@ -158,8 +158,8 @@ export default {
   }
   .btn {
     position: absolute;
-    top: 50vh;
-    left: 60vh;
+    top: 20rem;
+    left: 20rem;
   }
 }
 .characteristicSection.section-open {
