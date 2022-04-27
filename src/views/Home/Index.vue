@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-26 20:52:14
+ * @LastEditTime: 2022-04-27 12:15:41
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -267,10 +267,7 @@
                     <ResBtn icon-name="local_library" url="/service/labOrder" text="研修室预约" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn
-                      icon-name="format_list_bulleted"
-                      text="入馆须知"
-                    />
+                    <ResBtn icon-name="format_list_bulleted" url="/commentHub/common" text="入馆须知" />
                   </div>
                   <div class="md-layout-item">
                     <ResBtn icon-name="book" url="/service/borrowRules" text="图书续借" />
@@ -293,7 +290,7 @@
                     <ResBtn icon-name="dashboard" url="/resouce/collection" text="馆藏布局" />
                   </div>
                   <div class="md-layout-item">
-                    <ResBtn icon-name="3p" text="培训讲座" />
+                    <ResBtn icon-name="3p" url="/announcement/lecture" text="培训讲座" />
                   </div>
                   <div class="md-layout-item">
                     <ResBtn icon-name="bookmark_add" url="/reading/bookReport" text="新书通报" />
@@ -332,23 +329,25 @@
               />
             </div>
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
-              <div class="md-layout-item md-size-50">
+              <div class="md-layout-item md-size-50 newsImage">
                 <img
                   :src="newsImage[0]?newsImage[0].image:image"
-                  alt="Raised Image"
+                  :alt="newsImage[0]?newsImage[0].title:'default'"
                   class="img-raised rounded"
                   style="cursor: pointer"
                   @click="$router.push('/announcement/' + newsImage[0].id)"
                 >
+                <div v-if="newsImage[0]">{{ newsImage[0].title }}</div>
               </div>
-              <div class="md-layout-item md-size-50">
+              <div class="md-layout-item md-size-50 newsImage">
                 <img
                   :src="newsImage[1]?newsImage[1].image:image"
-                  alt="Raised Image"
+                  :alt="newsImage[1]?newsImage[1].title:'default'"
                   class="img-raised rounded"
                   style="cursor: pointer"
                   @click="$router.push('/announcement/' + newsImage[1].id)"
                 >
+                <div v-if="newsImage[1]">{{ newsImage[1].title }}</div>
               </div>
             </div>
           </div>
@@ -373,7 +372,7 @@
               />
             </div>
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
-              <div class="md-layout-item md-size-50">
+              <div class="md-layout-item md-size-50 newsImage">
                 <img
                   :src="newsImage[2]?newsImage[2].image:image"
                   alt="Raised Image"
@@ -381,8 +380,9 @@
                   style="cursor: pointer"
                   @click="$router.push('/announcement/' + newsImage[2].id)"
                 >
+                <div v-if="newsImage[2]">{{ newsImage[2].title }}</div>
               </div>
-              <div class="md-layout-item md-size-50">
+              <div class="md-layout-item md-size-50 newsImage">
                 <img
                   :src="newsImage[3]?newsImage[3].image:image"
                   alt="Raised Image"
@@ -390,6 +390,7 @@
                   style="cursor: pointer"
                   @click="$router.push('/announcement/' + newsImage[3].id)"
                 >
+                <div v-if="newsImage[3]">{{ newsImage[3].title }}</div>
               </div>
             </div>
           </div>
@@ -614,7 +615,7 @@ export default {
       const newslist = response.data.news.list
       newslist.forEach(ele => {
         if (ele.picture) {
-          const temp = { id: ele.id, image: getPic + ele.picture }
+          const temp = { id: ele.id, image: getPic + ele.picture, title: ele.title }
           this.newsImage.push(temp)
         }
         if (this.newsImage.length >= 4) return
@@ -623,12 +624,12 @@ export default {
       // console.log('NewsList', this.newsImage)
     })
 
-    fetchNewsList(1, 6).then(response => {
+    fetchNewsList(1, 8).then(response => {
       // console.log('NewsList', response)
       this.newsList.news = response.data.news.list
     })
 
-    fetchResourcesList(1, 6).then(response => {
+    fetchResourcesList(1, 8).then(response => {
       // console.log(response)
       this.newsList.resource = response.data.news.list
     })
@@ -704,6 +705,13 @@ export default {
 .res-btns {
   background-color: #fff;
   border-radius: 5px;
+}
+.newsImage {
+  height: 35vh;
+  img {
+    width: 100%;
+    height: 75%;
+  }
 }
 .formStyle {
   padding-top: 15px;

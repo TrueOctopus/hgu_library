@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:11:53
- * @LastEditTime: 2022-04-21 19:15:04
+ * @LastEditTime: 2022-04-27 11:30:15
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告页面
 -->
@@ -25,6 +25,8 @@
         <div v-if="picture" class="md-layout">
           <div class="md-layout-item md-size-30">
             <img class="md-image" style="height: auto" :src="picture" alt="主题图片">
+            <h4 class="">{{ detailTittle }}</h4>
+            <div style="font-size: 14px;">{{ remark }}</div>
           </div>
 
           <div class="md-layout-item md-size-70" v-html="content" />
@@ -67,16 +69,18 @@ export default {
       dateTittle: '',
       picture: undefined,
       content: '',
-      appendix: ''
+      appendix: '',
+      remark: ''
     }
   },
   created() {
     // console.log(this.$route.params.newId)
     if (this.$route.params.newId) {
       fetchNewsDetailById(this.$route.params.newId).then(response => {
-        // console.log(response, download)
+        console.log(response)
         this.headerTittle = response.data.news.catalog
         this.detailTittle = response.data.news.title
+        this.remark = response.data.news.remark
         this.dateTittle = response.data.news.releasetime.substring(0, 10)
         // FIXME 图片与后台预览不一致,会有水平居中的情况
         this.content = response.data.news.content.replace(/wscnph/g, 'wscnph md-image')
