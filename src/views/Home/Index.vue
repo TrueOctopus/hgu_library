@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-27 12:15:41
+ * @LastEditTime: 2022-04-28 18:43:41
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -19,7 +19,7 @@
             <div
               id="tabsNav"
               ref="tabsNav"
-              class="md-layout animate__animated animate__slow animate__fadeInUp"
+              class="md-layout animate__animated animate__fadeInUp"
             >
               <div class="md-layout-item md-size-10" />
               <nav-tabs-card
@@ -252,50 +252,49 @@
               <div class="md-layout-item md-size-10" />
             </div>
             <div
-              class="md-layout animate__animated animate__slow animate__fadeInUp animate__delay-1s"
+              class="md-layout animate__animated animate__fadeInUp"
             >
               <div class="md-layout-item md-size-10" />
               <div class="res-btns md-layout md-layout-item md-size-80">
-                <div class="md-layout md-layout-item md-size-100">
-                  <div class="md-layout-item">
+                <div class="md-layout md-layout-item md-size-100 md-gutter">
+                  <div class="md-layout-item md-size-5" />
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="schedule" url="/service/opentime" text="开放时间" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="chair_alt" url="/service/seatOrder" text="座位预约" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="local_library" url="/service/labOrder" text="研修室预约" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="format_list_bulleted" url="/commentHub/common" text="入馆须知" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="book" url="/service/borrowRules" text="图书续借" />
                   </div>
-                  <div class="md-layout-item">
-                    <ResBtn
-                      icon-name="collections_bookmark"
-                      text="资源荐购"
-                    />
+                  <div class="md-layout-item md-size-15">
+                    <ResBtn icon-name="collections_bookmark" text="资源荐购" />
                   </div>
                 </div>
-                <div class="md-layout md-layout-item md-size-100">
-                  <div class="md-layout-item">
+                <div class="md-layout md-layout-item md-size-100 md-gutter">
+                  <div class="md-layout-item md-size-5" />
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="school" url="/resouce/offcampus" text="校外访问" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="storage" url="/resouce/all" text="数据库" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="dashboard" url="/resouce/collection" text="馆藏布局" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="3p" url="/announcement/lecture" text="培训讲座" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="bookmark_add" url="/reading/bookReport" text="新书通报" />
                   </div>
-                  <div class="md-layout-item">
+                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="volunteer_activism" url="/service/donation" text="捐赠" />
                   </div>
                 </div>
@@ -589,24 +588,24 @@ export default {
       response.data.databaseList.forEach(ele => {
         switch (ele.genre) {
           case '中文':
-            if (this.databaseList.cn.length > 5) break
+            if (this.databaseList.cn.length > 4) break
             this.databaseList.cn.push(ele)
             break
           case '外文':
-            if (this.databaseList.foreign.length > 5) break
+            if (this.databaseList.foreign.length > 4) break
             this.databaseList.foreign.push(ele)
             break
           case '试用':
-            if (this.databaseList.try.length > 5) break
+            if (this.databaseList.try.length > 4) break
             this.databaseList.try.push(ele)
             break
           case '开放':
-            if (this.databaseList.open.length > 5) break
+            if (this.databaseList.open.length > 4) break
             this.databaseList.open.push(ele)
             break
           case '中外文':
-            if (this.databaseList.cn.length <= 5) this.databaseList.cn.push(ele)
-            if (this.databaseList.foreign.length <= 5) this.databaseList.foreign.push(ele)
+            if (this.databaseList.cn.length <= 4) this.databaseList.cn.push(ele)
+            if (this.databaseList.foreign.length <= 4) this.databaseList.foreign.push(ele)
             break
         }
       })
@@ -681,20 +680,21 @@ export default {
 }
 #tabsNav {
  .md-card {
-   height: 37vh;
+   height: 36vh;
  }
 
- .resourceSimple {
-   a {
-     padding-left: 1vh;
-     color: #ababab;
-
-     &:hover {
-       color: #00bcd4 !important;
-     }
-   }
-   margin-left: 5vh;
- }
+.resourceSimple {
+  a {
+    padding-left: 1vh;
+    color: #ababab;
+    &:hover {
+      color: #00bcd4 !important;
+    }
+  }
+  position: relative;
+  top: -1.2rem;
+  left: 2rem;
+}
 
  .more {
    font-weight: bold;
@@ -703,8 +703,15 @@ export default {
  }
 }
 .res-btns {
+  div {
+    padding: 0;
+    .md-layout-item {
+      padding: 0;
+    }
+  }
   background-color: #fff;
   border-radius: 5px;
+  padding: 0;
 }
 .newsImage {
   height: 35vh;
@@ -732,21 +739,6 @@ export default {
     font-size: 14px;
   }
 }
-// #resource {
-//   padding: 80px 0;
-// }
-// .dataBaseList {
-//   margin: 0 15px !important;
-//   padding: 5px 0;
-//   background-color: rgb(255, 255, 255);
-//   box-shadow: 0px 2px 5px 0px rgb(211, 211, 211);
-//   border-radius: 8px;
-// }
-// .dataBaseListItem {
-//   * {
-//     background-color: rgba(255, 255, 255, 0) !important;
-//   }
-// }
 .moreClass {
   font-size: 14px;
   color: #3c4858 !important;
