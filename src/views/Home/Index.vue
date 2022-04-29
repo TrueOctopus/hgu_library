@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-28 18:43:41
+ * @LastEditTime: 2022-04-28 18:45:36
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -705,6 +705,7 @@ export default {
 .res-btns {
   div {
     padding: 0;
+    padding-left: 0.5rem;
     .md-layout-item {
       padding: 0;
     }
