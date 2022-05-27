@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-28 18:45:36
+ * @LastEditTime: 2022-05-16 22:21:41
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -268,7 +268,7 @@
                     <ResBtn icon-name="local_library" url="/service/labOrder" text="研修室预约" />
                   </div>
                   <div class="md-layout-item md-size-15">
-                    <ResBtn icon-name="format_list_bulleted" url="/commentHub/common" text="入馆须知" />
+                    <ResBtn icon-name="format_list_bulleted" url="/studysupport/admissionEducation" text="入馆须知" />
                   </div>
                   <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="book" url="/service/borrowRules" text="图书续借" />
@@ -679,24 +679,36 @@ export default {
   margin-top: 0 !important;
 }
 #tabsNav {
+
  .md-card {
+   font-weight: bold;
+   color: #04aac0;
    height: 36vh;
  }
 
 .resourceSimple {
   a {
     padding-left: 1vh;
-    color: #ababab;
+    color: #000;
+    font-weight: normal;
     &:hover {
       color: #00bcd4 !important;
     }
   }
+  // a {
+  //   padding-left: 1vh;
+  //   color: #ababab;
+  //   &:hover {
+  //     color: #00bcd4 !important;
+  //   }
+  // }
   position: relative;
   top: -1.2rem;
   left: 2rem;
 }
 
  .more {
+   color: #ababab !important;
    font-weight: bold;
    float: right;
    margin-right: 8vh;
@@ -780,5 +792,10 @@ export default {
   .md-layout-item {
     line-height: 30px;
   }
+}
+</style>
+<style lang="scss">
+.md-tabs-navigation .md-button {
+  font-size: 14px !important;
 }
 </style>

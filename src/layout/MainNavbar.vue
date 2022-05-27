@@ -29,7 +29,7 @@
         <img
           :src="logoImage"
           alt="Logo image"
-          style="height:40px; margin-right:15px;"
+          style="margin-right:15px;"
         >
       </a>
       <div class="md-toolbar-section-start">
@@ -37,6 +37,42 @@
           <md-list-item href="/">
             <p>首页</p>
           </md-list-item>
+
+          <li class="md-list-item">
+            <a
+              class="md-list-item-router md-list-item-container md-button-clean dropdown"
+            >
+              <div class="md-list-item-content">
+                <drop-down direction="down">
+                  <md-button
+                    slot="title"
+                    class="md-button md-button-link md-white md-simple dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
+                    <p>新闻中心</p>
+                  </md-button>
+                  <ul class="dropdown-menu">
+                    <el-row>
+                      <el-col :span="24" style="width: 30vh">
+                        <ul>
+                          <li class="dropdown-header">资讯浏览</li>
+                          <li>
+                            <a href="/announcement/all" class="dropdown-item">资讯一览</a>
+                          </li>
+                          <li>
+                            <a href="/announcement/activity" class="dropdown-item">活动通知</a>
+                          </li>
+                          <li>
+                            <a href="/announcement/lecture" class="dropdown-item">讲座通知</a>
+                          </li>
+                        </ul>
+                      </el-col>
+                    </el-row>
+                  </ul>
+                </drop-down>
+              </div>
+            </a>
+          </li>
 
           <li class="md-list-item">
             <a
@@ -73,6 +109,9 @@
                             <a href="/resouce/delivery" class="dropdown-item">文献传递</a>
                           </li>
                           <li class="dropdown-divider" />
+                          <li>
+                            <a href="/studysupport/VPNusage" class="dropdown-item">校外访问</a>
+                          </li>
                         </ul>
                       </el-col>
                     </el-row>
@@ -235,6 +274,185 @@
                 <h3 class="md-title">河北地质大学图书馆</h3>
               </md-list> -->
               <!-- TODO 手机版导航 -->
+              <md-list>
+                <md-list-item href="/">
+                  <p>首页</p>
+                </md-list-item>
+
+                <li class="md-list-item">
+                  <a
+                    class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                  >
+                    <div class="md-list-item-content">
+                      <drop-down direction="down">
+                        <md-button
+                          slot="title"
+                          class="md-button md-button-link md-white md-simple dropdown-toggle"
+                          data-toggle="dropdown"
+                        >
+                          <p>资源</p>
+                        </md-button>
+                        <ul class="dropdown-menu">
+                          <el-row>
+                            <el-col :span="24" style="width: 30vh">
+                              <ul>
+                                <li class="dropdown-header">资源服务</li>
+                                <li>
+                                  <a href="/resouce/collection" class="dropdown-item">馆藏目录</a>
+                                </li>
+                                <li>
+                                  <a href="/resouce/all" class="dropdown-item">数据库导航</a>
+                                </li>
+                                <li>
+                                  <a href="/resouce/try" class="dropdown-item">试用资源</a>
+                                </li>
+                                <li>
+                                  <a href="/resouce/characteristic" class="dropdown-item">特色资源</a>
+                                </li>
+                                <li class="dropdown-divider" />
+                                <li>
+                                  <a href="/resouce/delivery" class="dropdown-item">文献传递</a>
+                                </li>
+                                <li class="dropdown-divider" />
+                                <li>
+                                  <a href="/studysupport/VPNusage" class="dropdown-item">校外访问</a>
+                                </li>
+                              </ul>
+                            </el-col>
+                          </el-row>
+                        </ul>
+                      </drop-down>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="md-list-item">
+                  <a
+                    class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                  >
+                    <div class="md-list-item-content">
+                      <drop-down direction="down">
+                        <md-button
+                          slot="title"
+                          class="md-button md-button-link md-white md-simple dropdown-toggle"
+                          data-toggle="dropdown"
+                        >
+                          <p>读者服务</p>
+                        </md-button>
+                        <ul class="dropdown-menu">
+                          <ul>
+                            <li>
+                              <a href="/service/opentime" class="dropdown-item">开馆时间</a>
+                            </li>
+                            <li>
+                              <a href="/service/distribution" class="dropdown-item">馆藏分布</a>
+                            </li>
+                            <li class="dropdown-divider" />
+                            <li class="dropdown-header">借阅服务</li>
+                            <li>
+                              <a href="/service/borrowRules" class="dropdown-item">借阅规则</a>
+                            </li>
+                            <li>
+                              <a href="/service/borrowProcess" class="dropdown-item">借阅流程</a>
+                            </li>
+                            <li class="dropdown-divider" />
+                            <li class="dropdown-header">反馈中心</li>
+                            <li>
+                              <a href="/commentHub/common" class="dropdown-item">常见问题</a>
+                            </li>
+                            <li>
+                              <a href="/commentHub/comment" class="dropdown-item">留言板</a>
+                            </li>
+                            <li class="dropdown-divider" />
+                            <li class="dropdown-header">预约服务</li>
+                            <li>
+                              <a href="/service/seatOrder" class="dropdown-item">座位预约</a>
+                            </li>
+                            <li>
+                              <a href="/service/labOrder" class="dropdown-item">研修室预约</a>
+                            </li>
+                            <li>
+                              <a href="/service/lectureOrder" class="dropdown-item">讲座预约</a>
+                            </li>
+                            <li class="dropdown-divider" />
+                            <li>
+                              <a href="/staffnumber" class="dropdown-item">职工读书证号查询</a>
+                            </li>
+                            <li class="dropdown-divider" />
+                            <li>
+                              <a href="/service/donation" class="dropdown-item">捐赠</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </drop-down>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="md-list-item">
+                  <a
+                    class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                  >
+                    <div class="md-list-item-content">
+                      <drop-down direction="down">
+                        <md-button
+                          slot="title"
+                          class="md-button md-button-link md-white md-simple dropdown-toggle"
+                          data-toggle="dropdown"
+                        >
+                          <p>阅读推广</p>
+                        </md-button>
+                        <ul class="dropdown-menu" style="width: 30vh">
+                          <li>
+                            <a href="/reading/recommendedReading" class="dropdown-item">读书推荐</a>
+                          </li>
+                          <li>
+                            <a href="/reading/bookReport" class="dropdown-item">新书通报</a>
+                          </li>
+                          <li class="dropdown-divider" />
+                          <li class="dropdown-header">主题活动</li>
+                          <li>
+                            <a href="/reading/readingMonth" class="dropdown-item">读书月</a>
+                          </li>
+                        </ul>
+                      </drop-down>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="md-list-item">
+                  <a
+                    class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                  >
+                    <div class="md-list-item-content">
+                      <drop-down direction="down">
+                        <md-button
+                          slot="title"
+                          class="md-button md-button-link md-white md-simple dropdown-toggle"
+                          data-toggle="dropdown"
+                        >
+                          <p>学习支持</p>
+                        </md-button>
+                        <ul class="dropdown-menu" style="width: 30vh">
+                          <li>
+                            <a href="/studysupport/admissionEducation" class="dropdown-item">新生入馆教育</a>
+                          </li>
+                          <li>
+                            <a href="/studysupport/readerTraining" class="dropdown-item">读者培训</a>
+                          </li>
+                          <li>
+                            <a href="/studysupport/VPNusage" class="dropdown-item">校外访问</a>
+                          </li>
+                        </ul>
+                      </drop-down>
+                    </div>
+                  </a>
+                </li>
+
+                <md-list-item href="/introduction">
+                  <p>概况</p>
+                </md-list-item>
+              </md-list>
             </mobile-menu>
 
             <md-list>
