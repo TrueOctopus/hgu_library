@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-23 19:37:46
- * @LastEditTime: 2022-04-24 19:09:25
+ * @LastEditTime: 2022-06-09 11:02:30
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 特色资源页面
 -->
 <template>
   <TemplePage :detail-tittle="detailTittle">

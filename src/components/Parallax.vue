@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 19:46:02
+ * @LastEditTime: 2022-06-09 10:28:11
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 背景组件
 -->
 <template>
   <div :style="styles">

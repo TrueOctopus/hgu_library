@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-04-26 18:04:32
+ * @LastEditTime: 2022-06-09 14:26:28
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -72,12 +72,12 @@ export default {
       userInfo: {
         username: '',
         password: ''
-      },
+      }, // 用户名和密码
 
-      hasPasswordErrorMessage: false,
-      passwordErrorMessage: '',
-      hasUsernameErrorMessage: false,
-      UsernameErrorMessage: ''
+      hasPasswordErrorMessage: false, // 密码错误提示
+      passwordErrorMessage: '', // 密码错误提示内容
+      hasUsernameErrorMessage: false, // 用户名错误提示
+      UsernameErrorMessage: '' // 用户名错误提示内容
     }
   },
   computed: {

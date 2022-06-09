@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 19:45:50
+ * @LastEditTime: 2022-06-09 10:24:53
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 登录选项卡
 -->
 <template>
   <md-card class="md-card-login" :class="{ 'md-card-hidden': cardHidden }">
@@ -32,21 +32,21 @@ export default {
     headerColor: {
       type: String,
       default: ''
-    }
+    } // 卡片头部颜色
   },
   data() {
     return {
-      cardHidden: true
+      cardHidden: true // 卡片是否隐藏
     }
   },
   beforeMount() {
     setTimeout(this.showCard, 400)
   },
   methods: {
-    showCard: function() {
+    showCard: function() { // 显示卡片
       this.cardHidden = false
     },
-    getClass: function(headerColor) {
+    getClass: function(headerColor) { // 设定卡片头部颜色
       return 'md-card-header-' + headerColor + ''
     }
   }

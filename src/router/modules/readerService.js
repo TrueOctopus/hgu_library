@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-25 15:26:51
- * @LastEditTime: 2022-03-25 16:22:20
+ * @LastEditTime: 2022-06-09 10:33:04
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 读者服务路由配置
  */
 import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'

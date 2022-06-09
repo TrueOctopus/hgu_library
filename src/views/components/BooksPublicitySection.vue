@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 17:26:09
- * @LastEditTime: 2022-04-26 19:26:47
+ * @LastEditTime: 2022-06-09 14:11:56
  * @LastEditors: 郑钊宇
  * @Description: 阅读推广
 -->
@@ -52,7 +52,7 @@ export default {
     })
   },
   methods: {
-    gotoBookDetail(id) {
+    gotoBookDetail(id) { // 跳转到书籍详情页
       this.$router.push('/reading/bookDetail/' + id)
     }
   }

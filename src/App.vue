@@ -1,12 +1,11 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-04-07 15:33:28
+ * @LastEditTime: 2022-06-09 14:37:44
  * @LastEditors: 郑钊宇
- * @Description: app.vue
+ * @Description: 主入口
 -->
 <template>
-
   <div>
     <Notifications />
     <div :class="{ 'nav-open': NavbarStore.showNavbar }">

@@ -1,17 +1,17 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-16 08:44:06
- * @LastEditTime: 2022-04-08 15:31:01
+ * @LastEditTime: 2022-06-09 10:36:44
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 用户信息状态管理
  */
 import { login, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const getDefaultState = () => {
   return {
-    token: getToken(),
-    username: ''
+    token: getToken(), // token
+    username: '' // 用户名
   }
 }
 

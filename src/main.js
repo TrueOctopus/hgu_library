@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-03-29 15:43:26
+ * @LastEditTime: 2022-06-09 14:37:58
  * @LastEditors: 郑钊宇
- * @Description: 入口文件
+ * @Description: 配置文件
  */
 import Vue from 'vue'
 import App from './App.vue'

@@ -1,13 +1,14 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-24 18:58:26
- * @LastEditTime: 2022-04-24 19:34:00
+ * @LastEditTime: 2022-06-09 10:47:09
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 论文页面
 -->
 <template>
   <div class="md-layout">
     <div class="md-layout-item md-size-90 table">
+      <!-- 搜索 -->
       <div>
         <el-input v-model="listQuery.author" placeholder="作者" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
         <el-input v-model="listQuery.title" placeholder="课题名称或承担项目" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
@@ -16,7 +17,7 @@
         <md-button class="filter-item md-info btn" @click="handleFilter">搜索</md-button>
 
       </div>
-
+      <!-- 列表展示 -->
       <el-table
         v-loading="listLoading"
         :data="list"
@@ -53,6 +54,7 @@
       </el-table>
 
     </div>
+    <!-- 分页 -->
     <div class="md-layout-item md-size-10" />
     <div class="md-layout-item md-size-15 total">共 {{ total }} 条</div>
     <pagination
@@ -74,17 +76,17 @@ export default {
   },
   data() {
     return {
-      list: [],
-      listLoading: true,
-      infoColor: 'info',
-      pages: 1,
-      total: 0,
+      list: [], // 列表数据
+      listLoading: true, // 列表加载状态
+      infoColor: 'info', // 分页颜色
+      pages: 1, // 分页总数
+      total: 0, // 列表总数
       listQuery: {
-        pageNo: 1,
-        pageSize: 10,
-        author: '',
-        title: '',
-        sourcePublication: ''
+        pageNo: 1, // 当前页码
+        pageSize: 10, // 每页条数
+        author: '', // 作者
+        title: '', // 题目
+        sourcePublication: '' // 来源刊物
       }
     }
   },
@@ -93,6 +95,7 @@ export default {
   },
   methods: {
     fetchList() {
+      // 请求列表数据
       this.listLoading = true
       searchAcaPapers(this.listQuery).then(response => {
         // console.log(response)

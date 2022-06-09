@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-04-26 16:53:32
+ * @LastEditTime: 2022-06-09 14:28:42
  * @LastEditors: 郑钊宇
  * @Description: 注册页面
 -->
@@ -83,20 +83,20 @@ export default {
   data() {
     return {
       userInfo: {
-        username: null,
-        email: null,
-        password: null,
-        password2: null
+        username: null, // 用户名
+        email: null, // 邮箱
+        password: null, // 密码
+        password2: null // 确认密码
       },
 
-      hasPasswordErrorMessage: false,
-      passwordErrorMessage: '',
-      hasPassword2ErrorMessage: false,
-      password2ErrorMessage: '',
-      hasEmailErrorMessage: false,
-      emailErrorMessage: '',
-      hasUsernameErrorMessage: false,
-      usernameErrorMessage: ''
+      hasPasswordErrorMessage: false, // 密码错误提示
+      passwordErrorMessage: '', // 密码错误提示内容
+      hasPassword2ErrorMessage: false, // 确认密码错误提示
+      password2ErrorMessage: '', // 确认密码错误提示内容
+      hasEmailErrorMessage: false, // 邮箱错误提示
+      emailErrorMessage: '', // 邮箱错误提示内容
+      hasUsernameErrorMessage: false, // 用户名错误提示
+      usernameErrorMessage: '' // 用户名错误提示内容
     }
   },
   computed: {
@@ -108,30 +108,31 @@ export default {
         backgroundSize: 'cover',
         height: '100vh'
       }
-    },
+    }, // 头部背景图片
     usernameMessageClass() {
       return {
         'md-invalid': this.hasUsernameErrorMessage
       }
-    },
+    }, // 用户名错误提示类名
     emailMessageClass() {
       return {
         'md-invalid': this.hasEmailErrorMessage
       }
-    },
+    }, // 邮箱错误提示类名
     passwordMessageClass() {
       return {
         'md-invalid': this.hasPasswordErrorMessage
       }
-    },
+    }, // 密码错误提示类名
     password2MessageClass() {
       return {
         'md-invalid': this.hasPassword2ErrorMessage
       }
-    }
+    } // 确认密码错误提示类名
   },
   methods: {
     submitForm() {
+      // 校验表单
       this.usernameVerify()
       this.emailVerify()
       this.passwordVerify()
@@ -153,6 +154,7 @@ export default {
       }
     },
     usernameVerify() {
+      // 校验用户名
       if (this.userInfo.username === null || this.userInfo.username === '') {
         this.hasUsernameErrorMessage = true
         this.usernameErrorMessage = '用户名不能为空'
@@ -162,6 +164,7 @@ export default {
       }
     },
     emailVerify() {
+      // 校验邮箱
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       if (this.userInfo.email === null || this.userInfo.email === '') {
         this.hasEmailErrorMessage = true
@@ -175,6 +178,7 @@ export default {
       }
     },
     passwordVerify() {
+      // 校验密码
       if (this.userInfo.password === null || this.userInfo.password === '') {
         this.hasPasswordErrorMessage = true
         this.passwordErrorMessage = '密码不能为空'
@@ -187,6 +191,7 @@ export default {
       }
     },
     password2Verify() {
+      // 校验确认密码
       if (this.userInfo.password2 === null || this.userInfo.password2 === '') {
         this.hasPassword2ErrorMessage = true
         this.password2ErrorMessage = '密码不能为空'

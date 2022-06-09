@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-27 09:55:14
- * @LastEditTime: 2022-03-30 15:16:44
+ * @LastEditTime: 2022-06-09 10:34:32
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: vuex配置
  */
 import Vue from 'vue'
 import Vuex from 'vuex'

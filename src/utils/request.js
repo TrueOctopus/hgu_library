@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-27 09:15:30
- * @LastEditTime: 2022-04-26 16:52:34
+ * @LastEditTime: 2022-06-09 10:39:09
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 请求配置
  */
 import axios from 'axios'
 import store from '@/store'
@@ -11,9 +11,9 @@ import { getToken } from '@/utils/auth'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url 接口基础地址
   // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000 // request timeout
+  timeout: 5000 // 超时时间
 })
 
 // request 监听器配置

@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 16:01:50
- * @LastEditTime: 2022-04-07 17:35:36
+ * @LastEditTime: 2022-06-09 14:31:12
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 座位预约页面
 -->
 <template>
   <div>

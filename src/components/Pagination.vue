@@ -1,3 +1,10 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-03-28 19:53:37
+ * @LastEditTime: 2022-03-29 14:54:21
+ * @LastEditors: 郑钊宇
+ * @Description: 分页组件
+-->
 <template>
   <ul class="pagination" :class="paginationClass">
     <li

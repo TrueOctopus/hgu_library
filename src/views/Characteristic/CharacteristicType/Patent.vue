@@ -1,13 +1,14 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-24 18:58:26
- * @LastEditTime: 2022-04-24 19:39:22
+ * @LastEditTime: 2022-06-09 10:53:41
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 专利页面
 -->
 <template>
   <div class="md-layout">
     <div class="md-layout-item md-size-90 table">
+      <!-- 搜索 -->
       <div>
         <el-input v-model="listQuery.author" placeholder="作者" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
         <el-input v-model="listQuery.title" placeholder="题目" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
@@ -15,7 +16,7 @@
         <md-button class="filter-item md-info btn" @click="handleFilter">搜索</md-button>
 
       </div>
-
+      <!-- 搜索 -->
       <el-table
         v-loading="listLoading"
         :data="list"
@@ -46,6 +47,7 @@
         </el-table-column>
       </el-table>
     </div>
+    <!-- 分页 -->
     <div class="md-layout-item md-size-10" />
     <div class="md-layout-item md-size-15 total">共 {{ total }} 条</div>
     <pagination
@@ -67,24 +69,24 @@ export default {
   },
   data() {
     return {
-      list: [],
-      listLoading: true,
-      infoColor: 'info',
-      pages: 1,
-      total: 0,
+      list: [], // 列表数据
+      listLoading: true, // 列表加载状态
+      infoColor: 'info', // 分页颜色
+      pages: 1, // 分页数量
+      total: 0, // 总数量
       listQuery: {
-        pageNo: 1,
-        pageSize: 10,
-        author: '',
-        title: ''
-      }
+        pageNo: 1, // 当前页码
+        pageSize: 10, // 每页数量
+        author: '', // 作者
+        title: '' // 题目
+      } // 查询参数
     }
   },
   created() {
     this.fetchList()
   },
   methods: {
-    fetchList() {
+    fetchList() { // 获取列表数据
       this.listLoading = true
       searchAcaPatent(this.listQuery).then(response => {
         // console.log(response)
@@ -99,7 +101,7 @@ export default {
       this.fetchList()
     },
     handleDownload(row) {
-      window.open(downloadCharacteristic + row.title)
+      window.open(downloadCharacteristic + row.title) // 下载
     }
   }
 }

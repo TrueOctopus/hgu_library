@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 21:23:49
- * @LastEditTime: 2022-04-06 15:07:11
+ * @LastEditTime: 2022-06-09 14:25:35
  * @LastEditors: 郑钊宇
  * @Description: 各类新闻公告列表 包括查询
 -->
@@ -77,6 +77,7 @@ export default {
   },
   computed: {
     lastBreadcrumbTittle() {
+      // 面包屑最后一个
       const news = ['all', 'news', 'notes', 'buy', 'try', 'lecture']
       const newsCN = ['资讯一览', '新闻', '公告', '购买', '试用', '讲座']
       let type = ''

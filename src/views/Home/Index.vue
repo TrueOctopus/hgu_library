@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-05-16 22:21:41
+ * @LastEditTime: 2022-06-09 14:20:27
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -10,6 +10,7 @@
     <AnchorNav :column-type="columnType" />
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout" style="width:99%">
+        <!-- 头部部分 选项卡与快捷入口 -->
         <div class="image-wrapper" style="width:99%">
           <div class="brand">
             <!-- <div class="md-layout-item md-size-100 md-small-size-100">
@@ -306,6 +307,7 @@
       </div>
     </parallax>
     <div class="main main-raised">
+      <!-- 新闻公告部分 -->
       <div id="announcement" ref="announcement" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -396,7 +398,7 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
-
+      <!-- 图书推广部分 -->
       <div id="publicity" ref="publicity" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -420,7 +422,7 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
-
+      <!-- 讲座预约部分 -->
       <div id="lecture" ref="lecture" class="section" :style="bgImage">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -439,7 +441,7 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
-
+      <!-- 特色资源部分 -->
       <div id="characteristic" ref="characteristic" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -458,7 +460,7 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
-
+      <!-- 友情链接部分 -->
       <div id="friendLink" ref="friendLink" class="section section-tabs">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -526,48 +528,48 @@ export default {
     headerImage: {
       type: String,
       default: require('@/assets/img/header.jpg')
-    },
+    }, // 头部图片
     image: {
       type: String,
       default: require('@/assets/img/cynthia-del-rio.jpg')
-    },
+    }, // 背景图片
     resourseImage: {
       type: String,
       default: require('@/assets/img/profile_city.jpg')
-    }
+    } // 资源图片
   },
   data() {
     return {
       newsOption,
       databaseList: {
-        cn: [],
-        foreign: [],
-        try: [],
-        open: []
-      },
+        cn: [], // 中文数据库
+        foreign: [], // 外文数据库
+        try: [], // 试用数据库
+        open: [] // 开放数据库
+      }, // 数据库列表
       newsList: {
-        news: [],
-        resource: []
-      },
-      newsImage: [],
+        news: [], // 新闻列表
+        resource: [] // 资源信息列表
+      }, // 新闻列表
+      newsImage: [], // 新闻图片
       docForm: {
-        strText: '',
-        docType: 'ALL'
-      },
+        strText: '', // 文本内容
+        docType: 'ALL' // 文档类型
+      }, // 文档搜索表单
       medaLinkSearchForm: {
         searchWords: ''
-      },
+      }, // 百链搜索表单
       duxiuSearchForm: {
         searchWords: ''
-      },
+      }, // 独秀搜索表单
       zlfSearchForm: {
         searchWords: ''
-      },
+      }, // 维普智立方搜索表单
       readerCardForm: {
         readerCardNumber: '',
         readerCardPassword: ''
-      },
-      columnType: 0
+      }, // 读者证搜索表单
+      columnType: 0 // 栏目类型
     }
   },
   computed: {
@@ -575,15 +577,16 @@ export default {
       return {
         backgroundImage: `url(${this.headerImage})`
       }
-    },
+    }, // 头部图片样式
     bgImage() {
       return {
         backgroundImage: `url(${this.resourseImage})`
       }
-    }
+    } // 背景图片样式
   },
   created() {
     fetchDatabaseList().then(response => {
+      // 获取数据库列表
       // console.log(response)
       response.data.databaseList.forEach(ele => {
         switch (ele.genre) {
@@ -611,6 +614,7 @@ export default {
       })
     })
     fetchReleaseNewsList(1, 1000).then(response => {
+      // 获取新闻列表
       const newslist = response.data.news.list
       newslist.forEach(ele => {
         if (ele.picture) {
@@ -624,11 +628,13 @@ export default {
     })
 
     fetchNewsList(1, 8).then(response => {
+      // 获取新闻列表
       // console.log('NewsList', response)
       this.newsList.news = response.data.news.list
     })
 
     fetchResourcesList(1, 8).then(response => {
+      // 获取资源列表
       // console.log(response)
       this.newsList.resource = response.data.news.list
     })

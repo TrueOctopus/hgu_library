@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-04-29 10:07:47
- * @LastEditTime: 2022-04-29 10:16:54
+ * @LastEditTime: 2022-06-09 10:33:35
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 学习支持路由配置
  */
 import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'

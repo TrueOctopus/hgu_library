@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 16:01:50
- * @LastEditTime: 2022-04-29 10:15:28
+ * @LastEditTime: 2022-06-09 14:37:04
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 新生入馆教育页面
 -->
 <template>
   <div>

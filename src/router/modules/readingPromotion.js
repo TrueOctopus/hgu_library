@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-25 15:26:51
- * @LastEditTime: 2022-04-07 10:12:09
+ * @LastEditTime: 2022-06-09 10:33:15
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 读书活动路由配置
  */
 import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'

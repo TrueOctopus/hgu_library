@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-18 17:08:15
- * @LastEditTime: 2022-04-05 15:33:51
+ * @LastEditTime: 2022-06-09 11:24:19
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 侧边导航条
 -->
 <template>
   <SubNavBox :menu-tittle="menuTittle">

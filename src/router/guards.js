@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-29 15:27:12
- * @LastEditTime: 2022-03-29 16:13:58
+ * @LastEditTime: 2022-06-09 10:33:58
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 路由守卫
  */
 import router from './router'
 import store from '../store'

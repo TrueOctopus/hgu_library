@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 19:45:52
+ * @LastEditTime: 2022-06-09 10:26:06
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 标记组件
 -->
 <template>
   <component :is="tag" class="badge" :class="`badge-${type}`">

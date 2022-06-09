@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-04-23 19:50:56
- * @LastEditTime: 2022-04-24 19:45:25
+ * @LastEditTime: 2022-06-09 10:32:31
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 特色资源相关路由配置
  */
 import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'

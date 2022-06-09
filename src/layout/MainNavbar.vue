@@ -1,3 +1,10 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2022-02-16 14:19:24
+ * @LastEditTime: 2022-06-09 10:31:09
+ * @LastEditors: 郑钊宇
+ * @Description: 顶部菜单模块
+-->
 <template>
   <md-toolbar
     id="toolbar"
@@ -539,20 +546,21 @@ export default {
       logoImage: require('@/assets/img/shoolLogo-black.png'), // 顶部图
 
       searchQuery: '', // 搜索框默认配置
-      employees: [],
+      employees: [], // 搜索框数据
 
       mobileFlag: false, // 移动端激活标志
-      showLogo: true,
+      showLogo: true, // 顶部图显示标志
 
       peopleNumber: 900 // 馆内人数
     }
   },
   computed: {
     ...mapGetters([
-      'username'
+      'username' // 用户名
     ])
   },
   mounted() {
+    // 添加滚动监听
     document.addEventListener('scroll', this.scrollListener)
     // console.log(screen.width);
     if (screen.width < 1300 && screen.width > 990) {
@@ -562,7 +570,7 @@ export default {
     }
   },
   beforeDestroy() {
-    document.removeEventListener('scroll', this.scrollListener)
+    document.removeEventListener('scroll', this.scrollListener) // 移除监听
   },
   methods: {
     bodyClick() {
@@ -580,12 +588,12 @@ export default {
         bodyClick.remove()
       }
     },
-    toggleNavbarMobile() {
+    toggleNavbarMobile() { // 移动端导航栏切换
       this.NavbarStore.showNavbar = !this.NavbarStore.showNavbar
       this.toggledClass = !this.toggledClass
       this.bodyClick()
     },
-    handleScroll() {
+    handleScroll() { // 滚动监听
       const scrollValue =
         document.body.scrollTop || document.documentElement.scrollTop
       const navbarColor = document.getElementById('toolbar')
@@ -641,7 +649,7 @@ export default {
     scrollListener() {
       resizeThrottler(this.handleScroll)
     },
-    handleSearch() {
+    handleSearch() { // 搜索框搜索
       this.$router.push({
         path: '/search',
         query: {
@@ -650,7 +658,7 @@ export default {
       })
       this.searchQuery = ''
     },
-    async logout() {
+    async logout() { // 登出
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }

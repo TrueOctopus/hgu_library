@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-03-15 19:57:59
+ * @LastEditTime: 2022-06-09 10:28:26
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 轮播图组件
 -->
 <template>
   <div class="slider" :class="[`slider-${type}`]" :disabled="disabled" />

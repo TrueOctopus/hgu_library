@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-25 08:29:01
- * @LastEditTime: 2022-04-05 15:57:39
+ * @LastEditTime: 2022-06-09 10:32:17
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 新闻公告相关路由配置
  */
 import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'

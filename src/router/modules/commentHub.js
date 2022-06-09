@@ -1,9 +1,9 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-04-09 15:51:11
- * @LastEditTime: 2022-04-09 15:54:44
+ * @LastEditTime: 2022-06-09 10:32:44
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 留言板相关路由配置
  */
 import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'

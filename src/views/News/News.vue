@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:11:53
- * @LastEditTime: 2022-04-27 11:30:15
+ * @LastEditTime: 2022-06-09 14:25:48
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告页面
 -->
@@ -64,13 +64,13 @@ export default {
   },
   data() {
     return {
-      headerTittle: '',
-      detailTittle: '',
-      dateTittle: '',
-      picture: undefined,
-      content: '',
-      appendix: '',
-      remark: ''
+      headerTittle: '', // 主标题
+      detailTittle: '', // 内容标题
+      dateTittle: '', // 日期
+      picture: undefined, // 主题图片
+      content: '', // 内容
+      appendix: '', // 附件
+      remark: '' // 备注
     }
   },
   created() {

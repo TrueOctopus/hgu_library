@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-07 10:09:23
- * @LastEditTime: 2022-04-26 19:23:05
+ * @LastEditTime: 2022-06-09 14:32:56
  * @LastEditors: 郑钊宇
- * @Description:
+ * @Description: 图书详情页面
 -->
 
 <template>
@@ -50,12 +50,12 @@ export default {
   },
   data() {
     return {
-      headerTittle: '图书介绍',
-      detailTittle: '',
-      dateTittle: '',
-      picture: undefined,
-      content: '',
-      bookinformation: ''
+      headerTittle: '图书介绍', // 主标题
+      detailTittle: '', // 内容标题
+      dateTittle: '', // 日期
+      picture: undefined, // 图片
+      content: '', // 内容
+      bookinformation: '' // 图书信息
     }
   },
   created() {

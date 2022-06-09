@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-05-27 10:15:47
+ * @LastEditTime: 2022-06-09 14:12:27
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -67,19 +67,19 @@ export default {
     headerImage: {
       type: String,
       default: require('@/assets/img/header.jpg')
-    },
+    }, // 头部图片
     headerTittle: {
       type: String,
       default: ''
-    },
+    }, // 头部标题
     detailTittle: {
       type: String,
       default: ''
-    },
+    }, // 标题
     dateTittle: {
       type: String,
       default: ''
-    }
+    } // 日期标题
   },
   computed: {
     headerStyle() {
