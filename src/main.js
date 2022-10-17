@@ -12,6 +12,9 @@ import store from './store'
 import router from './router/router'
 import '@/router/guards'
 
+// material-icons 引入
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
 import MaterialKit from './plugins/material-kit'
 Vue.use(MaterialKit)
 

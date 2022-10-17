@@ -6,7 +6,7 @@
  * @Description: 资源快速入口按钮
 -->
 <template>
-  <div>
+  <div class="ResouceBtn">
     <a class="md-layout res-btn" :href="url">
       <div class="md-layout-item md-size-100 material-icons md-light">
         {{ iconName }}
@@ -42,6 +42,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.ResouceBtn {
+  display: flex;
+  justify-content: center;
+}
 .res-btn {
   margin: 10px 15px;
   width: 16vh;

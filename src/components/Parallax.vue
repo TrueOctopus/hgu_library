@@ -35,7 +35,7 @@ export default {
   mounted() {
     const self = this
     window.addEventListener('scroll', function() {
-      if (window.innerWidth > 991) {
+      if (window.innerWidth > 1212) {
         const scrollVal = this.scrollY
         self.checkForParallax(scrollVal)
       }
