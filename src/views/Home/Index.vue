@@ -252,50 +252,32 @@
               </nav-tabs-card>
               <div class="md-layout-item md-size-10" />
             </div>
-            <div
-              class="md-layout animate__animated animate__fadeInUp"
-            >
+            <div class="myHeaderBottom md-layout animate__animated animate__fadeInUp">
               <div class="md-layout-item md-size-10" />
               <div class="res-btns md-layout md-layout-item md-size-80">
                 <div class="md-layout md-layout-item md-size-100 md-gutter">
-                  <div class="md-layout-item md-size-5" />
-                  <div class="md-layout-item md-size-15">
+                  <!-- <div class="md-layout-item md-size-5" /> -->
+                  <div class="my3boxs">
                     <ResBtn icon-name="schedule" url="/service/opentime" text="开放时间" />
-                  </div>
-                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="chair_alt" url="/service/seatOrder" text="座位预约" />
-                  </div>
-                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="local_library" url="/service/labOrder" text="研修室预约" />
                   </div>
-                  <div class="md-layout-item md-size-15">
+                  <div class="my3boxs">
                     <ResBtn icon-name="format_list_bulleted" url="/studysupport/admissionEducation" text="入馆须知" />
-                  </div>
-                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="book" url="/service/borrowRules" text="图书续借" />
-                  </div>
-                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="collections_bookmark" text="资源荐购" />
                   </div>
                 </div>
                 <div class="md-layout md-layout-item md-size-100 md-gutter">
-                  <div class="md-layout-item md-size-5" />
-                  <div class="md-layout-item md-size-15">
+                  <!-- <div class="md-layout-item md-size-5" /> -->
+                  <div class="my3boxs">
                     <ResBtn icon-name="school" url="/resouce/offcampus" text="校外访问" />
-                  </div>
-                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="storage" url="/resouce/all" text="数据库" />
-                  </div>
-                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="dashboard" url="/resouce/collection" text="馆藏布局" />
                   </div>
-                  <div class="md-layout-item md-size-15">
+                  <div class="my3boxs">
                     <ResBtn icon-name="3p" url="/announcement/lecture" text="培训讲座" />
-                  </div>
-                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="bookmark_add" url="/reading/bookReport" text="新书通报" />
-                  </div>
-                  <div class="md-layout-item md-size-15">
                     <ResBtn icon-name="volunteer_activism" url="/service/donation" text="捐赠" />
                   </div>
                 </div>
@@ -312,10 +294,10 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
-            <h3 class="md-layout-item md-size-90 tittle">新闻公告</h3>
+            <h3 class="md-layout-item md-size-85 tittle">新闻公告</h3>
             <router-link
               to="/announcement"
-              class="md-layout-item md-size-10 moreClass"
+              class="md-layout-item md-size-15 moreClass"
             >
               更多>>
             </router-link>
@@ -350,15 +332,20 @@
                 >
                 <div v-if="newsImage[1]">{{ newsImage[1].title }}</div>
               </div>
+              <div class="md-layout-item md-size-10 md-small-size-5" />
             </div>
           </div>
-          <div class="md-layout-item md-size-10 md-small-size-5" />
+        </div>
+      </div>
+
+      <div id="publicity" ref="publicity" class="section">
+        <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
-            <h3 class="md-layout-item md-size-90 tittle">资源信息</h3>
+            <h3 class="md-layout-item md-size-85 tittle">资源信息</h3>
             <router-link
               to="/announcement"
-              class="md-layout-item md-size-10 moreClass"
+              class="md-layout-item md-size-15 moreClass"
             >
               更多>>
             </router-link>
@@ -393,9 +380,9 @@
                 >
                 <div v-if="newsImage[3]">{{ newsImage[3].title }}</div>
               </div>
+              <div class="md-layout-item md-size-10 md-small-size-5" />
             </div>
           </div>
-          <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
       <!-- 图书推广部分 -->
@@ -404,14 +391,14 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
             <h3
-              class="md-layout-item md-size-90 tittle"
+              class="md-layout-item md-size-85 tittle"
               style="padding-bottom: 30px"
             >
               阅读推广
             </h3>
             <router-link
               to="/reading/recommendedReading"
-              class="md-layout-item md-size-10 moreClass"
+              class="md-layout-item md-size-15 moreClass"
             >
               更多>>
             </router-link>
@@ -427,10 +414,10 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout md-content">
-            <h3 class="md-layout-item md-size-90 tittle">活动讲座</h3>
+            <h3 class="md-layout-item md-size-85 tittle">活动讲座</h3>
             <router-link
               to="/announcement/lecture"
-              class="md-layout-item md-size-10 moreClass"
+              class="md-layout-item md-size-15 moreClass"
             >
               更多>>
             </router-link>
@@ -446,14 +433,14 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
           <div class="md-layout-item md-size-80 md-layout">
-            <h3 class="md-layout-item md-size-90 tittle">特色资源</h3>
+            <h3 class="md-layout-item md-size-85 tittle">特色资源</h3>
             <router-link
               to="/resouce/characteristic"
-              class="md-layout-item md-size-10 moreClass"
+              class="md-layout-item md-size-15 moreClass"
             >
               更多>>
             </router-link>
-            <div class="md-layout-item md-size-95">
+            <div class="md-layout-item md-size-100">
               <CharacteristicSection />
             </div>
           </div>
@@ -676,6 +663,29 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.page-header {
+  height: auto;
+}
+.myHeaderBottom {
+  margin-bottom: 13%;
+}
+.my3boxs {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 480px;
+  width: 50%;
+  justify-content: center;
+  div {
+    min-width: 155px;
+    flex: 1;
+  }
+}
+
+@media all and (max-width: 1212px) {
+.my3boxs {
+  width: 100%;
+}
+}
 @media all and (min-width: 991px) {
   .btn-container {
     display: flex;
@@ -689,7 +699,7 @@ export default {
  .md-card {
    font-weight: bold;
    color: #04aac0;
-   height: 36vh;
+  //  height: 36vh;
  }
 
 .resourceSimple {
@@ -751,7 +761,7 @@ export default {
   }
 }
 .brand {
-  margin-top: 7%;
+  margin-top: 9%;
 }
 #header-tabs {
   * {
@@ -760,6 +770,7 @@ export default {
 }
 .moreClass {
   font-size: 14px;
+  min-width: 75px !important;
   color: #3c4858 !important;
   line-height: 75px;
 }
