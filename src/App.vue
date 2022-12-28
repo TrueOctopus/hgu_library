@@ -1,11 +1,12 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:23
- * @LastEditTime: 2022-06-09 14:37:44
+ * @LastEditTime: 2022-04-07 15:33:28
  * @LastEditors: 郑钊宇
- * @Description: 主入口
+ * @Description: app.vue
 -->
 <template>
+
   <div>
     <Notifications />
     <div :class="{ 'nav-open': NavbarStore.showNavbar }">
@@ -67,5 +68,8 @@ ul {
 .md-image {
   display: inline-block !important;
   align-items: initial !important;
+}
+* {
+  font-family: 'Microsoft Yahei', Arial, sans-serif;
 }
 </style>

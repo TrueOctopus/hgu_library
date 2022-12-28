@@ -1,13 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 16:01:50
- * @LastEditTime: 2022-06-09 11:08:18
+ * @LastEditTime: 2022-04-26 17:39:08
  * @LastEditors: 郑钊宇
- * @Description: 留言板页面
+ * @Description:
 -->
 <template>
   <div class="md-layout">
-    <!-- 留言表单 -->
+
     <md-field class="md-layout-item md-size-70" :class="commentMessageClass">
       <label class="label">留言区</label>
       <span class="md-error">{{ commentErrorMessage }}</span>
@@ -17,7 +17,7 @@
     <div class="submitBtn md-layout-item md-size-20">
       <md-button class="md-info" @click="submit">留言</md-button>
     </div>
-    <!-- 留言信息 -->
+
     <div class="md-layout-item md-size-100 list">
       <commentElement
         v-for="item in list"
@@ -28,7 +28,7 @@
         :replay="item.reply"
       />
     </div>
-    <!-- 分页 -->
+
     <pagination
       v-model="pageNo"
       type="info"
@@ -50,18 +50,18 @@ export default {
   },
   data() {
     return {
-      list: [], // 列表数据
-      pageNo: 1, // 当前页码
-      pageSize: 10, // 每页条数
-      pages: 10, // 分页总数
-      isLogin: true, // 是否登录
+      list: [],
+      pageNo: 1,
+      pageSize: 10,
+      pages: 10,
+      isLogin: true,
       submitForm: {
-        messagecontent: '', // 留言内容
-        commenter: '', // 留言人
-        checkflag: 0 // 审核状态
-      }, // 留言表单
-      hasCommentErrorMessage: false, // 是否有留言错误信息
-      commentErrorMessage: '' // 留言错误信息
+        messagecontent: '',
+        commenter: '',
+        checkflag: 0
+      },
+      hasCommentErrorMessage: false,
+      commentErrorMessage: ''
     }
   },
   computed: {
@@ -82,7 +82,7 @@ export default {
     }
   },
   methods: {
-    fetchData() { // 获取留言列表
+    fetchData() {
       fetchCommentList({
         pageNo: this.pageNo,
         pageSize: this.pageSize
@@ -94,7 +94,7 @@ export default {
         // console.log(document.getElementsByClassName('wrapper')[0])
       })
     },
-    commentVerify() { // 留言验证
+    commentVerify() {
       if (this.submitForm.messagecontent.length < 1) {
         this.hasCommentErrorMessage = true
         this.commentErrorMessage = '请输入留言内容'
@@ -106,7 +106,7 @@ export default {
         this.commentErrorMessage = ''
       }
     },
-    submit() { // 提交留言
+    submit() {
       this.commentVerify()
       if (!this.hasCommentErrorMessage) {
         addComment(this.submitForm).then(res => {

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-08 09:04:07
- * @LastEditTime: 2022-06-09 14:21:38
+ * @LastEditTime: 2022-04-25 18:35:30
  * @LastEditors: 郑钊宇
  * @Description: 图书馆概况
 -->
@@ -39,10 +39,10 @@ export default {
   components: { TemplePage },
   data() {
     return {
-      detailTittle: '本馆概况', // 标题
-      content: '', // 内容
-      picture: undefined, // 图片
-      title: '' // 标题
+      detailTittle: '本馆概况',
+      content: '',
+      picture: undefined,
+      title: ''
     }
   },
   created() {

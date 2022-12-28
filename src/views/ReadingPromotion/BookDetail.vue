@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-07 10:09:23
- * @LastEditTime: 2022-06-09 14:32:56
+ * @LastEditTime: 2022-04-26 19:23:05
  * @LastEditors: 郑钊宇
- * @Description: 图书详情页面
+ * @Description:
 -->
 
 <template>
@@ -26,7 +26,7 @@
         <div v-if="picture" class="md-layout">
           <div class="md-layout-item md-size-30">
             <img class="md-image" style="width: 100%;height: auto" :src="picture" alt="主题图片">
-            <div style="white-space: pre-wrap; font-size: 14px;">{{ bookinformation }}</div>
+            <div style="white-space: pre-wrap; font-size: 14px;word-wrap: break-word;">{{ bookinformation }}</div>
           </div>
 
           <div class="md-layout-item md-size-70" v-html="content" />
@@ -50,12 +50,12 @@ export default {
   },
   data() {
     return {
-      headerTittle: '图书介绍', // 主标题
-      detailTittle: '', // 内容标题
-      dateTittle: '', // 日期
-      picture: undefined, // 图片
-      content: '', // 内容
-      bookinformation: '' // 图书信息
+      headerTittle: '图书介绍',
+      detailTittle: '',
+      dateTittle: '',
+      picture: undefined,
+      content: '',
+      bookinformation: ''
     }
   },
   created() {

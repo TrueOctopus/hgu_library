@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-18 15:07:21
- * @LastEditTime: 2022-06-09 11:24:33
+ * @LastEditTime: 2022-03-19 10:44:24
  * @LastEditors: 郑钊宇
- * @Description: 侧边导航条
+ * @Description:
 -->
 
 <template>
@@ -32,6 +32,6 @@ export default {
 </script>
 <style lang="scss">
 .sub a {
-  padding-left: 9vh !important;
+  padding-left: 6.5vh !important;
 }
 </style>

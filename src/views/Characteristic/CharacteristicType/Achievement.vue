@@ -1,14 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-19 16:47:36
- * @LastEditTime: 2022-06-09 10:41:53
+ * @LastEditTime: 2022-04-24 19:18:48
  * @LastEditors: 郑钊宇
- * @Description: 成果页面
+ * @Description:
 -->
 <template>
   <div class="md-layout">
     <div class="md-layout-item md-size-90 table">
-      <!-- 搜索 -->
       <div>
         <el-input v-model="listQuery.author" placeholder="作者" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
         <el-input v-model="listQuery.achievementName" placeholder="成果名称" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
@@ -16,7 +15,7 @@
         <md-button class="filter-item md-info btn" @click="handleFilter">搜索</md-button>
 
       </div>
-      <!-- 列表展示 -->
+
       <el-table
         v-loading="listLoading"
         :data="list"
@@ -54,7 +53,6 @@
     </div>
     <div class="md-layout-item md-size-10" />
     <div class="md-layout-item md-size-15 total">共 {{ total }} 条</div>
-    <!-- 分页 -->
     <pagination
       v-model="listQuery.pageNo"
       :class="`pagination-${infoColor} md-layout-item md-size-85`"
@@ -74,24 +72,24 @@ export default {
   },
   data() {
     return {
-      list: [], // 列表数据
-      listLoading: true, // 列表加载状态
-      infoColor: 'info', // 分页颜色
-      pages: 1, // 分页数量
-      total: 0, // 总数量
+      list: [],
+      listLoading: true,
+      infoColor: 'info',
+      pages: 1,
+      total: 0,
       listQuery: {
-        pageNo: 1, // 当前页码
-        pageSize: 10, // 每页数量
-        author: '', // 作者
-        achievementName: '' // 成果名称
-      } // 查询参数
+        pageNo: 1,
+        pageSize: 10,
+        author: '',
+        achievementName: ''
+      }
     }
   },
   created() {
     this.fetchList()
   },
   methods: {
-    fetchList() { // 获取列表数据
+    fetchList() {
       this.listLoading = true
       searchAcaAchievement(this.listQuery).then(response => {
         // console.log(response)
@@ -103,9 +101,9 @@ export default {
       })
     },
     handleFilter() {
-      this.fetchList() // 获取列表
+      this.fetchList()
     },
-    handleDownload(row) { // 下载
+    handleDownload(row) {
       window.open(downloadCharacteristic + row.achievementName)
     }
   }

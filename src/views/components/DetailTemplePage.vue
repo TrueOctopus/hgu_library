@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-06-09 14:12:27
+ * @LastEditTime: 2022-05-27 10:15:47
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -37,12 +37,12 @@
 
       <div>
         <div v-if="$slots.subNav" class="md-layout">
-          <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div id="subNav" class="md-layout-item md-size-15">
+          <div class="md-layout-item md-size-10 md-small-size-5 md-small-hide" />
+          <div id="subNav" class="md-layout-item md-size-15 md-small-hide">
             <slot name="subNav" />
           </div>
-          <div class="md-layout-item md-size-5 md-small-size-5" />
-          <div id="text" class="md-layout-item md-size-70">
+          <div class="md-layout-item md-size-5 md-small-size-5 md-small-hide" />
+          <div id="text" class="md-layout-item md-size-70 md-small-size-100">
             <slot name="text" />
           </div>
         </div>
@@ -67,19 +67,19 @@ export default {
     headerImage: {
       type: String,
       default: require('@/assets/img/header.jpg')
-    }, // 头部图片
+    },
     headerTittle: {
       type: String,
       default: ''
-    }, // 头部标题
+    },
     detailTittle: {
       type: String,
       default: ''
-    }, // 标题
+    },
     dateTittle: {
       type: String,
       default: ''
-    } // 日期标题
+    }
   },
   computed: {
     headerStyle() {
@@ -121,8 +121,12 @@ export default {
 </style>
 
 <style lang="scss">
-p {
-  line-height: normal;
+.container p {
+  line-height: 1.8;
+  font-size: medium;
+  white-space: normal;
+  margin: 10px 0;
+  text-indent: 2em;
 }
 #breadcrumb {
   padding: 60px 0 20px;

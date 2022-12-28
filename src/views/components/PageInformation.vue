@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-07 16:43:34
- * @LastEditTime: 2022-06-09 14:13:30
+ * @LastEditTime: 2022-04-07 17:33:37
  * @LastEditors: 郑钊宇
- * @Description: 页面具体信息模板
+ * @Description:
 -->
 <template>
   <div class="container">
@@ -48,8 +48,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  padding-right: 5vh;
-  margin-left: -5vh;
+
+@media screen and (min-width: 961px) {
+  .container {
+    padding-right: 5vh;
+    margin-left: -5vh;
+    font-size: medium;
+  }
 }
 </style>

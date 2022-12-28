@@ -1,10 +1,3 @@
-<!--
- * @Author: 郑钊宇
- * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-06-09 14:28:22
- * @LastEditors: 郑钊宇
- * @Description: 个人信息页面
--->
 <template>
   <div class="wrapper">
     <parallax
@@ -140,15 +133,16 @@ export default {
   data() {
     return {
       userInfo: {
-        id: '', // 用户id
-        username: '', // 用户名
-        email: '', // 邮箱
-        jurisdiction: '' // 权限
-      }, // 用户信息
-      emailErrorMessage: '', // 邮箱错误提示
-      hasEmailErrorMessage: false, // 是否有错误信息
-      role: ['读 者', '编 辑', '管理员'], // 权限
-      flag: false // 是否显示修改邮箱
+        id: '',
+        username: '',
+        email: '',
+        jurisdiction: ''
+
+      },
+      emailErrorMessage: '',
+      hasEmailErrorMessage: false,
+      role: ['读 者', '编 辑', '管理员'],
+      flag: false
     }
   },
   computed: {
@@ -156,12 +150,12 @@ export default {
       return {
         backgroundImage: `url(${this.header})`
       }
-    }, // 背景图片
+    },
     emailMessageClass() {
       return {
         'md-invalid': this.hasEmailErrorMessage
       }
-    } // 邮箱错误提示样式
+    }
   },
   created() {
     getInfo(this.$store.getters.token).then(res => {
@@ -185,7 +179,7 @@ export default {
         this.hasEmailErrorMessage = false
         this.emailErrorMessage = ''
       }
-    }, // 邮箱验证
+    },
     async submit() {
       this.emailVerify()
       if (!this.hasEmailErrorMessage) {

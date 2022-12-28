@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-06-09 14:20:27
+ * @LastEditTime: 2022-05-16 22:21:41
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -10,7 +10,6 @@
     <AnchorNav :column-type="columnType" />
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout" style="width:99%">
-        <!-- 头部部分 选项卡与快捷入口 -->
         <div class="image-wrapper" style="width:99%">
           <div class="brand">
             <!-- <div class="md-layout-item md-size-100 md-small-size-100">
@@ -220,31 +219,39 @@
 
                   <div class="resourceSimple">
                     <div style="overflow: hidden">
-                      中文资源:
-                      <a v-for="item in databaseList.cn" :key="item.id" :href="item.urladdress">
-                        {{ item.urlname }}
-                      </a>
+                      <div class="myTitle">中文资源:</div>
+                      <div class="myLinks">
+                        <a v-for="item in databaseList.cn" :key="item.id" :href="item.urladdress">
+                          {{ item.urlname }}
+                        </a>
+                      </div>
                       <a class="more" href="/resouce/cn">更多>></a>
                     </div>
                     <div>
-                      外文资源:
-                      <a v-for="item in databaseList.foreign" :key="item.id" :href="item.urladdress">
-                        {{ item.urlname }}
-                      </a>
+                      <div class="myTitle">外文资源:</div>
+                      <div class="myLinks">
+                        <a v-for="item in databaseList.foreign" :key="item.id" :href="item.urladdress">
+                          {{ item.urlname }}
+                        </a>
+                      </div>
                       <a class="more" href="/resouce/foreign">更多>></a>
                     </div>
                     <div>
-                      试用资源:
-                      <a v-for="item in databaseList.try" :key="item.id" :href="item.urladdress">
-                        {{ item.urlname }}
-                      </a>
+                      <div class="myTitle">试用资源:</div>
+                      <div class="myLinks">
+                        <a v-for="item in databaseList.try" :key="item.id" :href="item.urladdress">
+                          {{ item.urlname }}
+                        </a>
+                      </div>
                       <a class="more" href="/resouce/try">更多>></a>
                     </div>
                     <div>
-                      开放资源:
-                      <a v-for="item in databaseList.open" :key="item.id" :href="item.urladdress">
-                        {{ item.urlname }}
-                      </a>
+                      <div class="myTitle">开放资源:</div>
+                      <div class="myLinks">
+                        <a v-for="item in databaseList.open" :key="item.id" :href="item.urladdress">
+                          {{ item.urlname }}
+                        </a>
+                      </div>
                       <a class="more" href="/resouce/open">更多>></a>
                     </div>
                   </div>
@@ -289,7 +296,6 @@
       </div>
     </parallax>
     <div class="main main-raised">
-      <!-- 新闻公告部分 -->
       <div id="announcement" ref="announcement" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -313,23 +319,33 @@
             </div>
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
               <div class="md-layout-item md-size-50 newsImage">
-                <img
+                <!-- <img
                   :src="newsImage[0]?newsImage[0].image:image"
                   :alt="newsImage[0]?newsImage[0].title:'default'"
                   class="img-raised rounded"
                   style="cursor: pointer"
                   @click="$router.push('/announcement/' + newsImage[0].id)"
-                >
+                > -->
+                <div
+                  class="img-raised rounded myImg"
+                  :style="{'background-image': `url(${newsImage[0]?newsImage[0].image:image})`}"
+                  @click="$router.push('/announcement/' + newsImage[0].id)"
+                />
                 <div v-if="newsImage[0]">{{ newsImage[0].title }}</div>
               </div>
               <div class="md-layout-item md-size-50 newsImage">
-                <img
+                <!-- <img
                   :src="newsImage[1]?newsImage[1].image:image"
                   :alt="newsImage[1]?newsImage[1].title:'default'"
                   class="img-raised rounded"
                   style="cursor: pointer"
                   @click="$router.push('/announcement/' + newsImage[1].id)"
-                >
+                > -->
+                <div
+                  class="img-raised rounded myImg"
+                  :style="{'background-image': `url(${newsImage[1]?newsImage[1].image:image})`}"
+                  @click="$router.push('/announcement/' + newsImage[1].id)"
+                />
                 <div v-if="newsImage[1]">{{ newsImage[1].title }}</div>
               </div>
               <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -361,23 +377,33 @@
             </div>
             <div class="md-layout-item md-size-50 md-layout md-small-hide">
               <div class="md-layout-item md-size-50 newsImage">
-                <img
+                <!-- <img
                   :src="newsImage[2]?newsImage[2].image:image"
                   alt="Raised Image"
                   class="img-raised rounded"
                   style="cursor: pointer"
                   @click="$router.push('/announcement/' + newsImage[2].id)"
-                >
+                > -->
+                <div
+                  class="img-raised rounded myImg"
+                  :style="{'background-image': `url(${newsImage[2]?newsImage[2].image:image})`}"
+                  @click="$router.push('/announcement/' + newsImage[2].id)"
+                />
                 <div v-if="newsImage[2]">{{ newsImage[2].title }}</div>
               </div>
               <div class="md-layout-item md-size-50 newsImage">
-                <img
+                <!-- <img
                   :src="newsImage[3]?newsImage[3].image:image"
                   alt="Raised Image"
                   class="img-raised rounded"
                   style="cursor: pointer"
                   @click="$router.push('/announcement/' + newsImage[3].id)"
-                >
+                > -->
+                <div
+                  class="img-raised rounded myImg"
+                  :style="{'background-image': `url(${newsImage[3]?newsImage[3].image:image})`}"
+                  @click="$router.push('/announcement/' + newsImage[3].id)"
+                />
                 <div v-if="newsImage[3]">{{ newsImage[3].title }}</div>
               </div>
               <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -385,7 +411,7 @@
           </div>
         </div>
       </div>
-      <!-- 图书推广部分 -->
+
       <div id="publicity" ref="publicity" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -409,7 +435,7 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
-      <!-- 讲座预约部分 -->
+
       <div id="lecture" ref="lecture" class="section" :style="bgImage">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -428,7 +454,7 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
-      <!-- 特色资源部分 -->
+
       <div id="characteristic" ref="characteristic" class="section">
         <div class="md-layout">
           <div class="md-layout-item md-size-10 md-small-size-5" />
@@ -447,11 +473,11 @@
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
       </div>
-      <!-- 友情链接部分 -->
+
       <div id="friendLink" ref="friendLink" class="section section-tabs">
         <div class="md-layout">
-          <div class="md-layout-item md-size-10 md-small-size-5" />
-          <div class="md-layout-item md-size-80 md-layout">
+          <div class="md-layout-item md-size-10 md-small-size-0" />
+          <div class="md-layout-item md-size-80 md-small-size-100 md-layout">
             <h3 class="md-layout-item md-size-100 tittle">友情链接</h3>
             <div class="md-layout-item md-size-25 ">
               <a href="http://www.nlc.gov.cn/">国家图书馆</a>
@@ -481,7 +507,7 @@
               <a href="http://lib.hbu.edu.cn/">河北大学图书馆</a>
             </div>
           </div>
-          <div class="md-layout-item md-size-10 md-small-size-5" />
+          <div class="md-layout-item md-size-10 md-small-size-0" />
         </div>
       </div>
     </div>
@@ -515,48 +541,48 @@ export default {
     headerImage: {
       type: String,
       default: require('@/assets/img/header.jpg')
-    }, // 头部图片
+    },
     image: {
       type: String,
       default: require('@/assets/img/cynthia-del-rio.jpg')
-    }, // 背景图片
+    },
     resourseImage: {
       type: String,
       default: require('@/assets/img/profile_city.jpg')
-    } // 资源图片
+    }
   },
   data() {
     return {
       newsOption,
       databaseList: {
-        cn: [], // 中文数据库
-        foreign: [], // 外文数据库
-        try: [], // 试用数据库
-        open: [] // 开放数据库
-      }, // 数据库列表
+        cn: [],
+        foreign: [],
+        try: [],
+        open: []
+      },
       newsList: {
-        news: [], // 新闻列表
-        resource: [] // 资源信息列表
-      }, // 新闻列表
-      newsImage: [], // 新闻图片
+        news: [],
+        resource: []
+      },
+      newsImage: [],
       docForm: {
-        strText: '', // 文本内容
-        docType: 'ALL' // 文档类型
-      }, // 文档搜索表单
+        strText: '',
+        docType: 'ALL'
+      },
       medaLinkSearchForm: {
         searchWords: ''
-      }, // 百链搜索表单
+      },
       duxiuSearchForm: {
         searchWords: ''
-      }, // 独秀搜索表单
+      },
       zlfSearchForm: {
         searchWords: ''
-      }, // 维普智立方搜索表单
+      },
       readerCardForm: {
         readerCardNumber: '',
         readerCardPassword: ''
-      }, // 读者证搜索表单
-      columnType: 0 // 栏目类型
+      },
+      columnType: 0
     }
   },
   computed: {
@@ -564,16 +590,15 @@ export default {
       return {
         backgroundImage: `url(${this.headerImage})`
       }
-    }, // 头部图片样式
+    },
     bgImage() {
       return {
         backgroundImage: `url(${this.resourseImage})`
       }
-    } // 背景图片样式
+    }
   },
   created() {
     fetchDatabaseList().then(response => {
-      // 获取数据库列表
       // console.log(response)
       response.data.databaseList.forEach(ele => {
         switch (ele.genre) {
@@ -601,7 +626,6 @@ export default {
       })
     })
     fetchReleaseNewsList(1, 1000).then(response => {
-      // 获取新闻列表
       const newslist = response.data.news.list
       newslist.forEach(ele => {
         if (ele.picture) {
@@ -615,13 +639,11 @@ export default {
     })
 
     fetchNewsList(1, 8).then(response => {
-      // 获取新闻列表
       // console.log('NewsList', response)
       this.newsList.news = response.data.news.list
     })
 
     fetchResourcesList(1, 8).then(response => {
-      // 获取资源列表
       // console.log(response)
       this.newsList.resource = response.data.news.list
     })
@@ -663,6 +685,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.md-layout-item.md-size-25 {
+  padding-right: 10px;
+  padding-left: 10px;
+}
 .page-header {
   height: auto;
 }
@@ -682,9 +708,9 @@ export default {
 }
 
 @media all and (max-width: 1212px) {
-.my3boxs {
-  width: 100%;
-}
+  .my3boxs {
+    width: 100%;
+  }
 }
 @media all and (min-width: 991px) {
   .btn-container {
@@ -704,13 +730,16 @@ export default {
 
 .resourceSimple {
   a {
-    padding-left: 1vh;
     color: #000;
     font-weight: normal;
+    padding-right: 10px;
     &:hover {
       color: #00bcd4 !important;
     }
   }
+  // a + a {
+  //   padding-left: 1vh;
+  // }
   // a {
   //   padding-left: 1vh;
   //   color: #ababab;
@@ -718,18 +747,41 @@ export default {
   //     color: #00bcd4 !important;
   //   }
   // }
-  position: relative;
-  top: -1.2rem;
-  left: 2rem;
+  // position: relative;
+  // top: -1.2rem;
+  // left: 2rem;
 }
 
- .more {
+.resourceSimple > div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .myTitle {
+    width: 70px;
+  }
+  .myLinks {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .more {
+    width: 65px;
+  }
+}
+
+.more {
    color: #ababab !important;
    font-weight: bold;
    float: right;
-   margin-right: 8vh;
+  //  margin-right: 8vh;
  }
 }
+
+// @media all and (min-width: 751px) {
+//   .resourceSimple {
+//     padding: 0 8vh;
+//   }
+// }
 .res-btns {
   div {
     padding: 0;
@@ -741,12 +793,20 @@ export default {
   background-color: #fff;
   border-radius: 5px;
   padding: 0;
+  padding-bottom: 15px;
 }
 .newsImage {
   height: 35vh;
   img {
     width: 100%;
-    height: 75%;
+    height: 50%;
+    // height: 75%;
+  }
+  .myImg {
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    cursor: pointer;
   }
 }
 .formStyle {
@@ -758,6 +818,11 @@ export default {
   button {
     margin-top: -2px;
     margin-left: 3vh;
+  }
+}
+@media screen and (max-width: 1190px) {
+  .formStyle {
+    text-align: center;
   }
 }
 .brand {
@@ -808,6 +873,13 @@ export default {
   letter-spacing: 1px;
   .md-layout-item {
     line-height: 30px;
+  }
+}
+@media screen and (max-width: 750px) {
+  #friendLink {
+    .md-layout-item {
+      padding: 0 10px;
+    }
   }
 }
 </style>

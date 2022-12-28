@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 09:42:44
- * @LastEditTime: 2022-06-09 14:16:05
+ * @LastEditTime: 2022-04-25 15:05:43
  * @LastEditors: 郑钊宇
- * @Description: 特色资源介绍页面
+ * @Description:
 -->
 <template>
   <div>

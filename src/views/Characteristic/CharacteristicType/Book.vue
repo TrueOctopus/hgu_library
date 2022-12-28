@@ -1,14 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-24 18:58:34
- * @LastEditTime: 2022-06-09 10:44:01
+ * @LastEditTime: 2022-04-24 19:32:26
  * @LastEditors: 郑钊宇
- * @Description: 著作页面
+ * @Description:
 -->
 <template>
   <div class="md-layout">
     <div class="md-layout-item md-size-90 table">
-      <!-- 搜索 -->
       <div>
         <el-input v-model="listQuery.author" placeholder="作者" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
         <el-input v-model="listQuery.bookName" placeholder="书名" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
@@ -17,7 +16,7 @@
         <md-button class="filter-item md-info btn" @click="handleFilter">搜索</md-button>
 
       </div>
-      <!-- 列表展示 -->
+
       <el-table
         v-loading="listLoading"
         :data="list"
@@ -54,7 +53,7 @@
         </el-table-column>
       </el-table>
     </div>
-    <!-- 分页 -->
+
     <div class="md-layout-item md-size-10" />
     <div class="md-layout-item md-size-15 total">共 {{ total }} 条</div>
     <pagination
@@ -76,18 +75,18 @@ export default {
   },
   data() {
     return {
-      list: [], // 列表数据
-      listLoading: true, // 列表加载状态
-      infoColor: 'info', // 分页颜色
-      pages: 1, // 分页数量
-      total: 0, // 总数量
+      list: [],
+      listLoading: true,
+      infoColor: 'info',
+      pages: 1,
+      total: 0,
       listQuery: {
-        pageNo: 1, // 当前页码
-        pageSize: 10, // 每页数量
-        author: '', // 作者
-        bookName: '', // 书名
-        publishingHouse: '' // 出版社
-      } // 查询参数
+        pageNo: 1,
+        pageSize: 10,
+        author: '',
+        bookName: '',
+        publishingHouse: ''
+      }
     }
   },
   created() {
@@ -95,7 +94,6 @@ export default {
   },
   methods: {
     fetchList() {
-      // 获取列表数据
       this.listLoading = true
       searchAcaBook(this.listQuery).then(response => {
         // console.log(response)
@@ -110,7 +108,6 @@ export default {
       this.fetchList()
     },
     handleDownload(row) {
-      // 下载著作
       window.open(downloadCharacteristic + row.bookName)
     }
   }

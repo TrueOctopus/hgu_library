@@ -1,25 +1,34 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-14 17:26:09
- * @LastEditTime: 2022-06-09 14:11:56
+ * @LastEditTime: 2022-04-26 19:26:47
  * @LastEditors: 郑钊宇
  * @Description: 阅读推广
 -->
 <template>
-  <el-carousel
+  <!-- <el-carousel
     :interval="3000"
     type="card"
     height="434px"
+    indicator-position="none"
+  > -->
+  <el-carousel
+    :interval="3000"
+    type="card"
     indicator-position="none"
   >
     <el-carousel-item v-for="book in bookList" :key="book.id">
       <div class="md-layout" @click="gotoBookDetail(book.id)">
         <div class="md-layout-item md-size-20" />
         <div class="md-layout-item md-size-60">
-          <el-card
+          <!-- <el-card
             :body-style="{ padding: '0px' }"
             shadow="hover"
             style="height:434px"
+          > -->
+          <el-card
+            :body-style="{ padding: '0px' }"
+            shadow="hover"
           >
             <img :src="getPic + book.coverimage" class="image">
             <div style="padding: 14px;">
@@ -52,7 +61,7 @@ export default {
     })
   },
   methods: {
-    gotoBookDetail(id) { // 跳转到书籍详情页
+    gotoBookDetail(id) {
       this.$router.push('/reading/bookDetail/' + id)
     }
   }
@@ -68,14 +77,15 @@ export default {
 .bottom {
   margin-top: 13px;
   line-height: 16px;
-  height: 46px;
+  height: 48px;
   overflow: hidden;
   font-size: 14px;
   color: #ababab;
 }
 
 .image {
-  height: 330px;
+  // height: 330px;
+  height: 180px;
   display: block;
   margin: 0 auto;
 }

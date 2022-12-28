@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-19 14:34:07
- * @LastEditTime: 2022-06-09 14:14:07
+ * @LastEditTime: 2022-05-16 22:02:47
  * @LastEditors: 郑钊宇
  * @Description: 资源快速入口按钮
 -->
@@ -24,15 +24,15 @@ export default {
     iconName: {
       type: String,
       default: 'home'
-    }, // 图标名称
+    },
     url: {
       type: String,
       default: 'javascript:void(0)'
-    }, // 跳转链接
+    },
     text: {
       type: String,
       default: 'fault text'
-    } // 文字
+    }
   },
   data() {
     return {}
@@ -49,7 +49,7 @@ export default {
 .res-btn {
   margin: 10px 15px;
   width: 16vh;
-  height: 16vh;
+  height: 90%;
   background-color: #00bcd4;
   text-align: center;
   border-radius: 8px;

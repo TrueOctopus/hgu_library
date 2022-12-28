@@ -1,14 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-24 18:58:16
- * @LastEditTime: 2022-06-09 10:42:07
+ * @LastEditTime: 2022-04-24 19:23:44
  * @LastEditors: 郑钊宇
- * @Description: 成果奖励页面
+ * @Description:
 -->
 <template>
   <div class="md-layout">
     <div class="md-layout-item md-size-90 table">
-      <!-- 搜索 -->
       <div>
         <el-input v-model="listQuery.author" placeholder="作者" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
         <el-input v-model="listQuery.awardName" placeholder="课题名称或承担项目" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
@@ -16,7 +15,7 @@
         <md-button class="filter-item md-info btn" @click="handleFilter">搜索</md-button>
 
       </div>
-      <!-- 列表展示 -->
+
       <el-table
         v-loading="listLoading"
         :data="list"
@@ -65,7 +64,6 @@
     </div>
     <div class="md-layout-item md-size-10" />
     <div class="md-layout-item md-size-15 total">共 {{ total }} 条</div>
-    <!-- 分页 -->
     <pagination
       v-model="listQuery.pageNo"
       :class="`pagination-${infoColor} md-layout-item md-size-85`"
@@ -85,17 +83,17 @@ export default {
   },
   data() {
     return {
-      list: [], // 列表数据
-      listLoading: true, // 列表加载状态
-      infoColor: 'info', // 分页颜色
-      pages: 1, // 分页数量
-      total: 0, // 总数量
+      list: [],
+      listLoading: true,
+      infoColor: 'info',
+      pages: 1,
+      total: 0,
       listQuery: {
-        pageNo: 1, // 页码
-        pageSize: 10, // 每页数量
-        author: '', // 作者
-        awardName: '' // 课题名称或承担项目
-      }// 查询参数
+        pageNo: 1,
+        pageSize: 10,
+        author: '',
+        awardName: ''
+      }
     }
   },
   created() {

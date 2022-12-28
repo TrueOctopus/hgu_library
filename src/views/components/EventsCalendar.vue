@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-11 15:22:34
- * @LastEditTime: 2022-06-09 14:12:50
+ * @LastEditTime: 2022-04-26 16:12:19
  * @LastEditors: 郑钊宇
  * @Description: 活动日历
 -->
@@ -52,10 +52,10 @@ export default {
   },
   data() {
     return {
-      markArr: [], // 标记日期
-      today: '', // 今天的日期
-      selectDate: '', // 选择的日期
-      lectureList: [] // 日期对应的讲座或活动
+      markArr: [],
+      today: '',
+      selectDate: '',
+      lectureList: []
     }
   },
   created() {
@@ -77,7 +77,7 @@ export default {
     this.getSelectDateLecture(this.today)
   },
   methods: {
-    getSelectDate() { // 获取选择的日期
+    getSelectDate() {
       let day = document.getElementsByClassName('wh_chose_day')
       if (day.length === 0) {
         return
@@ -98,7 +98,7 @@ export default {
       this.selectDate = yearMonth + day
       this.getSelectDateLecture(this.selectDate)
     },
-    getSelectDateLecture(date) { // 获取选择的日期的讲座或活动
+    getSelectDateLecture(date) {
       // console.log('date', date)
       fetchLectureByDate(date).then(res => {
         // console.log(res)

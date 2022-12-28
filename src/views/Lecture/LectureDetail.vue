@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-07 15:44:54
- * @LastEditTime: 2022-06-09 14:21:52
+ * @LastEditTime: 2022-04-25 18:35:44
  * @LastEditors: 郑钊宇
- * @Description: 讲座详情页面
+ * @Description:
 -->
 <template>
   <div>
@@ -48,12 +48,12 @@ export default {
   },
   data() {
     return {
-      headerTittle: '', // 主标题
-      detailTittle: '', // 内容标题
-      dateTittle: '', // 日期
-      picture: undefined, // 图片
-      lectureTime: '', // 讲座时间
-      content: '' // 内容
+      headerTittle: '',
+      detailTittle: '',
+      dateTittle: '',
+      picture: undefined,
+      lectureTime: '',
+      content: ''
     }
   },
   created() {

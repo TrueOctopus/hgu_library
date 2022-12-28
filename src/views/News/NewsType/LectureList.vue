@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-19 16:47:36
- * @LastEditTime: 2022-06-09 14:24:04
+ * @LastEditTime: 2022-04-06 16:10:17
  * @LastEditors: 郑钊宇
- * @Description: 讲座通知
+ * @Description:
 -->
 <template>
   <div>
@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      newsOption, // 新闻类型
+      newsOption,
       list: [],
       infoColor: 'info',
       infoPagination: {

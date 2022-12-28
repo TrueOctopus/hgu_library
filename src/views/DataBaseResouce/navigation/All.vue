@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-30 18:51:55
- * @LastEditTime: 2022-06-09 14:14:21
+ * @LastEditTime: 2022-04-26 21:41:26
  * @LastEditors: 郑钊宇
- * @Description: 所有资源页面
+ * @Description:
 -->
 <template>
   <div class="app-container md-layout-item md-size-90">
@@ -53,19 +53,19 @@ export default {
         deleted: 'danger'
       }
       return statusMap[status]
-    } // 过滤器
+    }
   },
   data() {
     return {
-      list: [], // 资源列表
-      listLoading: true // 资源列表加载状态
+      list: [],
+      listLoading: true
     }
   },
   created() {
     this.fetchData()
   },
   methods: {
-    fetchData() { // 获取资源列表
+    fetchData() {
       this.listLoading = true
       fetchDatabaseList().then(response => {
         // console.log(response)

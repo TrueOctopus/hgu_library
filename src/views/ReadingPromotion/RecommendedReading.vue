@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 16:01:50
- * @LastEditTime: 2022-06-09 14:35:35
+ * @LastEditTime: 2022-04-26 21:26:07
  * @LastEditors: 郑钊宇
- * @Description: 图书推荐页面
+ * @Description:
 -->
 <template>
   <div class="waterfall">
@@ -27,8 +27,8 @@ import { getPic } from '@/api/file'
 export default {
   data() {
     return {
-      bookList: [], // 图书列表
-      getPic // 图片路径
+      bookList: [],
+      getPic
     }
   },
   created() {

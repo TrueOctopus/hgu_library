@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-04-11 15:10:44
- * @LastEditTime: 2022-06-09 14:36:24
+ * @LastEditTime: 2022-04-11 16:20:08
  * @LastEditors: 郑钊宇
- * @Description: 教职工读者证查询页面
+ * @Description:
 -->
 <template>
   <div>
@@ -50,16 +50,16 @@ export default {
   components: { TemplePage },
   data() {
     return {
-      detailTittle: '教职工号查询', // 主标题
+      detailTittle: '教职工号查询',
       workForm: {
-        workNumber: '', // 职工号
-        worker: '' // 姓名
-      }, // 搜索表单
+        workNumber: '',
+        worker: ''
+      },
       result: {
-        workNumber: '', // 职工号
-        worker: '', // 姓名
-        readerIdNumber: '' // 读者证号
-      }, // 搜索结果
+        workNumber: '',
+        worker: '',
+        readerIdNumber: ''
+      },
       rules: {
         workNumber: [
           { required: true, message: '请输入职工号', trigger: 'blur' }
@@ -67,7 +67,7 @@ export default {
         worker: [
           { required: true, message: '请输入姓名', trigger: 'blur' }
         ]
-      } // 表单验证规则
+      }
     }
   },
   methods: {

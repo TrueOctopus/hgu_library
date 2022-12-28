@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-10 18:27:49
- * @LastEditTime: 2022-06-09 11:19:47
+ * @LastEditTime: 2022-03-30 09:28:54
  * @LastEditors: 郑钊宇
  * @Description: 侧边导航条
 -->
@@ -79,7 +79,7 @@ export default {
   position: fixed;
   top: 30%;
   right: 1%;
-  z-index: 5000;
+  z-index: 500;
   text-align: center;
   box-shadow: 0 4px 18px 0px rgb(0 0 0 / 12%), 0 7px 10px -5px rgb(0 0 0 / 15%);
   opacity: 0.85;
