@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-04-06 14:58:26
+ * @LastEditTime: 2022-12-28 12:27:53
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告选项卡
 -->
@@ -116,7 +116,7 @@ export default {
 .dateClass {
   display: inline-block;
   text-align: center;
-  width: 4rem;
+  width: 6rem;
   padding: 0 0 0 7px;
   line-height: 35px;
 }

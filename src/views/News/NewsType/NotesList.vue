@@ -12,7 +12,7 @@
       :key="item.id"
       :news-type-index="newsOption.indexOf(item.catalog)"
       :tittle="item.title"
-      :date="item.releasetime.substring(5, 10)"
+      :date="item.releasetime.substring(2, 10)"
       :news-id="item.id"
     />
     <pagination

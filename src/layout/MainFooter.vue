@@ -32,7 +32,7 @@
                 src="@/assets/img/beian.png"
                 width="20"
                 height="20"
-                style="float: left"
+                style="float: none"
               >
               &nbsp;冀公网安备&nbsp;13010802000749号-2
             </a>
@@ -47,11 +47,12 @@
           <li>
             邮编：050031
           </li>
+          <br>
+          <li class="copyright">
+            版权所有：河北地质大学图书馆 CopyRight &copy; {{ year }}
+          </li>
         </ul>
       </nav>
-      <div class="copyright">
-        版权所有：河北地质大学图书馆 CopyRight &copy; {{ year }}
-      </div>
     </div>
   </footer>
 </template>
@@ -77,6 +78,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   text-align: center;
+  justify-content: center;
   li {
     font-size: 14px;
     font-weight: 500;

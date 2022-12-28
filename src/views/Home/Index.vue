@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-05-16 22:21:41
+ * @LastEditTime: 2022-12-28 18:18:47
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -313,7 +313,7 @@
                 :key="item.id"
                 :news-type-index="newsOption.indexOf(item.catalog)"
                 :tittle="item.title"
-                :date="item.releasetime.substring(5, 10)"
+                :date="item.releasetime.substring(2, 10)"
                 :news-id="item.id"
               />
             </div>
@@ -371,7 +371,7 @@
                 :key="item.id"
                 :news-type-index="newsOption.indexOf(item.catalog)"
                 :tittle="item.title"
-                :date="item.releasetime.substring(5, 10)"
+                :date="item.releasetime.substring(2, 10)"
                 :news-id="item.id"
               />
             </div>

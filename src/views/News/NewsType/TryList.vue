@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-19 16:47:36
- * @LastEditTime: 2022-04-07 08:58:18
+ * @LastEditTime: 2022-12-28 12:35:06
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -12,7 +12,7 @@
       :key="item.id"
       :news-type-index="newsOption.indexOf(item.catalog)"
       :tittle="item.title"
-      :date="item.releasetime.substring(5, 10)"
+      :date="item.releasetime.substring(2, 10)"
       :news-id="item.id"
     />
     <pagination
