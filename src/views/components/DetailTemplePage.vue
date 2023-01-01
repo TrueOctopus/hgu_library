@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:09:23
- * @LastEditTime: 2022-05-27 10:15:47
+ * @LastEditTime: 2023-01-01 16:30:29
  * @LastEditors: 郑钊宇
  * @Description: 二级模板页面，通过具名插槽实现
 -->
@@ -54,7 +54,6 @@
           </div>
           <div class="md-layout-item md-size-10 md-small-size-5" />
         </div>
-
       </div>
 
     </div>

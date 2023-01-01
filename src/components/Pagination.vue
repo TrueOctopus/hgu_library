@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-28 19:53:37
- * @LastEditTime: 2022-03-29 14:54:21
+ * @LastEditTime: 2023-01-01 18:37:22
  * @LastEditors: 郑钊宇
  * @Description: 分页组件
 -->
@@ -139,15 +139,19 @@ export default {
     },
     changePage(item) {
       this.$emit('input', item)
+      // console.log(item)
+      window.sessionStorage.setItem('pageNo', item)
     },
     nextPage() {
       if (this.value < this.totalPages) {
         this.$emit('input', this.value + 1)
+        window.sessionStorage.setItem('pageNo', this.value + 1)
       }
     },
     prevPage() {
       if (this.value > 1) {
         this.$emit('input', this.value - 1)
+        window.sessionStorage.setItem('pageNo', this.value + 1)
       }
     }
   }

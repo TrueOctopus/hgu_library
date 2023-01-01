@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-19 16:47:36
- * @LastEditTime: 2022-04-06 16:08:45
+ * @LastEditTime: 2023-01-01 18:27:49
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -47,7 +47,19 @@ export default {
       }
     }
   },
+  beforeRouteEnter(to, from, next) {
+    // console.log(to)
+    if (from.params.newId) {
+      to.params.isBack = true
+    } else {
+      to.params.isBack = false
+    }
+    next()
+  },
   created() {
+    if (this.$route.params.isBack) {
+      this.infoPagination.pageNo = Number(window.sessionStorage.getItem('pageNo'))
+    }
     this.fetchList()
   },
   methods: {

@@ -47,7 +47,19 @@ export default {
       }
     }
   },
+  beforeRouteEnter(to, from, next) {
+    // console.log(to)
+    if (from.params.newId) {
+      to.params.isBack = true
+    } else {
+      to.params.isBack = false
+    }
+    next()
+  },
   created() {
+    if (this.$route.params.isBack) {
+      this.infoPagination.pageNo = Number(window.sessionStorage.getItem('pageNo'))
+    }
     this.fetchList()
   },
   methods: {

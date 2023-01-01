@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-06 19:11:53
- * @LastEditTime: 2022-04-27 11:30:15
+ * @LastEditTime: 2023-01-01 18:33:39
  * @LastEditors: 郑钊宇
  * @Description: 新闻公告页面
 -->
@@ -74,10 +74,9 @@ export default {
     }
   },
   created() {
-    // console.log(this.$route.params.newId)
     if (this.$route.params.newId) {
       fetchNewsDetailById(this.$route.params.newId).then(response => {
-        console.log(response)
+        // console.log(response)
         this.headerTittle = response.data.news.catalog
         this.detailTittle = response.data.news.title
         this.remark = response.data.news.remark

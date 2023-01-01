@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2023-01-01 15:48:06
+ * @LastEditTime: 2023-01-01 16:20:34
  * @LastEditors: 郑钊宇
  * @Description: 顶部菜单模块
 -->
@@ -605,7 +605,7 @@ export default {
   mounted() {
     // 添加滚动监听
     document.addEventListener('scroll', this.scrollListener)
-    console.log(screen.width)
+    // console.log(screen.width)
     if (screen.width < 1300 && screen.width > 990) {
       this.showLogo = false
     } else if (screen.width <= 990) {
