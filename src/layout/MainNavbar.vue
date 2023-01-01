@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-06-09 10:31:09
+ * @LastEditTime: 2023-01-01 15:48:06
  * @LastEditors: 郑钊宇
  * @Description: 顶部菜单模块
 -->
@@ -297,6 +297,42 @@
                           class="md-button md-button-link md-white md-simple dropdown-toggle"
                           data-toggle="dropdown"
                         >
+                          <p>新闻中心</p>
+                        </md-button>
+                        <ul class="dropdown-menu">
+                          <el-row>
+                            <el-col :span="24" style="width: 30vh">
+                              <ul>
+                                <li class="dropdown-header">资讯浏览</li>
+                                <li>
+                                  <a href="/announcement/all" class="dropdown-item">资讯一览</a>
+                                </li>
+                                <li>
+                                  <a href="/announcement/activity" class="dropdown-item">活动通知</a>
+                                </li>
+                                <li>
+                                  <a href="/announcement/lecture" class="dropdown-item">讲座通知</a>
+                                </li>
+                              </ul>
+                            </el-col>
+                          </el-row>
+                        </ul>
+                      </drop-down>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="md-list-item">
+                  <a
+                    class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                  >
+                    <div class="md-list-item-content">
+                      <drop-down direction="down">
+                        <md-button
+                          slot="title"
+                          class="md-button md-button-link md-white md-simple dropdown-toggle"
+                          data-toggle="dropdown"
+                        >
                           <p>资源</p>
                         </md-button>
                         <ul class="dropdown-menu">
@@ -346,50 +382,57 @@
                         >
                           <p>读者服务</p>
                         </md-button>
-                        <ul class="dropdown-menu">
-                          <ul>
-                            <li>
-                              <a href="/service/opentime" class="dropdown-item">开馆时间</a>
-                            </li>
-                            <li>
-                              <a href="/service/distribution" class="dropdown-item">馆藏分布</a>
-                            </li>
-                            <li class="dropdown-divider" />
-                            <li class="dropdown-header">借阅服务</li>
-                            <li>
-                              <a href="/service/borrowRules" class="dropdown-item">借阅规则</a>
-                            </li>
-                            <li>
-                              <a href="/service/borrowProcess" class="dropdown-item">借阅流程</a>
-                            </li>
-                            <li class="dropdown-divider" />
-                            <li class="dropdown-header">反馈中心</li>
-                            <li>
-                              <a href="/commentHub/common" class="dropdown-item">常见问题</a>
-                            </li>
-                            <li>
-                              <a href="/commentHub/comment" class="dropdown-item">留言板</a>
-                            </li>
-                            <li class="dropdown-divider" />
-                            <li class="dropdown-header">预约服务</li>
-                            <li>
-                              <a href="/service/seatOrder" class="dropdown-item">座位预约</a>
-                            </li>
-                            <li>
-                              <a href="/service/labOrder" class="dropdown-item">研修室预约</a>
-                            </li>
-                            <li>
-                              <a href="/service/lectureOrder" class="dropdown-item">讲座预约</a>
-                            </li>
-                            <li class="dropdown-divider" />
-                            <li>
-                              <a href="/staffnumber" class="dropdown-item">职工读书证号查询</a>
-                            </li>
-                            <li class="dropdown-divider" />
-                            <li>
-                              <a href="/service/donation" class="dropdown-item">捐赠</a>
-                            </li>
-                          </ul>
+                        <ul class="dropdown-menu" style="width: 60vh">
+                          <el-row>
+                            <el-col :span="12">
+                              <ul>
+                                <li>
+                                  <a href="/service/opentime" class="dropdown-item">开馆时间</a>
+                                </li>
+                                <li>
+                                  <a href="/service/distribution" class="dropdown-item">馆藏分布</a>
+                                </li>
+                                <li class="dropdown-divider" />
+                                <li class="dropdown-header">借阅服务</li>
+                                <li>
+                                  <a href="/service/borrowRules" class="dropdown-item">借阅规则</a>
+                                </li>
+                                <li>
+                                  <a href="/service/borrowProcess" class="dropdown-item">借阅流程</a>
+                                </li>
+                                <li class="dropdown-divider" />
+                                <li class="dropdown-header">反馈中心</li>
+                                <li>
+                                  <a href="/commentHub/common" class="dropdown-item">常见问题</a>
+                                </li>
+                                <li>
+                                  <a href="/commentHub/comment" class="dropdown-item">留言板</a>
+                                </li>
+                              </ul>
+                            </el-col>
+                            <el-col :span="12">
+                              <ul>
+                                <li class="dropdown-header">预约服务</li>
+                                <li>
+                                  <a href="/service/seatOrder" class="dropdown-item">座位预约</a>
+                                </li>
+                                <li>
+                                  <a href="/service/labOrder" class="dropdown-item">研修室预约</a>
+                                </li>
+                                <li>
+                                  <a href="/service/lectureOrder" class="dropdown-item">讲座预约</a>
+                                </li>
+                                <li class="dropdown-divider" />
+                                <li>
+                                  <a href="/staffnumber" class="dropdown-item">职工读书证号查询</a>
+                                </li>
+                                <li class="dropdown-divider" />
+                                <li>
+                                  <a href="/service/donation" class="dropdown-item">捐赠</a>
+                                </li>
+                              </ul>
+                            </el-col>
+                          </el-row>
                         </ul>
                       </drop-down>
                     </div>
@@ -477,7 +520,7 @@
               </md-list-item>
 
               <md-list-item>
-                <md-button v-if="!username" class="md-info" href="/login">登录</md-button>
+                <md-button v-if="!username" class="md-info" href="/login">留言登录</md-button>
 
                 <el-dropdown v-else>
                   <span class="el-dropdown-link">
@@ -562,7 +605,7 @@ export default {
   mounted() {
     // 添加滚动监听
     document.addEventListener('scroll', this.scrollListener)
-    // console.log(screen.width);
+    console.log(screen.width)
     if (screen.width < 1300 && screen.width > 990) {
       this.showLogo = false
     } else if (screen.width <= 990) {

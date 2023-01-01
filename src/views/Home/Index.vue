@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2022-12-28 18:18:47
+ * @LastEditTime: 2023-01-01 15:39:52
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -178,8 +178,9 @@
                       id="tab-pages5"
                       md-label="我的图书馆"
                       md-icon="face"
+                      href="https://opac.hgu.edu.cn/reader/redr_verify.php"
                     >
-                      <p>
+                      <!-- <p>
                         <el-form
                           ref="readerCardForm"
                           :model="readerCardForm"
@@ -213,7 +214,7 @@
                             >重置</md-button>
                           </el-form-item>
                         </el-form>
-                      </p>
+                      </p> -->
                     </md-tab>
                   </md-tabs>
 
