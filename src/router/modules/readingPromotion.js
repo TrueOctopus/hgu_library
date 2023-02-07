@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-25 15:26:51
- * @LastEditTime: 2022-06-09 10:33:15
+ * @LastEditTime: 2023-02-07 20:39:15
  * @LastEditors: 郑钊宇
  * @Description: 读书活动路由配置
  */
@@ -10,7 +10,7 @@ import MainFooter from '@/layout/MainFooter.vue'
 
 import Index from '@/views/ReadingPromotion/Index.vue'
 import RecommendedReading from '@/views/ReadingPromotion/RecommendedReading.vue'
-import BookReport from '@/views/ReadingPromotion/BookReport.vue'
+import BookClub from '@/views/ReadingPromotion/BookClub.vue'
 import ReadingMonth from '@/views/ReadingPromotion/activity/ReadingMonth.vue'
 
 const readingPromotion = {
@@ -37,10 +37,10 @@ const readingPromotion = {
       }
     },
     {
-      path: 'bookReport',
-      name: 'BookReport',
+      path: 'bookClub',
+      name: 'BookClub',
       components: {
-        default: BookReport,
+        default: BookClub,
         header: MainNavbar,
         footer: MainFooter
       }

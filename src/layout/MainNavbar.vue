@@ -216,7 +216,7 @@
                       <a href="/reading/recommendedReading" class="dropdown-item">读书推荐</a>
                     </li>
                     <li>
-                      <a href="/reading/bookReport" class="dropdown-item">新书通报</a>
+                      <a href="/reading/bookClub" class="dropdown-item">山水读书社</a>
                     </li>
                     <li class="dropdown-divider" />
                     <li class="dropdown-header">主题活动</li>
@@ -482,7 +482,7 @@
                             <a href="/reading/recommendedReading" class="dropdown-item">读书推荐</a>
                           </li>
                           <li>
-                            <a href="/reading/bookReport" class="dropdown-item">新书通报</a>
+                            <a href="/reading/bookClub" class="dropdown-item">山水读书社</a>
                           </li>
                           <li class="dropdown-divider" />
                           <li class="dropdown-header">主题活动</li>

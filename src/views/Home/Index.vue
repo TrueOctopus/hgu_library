@@ -285,7 +285,7 @@
                   </div>
                   <div class="my3boxs">
                     <ResBtn icon-name="3p" url="/announcement/lecture" text="培训讲座" />
-                    <ResBtn icon-name="bookmark_add" url="/reading/bookReport" text="新书通报" />
+                    <ResBtn icon-name="bookmark_add" url="/reading/bookClub" text="山水读书社" />
                     <ResBtn icon-name="volunteer_activism" url="/service/donation" text="捐赠" />
                   </div>
                 </div>

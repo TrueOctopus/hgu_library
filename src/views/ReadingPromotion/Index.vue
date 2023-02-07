@@ -43,7 +43,7 @@ export default {
       // TODO 修改名称
       menuList: [
         { title: '读书推荐', link: 'recommendedReading' },
-        { title: '新书通报', link: 'bookReport' },
+        { title: '山水读书社', link: 'bookClub' },
         {
           title: '主题活动',
           children: [
@@ -55,8 +55,8 @@ export default {
   },
   computed: {
     lastBreadcrumbTittle() {
-      const news = ['recommendedReading', 'bookReport', 'readingMonth']
-      const newsCN = ['读书推荐', '新书通报', '读书月']
+      const news = ['recommendedReading', 'bookClub', 'readingMonth']
+      const newsCN = ['读书推荐', '山水读书社', '读书月']
       let type = ''
       news.forEach((e, index) => {
         // console.log(e, index, this.$route.path.split('/')[2])
