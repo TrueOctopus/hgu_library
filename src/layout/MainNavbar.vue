@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2023-01-01 16:20:34
+ * @LastEditTime: 2023-02-07 20:23:11
  * @LastEditors: 郑钊宇
  * @Description: 顶部菜单模块
 -->
@@ -258,9 +258,34 @@
             </a>
           </li>
 
-          <md-list-item href="/introduction">
-            <p>概况</p>
-          </md-list-item>
+          <li class="md-list-item">
+            <a
+              class="md-list-item-router md-list-item-container md-button-clean dropdown"
+            >
+              <div class="md-list-item-content">
+                <drop-down direction="down">
+                  <md-button
+                    slot="title"
+                    class="md-button md-button-link md-white md-simple dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
+                    <p>概况</p>
+                  </md-button>
+                  <ul class="dropdown-menu" style="width: 30vh">
+                    <li>
+                      <a href="/introduction/libraryIntroduction" class="dropdown-item">本馆概况</a>
+                    </li>
+                    <li>
+                      <a href="/introduction/leaderIntroduction" class="dropdown-item">现任领导</a>
+                    </li>
+                    <li>
+                      <a href="/introduction/departmentIntroduction" class="dropdown-item">部门介绍</a>
+                    </li>
+                  </ul>
+                </drop-down>
+              </div>
+            </a>
+          </li>
         </md-list>
       </div>
       <div class="md-toolbar-section-end">
@@ -499,9 +524,34 @@
                   </a>
                 </li>
 
-                <md-list-item href="/introduction">
-                  <p>概况</p>
-                </md-list-item>
+                <li class="md-list-item">
+                  <a
+                    class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                  >
+                    <div class="md-list-item-content">
+                      <drop-down direction="down">
+                        <md-button
+                          slot="title"
+                          class="md-button md-button-link md-white md-simple dropdown-toggle"
+                          data-toggle="dropdown"
+                        >
+                          <p>概况</p>
+                        </md-button>
+                        <ul class="dropdown-menu" style="width: 30vh">
+                          <li>
+                            <a href="/introduction/libraryIntroduction" class="dropdown-item">本馆概况</a>
+                          </li>
+                          <li>
+                            <a href="/introduction/leaderIntroduction" class="dropdown-item">现任领导</a>
+                          </li>
+                          <li>
+                            <a href="/introduction/departmentIntroduction" class="dropdown-item">部门介绍</a>
+                          </li>
+                        </ul>
+                      </drop-down>
+                    </div>
+                  </a>
+                </li>
               </md-list>
             </mobile-menu>
 

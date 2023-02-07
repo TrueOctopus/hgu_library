@@ -16,6 +16,7 @@ import readingPromotion from './modules/readingPromotion'
 import commentHub from './modules/commentHub'
 import characteristic from './modules/characteristic'
 import studySupport from './modules/studySupport'
+import introduction from './modules/introduction'
 
 import Index from '@/views/Home/Index.vue'
 import Login from '@/views/Personal/Login.vue'
@@ -25,7 +26,6 @@ import MainNavbar from '@/layout/MainNavbar.vue'
 import MainFooter from '@/layout/MainFooter.vue'
 
 import News from '@/views/News/News.vue'
-import Introduction from '@/views/Introduction/Introduction.vue'
 import BookDetail from '@/views/ReadingPromotion/BookDetail.vue'
 import LectureDetail from '@/views/Lecture/LectureDetail.vue'
 
@@ -71,22 +71,9 @@ export default new Router({
       }
     },
 
-    {
-      path: '/introduction',
-      name: 'Introduction',
-      components: {
-        default: Introduction,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 100 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-
     databaseResouce,
     announcementRouter,
+    introduction,
     readerService,
     readingPromotion,
     commentHub,
