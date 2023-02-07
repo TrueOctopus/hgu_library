@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2023-02-07 20:23:11
+ * @LastEditTime: 2023-02-07 20:46:04
  * @LastEditors: 郑钊宇
  * @Description: 顶部菜单模块
 -->
@@ -22,10 +22,12 @@
           info
         </span>
         开馆时间 8:00~22:00
-        <span class="material-icons">
-          perm_identity
-        </span>
-        当前馆内人数 {{ peopleNumber }}/2000
+        <template v-if="peopleNumber > -1">
+          <span class="material-icons">
+            perm_identity
+          </span>
+          当前馆内人数 {{ peopleNumber }}/2000
+        </template>
       </div>
     </div>
     <!-- <div class="md-toolbar-row md-collapse-lateral">
@@ -644,7 +646,7 @@ export default {
       mobileFlag: false, // 移动端激活标志
       showLogo: true, // 顶部图显示标志
 
-      peopleNumber: 900 // 馆内人数
+      peopleNumber: -1 // 馆内人数
     }
   },
   computed: {
