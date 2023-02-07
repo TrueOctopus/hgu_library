@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 16:01:50
- * @LastEditTime: 2022-04-26 17:39:08
+ * @LastEditTime: 2023-02-07 19:53:06
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -10,6 +10,7 @@
 
     <md-field class="md-layout-item md-size-70" :class="commentMessageClass">
       <label class="label">留言区</label>
+      <p v-if="showErrorMeg" style="margin-top: 1rem;">请<router-link to="/login">登录</router-link>后留言</p>
       <span class="md-error">{{ commentErrorMessage }}</span>
       <md-textarea v-model="submitForm.messagecontent" :disabled="isLogin" @blur="commentVerify" />
 
@@ -60,6 +61,7 @@ export default {
         commenter: '',
         checkflag: 0
       },
+      showErrorMeg: false,
       hasCommentErrorMessage: false,
       commentErrorMessage: ''
     }
@@ -74,8 +76,9 @@ export default {
   created() {
     this.fetchData()
     if (!this.$store.getters.username) {
-      this.submitForm.messagecontent = '请登陆后留言'
+      this.showErrorMeg = true
     } else {
+      this.showErrorMeg = false
       this.isLogin = false
       this.submitForm.messagecontent = ''
       this.submitForm.commenter = this.$store.getters.username

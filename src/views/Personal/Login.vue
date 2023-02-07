@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2022-04-26 18:04:32
+ * @LastEditTime: 2023-02-07 19:53:42
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -111,7 +111,7 @@ export default {
             noticeType: 'success',
             message: '登录成功'
           })
-          this.$router.push('/')
+          this.$router.push('/commentHub/comment')
         })
       } else {
         alert('信息填写错误!!')
