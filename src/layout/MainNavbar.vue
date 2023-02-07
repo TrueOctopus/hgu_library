@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-02-16 14:19:24
- * @LastEditTime: 2023-02-07 20:46:04
+ * @LastEditTime: 2023-02-07 20:57:48
  * @LastEditors: 郑钊宇
  * @Description: 顶部菜单模块
 -->
@@ -118,9 +118,6 @@
                             <a href="/resouce/delivery" class="dropdown-item">文献传递</a>
                           </li>
                           <li class="dropdown-divider" />
-                          <li>
-                            <a href="/studysupport/VPNusage" class="dropdown-item">校外访问</a>
-                          </li>
                         </ul>
                       </el-col>
                     </el-row>
@@ -384,9 +381,6 @@
                                   <a href="/resouce/delivery" class="dropdown-item">文献传递</a>
                                 </li>
                                 <li class="dropdown-divider" />
-                                <li>
-                                  <a href="/studysupport/VPNusage" class="dropdown-item">校外访问</a>
-                                </li>
                               </ul>
                             </el-col>
                           </el-row>

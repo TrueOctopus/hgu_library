@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2023-01-01 15:39:52
+ * @LastEditTime: 2023-02-07 20:59:35
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -279,7 +279,7 @@
                 <div class="md-layout md-layout-item md-size-100 md-gutter">
                   <!-- <div class="md-layout-item md-size-5" /> -->
                   <div class="my3boxs">
-                    <ResBtn icon-name="school" url="/resouce/offcampus" text="校外访问" />
+                    <ResBtn icon-name="school" url="/studysupport/VPNusage" text="校外访问" />
                     <ResBtn icon-name="storage" url="/resouce/all" text="数据库" />
                     <ResBtn icon-name="dashboard" url="/resouce/collection" text="馆藏布局" />
                   </div>

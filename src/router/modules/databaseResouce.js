@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2022-03-25 08:43:23
- * @LastEditTime: 2022-04-07 17:30:46
+ * @LastEditTime: 2023-02-07 20:58:02
  * @LastEditors: 郑钊宇
  * @Description: 数据库资源路由表
  */
@@ -17,7 +17,6 @@ import OpenResouce from '@/views/DataBaseResouce/navigation/Open.vue'
 import TryResouce from '@/views/DataBaseResouce/navigation/Try.vue'
 import Characteristic from '@/views/DataBaseResouce/Characteristic.vue'
 import Delivery from '@/views/DataBaseResouce/Delivery.vue'
-import Offcampus from '@/views/DataBaseResouce/Offcampus.vue'
 
 const databaseResouce = {
   path: '/resouce',
@@ -101,15 +100,6 @@ const databaseResouce = {
       name: 'Delivery',
       components: {
         default: Delivery,
-        header: MainNavbar,
-        footer: MainFooter
-      }
-    },
-    {
-      path: 'offcampus',
-      name: 'Offcampus',
-      components: {
-        default: Offcampus,
         header: MainNavbar,
         footer: MainFooter
       }

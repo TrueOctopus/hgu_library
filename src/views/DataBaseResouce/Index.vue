@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-25 08:39:26
- * @LastEditTime: 2022-04-23 18:11:41
+ * @LastEditTime: 2023-02-07 20:56:55
  * @LastEditors: 郑钊宇
  * @Description:
 -->
@@ -56,17 +56,16 @@ export default {
           ]
         },
         { title: '特色资源', link: 'characteristic' },
-        { title: '文献传递', link: 'delivery' },
-        { title: '校外访问', link: 'offcampus' }
+        { title: '文献传递', link: 'delivery' }
       ]
     }
   },
   computed: {
     lastBreadcrumbTittle() {
       const news = ['collection', 'all', 'cn', 'foreign', 'try', 'open',
-        'characteristic', 'delivery', 'offcampus']
+        'characteristic', 'delivery']
       const newsCN = ['馆藏目录', '全部资源', '中文资源', '外文资源', '试用资源', '开放资源',
-        '特色资源', '文献传递', '校外访问']
+        '特色资源', '文献传递']
       let type = ''
       news.forEach((e, index) => {
         // console.log(e, index, this.$route.path.split('/')[2])
