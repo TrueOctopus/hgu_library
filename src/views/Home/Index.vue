@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2023-02-07 20:59:35
+ * @LastEditTime: 2023-02-10 19:06:32
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -271,9 +271,9 @@
                     <ResBtn icon-name="local_library" url="/service/labOrder" text="研修室预约" />
                   </div>
                   <div class="my3boxs">
-                    <ResBtn icon-name="format_list_bulleted" url="/studysupport/admissionEducation" text="入馆须知" />
-                    <ResBtn icon-name="book" url="/service/borrowRules" text="图书续借" />
-                    <ResBtn icon-name="collections_bookmark" text="资源荐购" />
+                    <ResBtn icon-name="format_list_bulleted" url="/studysupport/admissionEducation" text="新生指南" />
+                    <ResBtn icon-name="book" url="/service/borrowRules" text="借阅服务" />
+                    <ResBtn icon-name="collections_bookmark" url="https://opac.hgu.edu.cn/asord/asord_hist.php" text="资源荐购" />
                   </div>
                 </div>
                 <div class="md-layout md-layout-item md-size-100 md-gutter">
@@ -506,6 +506,8 @@
               <a href="http://lib.hebut.edu.cn/">河北工业大学图书馆</a>
               <br>
               <a href="http://lib.hbu.edu.cn/">河北大学图书馆</a>
+              <br>
+              <a href="https://lib.heuet.edu.cn/">河北经贸大学图书馆</a>
             </div>
           </div>
           <div class="md-layout-item md-size-10 md-small-size-0" />

@@ -7,7 +7,7 @@
 -->
 <template>
   <div>
-    <pageInfo catalog="读书月" />
+    <pageInfo catalog="预告与报道" />
   </div>
 </template>
 

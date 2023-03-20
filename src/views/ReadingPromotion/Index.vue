@@ -43,20 +43,20 @@ export default {
       // TODO 修改名称
       menuList: [
         { title: '读书推荐', link: 'recommendedReading' },
-        { title: '山水读书社', link: 'bookClub' },
-        {
-          title: '主题活动',
-          children: [
-            { title: '读书月', link: 'readingMonth' }
-          ]
-        }
+        { title: '山水读书社', link: 'bookClub' }
+        // {
+        //   title: '主题活动',
+        //   children: [
+        //     { title: '预告与报道', link: 'readingMonth' }
+        //   ]
+        // }
       ]
     }
   },
   computed: {
     lastBreadcrumbTittle() {
       const news = ['recommendedReading', 'bookClub', 'readingMonth']
-      const newsCN = ['读书推荐', '山水读书社', '读书月']
+      const newsCN = ['读书推荐', '山水读书社'] // 删除了预告与报道
       let type = ''
       news.forEach((e, index) => {
         // console.log(e, index, this.$route.path.split('/')[2])

@@ -29,7 +29,7 @@
             {{ scope.row.author }}
           </template>
         </el-table-column>
-        <el-table-column label="课题名称或承担项目" align="center">
+        <el-table-column label="专利名称" align="center">
           <template slot-scope="scope">
             <span>{{ scope.row.title }}</span>
           </template>
