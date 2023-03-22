@@ -77,9 +77,9 @@
                               class="md-info"
                               @click="submitForm(`https://opac.hgu.edu.cn/opac/openlink.php?doctype=${docForm.docType}&strText=${docForm.strText}&simple=mode&strSearchType=title&match_flag=forward&displaypg=20&sort=CATA_DATE&orderby=desc&showmode=list&dept=ALL&submit=%25E6%25A3%2580%25E7%25B4%25A2`)"
                             >开始搜索</md-button>
-                            <md-button
+                            <!-- <md-button
                               @click="resetForm('docForm')"
-                            >重置</md-button>
+                            >重置</md-button> -->
                           </el-form-item>
                         </el-form>
                       </p>
@@ -223,7 +223,7 @@
                       <div class="myTitle">中文资源:</div>
                       <div class="myLinks">
                         <a v-for="item in databaseList.cn" :key="item.id" :href="item.urladdress">
-                          {{ item.urlname }}
+                          {{ item.urlname }}&emsp;
                         </a>
                       </div>
                       <a class="more" href="/resouce/cn">更多>></a>
@@ -232,7 +232,7 @@
                       <div class="myTitle">外文资源:</div>
                       <div class="myLinks">
                         <a v-for="item in databaseList.foreign" :key="item.id" :href="item.urladdress">
-                          {{ item.urlname }}
+                          {{ item.urlname }}&emsp;
                         </a>
                       </div>
                       <a class="more" href="/resouce/foreign">更多>></a>
@@ -241,7 +241,7 @@
                       <div class="myTitle">试用资源:</div>
                       <div class="myLinks">
                         <a v-for="item in databaseList.try" :key="item.id" :href="item.urladdress">
-                          {{ item.urlname }}
+                          {{ item.urlname }}&emsp;
                         </a>
                       </div>
                       <a class="more" href="/resouce/try">更多>></a>
@@ -250,7 +250,7 @@
                       <div class="myTitle">开放资源:</div>
                       <div class="myLinks">
                         <a v-for="item in databaseList.open" :key="item.id" :href="item.urladdress">
-                          {{ item.urlname }}
+                          {{ item.urlname }}&emsp;
                         </a>
                       </div>
                       <a class="more" href="/resouce/open">更多>></a>
@@ -732,10 +732,12 @@ export default {
  }
 
 .resourceSimple {
+  line-height: 36px;
   a {
     color: #000;
     font-weight: normal;
     padding-right: 10px;
+    font-size: 18px;
     &:hover {
       color: #00bcd4 !important;
     }
@@ -760,7 +762,8 @@ export default {
   justify-content: space-around;
   flex-wrap: wrap;
   .myTitle {
-    width: 70px;
+    width: 90px;
+    font-size: 18px;
   }
   .myLinks {
     flex: 1;
@@ -768,7 +771,7 @@ export default {
     flex-wrap: wrap;
   }
   .more {
-    width: 65px;
+    width: 80px;
   }
 }
 

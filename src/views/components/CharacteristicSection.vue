@@ -9,13 +9,19 @@
   <div class="md-layout">
     <div
       class="characteristicSection section-open"
-      :style="`background-color: #00BCD4;`"
+      :style="`background-image: url(${require('@/assets/img/characteristic/frontpage.jpg')})`"
       @click.stop="showInfo($event)"
     >
       <div class="portrait">院士文库</div>
       <div class="text">
         <p>
-          为传播科学思想，弘扬科学精神，院士文库收录了我校杰出校友7位院士的基本信息、履历、任职、成就贡献、学术成果等内容。
+          院士文库是一个收录了我校院士校友科研成果的数据库。这些院士在其所在领域的研究成果和学术贡献备受推崇，并且在国内外享有很高的声誉。
+        </p>
+        <p>
+          院士文库的内容丰富多样，包括了期刊论文、会议论文、研究报告、专利文献等，这些内容既有经典的研究成果，也有前沿的研究进展。通过院士文库，人们可以了解到我校院士校友在各自领域的最新科研成果和学术进展，对于学术界的研究者、学生和对各领域感兴趣的人士都具有非常大的参考价值。
+        </p>
+        <p>
+          院士文库的建设旨在推动学术交流和科学研究，弘扬科学精神，鼓励探索创新。通过院士文库，人们可以更加便捷地了解我校院士校友的学术成果和研究成果，促进了不同领域之间的交流和合作。同时，院士文库也为我校学子提供了一个学术学习和成长的平台，帮助他们更好地了解我校院士校友的学术成就和科学研究成果，推动他们的科学研究和学术发展。
         </p>
       </div>
       <md-button class="md-info btn" href="/characteristic">了解相关资源</md-button>
