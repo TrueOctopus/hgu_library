@@ -8,6 +8,7 @@
 <template>
   <div id="wrapper" class="wrapper">
     <AnchorNav :column-type="columnType" />
+    <a class="goOld" href="https://tsg.hgu.edu.cn/">返回旧版</a>
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout" style="width:99%">
         <div class="image-wrapper" style="width:99%">
@@ -892,5 +893,17 @@ export default {
 <style lang="scss">
 .md-tabs-navigation .md-button {
   font-size: 14px !important;
+}
+.goOld {
+  position: fixed;
+  right: 40px;
+  top: 20vh;
+  padding: 10px;
+  background-color: rgba($color: #ffffff, $alpha: .9);
+  border-radius: 5px;
+  color: black !important;
+  font-weight: 800;
+  font-size: 15px;
+  z-index: 500;
 }
 </style>
