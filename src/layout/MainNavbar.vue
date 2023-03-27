@@ -230,7 +230,7 @@
                     <li class="dropdown-divider" />
                     <li class="dropdown-header">主题活动</li>
                     <li>
-                      <a href="/reading/readingMonth" class="dropdown-item">读书月</a>
+                      <a href="/reading/readingMonth" class="dropdown-item">分享计划/书目</a>
                     </li>
                   </ul>
                 </drop-down>
@@ -493,7 +493,7 @@
                           <li class="dropdown-divider" />
                           <li class="dropdown-header">主题活动</li>
                           <li>
-                            <a href="/reading/readingMonth" class="dropdown-item">读书月</a>
+                            <a href="/reading/readingMonth" class="dropdown-item">分享计划/书目</a>
                           </li>
                         </ul>
                       </drop-down>
