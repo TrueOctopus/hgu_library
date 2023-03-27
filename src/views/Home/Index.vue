@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2023-03-22 11:36:42
+ * @LastEditTime: 2023-03-24 16:55:46
  * @LastEditors: tianhonyu 839779750@qq.com
  * @Description: 主页
 -->
@@ -390,7 +390,7 @@
                   class="img-raised rounded myImg"
                   :style="{'background-image': `url(${newsImage[2]?newsImage[2].image:image})`}"
                   @click="$router.push('/announcement/' + newsImage[2].id)"
-                />
+                />md-info
                 <div v-if="newsImage[2]">{{ newsImage[2].title }}</div>
               </div>
               <div class="md-layout-item md-size-50 newsImage">
@@ -738,7 +738,7 @@ export default {
     color: #000;
     font-weight: normal;
     padding-right: 10px;
-    font-size: 18px;
+    font-size: 16px;
     &:hover {
       color: #00bcd4 !important;
     }
@@ -764,7 +764,7 @@ export default {
   flex-wrap: wrap;
   .myTitle {
     width: 90px;
-    font-size: 18px;
+    font-size: 16px;
   }
   .myLinks {
     flex: 1;
@@ -892,7 +892,7 @@ export default {
 </style>
 <style lang="scss">
 .md-tabs-navigation .md-button {
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 .goOld {
   position: fixed;
