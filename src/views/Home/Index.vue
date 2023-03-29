@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-03 08:34:22
- * @LastEditTime: 2023-02-07 20:59:35
+ * @LastEditTime: 2023-02-10 19:06:32
  * @LastEditors: 郑钊宇
  * @Description: 主页
 -->
@@ -273,7 +273,7 @@
                   <div class="my3boxs">
                     <ResBtn icon-name="format_list_bulleted" url="/studysupport/admissionEducation" text="入馆须知" />
                     <ResBtn icon-name="book" url="/service/borrowRules" text="图书续借" />
-                    <ResBtn icon-name="collections_bookmark" text="资源荐购" />
+                    <ResBtn icon-name="collections_bookmark" url="https://opac.hgu.edu.cn/asord/asord_hist.php" text="资源荐购" />
                   </div>
                 </div>
                 <div class="md-layout md-layout-item md-size-100 md-gutter">
