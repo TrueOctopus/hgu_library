@@ -21,7 +21,7 @@
       </el-breadcrumb>
     </template>
     <template #subNav>
-      <SubNav :menu-list="menuList" menu-tittle="新闻中心" />
+      <SubNav :menu-list="menuList" menu-tittle="新闻公告" />
     </template>
     <template #text>
       <router-view />

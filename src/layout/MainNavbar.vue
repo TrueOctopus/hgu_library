@@ -17,7 +17,17 @@
       <!-- <div class="md-toolbar-section-start">
         河北地质大学图书馆
       </div> -->
-      <div class="md-toolbar-section-end">
+      <!-- <div class="md-toolbar-section-end">
+        <a
+          href="https://tsg.hgu.edu.cn/"
+          style="
+            color: red;
+            font-size: 14px;
+            font-weight: 800;
+          "
+        >
+          返回旧版
+        </a>
         <span class="material-icons">
           info
         </span>
@@ -28,7 +38,7 @@
           </span>
           当前馆内人数 {{ peopleNumber }}/2000
         </template>
-      </div>
+      </div> -->
     </div>
     <!-- <div class="md-toolbar-row md-collapse-lateral">
       <h3 class="md-title">河北地质大学图书馆</h3>
@@ -38,7 +48,7 @@
         <img
           :src="logoImage"
           alt="Logo image"
-          style="margin-right:15px;"
+          style="margin-right:5px;width: 258px;"
         >
       </a>
       <div class="md-toolbar-section-start">
@@ -101,9 +111,9 @@
                       <el-col :span="24" style="width: 30vh">
                         <ul>
                           <li class="dropdown-header">资源服务</li>
-                          <li>
+                          <!-- <li>
                             <a href="/resouce/collection" class="dropdown-item">馆藏目录</a>
-                          </li>
+                          </li> -->
                           <li>
                             <a href="/resouce/all" class="dropdown-item">数据库导航</a>
                           </li>
@@ -220,7 +230,7 @@
                     <li class="dropdown-divider" />
                     <li class="dropdown-header">主题活动</li>
                     <li>
-                      <a href="/reading/readingMonth" class="dropdown-item">读书月</a>
+                      <a href="/reading/readingMonth" class="dropdown-item">分享计划/书目</a>
                     </li>
                   </ul>
                 </drop-down>
@@ -364,9 +374,9 @@
                             <el-col :span="24" style="width: 30vh">
                               <ul>
                                 <li class="dropdown-header">资源服务</li>
-                                <li>
+                                <!-- <li>
                                   <a href="/resouce/collection" class="dropdown-item">馆藏目录</a>
-                                </li>
+                                </li> -->
                                 <li>
                                   <a href="/resouce/all" class="dropdown-item">数据库导航</a>
                                 </li>
@@ -483,7 +493,7 @@
                           <li class="dropdown-divider" />
                           <li class="dropdown-header">主题活动</li>
                           <li>
-                            <a href="/reading/readingMonth" class="dropdown-item">读书月</a>
+                            <a href="/reading/readingMonth" class="dropdown-item">分享计划/书目</a>
                           </li>
                         </ul>
                       </drop-down>
@@ -632,7 +642,7 @@ export default {
     return {
       extraNavClasses: 'initBar', // 导航栏额外class
       toggledClass: false, // 按钮切换标志符
-      logoImage: require('@/assets/img/shoolLogo-black.png'), // 顶部图
+      logoImage: require('@/assets/img/tsgLogo.jpg'), // 顶部图
 
       searchQuery: '', // 搜索框默认配置
       employees: [], // 搜索框数据

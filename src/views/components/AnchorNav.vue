@@ -29,6 +29,9 @@
     <a href="javascript:void(0)" @click="onTopClick('friendLink')">
       友情链接
     </a>
+    <a href="https://www.hgu.edu.cn/">
+      学校官网
+    </a>
     <a
       href="javascript:void(0)"
       style="border-radius: 0 0 3px 3px"

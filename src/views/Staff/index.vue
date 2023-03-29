@@ -50,7 +50,7 @@ export default {
   components: { TemplePage },
   data() {
     return {
-      detailTittle: '教职工号查询',
+      detailTittle: '职工读书证号查询',
       workForm: {
         workNumber: '',
         worker: ''

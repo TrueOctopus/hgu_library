@@ -1,8 +1,8 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2022-03-11 15:22:34
- * @LastEditTime: 2022-04-26 16:12:19
- * @LastEditors: 郑钊宇
+ * @LastEditTime: 2023-03-20 11:36:06
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Description: 活动日历
 -->
 <template>
@@ -22,9 +22,9 @@
           </div>
         </div>
       </div>
-      <div v-if="lectureList.length !== 0">
+      <div v-if="activityList.length !== 0">
         <div class="catalog">活动:</div>
-        <div v-for="lecture in lectureList" :key="lecture.id" class="lecture">
+        <div v-for="lecture in activityList" :key="lecture.id" class="lecture">
           <div v-if="lecture.catalog === '活动'">
             <router-link :to="`lecture/${lecture.id}`" class="lectureTittle">{{ lecture.title }}</router-link>
             <p>{{ lecture.remark }}</p>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-      <div v-else>当前日期没有讲座或活动~</div>
+      <div v-if="lectureList.length == 0 && activityList.length == 0">当前日期没有讲座或活动~</div>
     </div>
     <Calendar
       ref="Calendar"
@@ -55,7 +55,8 @@ export default {
       markArr: [],
       today: '',
       selectDate: '',
-      lectureList: []
+      lectureList: [],
+      activityList: []
     }
   },
   created() {
@@ -102,7 +103,13 @@ export default {
       // console.log('date', date)
       fetchLectureByDate(date).then(res => {
         // console.log(res)
-        this.lectureList = res.data.lecture
+        const listData = res.data.lecture
+        this.lectureList = listData.filter(item => {
+          return item.catalog === '讲座'
+        })
+        this.activityList = listData.filter(item => {
+          return item.catalog === '活动'
+        })
       })
     }
   }

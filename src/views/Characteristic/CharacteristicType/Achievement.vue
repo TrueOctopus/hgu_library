@@ -44,11 +44,11 @@
             <span>{{ scope.row.completeUnit }}</span>
           </template>
         </el-table-column>
-        <el-table-column label="" align="center" width="120" class-name="small-padding fixed-width">
+        <!-- <el-table-column label="" align="center" width="120" class-name="small-padding fixed-width">
           <template slot-scope="{row}">
             <md-button class="md-sm md-info" @click="handleDownload(row)">下载</md-button>
           </template>
-        </el-table-column>
+        </el-table-column> -->
       </el-table>
     </div>
     <div class="md-layout-item md-size-10" />

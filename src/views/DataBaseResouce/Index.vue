@@ -44,7 +44,7 @@ export default {
       detailTittle: '资源服务',
       // TODO 修改名称
       menuList: [
-        { title: '馆藏目录', link: 'collection' },
+        // { title: '馆藏目录', link: 'collection' },
         {
           title: '数据库导航',
           children: [
@@ -64,8 +64,8 @@ export default {
     lastBreadcrumbTittle() {
       const news = ['collection', 'all', 'cn', 'foreign', 'try', 'open',
         'characteristic', 'delivery']
-      const newsCN = ['馆藏目录', '全部资源', '中文资源', '外文资源', '试用资源', '开放资源',
-        '特色资源', '文献传递']
+      const newsCN = ['全部资源', '中文资源', '外文资源', '试用资源', '开放资源',
+        '特色资源', '文献传递'] // 删掉了“馆藏目录”
       let type = ''
       news.forEach((e, index) => {
         // console.log(e, index, this.$route.path.split('/')[2])
